@@ -1,5 +1,7 @@
 # d2-advance
 
+Advance, convention first, colourful front-end practice. be inspired by D2Admin :)
+
 ## Project setup
 ```
 yarn install
