@@ -7,6 +7,10 @@ export default [
       {
         path: 'welcome',
         component: () => import('../pages/home/welcome')
+      },
+      {
+        path: 'login',
+        component: () => import('../pages/home/login')
       }
     ]
   },

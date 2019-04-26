@@ -3,7 +3,7 @@ import createRouter from './router'
 
 const router = createRouter({
   async init() {
-    // ...
+    await store.dispatch('init')
   },
   async before() {
     // ...
