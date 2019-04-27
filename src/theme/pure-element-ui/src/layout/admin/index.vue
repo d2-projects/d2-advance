@@ -43,9 +43,9 @@
         </div>
       </el-header>
       <el-main>
-        <fade-transition mode="out-in">
+        <slide-x-right-transition mode="out-in">
           <slot />
-        </fade-transition>
+        </slide-x-right-transition>
       </el-main>
       <el-footer class="footer">Footer</el-footer>
     </el-container>
@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import { FadeTransition } from 'vue2-transitions'
+import { SlideXRightTransition } from 'vue2-transitions'
 
 const useCollapse = true
 const defaultCollapse = true
@@ -77,7 +77,7 @@ export default {
     }
   },
   components: {
-    FadeTransition
+    SlideXRightTransition
   }
 }
 </script>
