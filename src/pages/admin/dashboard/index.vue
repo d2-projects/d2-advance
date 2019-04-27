@@ -1,10 +1,6 @@
 <template>
-  <div>
-    <h2>admin-dashboard</h2>
-    <router-link to="/">back to home</router-link>
-    <div>
-      <button @click="handleLogout">just logout</button>
-    </div>
+  <div class="banner-container">
+    <h2>Welcome to the dashboard</h2>
   </div>
 </template>
 
