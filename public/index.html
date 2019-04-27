@@ -11,7 +11,73 @@
     <noscript>
       <strong>We're sorry but d2-advance doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <div id="app"></div>
+    <div id="app">
+      <style type="text/css">
+        #app {
+          min-height: 60vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .looping-rhombuses-spinner, .looping-rhombuses-spinner * {
+          box-sizing: border-box;
+        }
+
+        .looping-rhombuses-spinner {
+          width: calc(15px * 4);
+          height: 15px;
+          position: relative;
+        }
+
+        .looping-rhombuses-spinner .rhombus {
+          height: 15px;
+          width: 15px;
+          background-color: #c0c4cc;
+          left: calc(15px * 4);
+          position: absolute;
+          margin: 0 auto;
+          border-radius: 2px;
+          transform: translateY(0) rotate(45deg) scale(0);
+          animation: looping-rhombuses-spinner-animation 2500ms linear infinite;
+        }
+
+        .looping-rhombuses-spinner .rhombus:nth-child(1) {
+          animation-delay: calc(2500ms * 1 / -1.5);
+        }
+
+        .looping-rhombuses-spinner .rhombus:nth-child(2) {
+          animation-delay: calc(2500ms * 2 / -1.5);
+        }
+
+        .looping-rhombuses-spinner .rhombus:nth-child(3) {
+          animation-delay: calc(2500ms * 3 / -1.5);
+        }
+
+        @keyframes looping-rhombuses-spinner-animation {
+          0% {
+            transform: translateX(0) rotate(45deg) scale(0);
+          }
+          50% {
+            transform: translateX(-233%) rotate(45deg) scale(1);
+          }
+          100% {
+            transform: translateX(-466%) rotate(45deg) scale(0);
+          }
+        }
+      </style>
+      <div class="looping-rhombuses-spinner">
+        <div class="rhombus"></div>
+        <div class="rhombus"></div>
+        <div class="rhombus"></div>
+      </div>
+      <p style="
+        color: #606266;
+        font-weight: 100;
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+      ">Loading...</p>
+    </div>
     <!-- built files will be auto injected -->
   </body>
 </html>
