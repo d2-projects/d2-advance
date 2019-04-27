@@ -44,21 +44,20 @@ export default {
   bottom 22px
   right 0
   .toggle
-    margin-right -60px
-    font-size 10px
+    margin-right -30px
+    font-size 12px
     z-index 99999
     padding 5px 10px
     padding-right 15px
     border-radius 3px
     background red
     cursor pointer
-    border 1px solid #0000005e
-    background rgba(0, 0, 0, 0.5)
-    background #0009
-    color #fff
+    border 1px solid rgb(224, 228, 231)
+    background-color rgb(242, 245, 247)
+    box-shadow rgba(118, 118, 118, 0.11) 2px 0px 5px 0px
+    color #24292e
     transition all .25s
-    font-family monospace
+    font-family -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
     &:hover, &:focus
       margin-right -15px
-      background rgba(0, 0, 0, 0.7)
 </style>
