@@ -37,7 +37,7 @@
 </template>
 
 <script>
-const rules = {
+const defaultRules = {
   account: [
     { required: true, trigger: ['blur', 'change'] },
     { min: 3, max: 32, trigger: ['blur', 'change'], message: 'length 3 ~ 32' }
@@ -57,6 +57,10 @@ export default {
     initialForm: {
       type: Object,
       required: false
+    },
+    customRules: {
+      type: Array,
+      required: false
     }
   },
   data() {
@@ -66,8 +70,12 @@ export default {
         password: '',
         account: '',
         ...(this.initialForm || {})
-      },
-      rules
+      }
+    }
+  },
+  computed: {
+    rules() {
+      return this.customRules || defaultRules
     }
   },
   methods: {

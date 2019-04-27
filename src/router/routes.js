@@ -2,7 +2,7 @@ export default [
   {
     path: '/',
     redirect: '/welcome',
-    component: () => import('../layout/home'),
+    component: () => import('../pages/home'),
     children: [
       {
         path: 'welcome',
@@ -17,7 +17,7 @@ export default [
   {
     path: '/admin',
     redirect: '/admin/dashboard',
-    component: () => import('../layout/admin'),
+    component: () => import('../pages/admin'),
     children: [
       {
         path: 'dashboard',

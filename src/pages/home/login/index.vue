@@ -11,7 +11,6 @@
 
 <script>
 import { mapActions } from 'vuex'
-import PureLoginForm from '@/components/extend/main/PureLoginForm'
 
 export default {
   preview: {
@@ -26,9 +25,6 @@ export default {
       await this.login(form)
       this.$router.push('/admin')
     }
-  },
-  components: {
-    PureLoginForm
   }
 }
 </script>

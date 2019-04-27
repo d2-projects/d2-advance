@@ -43,7 +43,7 @@
         </div>
       </el-header>
       <el-main>
-        <router-view />
+        <slot />
       </el-main>
       <el-footer class="footer">Footer</el-footer>
     </el-container>
@@ -51,23 +51,20 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
-
 const useCollapse = true
 const defaultCollapse = true
 
 export default {
+  props: {
+    handleLogout: {
+      type: Function,
+      required: true
+    }
+  },
   data() {
     return {
       useCollapse,
       isCollapse: defaultCollapse
-    }
-  },
-  methods: {
-    ...mapActions(['logout']),
-    async handleLogout() {
-      await this.logout()
-      this.$router.push('/login')
     }
   },
   computed: {
