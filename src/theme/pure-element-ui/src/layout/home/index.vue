@@ -10,17 +10,24 @@
         </el-menu-item>
       </template>
     </el-menu>
-    <slot />
+    <fade-transition mode="out-in">
+      <slot />
+    </fade-transition>
   </div>
 </template>
 
 <script>
+import { FadeTransition } from 'vue2-transitions'
+
 export default {
   props: {
     menu: {
       type: Array,
       required: true
     }
+  },
+  components: {
+    FadeTransition
   }
 }
 </script>

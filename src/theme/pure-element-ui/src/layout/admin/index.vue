@@ -43,7 +43,9 @@
         </div>
       </el-header>
       <el-main>
-        <slot />
+        <fade-transition mode="out-in">
+          <slot />
+        </fade-transition>
       </el-main>
       <el-footer class="footer">Footer</el-footer>
     </el-container>
@@ -51,6 +53,8 @@
 </template>
 
 <script>
+import { FadeTransition } from 'vue2-transitions'
+
 const useCollapse = true
 const defaultCollapse = true
 
@@ -71,6 +75,9 @@ export default {
     arrow() {
       return this.isCollapse ? 'right' : 'left'
     }
+  },
+  components: {
+    FadeTransition
   }
 }
 </script>
