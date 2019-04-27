@@ -9,7 +9,7 @@ Vue.use(ElementUI)
 import HomeLayout from './layout/home'
 import AdminLayout from './layout/admin'
 
-import PureLoginForm from './components/PureLoginForm'
+import PureLoginForm from './views/PureLoginForm'
 
 const components = {
   HomeLayout,

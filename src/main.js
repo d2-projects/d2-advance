@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import { router, store } from './core'
 
-import Theme from './theme/pure-element'
+import Theme from './theme/pure-element-ui'
 Vue.use(Theme)
 
 import './styles/index.styl'
