@@ -13,6 +13,13 @@
         ><img
           src="https://img.shields.io/github/stars/d2-projects/d2-advance.svg"
       /></a>
+      <iframe
+        src="https://ghbtns.com/github-btn.html?user=d2-projects&repo=d2-advance&type=star"
+        frameborder="0"
+        scrolling="0"
+        width="50px"
+        height="20px"
+      ></iframe>
     </p>
     <p align="center">
       <a
@@ -57,7 +64,7 @@
     margin-bottom 2px
     &:last-child
       margin-bottom 0px
-    a
+    a, iframe
       display inline-block
       margin 0px 2px
 </style>
