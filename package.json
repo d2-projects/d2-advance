@@ -1,6 +1,9 @@
 {
   "name": "@d2-projects/d2-advance",
   "version": "0.1.0",
+  "author": "CNine <cnine229@gmail.com>",
+  "license": "MIT",
+  "description": "Advance, convention first, colourful front-end practice. be inspired by D2Admin :)",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -61,5 +64,20 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/d2-projects/d2-advance.git"
+  },
+  "bugs": {
+    "url": "https://github.com/d2-projects/d2-advance/issues"
+  },
+  "homepage": "https://github.com/d2-projects/d2-advance",
+  "keywords": [
+    "sort",
+    "alphanum",
+    "alphanumeric",
+    "natural",
+    "human"
   ]
 }
