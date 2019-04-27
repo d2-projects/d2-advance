@@ -10,12 +10,14 @@ import HomeLayout from './layout/home'
 import AdminLayout from './layout/admin'
 
 import LoginForm from './views/LoginForm'
+import ErrorOps from './views/ErrorOps'
 
 const components = {
   HomeLayout,
   AdminLayout,
 
-  LoginForm
+  LoginForm,
+  ErrorOps
 }
 
 const install = (Vue, option) => {
@@ -34,5 +36,6 @@ export default {
   HomeLayout,
   AdminLayout,
 
-  LoginForm
+  LoginForm,
+  ErrorOps
 }
