@@ -1,7 +1,7 @@
 <template>
-  <home-layout :menu="menu">
+  <pure-element-ui-home-layout :menu="menu">
     <router-view></router-view>
-  </home-layout>
+  </pure-element-ui-home-layout>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { each } from 'lodash'
+import { each, camelCase } from 'lodash'
 
 import 'normalize.css'
 import 'element-ui/lib/theme-chalk/index.css'
@@ -9,18 +9,22 @@ Vue.use(ElementUI)
 import HomeLayout from './layout/home'
 import AdminLayout from './layout/admin'
 
-import PureLoginForm from './views/PureLoginForm'
+import LoginForm from './views/LoginForm'
 
 const components = {
   HomeLayout,
   AdminLayout,
 
-  PureLoginForm
+  LoginForm
 }
 
-const install = () => {
+const install = (Vue, option) => {
+  const { prefix } = option
   each(components, (component, key) => {
-    Vue.component(key, component)
+    Vue.component(
+      camelCase(camelCase(prefix || '') + '-' + camelCase(key)),
+      component
+    )
   })
 }
 
@@ -30,5 +34,5 @@ export default {
   HomeLayout,
   AdminLayout,
 
-  PureLoginForm
+  LoginForm
 }

@@ -1,7 +1,7 @@
 <template>
-  <admin-layout :handleLogout="handleLogout">
+  <pure-element-ui-home-layout-admin-layout :handleLogout="handleLogout">
     <router-view></router-view>
-  </admin-layout>
+  </pure-element-ui-home-layout-admin-layout>
 </template>
 
 <script>

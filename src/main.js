@@ -3,7 +3,7 @@ import App from './App.vue'
 import { router, store } from './core'
 
 import Theme from './theme/pure-element-ui'
-Vue.use(Theme)
+Vue.use(Theme, { prefix: 'pure-element-ui' })
 
 import './styles/index.styl'
 

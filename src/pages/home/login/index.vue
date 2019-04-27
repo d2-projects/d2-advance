@@ -1,7 +1,7 @@
 <template>
   <div class="banner-container">
     <h2>Login any account</h2>
-    <pure-login-form
+    <pure-element-ui-login-form
       class="form"
       :handleSubmit="handleLogin"
       :initialForm="$options.preview.initialForm"
