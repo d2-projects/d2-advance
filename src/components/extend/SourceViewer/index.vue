@@ -1,6 +1,8 @@
 <template>
-  <div v-if="enable && deep" class="source-viewer-wrap" @click="handleClick">
-    <span>{{ text }}</span>
+  <div class="source-viewer-wrap">
+    <div v-if="enable && deep" class="toggle" @click="handleClick">
+      <span>{{ text }}</span>
+    </div>
   </div>
 </template>
 
@@ -38,23 +40,25 @@ export default {
 
 <style lang="stylus" scoped>
 .source-viewer-wrap
-  font-size 10px
-  z-index 99999
   position fixed
   bottom 22px
-  right -60px
-  padding 5px 10px
-  padding-right 15px
-  border-radius 3px
-  background red
-  cursor pointer
-  border 1px solid #0000005e
-  background rgba(0, 0, 0, 0.5)
-  background #0009
-  color #fff
-  transition all .25s
-  font-family monospace
-  &:hover, &:focus
-    right -15px
-    background rgba(0, 0, 0, 0.7)
+  right 0
+  .toggle
+    margin-right -60px
+    font-size 10px
+    z-index 99999
+    padding 5px 10px
+    padding-right 15px
+    border-radius 3px
+    background red
+    cursor pointer
+    border 1px solid #0000005e
+    background rgba(0, 0, 0, 0.5)
+    background #0009
+    color #fff
+    transition all .25s
+    font-family monospace
+    &:hover, &:focus
+      margin-right -15px
+      background rgba(0, 0, 0, 0.7)
 </style>
