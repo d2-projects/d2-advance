@@ -25,7 +25,7 @@ export default {
       return compact([
         { label: 'home', link: '/welcome', icon: 'house' },
         !this.isLogin && { label: 'login', link: '/login', icon: 'user' },
-        this.isLogin && { label: 'admin', link: '/admin', icon: 'odometer' }
+        this.isLogin && { label: 'dashboard', link: '/admin', icon: 'odometer' }
       ])
     }
   }

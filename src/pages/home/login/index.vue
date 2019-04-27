@@ -1,7 +1,11 @@
 <template>
   <div class="banner-container">
     <h2>Login any account</h2>
-    <pure-login-form class="form" :handleSubmit="handleLogin" />
+    <pure-login-form
+      class="form"
+      :handleSubmit="handleLogin"
+      :initialForm="$options.preview.initialForm"
+    />
   </div>
 </template>
 
@@ -10,6 +14,12 @@ import { mapActions } from 'vuex'
 import PureLoginForm from '@/components/extend/main/PureLoginForm'
 
 export default {
+  preview: {
+    initialForm: {
+      account: 'admin',
+      password: 'admin'
+    }
+  },
   methods: {
     ...mapActions(['login']),
     async handleLogin(form) {
