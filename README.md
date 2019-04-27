@@ -5,11 +5,11 @@ Advance, convention first, colourful front-end practice. be inspired by D2Admin 
 ## Features
 
 - ✔️ Build with vue-cli3
-- ✔️ use ElementUI
+- ✔️ Use ElementUI
 - ✔️ Router rule engine
 - ✔️ User login
-- 🕐 Preview mode
-  - 🕐 quick see the code
+- ✔️ Source code viewer
+- ✔️ Theme construct
 - more...
 
 ## Project setup
