@@ -1,6 +1,16 @@
-# d2-advance
+# D2 Advance
 
 Advance, convention first, colourful front-end practice. be inspired by D2Admin :)
+
+## Features
+
+- ✔️ Build with vue-cli3
+- ✔️ use ElementUI
+- ✔️ Router rule engine
+- ✔️ User login
+- 🕐 Preview mode
+  - 🕐 quick see the code
+- more...
 
 ## Project setup
 ```
