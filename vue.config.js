@@ -1,4 +1,7 @@
 module.exports = {
+  // about: https://cli.vuejs.org/config/#publicpath
+  publicPath: process.env.BASE_URL,
+
   chainWebpack: config => {
     // for SourceViewer component
     // about: https://vue-loader.vuejs.org/options.html#exposefilename
