@@ -3,11 +3,11 @@ node_js: stable
 
 cache:
   directories:
-    - "node_modules"
+    - node_modules
 
 branches:
   only:
-  - master
+    - master
 
 script:
   - yarn run build
