@@ -6,6 +6,7 @@
   "description": "Advance, convention first, colourful front-end practice. be inspired by D2Admin :)",
   "scripts": {
     "serve": "vue-cli-service serve",
+    "build:preview": "vue-cli-service build --mode=preview --report",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
