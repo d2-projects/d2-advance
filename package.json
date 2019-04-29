@@ -74,12 +74,5 @@
   "bugs": {
     "url": "https://github.com/d2-projects/d2-advance/issues"
   },
-  "homepage": "https://github.com/d2-projects/d2-advance",
-  "keywords": [
-    "sort",
-    "alphanum",
-    "alphanumeric",
-    "natural",
-    "human"
-  ]
+  "homepage": "https://github.com/d2-projects/d2-advance"
 }
