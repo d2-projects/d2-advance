@@ -59,12 +59,6 @@ const useCollapse = true
 const defaultCollapse = true
 
 export default {
-  props: {
-    handleLogout: {
-      type: Function,
-      required: true
-    }
-  },
   data() {
     return {
       useCollapse,
@@ -74,6 +68,11 @@ export default {
   computed: {
     arrow() {
       return this.isCollapse ? 'right' : 'left'
+    }
+  },
+  methods: {
+    handleLogout() {
+      this.$emit('logout')
     }
   },
   components: {

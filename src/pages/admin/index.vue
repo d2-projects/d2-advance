@@ -1,13 +1,19 @@
 <template>
-  <pure-element-ui-admin-layout :handleLogout="handleLogout">
-    <router-view></router-view>
-  </pure-element-ui-admin-layout>
+  <component :is="layoutComponent" @logout="handleLogout">
+    <router-view />
+  </component>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
+  computed: {
+    ...mapGetters(['mainTheme']),
+    layoutComponent() {
+      return this.mainTheme.name + '-admin-layout'
+    }
+  },
   methods: {
     ...mapActions(['logout']),
     async handleLogout() {

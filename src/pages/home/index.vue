@@ -1,7 +1,7 @@
 <template>
-  <pure-element-ui-home-layout :menu="menu">
-    <router-view></router-view>
-  </pure-element-ui-home-layout>
+  <component :is="layoutComponent" :menu="menu">
+    <router-view />
+  </component>
 </template>
 
 <script>
@@ -10,7 +10,10 @@ import { mapGetters } from 'vuex'
 
 export default {
   computed: {
-    ...mapGetters(['isLogin']),
+    ...mapGetters(['isLogin', 'mainTheme']),
+    layoutComponent() {
+      return this.mainTheme.name + '-home-layout'
+    },
     menu() {
       return compact([
         { label: 'home', link: '/welcome', icon: 'house' },
