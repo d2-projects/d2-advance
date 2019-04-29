@@ -9,7 +9,7 @@
 <script>
 import { map, compact, last } from 'lodash'
 
-const enable = process.env.VUE_APP_SOURCE_VIEWER_ENABLE
+const enable = process.env.VUE_APP_SOURCE_VIEWER === 'on'
 const basePath = process.env.VUE_APP_SOURCE_VIEWER_BASE_PATH
 
 export default {
