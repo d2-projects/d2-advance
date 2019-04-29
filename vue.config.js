@@ -1,10 +1,11 @@
 module.exports = {
-  // about: https://cli.vuejs.org/config/#publicpath
+  // @ https://cli.vuejs.org/config/#publicpath
   publicPath: process.env.BASE_URL,
 
+  // @ https://cli.vuejs.org/config/#chainwebpack
   chainWebpack: config => {
     // for SourceViewer component
-    // about: https://vue-loader.vuejs.org/options.html#exposefilename
+    // @ https://vue-loader.vuejs.org/options.html#exposefilename
     if (process.env.VUE_APP_SOURCE_VIEWER === 'on') {
       config.module
         .rule('vue')
