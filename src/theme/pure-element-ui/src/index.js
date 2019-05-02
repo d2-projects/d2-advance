@@ -6,8 +6,8 @@ import 'element-ui/lib/theme-chalk/index.css'
 import ElementUI from 'element-ui'
 Vue.use(ElementUI)
 
-import HomeLayout from './layout/home'
-import AdminLayout from './layout/admin'
+import HomeLayout from './layout/HomeLayout'
+import AdminLayout from './layout/AdminLayout'
 
 import LoginForm from './views/LoginForm'
 import ErrorOps from './views/ErrorOps'
