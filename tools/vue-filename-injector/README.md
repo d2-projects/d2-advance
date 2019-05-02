@@ -1,4 +1,4 @@
-# Vue Filename Loader
+# Vue Filename Injector
 
 Inject the file path of the `.vue` on `this.$options.__source`.
 
