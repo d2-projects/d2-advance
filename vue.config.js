@@ -1,4 +1,4 @@
-const VueFilenameInjector = require('./tools/vue-filename-loader')
+const VueFilenameInjector = require('./tools/vue-filename-injector')
 
 module.exports = {
   // @ https://cli.vuejs.org/config/#publicpath
