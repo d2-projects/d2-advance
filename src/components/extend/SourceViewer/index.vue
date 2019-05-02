@@ -11,6 +11,9 @@ import { map, compact, last } from 'lodash'
 
 const enable = process.env.VUE_APP_SOURCE_VIEWER === 'on'
 const basePath = process.env.VUE_APP_SOURCE_VIEWER_BASE_PATH
+const propName = process.env.VUE_APP_SOURCE_VIEWER_PROP_NAME
+
+const fullPropPath = `components.default.${propName}`
 
 export default {
   data() {
@@ -27,7 +30,7 @@ export default {
   },
   watch: {
     $route(to) {
-      this.paths = compact(map(to.matched, 'components.default.__file'))
+      this.paths = compact(map(to.matched, fullPropPath))
     }
   },
   methods: {
