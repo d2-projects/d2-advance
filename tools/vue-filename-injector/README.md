@@ -2,7 +2,7 @@
 
 Inject the file path of the `.vue` on `this.$options.__source`.
 
-## in chainWebpack
+## Usage
 
 `vue.config.js`:
 
@@ -10,10 +10,17 @@ Inject the file path of the `.vue` on `this.$options.__source`.
 const VueFilenameInjector = require('./path/to/vue-filename-loader')
 
 module.exports = {
+
   chainWebpack: config => {
+    // only with chainWebpack
     VueFilenameInjector(config, {
       propName: '__source' // default
     })
   }
 }
 ```
+
+## Relevant
+
+https://github.com/neutrinojs/webpack-chain
+https://vue-loader.vuejs.org/guide/custom-blocks.html
