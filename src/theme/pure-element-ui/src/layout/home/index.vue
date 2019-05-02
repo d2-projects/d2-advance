@@ -11,7 +11,9 @@
       </template>
     </el-menu>
     <slide-x-right-transition mode="out-in">
-      <slot />
+      <keep-alive>
+        <slot />
+      </keep-alive>
     </slide-x-right-transition>
   </div>
 </template>

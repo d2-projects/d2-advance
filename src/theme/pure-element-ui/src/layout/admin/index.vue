@@ -44,7 +44,9 @@
       </el-header>
       <el-main>
         <slide-x-right-transition mode="out-in">
-          <slot />
+          <keep-alive>
+            <slot />
+          </keep-alive>
         </slide-x-right-transition>
       </el-main>
       <el-footer class="footer">Footer</el-footer>
