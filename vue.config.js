@@ -1,3 +1,4 @@
+const VueFilenameInjector = require('./tools/vue-filename-loader')
 
 module.exports = {
   // @ https://cli.vuejs.org/config/#publicpath
@@ -7,18 +8,9 @@ module.exports = {
   chainWebpack: config => {
     // for SourceViewer component
     if (process.env.VUE_APP_SOURCE_VIEWER === 'on') {
-      config.module
-        .rule('vue')
-        .use('vue-filename-loader--injector')
-        .loader(require.resolve('./tools/vue-filename-loader/injector.js'))
-        .after('vue-loader')
-        .end()
-      config.module
-        .rule('')
-        .resourceQuery(/blockType=injector/)
-        .use('vue-filename-loader--loader')
-        .loader(require.resolve('./tools/vue-filename-loader/loader.js'))
-        .end()
+      VueFilenameInjector(config, {
+        propName: process.env.VUE_APP_SOURCE_VIEWER_PROP_NAME
+      })
     }
   }
 }

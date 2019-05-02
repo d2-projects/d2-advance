@@ -1,7 +1,7 @@
 const path = require('path')
 const loaderUtils = require('loader-utils')
 
-const defaultPropName = process.env.VUE_APP_SOURCE_VIEWER_PROP_NAME || '__source'
+const { blockName, defaultPropName } = require('./config.js')
 
 module.exports = function (content /*, map, meta */) {
   const loaderContext = this
@@ -20,11 +20,11 @@ module.exports = function (content /*, map, meta */) {
   const propName = options.propName || defaultPropName
 
   content += `
-<injector>
+<${blockName}>
 export default function (Component) {
   Component.options.${propName} = ${JSON.stringify(rawShortFilePath.replace(/\\/g, '/'))}
 }
-</injector>
+</${blockName}>
 `
   return content
 }
