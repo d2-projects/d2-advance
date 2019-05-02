@@ -42,7 +42,7 @@
           </el-popover>
         </div>
       </el-header>
-      <el-main>
+      <el-main style="overflow-x: hidden">
         <slide-x-right-transition mode="out-in">
           <keep-alive>
             <slot />

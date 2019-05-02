@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="overflow-x: hidden">
     <el-menu router :default-active="$route.path" mode="horizontal">
       <template v-for="(item, index) in menu">
         <el-menu-item :index="item.link" :key="index">
