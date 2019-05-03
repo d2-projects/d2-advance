@@ -1,7 +1,7 @@
 <template>
   <el-container class="full-container">
     <el-aside width="auto">
-      <auto-nav-menu :menu="menu" />
+      <auto-nav-menu :menu="menu" class="el-menu-vertical" />
     </el-aside>
     <el-container>
       <el-header height="56px" class="header">
@@ -61,7 +61,7 @@ export default {
 <style lang="stylus" scoped>
 .full-container
   height 100vh
-.el-menu-vertical-demo
+.el-menu-vertical
   height 100vh
 
 .header

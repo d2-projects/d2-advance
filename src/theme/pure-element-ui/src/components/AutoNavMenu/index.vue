@@ -3,10 +3,10 @@
     router
     :default-active="$route.path"
     :collapse="useCollapse && computedIsCollapse"
-    class="el-menu-vertical-demo"
+    :mode="mode"
   >
     <el-menu-item
-      v-if="useCollapse"
+      v-if="mode === 'vertical' && useCollapse"
       @click="switchCollapse"
       style="text-align: center"
     >
@@ -48,6 +48,11 @@ export default {
       type: Array,
       required: false,
       default: () => []
+    },
+    mode: {
+      type: String,
+      required: false,
+      default: () => 'vertical'
     }
   },
   data() {

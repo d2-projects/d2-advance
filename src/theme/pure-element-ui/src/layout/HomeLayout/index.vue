@@ -1,15 +1,6 @@
 <template>
   <div style="overflow-x: hidden">
-    <el-menu router :default-active="$route.path" mode="horizontal">
-      <template v-for="(item, index) in menu">
-        <el-menu-item :index="item.link" :key="index">
-          <template slot="title">
-            <i v-if="item.icon" :class="'el-icon-' + item.icon"></i>
-            <span class="label" v-if="item.label">{{ item.label }}</span>
-          </template>
-        </el-menu-item>
-      </template>
-    </el-menu>
+    <auto-nav-menu :menu="menu" mode="horizontal" />
     <slide-x-right-transition mode="out-in">
       <keep-alive>
         <slot />
@@ -20,6 +11,7 @@
 
 <script>
 import { SlideXRightTransition } from 'vue2-transitions'
+import AutoNavMenu from '../../components/AutoNavMenu'
 
 export default {
   props: {
@@ -29,7 +21,8 @@ export default {
     }
   },
   components: {
-    SlideXRightTransition
+    SlideXRightTransition,
+    AutoNavMenu
   }
 }
 </script>
