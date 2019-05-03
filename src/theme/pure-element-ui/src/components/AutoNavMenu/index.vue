@@ -4,11 +4,13 @@
     :default-active="$route.path"
     :collapse="useCollapse && computedIsCollapse"
     :mode="mode"
+    class="menu"
   >
     <el-menu-item
       v-if="mode === 'vertical' && useCollapse"
       @click="switchCollapse"
       style="text-align: center"
+      class="menu-toggle"
     >
       <transition>
         <i v-bind:key="arrow" :class="'el-icon-arrow-' + arrow"></i>
@@ -84,3 +86,10 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus" scoped>
+.menu
+  &.horizontal-collapse-transition
+    .menu-toggle
+      visibility hidden
+</style>
