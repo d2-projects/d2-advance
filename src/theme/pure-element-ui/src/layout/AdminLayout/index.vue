@@ -7,9 +7,46 @@
       <el-header height="56px" class="header">
         <div class="full"></div>
         <div class="btns">
-          <el-button type="text" icon="el-icon-house" @click="$router.push('/')"
-            >Home</el-button
+          <el-tooltip
+            content="Go home"
+            placement="bottom-end"
+            :open-delay="500"
           >
+            <el-button
+              type="text"
+              icon="el-icon-house"
+              @click="$router.push('/')"
+            ></el-button>
+          </el-tooltip>
+          <el-tooltip
+            content="Switch fullscreen"
+            placement="bottom-end"
+            :open-delay="500"
+          >
+            <el-button
+              type="text"
+              icon="el-icon-full-screen"
+              @click="handleFullscreen"
+            ></el-button>
+          </el-tooltip>
+          <el-tooltip
+            content="Choice skin"
+            placement="bottom-end"
+            :open-delay="500"
+          >
+            <el-button
+              type="text"
+              icon="el-icon-umbrella"
+              @click="skinDialog = true"
+            ></el-button>
+          </el-tooltip>
+          <el-dialog title="Skin" :visible.sync="skinDialog">
+            <el-table :data="[]">
+              <el-table-column property="name"></el-table-column>
+              <el-table-column property="address"></el-table-column>
+              <el-table-column property="use"></el-table-column>
+            </el-table>
+          </el-dialog>
           <el-popover placement="bottom-end" width="100" trigger="click">
             <div style="text-align: center;">
               <p>Exit from current user?</p>
@@ -17,9 +54,11 @@
                 >Yes</el-button
               >
             </div>
-            <el-button slot="reference" type="text" icon="el-icon-switch-button"
-              >Exit</el-button
-            >
+            <el-button
+              slot="reference"
+              type="text"
+              icon="el-icon-switch-button"
+            ></el-button>
           </el-popover>
         </div>
       </el-header>
@@ -38,6 +77,7 @@
 <script>
 import { SlideXRightTransition } from 'vue2-transitions'
 import AutoNavMenu from '../../components/AutoNavMenu'
+import screenfull from 'screenfull'
 
 export default {
   props: {
@@ -46,9 +86,21 @@ export default {
       required: true
     }
   },
+  data() {
+    return {
+      skinDialog: false
+    }
+  },
   methods: {
     handleLogout() {
       this.$emit('logout')
+    },
+    handleFullscreen() {
+      if (screenfull.isFullscreen) {
+        screenfull.exit()
+      } else {
+        screenfull.request()
+      }
     }
   },
   components: {
@@ -75,6 +127,7 @@ export default {
     flex 1
   .btns > *
     margin-right 20px
+    margin-left 0
     &:last-child
       margin-right 0
 

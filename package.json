@@ -16,6 +16,7 @@
     "lodash": "^4.17.11",
     "micromatch": "^4.0.2",
     "normalize.css": "^8.0.1",
+    "screenfull": "^4.2.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
     "vue2-transitions": "^0.3.0",
