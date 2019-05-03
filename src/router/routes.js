@@ -22,10 +22,6 @@ export default [
       {
         path: 'dashboard',
         component: () => import('../pages/admin/dashboard')
-      },
-      {
-        path: 'profile',
-        component: () => import('../pages/admin/profile')
       }
     ]
   },
