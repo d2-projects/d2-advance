@@ -16,6 +16,38 @@ export default {
           icon: 'odometer',
           label: 'Dashboard',
           link: '/admin/dashboard'
+        },
+        {
+          icon: 'odometer',
+          label: 'Dashboard',
+          link: '/admin/foo',
+          children: [
+            {
+              icon: 'odometer',
+              label: 'Dashboard',
+              link: '/admin/foo/item1'
+            },
+            {
+              icon: 'odometer',
+              label: 'Dashboard',
+              link: '/admin/foo/item2'
+            },
+            {
+              label: 'group',
+              group: [
+                {
+                  icon: 'odometer',
+                  label: 'Dashboard',
+                  link: '/admin/bar/item1'
+                },
+                {
+                  icon: 'odometer',
+                  label: 'Dashboard',
+                  link: '/admin/bar/item2'
+                }
+              ]
+            }
+          ]
         }
       ]
     }
