@@ -1,26 +1,7 @@
 <template>
   <el-container class="full-container">
     <el-aside width="auto">
-      <el-menu
-        router
-        :default-active="$route.path"
-        :collapse="useCollapse && isCollapse"
-        class="el-menu-vertical-demo"
-      >
-        <el-menu-item
-          v-if="useCollapse"
-          @click="isCollapse = !isCollapse"
-          style="text-align: center"
-        >
-          <transition>
-            <i v-bind:key="arrow" :class="'el-icon-arrow-' + arrow"></i>
-          </transition>
-        </el-menu-item>
-        <el-menu-item index="/admin/dashboard">
-          <i class="el-icon-odometer"></i>
-          <span slot="title">Dashboard</span>
-        </el-menu-item>
-      </el-menu>
+      <auto-nav-menu :menu="menu" />
     </el-aside>
     <el-container>
       <el-header height="56px" class="header">
@@ -56,20 +37,13 @@
 
 <script>
 import { SlideXRightTransition } from 'vue2-transitions'
-
-const useCollapse = true
-const defaultCollapse = false
+import AutoNavMenu from '../../components/AutoNavMenu'
 
 export default {
-  data() {
-    return {
-      useCollapse,
-      isCollapse: defaultCollapse
-    }
-  },
-  computed: {
-    arrow() {
-      return this.isCollapse ? 'right' : 'left'
+  props: {
+    menu: {
+      type: Array,
+      required: true
     }
   },
   methods: {
@@ -78,7 +52,8 @@ export default {
     }
   },
   components: {
-    SlideXRightTransition
+    SlideXRightTransition,
+    AutoNavMenu
   }
 }
 </script>

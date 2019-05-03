@@ -1,5 +1,5 @@
 <template>
-  <component :is="layoutComponent" @logout="handleLogout">
+  <component :is="layoutComponent" :menu="menu" @logout="handleLogout">
     <router-view />
   </component>
 </template>
@@ -8,6 +8,18 @@
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
+  data() {
+    return {
+      isCollapse: false,
+      menu: [
+        {
+          icon: 'odometer',
+          label: 'Dashboard',
+          link: '/admin/dashboard'
+        }
+      ]
+    }
+  },
   computed: {
     ...mapGetters(['mainTheme']),
     layoutComponent() {
