@@ -58,7 +58,7 @@
 import { SlideXRightTransition } from 'vue2-transitions'
 
 const useCollapse = true
-const defaultCollapse = true
+const defaultCollapse = false
 
 export default {
   data() {
