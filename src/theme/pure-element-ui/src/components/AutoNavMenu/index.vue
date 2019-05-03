@@ -89,7 +89,12 @@ export default {
 
 <style lang="stylus" scoped>
 .menu
+  .menu-toggle
+    i
+      opacity 1
+      transition opacity .3s
   &.horizontal-collapse-transition
     .menu-toggle
-      visibility hidden
+      i
+        opacity 0
 </style>
