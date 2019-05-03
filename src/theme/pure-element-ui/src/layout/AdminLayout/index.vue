@@ -63,6 +63,8 @@ export default {
   height 100vh
 .el-menu-vertical
   height 100vh
+  &:not(.el-menu--collapse)
+    width 200px
 
 .header
   display flex
@@ -81,8 +83,4 @@ export default {
   flex-direction row
   justify-content flex-start
   align-items center
-
-.el-menu-vertical-demo:not(.el-menu--collapse)
-  width 200px
-  min-height 400px
 </style>
