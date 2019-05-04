@@ -43,10 +43,12 @@
             </el-tooltip>
             <el-dialog title="Skin" :visible.sync="skinDialog" width="500px">
               <el-table :data="skins" :show-header="false">
-                <el-table-column
-                  property="name"
-                  align="center"
-                ></el-table-column>
+                <el-table-column>
+                  <template slot-scope="scope">
+                    <color-dots :colors="scope.row.colors" />
+                    <span>{{ scope.row.name }}</span>
+                  </template>
+                </el-table-column>
                 <el-table-column width="200px" align="center">
                   <template slot-scope="scope">
                     <el-button
@@ -92,6 +94,8 @@
 <script>
 import { SlideXRightTransition } from 'vue2-transitions'
 import AutoNavMenu from '../../components/AutoNavMenu'
+import ColorDots from '../../components/ColorDots'
+
 import screenfull from 'screenfull'
 
 export default {
@@ -107,23 +111,28 @@ export default {
       skins: [
         {
           name: 'D2 Classics',
-          key: 'd2-classics'
+          key: 'd2-classics',
+          colors: ['#2f74ff', '#ebf1f6']
         },
         {
           name: 'Native',
-          key: 'native'
+          key: 'native',
+          colors: ['#409EFF', '#ffffff']
         },
         {
           name: 'Thanos',
-          key: 'thanos'
+          key: 'thanos',
+          colors: ['#5b65d6', '#373c43']
         },
         {
           name: 'Violet',
-          key: 'violet'
+          key: 'violet',
+          colors: ['#573493', '#f9f9f9']
         },
         {
           name: 'Monroe',
-          key: 'monroe'
+          key: 'monroe',
+          colors: ['#5e6675', '#ff6600']
         }
       ],
       skinDialog: false
@@ -143,7 +152,8 @@ export default {
   },
   components: {
     SlideXRightTransition,
-    AutoNavMenu
+    AutoNavMenu,
+    ColorDots
   }
 }
 </script>
