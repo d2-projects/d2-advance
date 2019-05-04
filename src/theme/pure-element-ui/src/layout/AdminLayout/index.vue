@@ -111,7 +111,7 @@ export default {
           key: 'd2-classics'
         },
         {
-          name: 'Nitive',
+          name: 'Native',
           key: 'native'
         },
         {
