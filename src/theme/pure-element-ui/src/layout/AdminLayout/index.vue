@@ -164,6 +164,7 @@ export default {
   flex-direction row
   justify-content flex-start
   align-items center
+  height 70px
 </style>
 
 <style lang="stylus">
