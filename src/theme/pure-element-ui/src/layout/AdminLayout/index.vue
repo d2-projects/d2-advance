@@ -104,15 +104,15 @@ export default {
   },
   data() {
     return {
-      skin: 'native',
+      skin: 'd2-classics',
       skins: [
-        {
-          name: 'Nitive',
-          key: 'native'
-        },
         {
           name: 'D2 Classics',
           key: 'd2-classics'
+        },
+        {
+          name: 'Nitive',
+          key: 'native'
         },
         {
           name: 'Thanos',
