@@ -83,7 +83,7 @@
               </keep-alive>
             </slide-x-right-transition>
           </el-main>
-        <el-footer class="footer">Footer</el-footer>
+          <el-footer class="footer">Footer</el-footer>
         </el-container>
       </el-container>
     </el-container>
