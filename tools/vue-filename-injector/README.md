@@ -7,7 +7,7 @@ Inject the file path of the `.vue` on `this.$options.__source`.
 `vue.config.js`:
 
 ``` js
-const VueFilenameInjector = require('./path/to/vue-filename-loader')
+const VueFilenameInjector = require('./path/to/vue-filename-injector')
 
 module.exports = {
 
