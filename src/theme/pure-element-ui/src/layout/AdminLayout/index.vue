@@ -75,14 +75,16 @@
             </el-popover>
           </div>
         </el-header>
-        <el-main class="main">
-          <slide-x-right-transition mode="out-in">
-            <keep-alive>
-              <slot />
-            </keep-alive>
-          </slide-x-right-transition>
-        </el-main>
+        <el-container class="body">
+          <el-main class="main">
+            <slide-x-right-transition mode="out-in">
+              <keep-alive>
+                <slot />
+              </keep-alive>
+            </slide-x-right-transition>
+          </el-main>
         <el-footer class="footer">Footer</el-footer>
+        </el-container>
       </el-container>
     </el-container>
   </div>
@@ -107,6 +109,10 @@ export default {
         {
           name: 'Nitive',
           key: 'native'
+        },
+        {
+          name: 'D2 Classics',
+          key: 'd2-classics'
         },
         {
           name: 'Thanos',
@@ -179,6 +185,7 @@ export default {
 /* SKIN */
 
 // default .skin--native
+@import './skin/d2-classics';
 @import './skin/thanos';
 @import './skin/violet';
 @import './skin/monroe';
