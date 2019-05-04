@@ -16,9 +16,9 @@ export default {
     },
     menu() {
       return compact([
-        { label: 'home', link: '/welcome', icon: 'house' },
-        !this.isLogin && { label: 'login', link: '/login', icon: 'user' },
-        this.isLogin && { label: 'dashboard', link: '/admin', icon: 'odometer' }
+        { label: 'Home', link: '/welcome', icon: 'house' },
+        !this.isLogin && { label: 'Login', link: '/login', icon: 'user' },
+        this.isLogin && { label: 'Dashboard', link: '/admin', icon: 'odometer' }
       ])
     }
   }
