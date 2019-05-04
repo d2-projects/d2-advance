@@ -2,12 +2,12 @@
   <h1><span style="color: #409eff">D2</span><span style="color: #35495e">Advance</span></h1>
   <p>Advance, convention first, colourful front-end practice. be inspired by D2Admin :)</p>
   <p>
-    <img src="screenshot/home-login.png" width="320" />
-    <img src="screenshot/admin-dashboard-d2-classics.png" width="320" />
-    <img src="screenshot/admin-dashboard-native.png" width="320" />
-    <img src="screenshot/admin-dashboard-thanos.png" width="320" />
-    <img src="screenshot/admin-dashboard-violet.png" width="320" />
-    <img src="screenshot/admin-dashboard-monroe.png" width="320" />
+    <img src="screenshot/home-login.png" width="280" />
+    <img src="screenshot/admin-dashboard-d2-classics.png" width="280" />
+    <img src="screenshot/admin-dashboard-native.png" width="280" />
+    <img src="screenshot/admin-dashboard-thanos.png" width="280" />
+    <img src="screenshot/admin-dashboard-violet.png" width="280" />
+    <img src="screenshot/admin-dashboard-monroe.png" width="280" />
   </p>
 </center>
 
