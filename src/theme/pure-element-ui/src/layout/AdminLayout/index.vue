@@ -42,12 +42,11 @@
               ></el-button>
             </el-tooltip>
             <el-dialog title="Skin" :visible.sync="skinDialog" width="500px">
-              <el-table :data="skins">
+              <el-table :data="skins" :show-header="false">
                 <el-table-column
                   property="name"
                   align="center"
                 ></el-table-column>
-                <el-table-column property="address"></el-table-column>
                 <el-table-column width="200px" align="center">
                   <template slot-scope="scope">
                     <el-button
