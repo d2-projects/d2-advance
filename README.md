@@ -1,15 +1,13 @@
-<center>
-  <h1><span style="color: #409eff">D2</span><span style="color: #35495e">Advance</span></h1>
-  <p>Advance, convention first, colourful front-end practice. be inspired by D2Admin :)</p>
-  <p>
-    <img src="screenshot/home-login.png" width="280" />
-    <img src="screenshot/admin-dashboard-d2-classics.png" width="280" />
-    <img src="screenshot/admin-dashboard-native.png" width="280" />
-    <img src="screenshot/admin-dashboard-thanos.png" width="280" />
-    <img src="screenshot/admin-dashboard-violet.png" width="280" />
-    <img src="screenshot/admin-dashboard-monroe.png" width="280" />
-  </p>
-</center>
+<h1 align="center"><font color="#409eff">D2</font><font color="#35495e">Advance</font></h1>
+<p align="center">Advance, convention first, colourful front-end practice. be inspired by D2Admin :)</p>
+<p align="center">
+  <img src="screenshot/home-login.png" width="280" />
+  <img src="screenshot/admin-dashboard-d2-classics.png" width="280" />
+  <img src="screenshot/admin-dashboard-native.png" width="280" />
+  <img src="screenshot/admin-dashboard-thanos.png" width="280" />
+  <img src="screenshot/admin-dashboard-violet.png" width="280" />
+  <img src="screenshot/admin-dashboard-monroe.png" width="280" />
+</p>
 
 ## Features
 
@@ -18,8 +16,9 @@
 - ✔️ Router rule engine
 - ✔️ User login
 - ✔️ Source code viewer
-- ✔️ Theme construct
-- more...
+- ✔️ Theme demo
+- ✔️ Skin demo
+- ...
 
 ## Project setup
 ```
