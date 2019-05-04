@@ -109,8 +109,16 @@ export default {
           key: 'native'
         },
         {
+          name: 'Thanos',
+          key: 'thanos'
+        },
+        {
           name: 'Violet',
           key: 'violet'
+        },
+        {
+          name: 'Monroe',
+          key: 'monroe'
         }
       ],
       skinDialog: false
@@ -171,5 +179,7 @@ export default {
 /* SKIN */
 
 // default .skin--native
+@import './skin/thanos';
 @import './skin/violet';
+@import './skin/monroe';
 </style>
