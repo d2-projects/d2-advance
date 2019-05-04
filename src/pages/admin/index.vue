@@ -18,31 +18,31 @@ export default {
           link: '/admin/dashboard'
         },
         {
-          icon: 'odometer',
-          label: 'Dashboard',
+          icon: 'collection',
+          label: 'Collection',
           link: '/admin/foo',
           children: [
             {
-              icon: 'odometer',
-              label: 'Dashboard',
+              icon: 'milk-tea',
+              label: 'Milk tea',
               link: '/admin/foo/item1'
             },
             {
-              icon: 'odometer',
-              label: 'Dashboard',
+              icon: 'ice-drink',
+              label: 'Ice drink',
               link: '/admin/foo/item2'
             },
             {
-              label: 'group',
+              label: 'Fruits',
               group: [
                 {
-                  icon: 'odometer',
-                  label: 'Dashboard',
+                  icon: 'apple',
+                  label: 'Apple',
                   link: '/admin/bar/item1'
                 },
                 {
-                  icon: 'odometer',
-                  label: 'Dashboard',
+                  icon: 'cherry',
+                  label: 'Cherry',
                   link: '/admin/bar/item2'
                 }
               ]
