@@ -1,12 +1,7 @@
 <h1 align="center"><font color="#409eff">D2</font><font color="#35495e">Advance</font></h1>
 <p align="center">Advance, convention first, colourful front-end practice. be inspired by D2Admin :)</p>
 <p align="center">
-  <img src="screenshot/home-login.png" width="280" />
-  <img src="screenshot/admin-dashboard-d2-classics.png" width="280" />
-  <img src="screenshot/admin-dashboard-native.png" width="280" />
-  <img src="screenshot/admin-dashboard-thanos.png" width="280" />
-  <img src="screenshot/admin-dashboard-violet.png" width="280" />
-  <img src="screenshot/admin-dashboard-monroe.png" width="280" />
+  <img src="screenshot/preview.png" />
 </p>
 
 ## Features
