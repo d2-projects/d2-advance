@@ -1,4 +1,23 @@
-export default [
+import fast from './fast'
+
+/* Fast */
+const routes = fast({
+  [['/', 'home']]: {
+    welcome: 'home/welcome',
+    login: 'home/login'
+  },
+  [['/admin', 'admin']]: {
+    dashboard: 'admin/dashboard'
+  },
+  '/404': '404',
+  '*!redirect': '/404'
+})
+
+// OR
+
+/* Normal */
+/*
+const routes = [
   {
     path: '/',
     redirect: '/welcome',
@@ -27,8 +46,10 @@ export default [
   },
   {
     path: '/404',
-    name: 'notfount',
     component: () => import('../pages/404')
   },
   { path: '*', redirect: '/404' }
 ]
+*/
+
+export default routes
