@@ -3,11 +3,15 @@ import fast from './fast'
 /* Fast */
 const routes = fast({
   [['/', 'home']]: {
-    welcome: 'home/welcome',
-    login: 'home/login'
+    'welcome': 'home/welcome',
+    'login': 'home/login'
   },
   [['/admin', 'admin']]: {
-    dashboard: 'admin/dashboard'
+    'dashboard': 'admin/dashboard',
+    'collection/milk-tea': '404',
+    'collection/ice-drink': '404',
+    'collection/apple': '404',
+    'collection/cherry': '404'
   },
   '/404': '404',
   '*!redirect': '/404'

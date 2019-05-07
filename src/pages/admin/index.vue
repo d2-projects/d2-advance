@@ -20,17 +20,17 @@ export default {
         {
           icon: 'collection',
           label: 'Collection',
-          link: '/admin/foo',
+          link: '/admin/collection',
           children: [
             {
               icon: 'milk-tea',
               label: 'Milk tea',
-              link: '/admin/foo/item1'
+              link: '/admin/collection/milk-tea'
             },
             {
               icon: 'ice-drink',
               label: 'Ice drink',
-              link: '/admin/foo/item2'
+              link: '/admin/collection/ice-drink'
             },
             {
               label: 'Fruits',
@@ -38,12 +38,12 @@ export default {
                 {
                   icon: 'apple',
                   label: 'Apple',
-                  link: '/admin/bar/item1'
+                  link: '/admin/collection/apple'
                 },
                 {
                   icon: 'cherry',
                   label: 'Cherry',
-                  link: '/admin/bar/item2'
+                  link: '/admin/collection/cherry'
                 }
               ]
             }
