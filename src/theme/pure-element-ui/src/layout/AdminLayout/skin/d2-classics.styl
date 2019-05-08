@@ -1,49 +1,57 @@
+$text-color-primary=#606266
+$text-color-light=#e2ebff54
+$text-color-highlight=#2f74ff
+$background-color=#ebf1f6
+$background-color-light=#fff
+$border-color=#cfd7e5
+$background-active=#ffffff80
+
 .skin--d2-classics
-  color #606266
-  background #ebf1f6
+  color $text-color-primary
+  background $background-color
   .el-button--text
-    color #606266
+    color $text-color-primary
     &:hover
-      color #2f74ff
+      color $text-color-highlight
   .container
     .aside
       .menu
         border none
-        color #e2ebff54
         background transparent
         .menu-toggle
           background transparent
           i
-            color #606266
+            color $text-color-primary
         i
-          color #606266
+          color $text-color-primary
         &.el-menu-vertical
           .el-menu-item
           .el-submenu__title
           .el-submenu__title .el-submenu__icon-arrow
-            color #606266
+            color $text-color-primary
           .el-menu-item-group__title
-            color #606266
+            color $text-color-light
           .el-menu-item:not(.menu-toggle):focus
           .el-menu-item:not(.menu-toggle):hover
           .el-submenu__title:hover
           .el-menu--inline
             background-color transparent
           .el-menu-item:not(.menu-toggle).is-active
-            color #606266
+            color $text-color-primary
             & i
-              color #2f74ff
+              color $text-color-highlight
           & > .el-menu-item:not(.menu-toggle)
           .el-submenu__title
             height 56px
             line-height 56px
           .el-menu-item:not(.menu-toggle):hover
           .el-menu-item:not(.menu-toggle).is-active
-            background #ffffff80
-            color #2f74ff
+            background $background-active
+            transition background .28s
+            color $text-color-highlight
     .body
-      border 1px solid #cfd7e5
+      border 1px solid $border-color
       border-top-left-radius 5px
       border-top-right-radius 5px
       margin-right 20px
-      background #fff
+      background $background-color-light
