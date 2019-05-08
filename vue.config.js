@@ -1,5 +1,6 @@
 const VueFilenameInjector = require('./tools/vue-filename-injector')
 
+// @ https://cli.vuejs.org/config/#vue-config-js
 module.exports = {
   // @ https://cli.vuejs.org/config/#publicpath
   publicPath: process.env.BASE_URL,
