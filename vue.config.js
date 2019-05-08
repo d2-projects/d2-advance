@@ -5,6 +5,9 @@ module.exports = {
   // @ https://cli.vuejs.org/config/#publicpath
   publicPath: process.env.BASE_URL,
 
+  // @ https://cli.vuejs.org/zh/config/#productionsourcemap
+  productionSourceMap: process.env.VUE_APP_SOURCE_MAP === 'on',
+
   // @ https://cli.vuejs.org/config/#chainwebpack
   chainWebpack: config => {
     // for SourceViewer component
