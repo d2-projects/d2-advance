@@ -4,7 +4,7 @@
       <el-aside width="auto" class="aside">
         <auto-nav-menu :menu="menu" class="el-menu-vertical" />
       </el-aside>
-      <el-container>
+      <el-container class="section">
         <el-header height="56px" class="header">
           <div class="full"></div>
           <div class="btns">
@@ -133,6 +133,11 @@ export default {
           name: 'Monroe',
           key: 'monroe',
           colors: ['#5e6675', '#ff6600']
+        },
+        {
+          name: 'Deep Sea',
+          key: 'deep-sea',
+          colors: ['#364073', '#1d224d']
         }
       ],
       skinDialog: false
@@ -198,4 +203,5 @@ export default {
 @import './skin/thanos';
 @import './skin/violet';
 @import './skin/monroe';
+@import './skin/deep-sea';
 </style>
