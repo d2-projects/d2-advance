@@ -10,10 +10,11 @@
 <script>
 import SourceViewer from '@/components/extend/SourceViewer'
 import { FadeTransition } from 'vue2-transitions'
+import packageInfo from '../package.json'
 
 export default {
   mounted() {
-    this.$app.logger('xxx')
+    this.$app.logger.capsule('D2', 'Advance', `Version ${packageInfo.version}`)
   },
   components: {
     SourceViewer,

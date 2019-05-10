@@ -14,13 +14,13 @@ const Logger = () => {
     console.log(...arguments)
   }
 
-  logger.capsule = (title, info, type = 'primary') => {
+  logger.capsule = (title, info, plain, type = 'primary') => {
     logger(
-      `%c ${title} %c ${info} %c`,
+      `%c ${title} %c ${info} %c ${plain}`,
       'background:#35495E; padding: 1px; border-radius: 3px 0 0 3px; color: #fff;',
-      `background:${LOGGER_TYPES(
-        type
-      )}; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff;`,
+      `background:${
+        LOGGER_TYPES[type]
+      }; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff;`,
       'background:transparent'
     )
   }
@@ -28,7 +28,7 @@ const Logger = () => {
   logger.colorful = textArr => {
     logger(
       `%c${textArr.map(t => t.text || '').join('%c')}`,
-      ...textArr.map(t => `color: ${LOGGER_TYPES(t.type)};`)
+      ...textArr.map(t => `color: ${LOGGER_TYPES[t.type]};`)
     )
   }
 
