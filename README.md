@@ -1,7 +1,7 @@
 <h1 align="center"><font color="#409eff">D2</font><font color="#35495e">Advance</font></h1>
 <p align="center">Advance, convention first, colourful front-end practice. be inspired by D2Admin :)</p>
 <p align="center">
-  <img src="screenshot/preview.png" />
+  <img src="preview.png" />
 </p>
 
 ## Features
