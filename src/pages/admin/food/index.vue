@@ -1,5 +1,5 @@
 <template>
-  <div class="banner-container" :key="food">
+  <div :key="food" class="banner-container">
     <h2>{{ food }}</h2>
   </div>
 </template>

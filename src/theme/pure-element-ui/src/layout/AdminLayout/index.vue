@@ -9,6 +9,17 @@
           <div class="full"></div>
           <div class="btns">
             <el-tooltip
+              content="Search navigation"
+              placement="bottom-end"
+              :open-delay="500"
+            >
+              <el-button
+                type="text"
+                icon="el-icon-search"
+                @click="showSearchNavigation = !showSearchNavigation"
+              ></el-button>
+            </el-tooltip>
+            <el-tooltip
               content="Go home"
               placement="bottom-end"
               :open-delay="500"
@@ -76,10 +87,22 @@
             </el-popover>
           </div>
         </el-header>
-        <el-container class="body">
+        <el-container class="body" :class="{ slid: showSearchNavigation }">
           <el-main class="main">
-            <slide-x-right-transition mode="out-in">
-              <keep-alive>
+            <slide-x-right-transition mode="out-in" :duration="280">
+              <div v-if="showSearchNavigation" style="text-align: center">
+                <el-input
+                  clearable
+                  placeholder="search"
+                  suffix-icon="el-icon-search"
+                  v-model="searchNavigationContent"
+                  autofocus
+                  @keyup.esc.native="showSearchNavigation = false"
+                  style="max-width: 512px"
+                >
+                </el-input>
+              </div>
+              <keep-alive v-else>
                 <slot />
               </keep-alive>
             </slide-x-right-transition>
@@ -107,6 +130,8 @@ export default {
   },
   data() {
     return {
+      showSearchNavigation: false,
+      searchNavigationContent: '',
       skin: 'd2-classics',
       skins: [
         {
@@ -193,6 +218,15 @@ export default {
   justify-content flex-start
   align-items center
   height 70px
+
+.body
+.main
+  transition margin .28s
+
+.body.slid
+  margin-top 110px
+  .main
+    margin-top -110px
 </style>
 
 <style lang="stylus">
