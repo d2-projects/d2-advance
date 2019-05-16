@@ -90,17 +90,24 @@
         <el-container class="body" :class="{ slid: showSearchNavigation }">
           <el-main class="main">
             <slide-x-right-transition mode="out-in" :duration="280">
-              <div v-if="showSearchNavigation" style="text-align: center">
-                <el-input
-                  clearable
-                  placeholder="search"
-                  suffix-icon="el-icon-search"
-                  v-model="searchNavigationContent"
-                  autofocus
-                  @keyup.esc.native="showSearchNavigation = false"
-                  style="max-width: 512px"
-                >
-                </el-input>
+              <div v-if="showSearchNavigation">
+                <div class="slider">
+                  <el-input
+                    clearable
+                    placeholder="search"
+                    suffix-icon="el-icon-search"
+                    v-model="searchNavigationContent"
+                    autofocus
+                    @keyup.esc.native="showSearchNavigation = false"
+                    style="max-width: 512px"
+                  >
+                  </el-input>
+                </div>
+                <div class="searchNavigationList">
+                  <template v-for="(item, index) in searchNavigationList">
+                    <div :key="index">{{ item.label }}</div>
+                  </template>
+                </div>
               </div>
               <keep-alive v-else>
                 <slot />
@@ -115,6 +122,7 @@
 </template>
 
 <script>
+import Fuse from 'fuse.js'
 import { SlideXRightTransition } from 'vue2-transitions'
 import AutoNavMenu from '../../components/AutoNavMenu'
 import ColorDots from '../../components/ColorDots'
@@ -166,6 +174,40 @@ export default {
         }
       ],
       skinDialog: false
+    }
+  },
+  watch: {
+    '$route'() {
+      this.showSearchNavigation = false
+    }
+  },
+  computed: {
+    searchNavigationList() {
+      return this.searchNavigationContent
+        ? new Fuse(this.menu, {
+            tokenize: true,
+            threshold: 0.6,
+            location: 0,
+            distance: 100,
+            maxPatternLength: 32,
+            minMatchCharLength: 1,
+            keys: [
+              'label',
+              'children.label',
+              'group.label',
+              'children.group.label',
+              'group.children.label',
+              'children.children.label',
+              'children.group.label',
+              'children.children.group.label',
+              'children.group.children.label',
+              'group.children.label',
+              'group.group.label',
+              'group.children.group.label',
+              'group.group.children.label'
+            ]
+          }).search(this.searchNavigationContent)
+        : this.menu
     }
   },
   methods: {
@@ -227,6 +269,9 @@ export default {
   margin-top 110px
   .main
     margin-top -110px
+.slider
+  text-align center
+  height 110px
 </style>
 
 <style lang="stylus">
