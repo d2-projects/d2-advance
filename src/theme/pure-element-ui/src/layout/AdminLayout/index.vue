@@ -19,6 +19,17 @@
                 @click="showSearchNavigation = !showSearchNavigation"
               ></el-button>
             </el-tooltip>
+            <el-popover placement="bottom" width="100" trigger="click">
+              <div style="text-align: center;">
+                <p style="margin-top: 0">Keyboard over</p>
+                <el-switch v-model="showKBO"></el-switch>
+              </div>
+              <el-button
+                slot="reference"
+                type="text"
+                icon="el-icon-thumb"
+              ></el-button>
+            </el-popover>
             <el-tooltip
               content="Go home"
               placement="bottom-end"
@@ -74,7 +85,7 @@
             </el-dialog>
             <el-popover placement="bottom-end" width="100" trigger="click">
               <div style="text-align: center;">
-                <p>Exit from current user?</p>
+                <p style="margin-top: 0">Exit from current user?</p>
                 <el-button type="primary" size="mini" @click="handleLogout"
                   >Yes</el-button
                 >
@@ -102,6 +113,7 @@
                     @keyup.enter.native="handleEnterNavigation"
                     @keyup.up.native="handleChangeNavigationTarget(-1)"
                     @keyup.down.native="handleChangeNavigationTarget(1)"
+                    maxlength="64"
                     style="max-width: 512px"
                     ref="search-navigation-input"
                   >
@@ -151,12 +163,14 @@
         </el-container>
       </el-container>
     </el-container>
+    <KeyboardOver v-show="showKBO" class="overlay"></KeyboardOver>
   </div>
 </template>
 
 <script>
 import Fuse from 'fuse.js'
 import { SlideXRightTransition } from 'vue2-transitions'
+import KeyboardOver from 'vue-keyboard-over'
 import AutoNavMenu from '../../components/AutoNavMenu'
 import ColorDots from '../../components/ColorDots'
 import { clamp } from 'lodash'
@@ -182,6 +196,7 @@ export default {
   },
   data() {
     return {
+      showKBO: false,
       showSearchNavigation: false,
       searchNavigationContent: '',
       searchNavigationTarget: 0,
@@ -295,6 +310,7 @@ export default {
   },
   components: {
     SlideXRightTransition,
+    KeyboardOver,
     AutoNavMenu,
     ColorDots
   }
@@ -392,6 +408,14 @@ export default {
     padding 10px 5px
     text-align center
     color #8590abde
+
+.overlay
+  position fixed
+  bottom 1em
+  left calc(50% + 100px)
+  transform translateX(-50%)
+  text-align center
+  font-size 24px
 </style>
 
 <style lang="stylus">

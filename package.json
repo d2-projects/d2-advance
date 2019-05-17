@@ -19,6 +19,7 @@
     "normalize.css": "^8.0.1",
     "screenfull": "^4.2.0",
     "vue": "^2.6.10",
+    "vue-keyboard-over": "^0.4.1",
     "vue-router": "^3.0.3",
     "vue2-transitions": "^0.3.0",
     "vuex": "^3.1.1"
