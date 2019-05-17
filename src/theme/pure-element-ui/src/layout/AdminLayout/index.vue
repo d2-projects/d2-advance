@@ -100,6 +100,8 @@
                     autofocus
                     @keyup.esc.native="showSearchNavigation = false"
                     @keyup.enter.native="handleEnterNavigation"
+                    @keyup.up.native="handleChangeNavigationTarget(-1)"
+                    @keyup.down.native="handleChangeNavigationTarget(1)"
                     style="max-width: 512px"
                     ref="search-navigation-input"
                   >
@@ -114,7 +116,10 @@
                     <template v-for="(item, index) in searchNavigationList">
                       <div
                         :key="index"
-                        class="item"
+                        :class="[
+                          'item',
+                          index === searchNavigationTarget && 'target'
+                        ]"
                         @click="handleClickNavigation(item)"
                       >
                         <div class="item-wrapper">
@@ -154,7 +159,7 @@ import Fuse from 'fuse.js'
 import { SlideXRightTransition } from 'vue2-transitions'
 import AutoNavMenu from '../../components/AutoNavMenu'
 import ColorDots from '../../components/ColorDots'
-
+import { clamp } from 'lodash'
 import screenfull from 'screenfull'
 import { setTimeout } from 'timers'
 
@@ -179,6 +184,7 @@ export default {
     return {
       showSearchNavigation: false,
       searchNavigationContent: '',
+      searchNavigationTarget: 0,
       skin: 'd2-classics',
       skins: [
         {
@@ -215,22 +221,6 @@ export default {
       skinDialog: false
     }
   },
-  watch: {
-    '$route'() {
-      this.showSearchNavigation = false
-    },
-    showSearchNavigation(value) {
-      if (!value) {
-        this.searchNavigationContent = ''
-      } else {
-        setTimeout(() => {
-          if (this.$refs['search-navigation-input']) {
-            this.$refs['search-navigation-input'].focus()
-          }
-        }, 500)
-      }
-    }
-  },
   computed: {
     flatMenu() {
       return flat(this.menu)
@@ -248,6 +238,25 @@ export default {
             keys: ['label']
           }).search(this.searchNavigationContent)
         : this.flatMenu
+    }
+  },
+  watch: {
+    '$route'() {
+      this.showSearchNavigation = false
+    },
+    showSearchNavigation(value) {
+      if (!value) {
+        this.searchNavigationContent = ''
+      } else {
+        setTimeout(() => {
+          if (this.$refs['search-navigation-input']) {
+            this.$refs['search-navigation-input'].focus()
+          }
+        }, 500)
+      }
+    },
+    searchNavigationList() {
+      this.searchNavigationTarget = 0
     }
   },
   methods: {
@@ -269,9 +278,19 @@ export default {
       }
     },
     handleEnterNavigation() {
-      if (this.searchNavigationList.length) {
-        this.handleClickNavigation(this.searchNavigationList[0])
+      if (
+        this.searchNavigationList.length &&
+        this.searchNavigationList[this.searchNavigationTarget]
+      ) {
+        this.handleClickNavigation(
+          this.searchNavigationList[this.searchNavigationTarget]
+        )
       }
+    },
+    handleChangeNavigationTarget(step) {
+      const target = this.searchNavigationTarget
+      const upper = this.searchNavigationList.length - 1
+      this.searchNavigationTarget = clamp(target + step, 0, upper)
     }
   },
   components: {
@@ -362,7 +381,7 @@ export default {
           .item-icon
             color #2f74ff
     &:not(:hover)
-      .item:first-of-type
+      .item.target
         color #000
         background #f5f7fa
         .item-wrapper
