@@ -20,7 +20,6 @@ export default {
         {
           icon: 'collection',
           label: 'Collection',
-          link: '/admin/collection',
           children: [
             {
               icon: 'milk-tea',
