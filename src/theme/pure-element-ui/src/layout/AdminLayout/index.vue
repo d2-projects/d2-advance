@@ -90,7 +90,7 @@
         <el-container class="body" :class="{ slid: showSearchNavigation }">
           <el-main class="main">
             <slide-x-right-transition mode="out-in" :duration="280">
-              <div v-if="showSearchNavigation">
+              <div v-if="showSearchNavigation" class="slider-outer">
                 <div class="slider">
                   <el-input
                     clearable
@@ -103,9 +103,29 @@
                   >
                   </el-input>
                 </div>
-                <div class="searchNavigationList">
+                <div class="search-navigation-list">
                   <template v-for="(item, index) in searchNavigationList">
-                    <div :key="index">{{ item.label }}</div>
+                    <div
+                      :key="index"
+                      class="item"
+                      @click="handleClickNavigation(item)"
+                    >
+                      <div class="item-wrapper">
+                        <div class="item-icon">
+                          <i :class="'el-icon-' + item.icon" />
+                        </div>
+                        <div class="item-content">
+                          <div class="label">{{ item.label }}</div>
+                          <div class="tags">
+                            <span
+                              v-for="(children, index) in item.children"
+                              :key="index"
+                              >{{ children.label }}</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </template>
                 </div>
               </div>
@@ -128,6 +148,16 @@ import AutoNavMenu from '../../components/AutoNavMenu'
 import ColorDots from '../../components/ColorDots'
 
 import screenfull from 'screenfull'
+
+const flat = (arr, level = 0) =>
+  arr
+    ? arr.reduce((x, i) => {
+        const { children, group, ...rest } = i
+        const { label, link } = rest
+        if (label && link) x.push({ ...rest, level })
+        return [...x, ...flat(children, level + 1), ...flat(group, level)]
+      }, [])
+    : []
 
 export default {
   props: {
@@ -182,32 +212,22 @@ export default {
     }
   },
   computed: {
+    flatMenu() {
+      return flat(this.menu)
+    },
     searchNavigationList() {
       return this.searchNavigationContent
-        ? new Fuse(this.menu, {
+        ? new Fuse(this.flatMenu, {
             tokenize: true,
             threshold: 0.6,
+            sort: false,
             location: 0,
             distance: 100,
             maxPatternLength: 32,
             minMatchCharLength: 1,
-            keys: [
-              'label',
-              'children.label',
-              'group.label',
-              'children.group.label',
-              'group.children.label',
-              'children.children.label',
-              'children.group.label',
-              'children.children.group.label',
-              'children.group.children.label',
-              'group.children.label',
-              'group.group.label',
-              'group.children.group.label',
-              'group.group.children.label'
-            ]
+            keys: ['label']
           }).search(this.searchNavigationContent)
-        : this.menu
+        : this.flatMenu
     }
   },
   methods: {
@@ -220,6 +240,9 @@ export default {
       } else {
         screenfull.request()
       }
+    },
+    handleClickNavigation(item) {
+      this.$router.push(item.link)
     }
   },
   components: {
@@ -263,15 +286,44 @@ export default {
 
 .body
 .main
+  padding 0
   transition margin .28s
 
 .body.slid
   margin-top 110px
   .main
     margin-top -110px
+.slider-outer
+  display flex
+  flex-direction column
 .slider
   text-align center
   height 110px
+  line-height @height
+.search-navigation-list
+  .item
+    padding 5px 0
+    height 50px
+    line-height @height
+    cursor pointer
+    color #606266
+    transition all .28s
+    &:hover
+      color #000
+      background #f5f7fa
+      .item-wrapper
+        .item-icon
+          color #2f74ff
+    .item-wrapper
+      display flex
+      .item-icon
+        font-size 18px
+        padding 0 20px
+      .item-content
+        .label
+          font-size 16px
+        .tags
+          font-size 14px
 </style>
 
 <style lang="stylus">
