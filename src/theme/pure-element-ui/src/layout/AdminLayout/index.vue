@@ -111,8 +111,8 @@
                     autofocus
                     @keyup.esc.native="showSearchNavigation = false"
                     @keyup.enter.native="handleEnterNavigation"
-                    @keyup.up.native="handleChangeNavigationTarget(-1)"
-                    @keyup.down.native="handleChangeNavigationTarget(1)"
+                    @keydown.up.native="handleChangeNavigationTarget(-1)"
+                    @keydown.down.native="handleChangeNavigationTarget(1)"
                     maxlength="64"
                     style="max-width: 512px"
                     ref="search-navigation-input"
@@ -161,9 +161,9 @@
           </el-main>
           <el-footer class="footer">Footer</el-footer>
         </el-container>
+        <KeyboardOver v-show="showKBO" class="overlay" />
       </el-container>
     </el-container>
-    <KeyboardOver v-show="showKBO" class="overlay"></KeyboardOver>
   </div>
 </template>
 
@@ -338,6 +338,9 @@ export default {
     &:last-child
       margin-right 0
 
+.section
+  position relative
+
 .main
   flex 1
   display flex
@@ -410,9 +413,9 @@ export default {
     color #8590abde
 
 .overlay
-  position fixed
+  position absolute
   bottom 1em
-  left calc(50% + 100px)
+  left 50%
   transform translateX(-50%)
   text-align center
   font-size 24px
