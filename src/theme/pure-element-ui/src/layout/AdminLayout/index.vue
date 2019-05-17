@@ -94,39 +94,47 @@
                 <div class="slider">
                   <el-input
                     clearable
-                    placeholder="search"
+                    placeholder="search, or esc"
                     suffix-icon="el-icon-search"
                     v-model="searchNavigationContent"
                     autofocus
                     @keyup.esc.native="showSearchNavigation = false"
+                    @keyup.enter.native="handleEnterNavigation"
                     style="max-width: 512px"
+                    ref="search-navigation-input"
                   >
                   </el-input>
                 </div>
                 <div class="search-navigation-list">
-                  <template v-for="(item, index) in searchNavigationList">
-                    <div
-                      :key="index"
-                      class="item"
-                      @click="handleClickNavigation(item)"
-                    >
-                      <div class="item-wrapper">
-                        <div class="item-icon">
-                          <i :class="'el-icon-' + item.icon" />
-                        </div>
-                        <div class="item-content">
-                          <div class="label">{{ item.label }}</div>
-                          <div class="tags">
-                            <span
-                              v-for="(children, index) in item.children"
-                              :key="index"
-                              >{{ children.label }}</span
-                            >
+                  <div class="search-navigation-counter">
+                    matched {{ searchNavigationList.length }} result, total
+                    {{ flatMenu.length }}.
+                  </div>
+                  <div class="search-navigation-list-body">
+                    <template v-for="(item, index) in searchNavigationList">
+                      <div
+                        :key="index"
+                        class="item"
+                        @click="handleClickNavigation(item)"
+                      >
+                        <div class="item-wrapper">
+                          <div class="item-icon">
+                            <i :class="'el-icon-' + item.icon" />
+                          </div>
+                          <div class="item-content">
+                            <div class="label">{{ item.label }}</div>
+                            <div class="tags">
+                              <span
+                                v-for="(children, index) in item.children"
+                                :key="index"
+                                >{{ children.label }}</span
+                              >
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </template>
+                    </template>
+                  </div>
                 </div>
               </div>
               <keep-alive v-else>
@@ -148,6 +156,7 @@ import AutoNavMenu from '../../components/AutoNavMenu'
 import ColorDots from '../../components/ColorDots'
 
 import screenfull from 'screenfull'
+import { setTimeout } from 'timers'
 
 const flat = (arr, level = 0) =>
   arr
@@ -209,6 +218,17 @@ export default {
   watch: {
     '$route'() {
       this.showSearchNavigation = false
+    },
+    showSearchNavigation(value) {
+      if (!value) {
+        this.searchNavigationContent = ''
+      } else {
+        setTimeout(() => {
+          if (this.$refs['search-navigation-input']) {
+            this.$refs['search-navigation-input'].focus()
+          }
+        }, 500)
+      }
     }
   },
   computed: {
@@ -242,7 +262,16 @@ export default {
       }
     },
     handleClickNavigation(item) {
-      this.$router.push(item.link)
+      if (this.$route.path === item.link) {
+        this.showSearchNavigation = false
+      } else {
+        this.$router.push(item.link)
+      }
+    },
+    handleEnterNavigation() {
+      if (this.searchNavigationList.length) {
+        this.handleClickNavigation(this.searchNavigationList[0])
+      }
     }
   },
   components: {
@@ -275,7 +304,11 @@ export default {
       margin-right 0
 
 .main
+  flex 1
+  display flex
+  flex-direction column
   overflow-x hidden
+  height 100%
 
 .footer
   display flex
@@ -301,29 +334,45 @@ export default {
   height 110px
   line-height @height
 .search-navigation-list
-  .item
-    padding 5px 0
-    height 50px
-    line-height @height
-    cursor pointer
-    color #606266
-    transition all .28s
-    &:hover
-      color #000
-      background #f5f7fa
+  flex 1
+  overflow auto
+  .search-navigation-list-body
+    .item
+      padding 5px 0
+      height 50px
+      line-height @height
+      cursor pointer
+      color #606266
+      transition all .28s
       .item-wrapper
+        display flex
         .item-icon
-          color #2f74ff
-    .item-wrapper
-      display flex
-      .item-icon
-        font-size 18px
-        padding 0 20px
-      .item-content
-        .label
-          font-size 16px
-        .tags
-          font-size 14px
+          font-size 18px
+          padding 0 20px
+        .item-content
+          .label
+            font-size 16px
+          .tags
+            font-size 14px
+    &:hover
+      .item:hover
+        color #000
+        background #f5f7fa
+        .item-wrapper
+          .item-icon
+            color #2f74ff
+    &:not(:hover)
+      .item:first-of-type
+        color #000
+        background #f5f7fa
+        .item-wrapper
+          .item-icon
+            color #2f74ff
+  .search-navigation-counter
+    font-size 12px
+    padding 10px 5px
+    text-align center
+    color #8590abde
 </style>
 
 <style lang="stylus">
