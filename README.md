@@ -11,9 +11,9 @@
 - ✔️ Router rule engine
 - ✔️ User login
 - ✔️ Source code viewer
-- ✔️ Theme demo
-- ✔️ Skin demo
-- ...
+- ✔️ Theme & Skin demo
+- ✔️ Keyboard over
+- ✔️ Search navigation demo
 
 ## Project setup
 ```
