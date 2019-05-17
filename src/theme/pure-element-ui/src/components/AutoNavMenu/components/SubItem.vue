@@ -31,7 +31,11 @@ export default {
       return get(this, 'meta.icon')
     },
     link() {
-      return get(this, 'meta.link')
+      return (
+        get(this, 'meta.link') ||
+        get(this, 'meta.children[0].link') ||
+        get(this, 'meta.group[0].link')
+      )
     },
     children() {
       return get(this, 'meta.children')
