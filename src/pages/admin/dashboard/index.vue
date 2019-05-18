@@ -1,5 +1,13 @@
 <template>
-  <div class="banner-container">
-    <h2>Welcome to the dashboard</h2>
-  </div>
+  <project-banner />
 </template>
+
+<script>
+import ProjectBanner from '@/components/extend/ProjectBanner'
+
+export default {
+  components: {
+    ProjectBanner
+  }
+}
+</script>
