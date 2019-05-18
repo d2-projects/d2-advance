@@ -7,7 +7,7 @@
     <p>
       <span style="color: #c0c4cc; font-weight: 100;">@{{ version }}</span>
     </p>
-    <p>
+    <p style="text-align: center">
       Advance, convention first, colourful front-end practice. be inspired by
       D2Admin :)
     </p>

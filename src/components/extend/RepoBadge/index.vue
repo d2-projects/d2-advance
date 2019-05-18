@@ -3,54 +3,37 @@
     <p align="center">
       <a
         ><img
-          src="https://img.shields.io/github/release/d2-projects/d2-advance.svg"
+          alt="GitHub release"
+          src="https://img.shields.io/github/release/d2-projects/d2-advance.svg?style=popout-square"
       /></a>
+      <a href="https://github.com/d2-projects/d2-advance/blob/master/LICENSE">
+        <img
+          alt="GitHub license"
+          src="https://img.shields.io/github/license/d2-projects/d2-advance.svg?style=popout-square"
+        />
+      </a>
       <a
         ><img
-          src="https://img.shields.io/github/forks/d2-projects/d2-advance.svg"
+          alt="GitHub issues"
+          src="https://img.shields.io/github/issues/d2-projects/d2-advance.svg?style=popout-square"
       /></a>
-      <a
-        ><img
-          src="https://img.shields.io/github/stars/d2-projects/d2-advance.svg"
-      /></a>
-      <iframe
-        src="https://ghbtns.com/github-btn.html?user=d2-projects&repo=d2-advance&type=star"
-        frameborder="0"
-        scrolling="0"
-        width="50px"
-        height="20px"
-      ></iframe>
+      <a href="https://github.com/d2-projects/d2-advance">
+        <img
+          alt="GitHub stars"
+          src="https://img.shields.io/github/stars/d2-projects/d2-advance.svg?style=popout-square"
+        />
+      </a>
     </p>
     <p align="center">
       <a
         ><img
-          src="https://img.shields.io/github/issues/d2-projects/d2-advance.svg"
+          alt="Travis (.org)"
+          src="https://img.shields.io/travis/d2-projects/d2-advance.svg?style=popout-square"
       /></a>
       <a
         ><img
-          src="https://img.shields.io/github/issues-closed/d2-projects/d2-advance.svg"
-      /></a>
-      <a
-        ><img
-          src="https://img.shields.io/github/issues-pr/d2-projects/d2-advance.svg"
-      /></a>
-      <a
-        ><img
-          src="https://img.shields.io/github/issues-pr-closed/d2-projects/d2-advance.svg"
-      /></a>
-    </p>
-    <p align="center">
-      <a href="https://www.travis-ci.org/d2-projects/d2-advance"
-        ><img
-          src="https://www.travis-ci.org/d2-projects/d2-advance.svg?branch=master"
-      /></a>
-      <a
-        ><img
-          src="https://img.shields.io/github/last-commit/d2-projects/d2-advance.svg"
-      /></a>
-      <a
-        ><img
-          src="https://img.shields.io/badge/code_style-standard-brightgreen.svg"
+          alt="GitHub last commit"
+          src="https://img.shields.io/github/last-commit/d2-projects/d2-advance.svg?style=popout-square"
       /></a>
     </p>
   </div>
@@ -58,7 +41,7 @@
 
 <style lang="stylus" scoped>
 .badge
-  margin-bottom 20px
+  padding 20px 10px
   p
     margin 0px
     margin-bottom 2px
