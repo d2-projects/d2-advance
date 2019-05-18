@@ -15,7 +15,8 @@ export default {
         {
           icon: 'odometer',
           label: 'Dashboard',
-          link: '/admin/dashboard'
+          link: '/admin/dashboard',
+          tags: ['admin', 'management']
         },
         {
           icon: 'collection',

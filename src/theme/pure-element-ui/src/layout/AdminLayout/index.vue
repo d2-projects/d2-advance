@@ -8,17 +8,11 @@
         <el-header height="56px" class="header">
           <div class="full"></div>
           <div class="btns">
-            <el-tooltip
-              content="Search navigation"
-              placement="bottom-end"
-              :open-delay="500"
-            >
-              <el-button
-                type="text"
-                icon="el-icon-search"
-                @click="showSearchNavigation = !showSearchNavigation"
-              ></el-button>
-            </el-tooltip>
+            <el-button
+              type="text"
+              icon="el-icon-search"
+              @click="showSearchNavigation = !showSearchNavigation"
+            ></el-button>
             <el-popover placement="bottom" width="100" trigger="click">
               <div style="text-align: center;">
                 <p style="margin-top: 0">Keyboard over</p>
@@ -140,11 +134,13 @@
                           </div>
                           <div class="item-content">
                             <div class="label">{{ item.label }}</div>
+                            <div class="link">{{ item.link }}</div>
                             <div class="tags">
                               <span
-                                v-for="(children, index) in item.children"
+                                class="tag"
+                                v-for="(tag, index) in item.tags"
                                 :key="index"
-                                >{{ children.label }}</span
+                                >{{ tag }}</span
                               >
                             </div>
                           </div>
@@ -250,7 +246,7 @@ export default {
             distance: 100,
             maxPatternLength: 32,
             minMatchCharLength: 1,
-            keys: ['label']
+            keys: ['label', 'link', 'tags']
           }).search(this.searchNavigationContent)
         : this.flatMenu
     }
@@ -262,6 +258,7 @@ export default {
     showSearchNavigation(value) {
       if (!value) {
         this.searchNavigationContent = ''
+        this.searchNavigationTarget = 0
       } else {
         setTimeout(() => {
           if (this.$refs['search-navigation-input']) {
@@ -388,10 +385,23 @@ export default {
           font-size 18px
           padding 0 20px
         .item-content
+          display flex
+          flex-direction column
+          line-height normal
+          justify-content center
           .label
             font-size 16px
+          .link
+            transition all .28s
+            color #c0c4cc
+            font-size 12px
           .tags
-            font-size 14px
+            transition all .28s
+            color #c0c4cc
+            font-size 12px
+            .tag
+              margin-right 10px
+              border-bottom 1px solid #c0c4cc
     &:hover
       .item:hover
         color #000
@@ -399,6 +409,8 @@ export default {
         .item-wrapper
           .item-icon
             color #2f74ff
+          .link, .tags
+            color #8590abde
     &:not(:hover)
       .item.target
         color #000
