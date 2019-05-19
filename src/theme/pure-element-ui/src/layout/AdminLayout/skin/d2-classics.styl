@@ -23,7 +23,7 @@ $background-active=#ffffff80
           i
             color $text-color-primary
         i
-          color $text-color-primary
+          transition color .28s
         &.el-menu-vertical
           .el-menu-item
           .el-submenu__title
@@ -37,6 +37,7 @@ $background-active=#ffffff80
           .el-menu--inline
             background-color transparent
           .el-menu-item:not(.menu-toggle).is-active
+          .el-menu-item:hover
             color $text-color-primary
             & i
               color $text-color-highlight
