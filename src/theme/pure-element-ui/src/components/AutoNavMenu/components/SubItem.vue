@@ -28,7 +28,7 @@ export default {
       return get(this, 'meta.label')
     },
     icon() {
-      return get(this, 'meta.icon')
+      return get(this, 'meta.icon', 'folder')
     },
     link() {
       return (

@@ -178,8 +178,13 @@ const flat = (arr, level = 0) =>
   arr
     ? arr.reduce((x, i) => {
         const { children, group, ...rest } = i
-        const { label, link } = rest
-        if (label && link) x.push({ ...rest, level })
+        const { label, link, icon } = rest
+        if (label && link)
+          x.push({
+            ...rest,
+            level,
+            icon: icon || (children || group ? 'folder' : 'document')
+          })
         return [...x, ...flat(children, level + 1), ...flat(group, level)]
       }, [])
     : []
