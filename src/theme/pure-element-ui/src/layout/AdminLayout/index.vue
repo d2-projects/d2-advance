@@ -47,11 +47,12 @@
               ></el-button>
             </el-tooltip>
             <el-tooltip
-              content="Choice skin"
+              content="Choice skin (temporarily unavailable)"
               placement="bottom-end"
               :open-delay="500"
             >
               <el-button
+                disabled
                 type="text"
                 icon="el-icon-umbrella"
                 @click="skinDialog = true"
