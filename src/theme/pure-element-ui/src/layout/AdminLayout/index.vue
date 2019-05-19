@@ -191,6 +191,12 @@ export default {
       required: true
     }
   },
+  created() {
+    window.addEventListener('keydown', this.keydown, true)
+  },
+  beforeDestroy() {
+    window.removeEventListener('keydown', this.keydown)
+  },
   data() {
     return {
       showKBO: false,
@@ -230,7 +236,8 @@ export default {
           colors: ['#364073', '#1d224d']
         }
       ],
-      skinDialog: false
+      skinDialog: false,
+      lastShift: new Date()
     }
   },
   computed: {
@@ -304,6 +311,15 @@ export default {
       const target = this.searchNavigationTarget
       const upper = this.searchNavigationList.length - 1
       this.searchNavigationTarget = clamp(target + step, 0, upper)
+    },
+    keydown(event) {
+      if (event.key !== 'Shift') return
+      const now = new Date()
+      const interval = now - this.lastShift
+      if (interval < 350) {
+        this.showSearchNavigation = !this.showSearchNavigation
+      }
+      this.lastShift = now
     }
   },
   components: {
