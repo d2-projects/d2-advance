@@ -1,7 +1,7 @@
+import packageInfo from '../package.json'
 import store from './store'
 import createRouter from './router'
 import plugin from './lib/plugin'
-import config from './config'
 
 const router = createRouter({
   async init() {
@@ -15,11 +15,14 @@ const router = createRouter({
   }
 })
 
-const app = plugin(
-  config({
-    router,
-    store
-  })
-)
+const app = plugin({
+  logger: true,
+  localStorage: {
+    name: 'default',
+    domain: packageInfo.name,
+    version: packageInfo.version,
+    defaults: {}
+  }
+})
 
 export { router, store, app }
