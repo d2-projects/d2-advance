@@ -16,5 +16,9 @@ module.exports = {
         propName: process.env.VUE_APP_SOURCE_VIEWER_PROP_NAME
       })
     }
+
+    // @ https://cli.vuejs.org/zh/guide/html-and-static-assets.html
+    config.plugins.delete('prefetch')
+    config.plugins.delete('preload')
   }
 }
