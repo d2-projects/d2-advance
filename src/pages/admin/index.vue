@@ -48,6 +48,16 @@ export default {
               ]
             }
           ]
+        },
+        {
+          label: 'Empty',
+          link: '/admin/empty',
+          tags: ['common']
+        },
+        {
+          label: 'Forbidden',
+          link: '/admin/forbidden',
+          tags: ['common']
         }
       ]
     }

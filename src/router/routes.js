@@ -7,7 +7,9 @@ const routes = fast({
   },
   [['/admin', 'admin']]: {
     'dashboard': 'admin/dashboard',
-    'collection/:food': 'admin/food'
+    'collection/:food': 'admin/food',
+    'forbidden': 'admin/common/forbidden',
+    'empty': 'admin/common/empty'
   },
   '/404': '404',
   '*!redirect': '/404'
