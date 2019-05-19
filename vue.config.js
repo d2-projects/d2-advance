@@ -8,6 +8,12 @@ module.exports = {
   // @ https://cli.vuejs.org/zh/config/#productionsourcemap
   productionSourceMap: process.env.VUE_APP_SOURCE_MAP === 'on',
 
+  configureWebpack: {
+    performance: {
+      hints: false // false | "error" | "warning"
+    }
+  },
+
   // @ https://cli.vuejs.org/config/#chainwebpack
   chainWebpack: config => {
     // for SourceViewer component
