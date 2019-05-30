@@ -7,14 +7,18 @@ const routes = fast({
   },
   [['/admin', 'admin']]: {
     'dashboard': 'admin/dashboard',
+
     'collection/:food': 'admin/food',
+
     [['rbac', 'admin/rbac']]: {
       'role/*': 'admin/rbac/role'
     },
-    'forbidden': 'admin/common/forbidden',
-    'empty': 'admin/common/empty'
+
+    'common/forbidden': '_common_/forbidden',
+    'common/empty': '_common_/empty',
+    'common/404': '_common_/404'
   },
-  '/404': '404',
+  '/404': '_common_/404',
   '*!redirect': '/404'
 })
 
