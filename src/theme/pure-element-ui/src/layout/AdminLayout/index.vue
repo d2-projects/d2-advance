@@ -111,6 +111,11 @@
                     style="max-width: 512px"
                     ref="search-navigation-input"
                   >
+                    <el-button
+                      slot="append"
+                      icon="el-icon-close"
+                      @click="showSearchNavigation = false"
+                    />
                   </el-input>
                 </div>
                 <div class="search-navigation-list">
