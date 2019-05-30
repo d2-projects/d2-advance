@@ -37,13 +37,18 @@ export default [
     ]
   },
   {
-    label: 'Empty',
-    link: '/admin/empty',
-    tags: ['common']
+    icon: 'guide',
+    label: 'RBAC Demo',
+    link: '/admin/rbac/role/'
   },
   {
     label: 'Forbidden',
     link: '/admin/forbidden',
+    tags: ['common']
+  },
+  {
+    label: 'Empty',
+    link: '/admin/empty',
     tags: ['common']
   }
 ]

@@ -8,6 +8,9 @@ const routes = fast({
   [['/admin', 'admin']]: {
     'dashboard': 'admin/dashboard',
     'collection/:food': 'admin/food',
+    [['rbac', 'admin/rbac']]: {
+      'role/*': 'admin/rbac/role'
+    },
     'forbidden': 'admin/common/forbidden',
     'empty': 'admin/common/empty'
   },
