@@ -1,10 +1,10 @@
 import Router from 'vue-router'
-import mm from 'micromatch'
+import { isMatch } from 'micromatch'
 import { isString } from 'lodash'
 
 export const defend = (to, from, next, rules) => {
   for (const { match, validator, handler } of rules) {
-    if (mm.isMatch(to.path, match) && validator({ to, from })) {
+    if (isMatch(to.path, match) && validator({ to, from })) {
       const rst = isString(handler) ? handler : handler({ to, from })
       if (rst && isString(rst)) return next(rst)
     }
