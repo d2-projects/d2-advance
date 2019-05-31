@@ -17,7 +17,7 @@
           alt="GitHub issues"
           src="https://img.shields.io/github/issues/d2-projects/d2-advance.svg?style=popout-square"
       /></a>
-      <a href="https://github.com/d2-projects/d2-advance">
+      <a href="https://github.com/d2-projects/d2-advance" target="_blank">
         <img
           alt="GitHub stars"
           src="https://img.shields.io/github/stars/d2-projects/d2-advance.svg?style=popout-square"
