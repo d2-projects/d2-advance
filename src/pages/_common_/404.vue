@@ -4,7 +4,7 @@
       title="404"
       message="The page not found :/"
       :handleBack="handleBack"
-      handleBackText="Back to Home"
+      handleBackText="Go back"
     />
   </div>
 </template>
@@ -13,7 +13,7 @@
 export default {
   methods: {
     handleBack() {
-      this.$router.push('/')
+      this.$router.go(-1)
     }
   }
 }
