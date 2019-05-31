@@ -9,7 +9,13 @@
     </p>
     <p style="text-align: center">
       Advance, convention first, colourful front-end practice. be inspired by
-      D2Admin :)
+      <el-link
+        type="primary"
+        href="https://d2admin.fairyever.com"
+        target="_blank"
+        >D2Admin</el-link
+      >
+      :)
     </p>
     <repo-badge />
   </div>
