@@ -871,10 +871,10 @@
     eslint "^4.19.1"
     eslint-plugin-vue "^4.7.1"
 
-"@vue/cli-service@^3.8.3":
-  version "3.8.3"
-  resolved "https://registry.npm.taobao.org/@vue/cli-service/download/@vue/cli-service-3.8.3.tgz#aac15c880220532497916ce091e2d9194086be5b"
-  integrity sha1-qsFciAIgUySXkWzgkeLZGUCGvls=
+"@vue/cli-service@^3.8.4":
+  version "3.8.4"
+  resolved "https://registry.npm.taobao.org/@vue/cli-service/download/@vue/cli-service-3.8.4.tgz#fecf63c8e0a838e2468d2a79059e39f2cbb1fdc5"
+  integrity sha1-/s9jyOCoOOJGjSp5BZ458sux/cU=
   dependencies:
     "@intervolga/optimize-cssnano-plugin" "^1.0.5"
     "@soda/friendly-errors-webpack-plugin" "^1.7.1"
@@ -899,7 +899,7 @@
     cssnano "^4.1.10"
     current-script-polyfill "^1.0.0"
     debug "^4.1.1"
-    default-gateway "^4.2.0"
+    default-gateway "^5.0.2"
     dotenv "^7.0.0"
     dotenv-expand "^5.1.0"
     escape-string-regexp "^1.0.5"
@@ -1493,6 +1493,18 @@ babel-eslint@^10.0.1:
   version "10.0.1"
   resolved "https://registry.npm.taobao.org/babel-eslint/download/babel-eslint-10.0.1.tgz#919681dc099614cd7d31d45c8908695092a1faed"
   integrity sha1-kZaB3AmWFM19MdRciQhpUJKh+u0=
+  dependencies:
+    "@babel/code-frame" "^7.0.0"
+    "@babel/parser" "^7.0.0"
+    "@babel/traverse" "^7.0.0"
+    "@babel/types" "^7.0.0"
+    eslint-scope "3.7.1"
+    eslint-visitor-keys "^1.0.0"
+
+babel-eslint@^10.0.2:
+  version "10.0.2"
+  resolved "https://registry.npm.taobao.org/babel-eslint/download/babel-eslint-10.0.2.tgz#182d5ac204579ff0881684b040560fdcc1558456"
+  integrity sha1-GC1awgRXn/CIFoSwQFYP3MFVhFY=
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/parser" "^7.0.0"
@@ -2693,6 +2705,14 @@ default-gateway@^4.2.0:
   version "4.2.0"
   resolved "https://registry.npm.taobao.org/default-gateway/download/default-gateway-4.2.0.tgz#167104c7500c2115f6dd69b0a536bb8ed720552b"
   integrity sha1-FnEEx1AMIRX23WmwpTa7jtcgVSs=
+  dependencies:
+    execa "^1.0.0"
+    ip-regex "^2.1.0"
+
+default-gateway@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.npm.taobao.org/default-gateway/download/default-gateway-5.0.2.tgz#d2d8a13d6fee406d9365d19ec9adccb8a60b82b3"
+  integrity sha1-0tihPW/uQG2TZdGeya3MuKYLgrM=
   dependencies:
     execa "^1.0.0"
     ip-regex "^2.1.0"
