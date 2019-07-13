@@ -15,7 +15,7 @@
     "core-js": "^2.6.5",
     "element-ui": "^2.10.1",
     "fuse.js": "^3.4.5",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "lowdb": "^1.0.0",
     "micromatch": "^4.0.2",
     "normalize.css": "^8.0.1",
