@@ -17,8 +17,8 @@ export const Wrapper = ({ init, after, before, reload, defender }) => {
 
   const beforeWrapper = async (...args) => {
     if (!initState && isFunction(init)) {
-      const needReload = await init(...args)
-      if (needReload) {
+      const success = await init(...args)
+      if (!success) {
         return isFunction(reload) && reload()
       }
       initState = true
