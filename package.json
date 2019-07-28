@@ -12,9 +12,7 @@
     "lint:no-fix": "vue-cli-service lint --no-fix"
   },
   "gitHooks": {
-    "hooks": {
-      "pre-push": "yarn run lint:no-fix"
-    }
+    "pre-push": "yarn run lint:no-fix"
   },
   "dependencies": {
     "axios": "^0.19.0",
