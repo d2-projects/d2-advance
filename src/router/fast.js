@@ -9,10 +9,10 @@ const _import = file => () =>
     `@/pages/${file}` // default root path: '@/pages/'
   )
 
-export const pathMerge = (parent, child) =>
-  capture(child + '*', parent)
+export const forceMergePath = (absoluteParent, child) =>
+  capture(child + '*', absoluteParent)
     ? child
-    : (parent + '/' + child).replace(/\/+/g, '/')
+    : (absoluteParent + '/' + child).replace(/\/+/g, '/')
 
 const generateFastRoutes = (fast, parentPath = '/') => {
   const arr = []
@@ -21,16 +21,16 @@ const generateFastRoutes = (fast, parentPath = '/') => {
     if (isString(key) && isString(value)) {
       const keys = key.split('!')
       if (keys.length === 1) {
-        path = pathMerge(parentPath, keys[0])
+        path = forceMergePath(parentPath, keys[0])
         component = value
       } else if (keys.length === 2 && keys[1] === 'redirect') {
-        path = pathMerge(parentPath, keys[0])
+        path = forceMergePath(parentPath, keys[0])
         redirect = value
       }
     } else if (isString(key) && isObject(value)) {
       const keys = key.split(',')
       if (keys.length === 2) {
-        path = pathMerge(parentPath, get(keys, '0'))
+        path = forceMergePath(parentPath, get(keys, '0'))
         component = get(keys, '1')
         children = generateFastRoutes(value, path)
         redirect = get(children, '0.path')

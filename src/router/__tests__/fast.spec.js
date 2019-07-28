@@ -1,4 +1,4 @@
-import { default as generateFastRoutes } from '../fast'
+import { default as generateFastRoutes, forceMergePath } from '../fast'
 
 describe('Fast router config transform', () => {
   describe('Generate fast routes', () => {
@@ -30,6 +30,28 @@ describe('Fast router config transform', () => {
           ]
         }
       ])
+    })
+  })
+
+  describe('Merge child path relative or absolute with parent force', () => {
+    it('should merge relative with absolute parent normal', () => {
+      expect(forceMergePath('/admin', 'dashboard/page1')).toBe(
+        '/admin/dashboard/page1'
+      )
+      expect(forceMergePath('/admin/', 'dashboard/page1')).toBe(
+        '/admin/dashboard/page1'
+      )
+      expect(forceMergePath('/admin//', 'dashboard/page1')).toBe(
+        '/admin/dashboard/page1'
+      )
+    })
+    it('should merge absolute with absolute parent force!', () => {
+      expect(forceMergePath('/admin', '/home/dashboard/page1')).toBe(
+        '/admin/home/dashboard/page1'
+      )
+      expect(forceMergePath('/admin/dashboard', '/home/dashboard/page2')).toBe(
+        '/admin/dashboard/home/dashboard/page2'
+      )
     })
   })
 })
