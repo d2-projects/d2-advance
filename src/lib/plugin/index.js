@@ -1,11 +1,11 @@
 import { isMatch, capture } from 'micromatch'
 import { camelCase, set, get } from 'lodash'
 
-const loader = (r, config) =>
-  r.keys().reduce((x, key) => {
+export const autowired = (requireContext, config) =>
+  requireContext.keys().reduce((x, key) => {
     const absKey = key.slice(1)
     if (isMatch(absKey, '/*/index.js')) {
-      const module = r(key)
+      const module = requireContext(key)
       const plugin = module.default || module
       const pluginName = camelCase(capture('/*/index.js', absKey)[0])
       const need = get(config, pluginName)
@@ -15,4 +15,4 @@ const loader = (r, config) =>
   }, {})
 
 export default config =>
-  loader(require.context('./packages', true, /index.js$/), config)
+  autowired(require.context('./packages', true, /index.js$/), config)
