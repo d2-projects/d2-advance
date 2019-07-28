@@ -11,7 +11,7 @@
     "lint": "vue-cli-service lint",
     "lint:no-fix": "vue-cli-service lint --no-fix"
   },
-  "husky": {
+  "gitHooks": {
     "hooks": {
       "pre-push": "yarn run lint:no-fix"
     }
@@ -41,7 +41,6 @@
     "css-loader": "^2.1.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.2.3",
-    "husky": "^3.0.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "vue-template-compiler": "^2.5.21"
