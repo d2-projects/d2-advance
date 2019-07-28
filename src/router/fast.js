@@ -1,4 +1,4 @@
-import { get, each, isObject, isString } from 'lodash'
+import { get, each, isObject, isString, omitBy, isUndefined } from 'lodash'
 import { capture } from 'micromatch'
 
 // @ https://webpack.js.org/api/module-methods/#import-1
@@ -9,7 +9,7 @@ const _import = file => () =>
     `@/pages/${file}` // default root path: '@/pages/'
   )
 
-const pathMerge = (parent, child) =>
+export const pathMerge = (parent, child) =>
   capture(child + '*', parent)
     ? child
     : (parent + '/' + child).replace(/\/+/g, '/')
@@ -37,7 +37,7 @@ const generateFastRoutes = (fast, parentPath = '/') => {
       }
     }
     component = component ? _import(component) : undefined
-    arr.push({ path, component, children, redirect })
+    arr.push(omitBy({ path, component, children, redirect }, isUndefined))
   })
   return arr
 }
