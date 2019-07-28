@@ -677,6 +677,13 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
+"@d2-projects/vue-filename-injector@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npm.taobao.org/@d2-projects/vue-filename-injector/download/@d2-projects/vue-filename-injector-1.0.0.tgz#486f02df1d4aea256588348086e462365442cbe5"
+  integrity sha1-SG8C3x1K6iVliDSAhuRiNlRCy+U=
+  dependencies:
+    loader-utils "^1.2.3"
+
 "@hapi/address@2.x.x":
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/@hapi/address/download/@hapi/address-2.0.0.tgz#9f05469c88cb2fd3dcd624776b54ee95c312126a"

@@ -1,4 +1,4 @@
-const VueFilenameInjector = require('./tools/vue-filename-injector')
+const VueFilenameInjector = require('@d2-projects/vue-filename-injector')
 
 // @ https://cli.vuejs.org/config/#vue-config-js
 module.exports = {
