@@ -3,9 +3,9 @@ import { isMatch } from 'micromatch'
 import { isString, isFunction } from 'lodash'
 
 export const Defender = rules => (to, from, next) => {
-  for (const { match, validator, handler } of rules) {
-    if (isMatch(to.path, match) && validator({ to, from })) {
-      const rst = isString(handler) ? handler : handler({ to, from })
+  for (const { match, interceptor, action } of rules) {
+    if (isMatch(to.path, match) && interceptor({ to, from })) {
+      const rst = isString(action) ? action : action({ to, from })
       if (rst && isString(rst)) return next(rst)
     }
   }

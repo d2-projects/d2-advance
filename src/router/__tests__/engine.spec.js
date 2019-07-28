@@ -1,6 +1,54 @@
-import { Wrapper } from '../engine'
+import { Defender, Wrapper } from '../engine'
 
 describe('Router logic engine', () => {
+  describe('Defender for execute router next ', () => {
+    it('should match to.path with interceptor true always', () => {
+      const next = jest.fn()
+      const defender = Defender([
+        { match: '/admin/**', interceptor: () => true, action: () => '/a' }
+      ])
+
+      defender({ path: '/admin' }, {}, next)
+      expect(next.mock.calls.length).toBe(1)
+      expect(next.mock.calls[0][0]).toBe('/a')
+    })
+
+    it('should not match to.path with interceptor true always', () => {
+      const next = jest.fn()
+      const defender = Defender([
+        { match: '/public/**', interceptor: () => true, action: () => '/a' }
+      ])
+
+      defender({ path: '/admin' }, {}, next)
+      expect(next.mock.calls.length).toBe(1)
+      expect(next.mock.calls[0][0]).toBeUndefined()
+    })
+
+    it('should match to.path sequential', () => {
+      const next = jest.fn()
+      const defender = Defender([
+        { match: '/admin/**', interceptor: () => true, action: () => '/a' },
+        { match: '/admin', interceptor: () => true, action: () => '/b' }
+      ])
+
+      defender({ path: '/admin' }, {}, next)
+      expect(next.mock.calls.length).toBe(1)
+      expect(next.mock.calls[0][0]).toBe('/a')
+    })
+
+    it('should match to.path use match character or equal intensity !', () => {
+      const next = jest.fn()
+      const defender = Defender([
+        { match: '/admin/', interceptor: () => true, action: () => '/a' },
+        { match: '/admin/**', interceptor: () => true, action: () => '/b' }
+      ])
+
+      defender({ path: '/admin' }, {}, next)
+      expect(next.mock.calls.length).toBe(1)
+      expect(next.mock.calls[0][0]).toBe('/b')
+    })
+  })
+
   describe('Wrapper behavior', () => {
     it('should call before hook without init hook', async () => {
       const before = jest.fn()
