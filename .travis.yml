@@ -10,4 +10,4 @@ branches:
     - master
 
 script:
-  - yarn run build
+  - yarn run ci
