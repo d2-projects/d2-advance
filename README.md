@@ -23,8 +23,6 @@
       src="https://img.shields.io/github/stars/d2-projects/d2-advance.svg?style=popout-square"
     />
   </a>
-</p>
-<p align="center">
   <a
     ><img
       alt="Travis (.org)"
@@ -40,19 +38,39 @@
   <img src="preview.png" />
 </p>
 
-## Download source
+## Quick start
+
+Clone quickly, without history commit.
+
 ``` sh
-git clone --depth=0 https://github.com/d2-projects/d2-advance.git
+git clone --depth=1 https://github.com/d2-projects/d2-advance
 ```
 
-## Project setup
+Install dependencies, and run dev server.
+
 ``` sh
 yarn install
+yarn serve
 ```
 
-### Compiles and hot-reloads for development
+Or use npm.
+
 ``` sh
-yarn run serve
+npm install
+npm run serve
+```
+
+Open http://localhost:8080/ in browser when you see that:
+```
+ DONE  Compiled successfully in 6782ms                                                                                                                                       10:43:40 PM
+
+ 
+  App running at:
+  - Local:   http://localhost:8080/ 
+  - Network: http://192.168.23.33:8080/
+
+  Note that the development build is not optimized.
+  To create a production build, run yarn build.
 ```
 
 ### Compiles and minifies for production
