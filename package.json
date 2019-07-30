@@ -46,31 +46,6 @@
     "stylus-loader": "^3.0.2",
     "vue-template-compiler": "^2.5.21"
   },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true,
-      "jest": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "@vue/prettier"
-    ],
-    "rules": {
-      "prettier/prettier": [
-        "warn",
-        {
-          "singleQuote": true,
-          "semi": false,
-          "trailingComma": "none",
-          "quoteProps": "preserve"
-        }
-      ]
-    },
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
-  },
   "postcss": {
     "plugins": {
       "autoprefixer": {}
