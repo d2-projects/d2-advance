@@ -5,13 +5,13 @@
   "author": "CNine <cnine229@gmail.com>",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build:preview": "vue-cli-service build --mode=preview --report",
     "lint:no-fix": "vue-cli-service lint --no-fix",
+    "lint:block": "vue-cli-service lint --no-fix --max-warnings=0",
     "test": "vue-cli-service test:unit",
-    "ci": "yarn run lint:no-fix && yarn run test && yarn run build",
-    "lint:block": "vue-cli-service lint --no-fix --max-warnings=0"
+    "build": "vue-cli-service build",
+    "build:preview": "vue-cli-service build --mode=preview --report",
+    "ci": "yarn run lint:no-fix && yarn run test && yarn run build"
   },
   "dependencies": {
     "axios": "^0.19.0",
