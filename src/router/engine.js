@@ -41,7 +41,7 @@ export const Wrapper = ({ init, after, before, reload, defender }) => {
 export default ({ routes, rules, init, after, before }) => {
   const router = new Router({ routes })
 
-  const reload = window.location.reload
+  const reload = () => window.location.reload()
   const defender = Defender(rules)
 
   const [beforeWrapper, afterWrapper] = Wrapper({

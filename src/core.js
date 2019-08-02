@@ -5,7 +5,12 @@ import plugin from './lib/plugin'
 
 const router = createRouter({
   async init() {
-    await store.dispatch('init')
+    try {
+      await store.dispatch('init')
+    } catch {
+      return false
+    }
+    return true
   },
   async before() {
     // ...
