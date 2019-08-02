@@ -20,5 +20,5 @@ export default {
     SourceViewer,
     FadeTransition
   },
-}
+};
 </script>

@@ -10,7 +10,8 @@
     "build:preview": "vue-cli-service build --mode=preview --report",
     "lint:no-fix": "vue-cli-service lint --no-fix",
     "test": "vue-cli-service test:unit",
-    "ci": "yarn run lint:no-fix && yarn run test && yarn run build"
+    "ci": "yarn run lint:no-fix && yarn run test && yarn run build",
+    "lint:block": "vue-cli-service lint --no-fix --max-warnings=0"
   },
   "dependencies": {
     "axios": "^0.19.0",
@@ -60,7 +61,7 @@
     "url": "https://github.com/d2-projects/d2-advance/issues"
   },
   "gitHooks": {
-    "pre-push": "yarn run lint:no-fix && yarn run test"
+    "pre-push": "yarn run lint:block && yarn run test"
   },
   "homepage": "https://github.com/d2-projects/d2-advance",
   "license": "MIT",
