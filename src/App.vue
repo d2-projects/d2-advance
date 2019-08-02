@@ -3,12 +3,12 @@
     <fade-transition mode="out-in">
       <router-view />
     </fade-transition>
-    <source-viewer />
+    <source-link />
   </div>
 </template>
 
 <script>
-import SourceViewer from '@/components/extend/SourceViewer'
+import SourceLink from '@/components/extend/SourceLink'
 import { FadeTransition } from 'vue2-transitions'
 import packageInfo from '../package.json'
 
@@ -17,7 +17,7 @@ export default {
     this.$app.logger.capsule('D2', 'Advance', `Version ${packageInfo.version}`)
   },
   components: {
-    SourceViewer,
+    SourceLink,
     FadeTransition
   }
 }

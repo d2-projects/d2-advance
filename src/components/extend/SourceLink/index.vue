@@ -1,5 +1,5 @@
 <template>
-  <div class="source-viewer-wrap">
+  <div class="source-link-wrap">
     <div v-if="enable && deep" class="toggle" @click="handleClick">
       <span>{{ text }}</span>
     </div>
@@ -9,9 +9,9 @@
 <script>
 import { map, compact, last } from 'lodash'
 
-const enable = process.env.VUE_APP_SOURCE_VIEWER === 'on'
-const basePath = process.env.VUE_APP_SOURCE_VIEWER_BASE_PATH
-const propName = process.env.VUE_APP_SOURCE_VIEWER_PROP_NAME
+const enable = process.env.VUE_APP_SOURCE_LINK === 'on'
+const basePath = process.env.VUE_APP_SOURCE_LINK_BASE_PATH
+const propName = process.env.VUE_APP_SOURCE_LINK_PROP_NAME
 
 const fullPropPath = `components.default.${propName}`
 
@@ -19,7 +19,7 @@ export default {
   data() {
     return {
       enable,
-      text: '<SourceCode />',
+      text: '<SourceLink />',
       paths: []
     }
   },
@@ -42,7 +42,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.source-viewer-wrap
+.source-link-wrap
   position fixed
   bottom 22px
   right 0
