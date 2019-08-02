@@ -19,6 +19,6 @@ export default {
   components: {
     SourceViewer,
     FadeTransition
-  }
+  },
 }
 </script>
