@@ -7,6 +7,7 @@ Vue.use(Theme, { prefix: 'pure-element-ui' })
 
 import './styles/index.styl'
 
+Vue.config.performance = process.env.NODE_ENV !== 'production'
 Vue.config.productionTip = false
 Vue.prototype.$app = app
 
