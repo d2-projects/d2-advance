@@ -1,7 +1,7 @@
 {
   "name": "@d2-projects/d2-advance",
   "description": "Advanced, colourful front-end integration practice. be inspired by D2Admin :)",
-  "version": "0.1.0",
+  "version": "0.0.0-development",
   "license": "MIT",
   "author": {
     "name": "CNine",
@@ -12,7 +12,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "core-js": "^3.4.3",
@@ -39,11 +40,39 @@
     "prettier": "^1.19.1",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "semantic-release": "^15.13.31"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/d2-projects/d2-advance.git"
+  },
+  "release": {
+    "branch": "refactor",
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "docs/CHANGELOG.md",
+          "changelogTitle": "# Changelog\n\nAll notable changes to this project will be documented in this file. See\n[Conventional Commits](https://conventionalcommits.org) for commit guidelines."
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "docs/CHANGELOG.md"
+          ]
+        }
+      ],
+      "@semantic-release/github"
+    ]
   }
 }
