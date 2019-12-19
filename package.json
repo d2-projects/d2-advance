@@ -8,6 +8,7 @@
     "email": "cnine229@gmail.com",
     "url": "https://github.com/Aysnine"
   },
+  "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
