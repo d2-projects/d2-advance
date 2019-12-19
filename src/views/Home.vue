@@ -1,5 +1,5 @@
 <template>
-  <HelloWorld msg="Welcome to D2 Advance" />
+  <HelloWorld msg="Welcome to D2 Advance :)" />
 </template>
 
 <script>
