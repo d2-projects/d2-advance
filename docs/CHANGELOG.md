@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/d2-projects/d2-advance/compare/v1.0.0...v1.1.0) (2019-12-19)
+
+
+### Features
+
+* **wording:** add smile :) ([5d157dd](https://github.com/d2-projects/d2-advance/commit/5d157dde129ffa9bae09a12635e29fd10727695e))
+
 # 1.0.0 (2019-12-19)
 
 
