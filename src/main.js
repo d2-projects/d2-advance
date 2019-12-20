@@ -4,7 +4,7 @@ import StartLoading from '@/components/StartLoading.vue'
 
 Vue.config.productionTip = false
 
-const MIN_LOADING_TIME = 600
+const MIN_LOADING_TIME = 800
 
 document.getElementById('app').appendChild(
   new Vue({

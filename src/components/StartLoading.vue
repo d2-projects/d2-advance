@@ -1,6 +1,11 @@
 <template>
   <div class="start-loading">
-    <atom-spinner :animation-duration="1000" :size="60" :color="'#ff1d5e'" />
+    <atom-spinner
+      class="spinner"
+      :animation-duration="800"
+      :size="120"
+      color="#589ff8"
+    />
   </div>
 </template>
 
@@ -16,5 +21,18 @@ export default {
 
 <style lang="stylus" scoped>
 .start-loading
-  text-align center
+  height 100vh
+  width 100%
+  .spinner
+    position relative
+    top 36vh
+    margin auto
+    background no-repeat center/70% url('../assets/logo.png')
+</style>
+
+<style lang="stylus">
+.start-loading
+  .atom-spinner
+    .spinner-circle
+      display none !important
 </style>
