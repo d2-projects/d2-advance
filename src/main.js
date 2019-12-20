@@ -4,33 +4,50 @@ import StartLoading from '@/components/StartLoading.vue'
 
 Vue.config.productionTip = false
 
-const MIN_LOADING_TIME = 800
+const mountApp = async () => {
+  const MIN_LOADING_TIME = 800
+
+  if (process.env.VUE_APP_START_LOADING_DEBUG === 'on') {
+    // eslint-disable-next-line no-console
+    console.warn('VUE_APP_START_LOADING_DEBUG is turn on')
+    return
+  }
+
+  try {
+    const startTime = new Date().getTime()
+    const module = await import('./mount')
+    const mount = () => !(module.default || module).mount()
+    const loadingTime = new Date().getTime() - startTime
+    if (loadingTime < MIN_LOADING_TIME) {
+      setTimeout(mount, MIN_LOADING_TIME - loadingTime)
+    } else {
+      mount()
+    }
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('mountApp Ops!', error)
+    throw error
+  }
+}
 
 document.getElementById('app').appendChild(
   new Vue({
-    render: h => h(StartLoading),
-    mounted() {
-      if (process.env.VUE_APP_START_LOADING_DEBUG === 'on') {
-        /* eslint-disable no-console */
-        console.warn('VUE_APP_START_LOADING_DEBUG is turn on')
-        return
+    data: {
+      error: null
+    },
+    render(h) {
+      return h(StartLoading, {
+        props: {
+          error: this.error
+        }
+      })
+    },
+    async mounted() {
+      try {
+        await mountApp()
+      } catch (error) {
+        this.error = error
       }
-
-      const startTime = new Date().getTime()
-
-      import('./mount')
-        .then(module => {
-          const loadingTime = new Date().getTime() - startTime
-          if (loadingTime < MIN_LOADING_TIME) {
-            setTimeout(() => {
-              !(module.default || module).mount()
-            }, MIN_LOADING_TIME - loadingTime)
-          }
-        })
-        .catch(error => {
-          /* eslint-disable no-console */
-          console.error('Ops!', error)
-        })
     }
   }).$mount().$el
 )
