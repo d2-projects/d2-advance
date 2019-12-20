@@ -25,5 +25,12 @@ yarn test:unit
 yarn lint
 ```
 
+**Strict mode**
+```
+yarn lint:strict
+```
+
+Without auto fix, not missing any warning.
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
