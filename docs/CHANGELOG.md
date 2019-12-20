@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/d2-projects/d2-advance/compare/v1.2.0...v1.3.0) (2019-12-20)
+
+
+### Features
+
+* use normalize.css for css reset ([5f8c379](https://github.com/d2-projects/d2-advance/commit/5f8c379bc8ca2f7d45218266e9c9b8a207687b9e))
+* **loading:** add start-loading with epic spinner, use VUE_APP_START_LOADING_DEBUG to debug it ([0a920aa](https://github.com/d2-projects/d2-advance/commit/0a920aa69b5fa5d5645454421d3db94f229a9263))
+
 # [1.2.0](https://github.com/d2-projects/d2-advance/compare/v1.1.1...v1.2.0) (2019-12-20)
 
 
