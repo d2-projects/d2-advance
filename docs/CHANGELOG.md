@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/d2-projects/d2-advance/compare/v1.3.0...v1.4.0) (2019-12-20)
+
+
+### Features
+
+* **ui:** add element-ui ([57856f2](https://github.com/d2-projects/d2-advance/commit/57856f25f15344581f342eca4d3e8715d7ee9428))
+
 # [1.3.0](https://github.com/d2-projects/d2-advance/compare/v1.2.0...v1.3.0) (2019-12-20)
 
 
