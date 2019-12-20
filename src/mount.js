@@ -5,8 +5,6 @@ import store from './store'
 
 export default {
   mount() {
-    Vue.config.productionTip = false
-
     new Vue({
       router,
       store,
