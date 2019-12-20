@@ -10,6 +10,7 @@ document.getElementById('app').appendChild(
     render: h => h(StartLoading),
     mounted() {
       if (process.env.VUE_APP_START_LOADING_DEBUG === 'on') {
+        /* eslint-disable no-console */
         console.warn('VUE_APP_START_LOADING_DEBUG is turn on')
         return
       }
@@ -26,6 +27,7 @@ document.getElementById('app').appendChild(
           }
         })
         .catch(error => {
+          /* eslint-disable no-console */
           console.error('Ops!', error)
         })
     }
