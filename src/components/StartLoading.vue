@@ -34,8 +34,9 @@ export default {
   height 100vh
   width 100%
   .start-loading-inner
+    position relative
     margin auto
-    margin-top 25vh
+    padding-top 25vh
     text-align center
     .logo-for-spinner
       position relative

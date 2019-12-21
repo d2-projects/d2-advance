@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import 'normalize.css'
+import './style/basic.styl'
 import StartLoading from '@/components/StartLoading.vue'
 
 Vue.config.productionTip = false
