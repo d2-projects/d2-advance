@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.1](https://github.com/d2-projects/d2-advance/compare/v1.4.0...v1.4.1) (2019-12-22)
+
+
+### Bug Fixes
+
+* change export to exports ([acab851](https://github.com/d2-projects/d2-advance/commit/acab8516dbb84833bffb99c9826d86561852cd39))
+
 # [1.4.0](https://github.com/d2-projects/d2-advance/compare/v1.3.0...v1.4.0) (2019-12-20)
 
 
