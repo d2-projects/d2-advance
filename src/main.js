@@ -14,34 +14,20 @@ const mountApp = async () => {
     return
   }
 
-  try {
-    const startTime = new Date().getTime()
-    const module = await import('./mount')
-    const mount = () => !(module.default || module).mount()
-    const loadingTime = new Date().getTime() - startTime
-    if (loadingTime < MIN_LOADING_TIME) {
-      setTimeout(mount, MIN_LOADING_TIME - loadingTime)
-    } else {
-      mount()
-    }
-  } catch (error) {
-    // eslint-disable-next-line no-console
-    console.error('mountApp Ops!', error)
-    throw error
-  }
+  const startTime = new Date().getTime()
+  const module = await import('./mount')
+  const mount = () => !(module.default || module).mount()
+  const loadingTime = new Date().getTime() - startTime
+  loadingTime < MIN_LOADING_TIME
+    ? setTimeout(mount, MIN_LOADING_TIME - loadingTime)
+    : mount()
 }
 
 document.getElementById('app').appendChild(
   new Vue({
-    data: {
-      error: null
-    },
+    data: { error: null },
     render(h) {
-      return h(StartLoading, {
-        props: {
-          error: this.error
-        }
-      })
+      return h(StartLoading, { props: { error: this.error } })
     },
     async mounted() {
       try {
