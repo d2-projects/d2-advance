@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/d2-projects/d2-advance/compare/v1.4.1...v1.5.0) (2019-12-24)
+
+
+### Bug Fixes
+
+* **eslint:** add eslint disable for console.error ([eea3a54](https://github.com/d2-projects/d2-advance/commit/eea3a54faaf6900f284d5208dddd817dfe90fe73))
+
+
+### Features
+
+* d2-vue-application ([e676fb5](https://github.com/d2-projects/d2-advance/commit/e676fb524caf6cceefb850e55c13e27e24028cea))
+* **router:** routing-guards ([2749a10](https://github.com/d2-projects/d2-advance/commit/2749a100e2829a7cfa3b921e499350cb82ec9c02))
+
+
+### Reverts
+
+* **pwa:** remove pwa support ([b781136](https://github.com/d2-projects/d2-advance/commit/b7811363e8c2378ae104ee984e26ddc23c055a52))
+
 ## [1.4.1](https://github.com/d2-projects/d2-advance/compare/v1.4.0...v1.4.1) (2019-12-22)
 
 
