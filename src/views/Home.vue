@@ -9,7 +9,7 @@
             <span class="c"></span>
           </div>
         </div>
-        <div class="box-body">
+        <div class="box-body main">
           <img
             class="right-logo"
             width="100"
@@ -17,6 +17,22 @@
             src="../assets/logo.png"
           />
           <h1><span class="foreground-text">D2</span> Advance</h1>
+        </div>
+      </div>
+    </div>
+    <div class="colorful-box-wrapper">
+      <div class="colorful-box">
+        <div class="box-body demo">
+          <h2>Admin</h2>
+          <p>Frontend solution for admin interfaces</p>
+          <router-link to="/admin">
+            <el-button
+              size="medium"
+              type="primary"
+              icon="el-icon-right"
+              circle
+            />
+          </router-link>
         </div>
       </div>
     </div>
@@ -33,6 +49,8 @@
     margin auto
     max-width 800px
     padding-top 10vh
+    &+.colorful-box-wrapper
+      padding-top 10px
     .colorful-box
       position relative
       display flex
@@ -63,11 +81,18 @@
           .c
             background #72be47
       .box-body
-        padding 100px 10px
+        padding 10px
         flex 1
-        text-align center
-        h1
-          font-weight 300
+        h1, h2
+          font-weight 400
+        p
+          color $secondary-text-color
+        &.main
+          padding 100px 10px
+          text-align center
+        &.demo
+          padding 10px 10px 20px
+          text-align center
         .foreground-text
           color $primary-color
 </style>

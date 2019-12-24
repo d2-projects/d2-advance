@@ -33,7 +33,7 @@ class MyApplication extends VueApplication {
       new RoutingGuards()
         .use(this.firstRoutingMiddleware())
         .use(async () => {
-          await new Promise(resolve => setTimeout(resolve, 2000))
+          // router guards here...
         })
         .callback()
     )
