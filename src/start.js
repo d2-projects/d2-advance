@@ -56,8 +56,8 @@ class MyApplication extends D2VueApplication {
 
 export default {
   app: null,
-  start(payload = {}) {
+  start() {
     this.app = new MyApplication()
-    this.app.start(payload)
+    this.app.start()
   }
 }
