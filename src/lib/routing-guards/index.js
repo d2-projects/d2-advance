@@ -6,6 +6,7 @@ export default class RoutingGuards extends Emitter {
     super()
     this.middleare = []
     this.context = {
+      // eslint-disable-next-line no-console
       onerror: console.error
     }
   }
