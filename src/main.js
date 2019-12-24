@@ -3,6 +3,8 @@ import Vuex from 'vuex'
 import VueRouter from 'vue-router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 import App from './App.vue'
 import routes from './routes'
@@ -28,8 +30,21 @@ class MyApplication extends VueApplication {
     router.beforeEach(
       new RoutingGuards()
         .use(this.firstRoutingMiddleware())
+        .use(async (_, next) => {
+          NProgress.start()
+          await next()
+        })
         .use(async () => {
           // router guards here...
+        })
+        .callback()
+    )
+
+    router.afterEach(
+      new RoutingGuards()
+        .use(async (_, next) => {
+          NProgress.done()
+          await next()
         })
         .callback()
     )
