@@ -54,9 +54,8 @@ class MyApplication extends VueApplication {
 }
 
 export default {
-  app: null,
+  app: new MyApplication(),
   start() {
-    this.app = new MyApplication()
     this.app.start()
   }
 }
