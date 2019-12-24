@@ -8,7 +8,7 @@ import store from './store'
 Vue.use(ElementUI)
 
 export default {
-  mount() {
+  start() {
     new Vue({
       router,
       store,

@@ -5,7 +5,7 @@ import StartLoading from '@/components/StartLoading.vue'
 
 Vue.config.productionTip = false
 
-const mountApp = async () => {
+const startApp = async () => {
   const MIN_LOADING_TIME = 800
 
   if (process.env.VUE_APP_START_LOADING_DEBUG === 'on') {
@@ -15,12 +15,12 @@ const mountApp = async () => {
   }
 
   const startTime = new Date().getTime()
-  const module = await import('./mount')
-  const mount = () => !(module.default || module).mount()
+  const module = await import('./start')
+  const start = () => !(module.default || module).start()
   const loadingTime = new Date().getTime() - startTime
   loadingTime < MIN_LOADING_TIME
-    ? setTimeout(mount, MIN_LOADING_TIME - loadingTime)
-    : mount()
+    ? setTimeout(start, MIN_LOADING_TIME - loadingTime)
+    : start()
 }
 
 document.getElementById('app').appendChild(
@@ -31,7 +31,7 @@ document.getElementById('app').appendChild(
     },
     async mounted() {
       try {
-        await mountApp()
+        await startApp()
       } catch (error) {
         this.error = error
       }
