@@ -5,14 +5,13 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import App from './App.vue'
 import routes from './routes'
-import RoutingGuards from './lib/routing-guards'
-import { D2VueApplication } from './lib/core'
+import { VueApplication, RoutingGuards } from './lib/core'
 
 Vue.use(Vuex)
 Vue.use(VueRouter)
 Vue.use(ElementUI)
 
-class MyApplication extends D2VueApplication {
+class MyApplication extends VueApplication {
   constructor() {
     super()
   }
