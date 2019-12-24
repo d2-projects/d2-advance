@@ -13,10 +13,6 @@ Vue.use(VueRouter)
 Vue.use(ElementUI)
 
 class MyApplication extends VueApplication {
-  constructor() {
-    super()
-  }
-
   createStore() {
     return new Vuex.Store({
       state: {},
@@ -54,9 +50,4 @@ class MyApplication extends VueApplication {
   }
 }
 
-export default {
-  app: new MyApplication(),
-  start() {
-    this.app.start()
-  }
-}
+export default new MyApplication()
