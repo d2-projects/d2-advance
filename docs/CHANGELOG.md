@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/d2-projects/d2-advance/compare/v1.5.0...v1.6.0) (2019-12-25)
+
+
+### Features
+
+* **admin:** add admin demo page with smart nav-menu ([38673ff](https://github.com/d2-projects/d2-advance/commit/38673ff885645eb1b815de7f216319be0e9717ab))
+* **admin:** demo page ([2a0b83f](https://github.com/d2-projects/d2-advance/commit/2a0b83f849699d32e4617f15acaf3e3794b9946e))
+* **progress:** use nprogress for router loading ([76f50c5](https://github.com/d2-projects/d2-advance/commit/76f50c546a1ef570ed46c1107ac7df9b94bcbf3d))
+
 # [1.5.0](https://github.com/d2-projects/d2-advance/compare/v1.4.1...v1.5.0) (2019-12-24)
 
 
