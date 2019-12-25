@@ -8,7 +8,7 @@
     </el-header>
     <el-container>
       <el-aside class="aside" width="auto">
-        <nav-menu :menu="menu" :isCollapse="isCollapse" />
+        <nav-menu :menu="menu" :collapse="isCollapse" />
       </el-aside>
       <el-main class="main">
         <router-view />

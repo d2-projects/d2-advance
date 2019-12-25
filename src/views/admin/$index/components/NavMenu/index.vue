@@ -8,40 +8,43 @@ export default {
       type: Array,
       required: true
     },
-    isCollapse: {
+    collapse: {
       type: Boolean,
       required: true
     },
-    defaultIcon: {
+    onlyMainIcon: {
       type: Boolean,
-      default: true
+      default: false
     }
   },
   render(h) {
     const it = ({ icon, label, group, children, ...props }, level = 0) => {
       const next = data => it(data, level + 1)
 
+      const iconComp = (defaultIcon = 'el-icon-tickets') => {
+        if (this.onlyMainIcon && level > 1) return null
+        return h('i', { class: icon || defaultIcon })
+      }
+      const labelComp = (defaultLabel = 'Untitled') =>
+        h('span', { class: 'text', slot: 'title' }, label || defaultLabel)
+
       if (group) {
         return h('el-menu-item-group', { props }, [
-          h('span', { class: 'text', slot: 'title' }, label || 'Group'),
+          labelComp('Group'),
           ...map(group, next)
         ])
       } else if (children) {
         return h('el-submenu', { props }, [
           h('template', { slot: 'title' }, [
-            !icon && !this.defaultIcon && level > 1
-              ? null
-              : h('i', { class: icon || 'el-icon-folder' }),
-            h('span', { class: 'text', slot: 'title' }, label || 'Submenu')
+            iconComp('el-icon-folder'),
+            labelComp('Submenu')
           ]),
           ...map(children, next)
         ])
       } else {
         return h('el-menu-item', { props }, [
-          !icon && !this.defaultIcon && level > 1
-            ? null
-            : h('i', { class: icon || 'el-icon-tickets' }),
-          h('span', { class: 'text', slot: 'title' }, label || 'Menu item')
+          iconComp('el-icon-tickets'),
+          labelComp('Menu item')
         ])
       }
     }
@@ -51,12 +54,12 @@ export default {
       {
         class: {
           'el-menu-vertical': true,
-          'collapse': this.isCollapse
+          'collapse': this.collapse
         },
         props: {
           router: true,
           'default-active': this.$route.path,
-          collapse: this.isCollapse
+          collapse: this.collapse
         }
       },
       map(this.menu, it)
