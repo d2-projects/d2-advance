@@ -5,6 +5,10 @@ module.exports = {
   configureWebpack: {
     entry: {
       app: ['./src/start.js']
+    },
+    performance: {
+      // https://webpack.js.org/configuration/performance/#performancehints
+      hints: false // false | "error" | "warning"
     }
   }
 }
