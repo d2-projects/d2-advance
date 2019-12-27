@@ -53,5 +53,7 @@ $header-height = 60px
     >>> .el-menu-vertical:not(.el-menu--collapse)
       width $aside-width
   .main
+    position relative
     padding 0
+    padding-right 20px
 </style>
