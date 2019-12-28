@@ -71,23 +71,33 @@ export default {
 <style lang="stylus" scoped>
 @import '../../../../../style/variable.styl'
 
+custom-items()
+  .el-menu-item
+  .el-submenu > .el-submenu__title
+    color inherit
+    i
+      color inherit
+    &:focus, &:hover, &.is-active
+      color $foreground-color
+      background #ffffff80
+  .el-submenu.is-active > .el-submenu__title
+    color $foreground-color
+
 .el-menu-vertical
   border none
-  &.collapse
-    .text
-    >>>.el-menu--inline
-      display none
->>>.el-menu-item
->>>.el-submenu__title
   color $regular-text-color
-  i
-    color: inherit;
-  &:focus, &:hover, &.is-active
-    color $foreground-color
-    background #ffffff80
-.el-menu
->>>.el-menu
   background transparent
->>>.el-submenu__icon-arrow
-  margin-top -4px
+  &.collapse
+    .text, >>> .el-menu--inline
+      display none
+  >>>
+    .el-submenu__icon-arrow
+      margin-top -4px
+    >
+      custom-items()
+  &:not(.el-menu--collapse)
+    >>>
+      .el-menu
+        background transparent
+      custom-items()
 </style>
