@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/d2-projects/d2-advance/compare/v1.6.0...v1.7.0) (2019-12-28)
+
+
+### Bug Fixes
+
+* **admin:** add missing prop for page-container demo page ([efca4f6](https://github.com/d2-projects/d2-advance/commit/efca4f6aa57a4386c5e3e833911b76dc09ce124e))
+* **admin:** unset height of header and footer for page-container ([04a5cf4](https://github.com/d2-projects/d2-advance/commit/04a5cf41f75051dc4c212ab63f9746d77cf353e1))
+
+
+### Features
+
+* **admin:** add aside-nav-menu demo page ([28e6f26](https://github.com/d2-projects/d2-advance/commit/28e6f26a2995bc467ec81ea210a033a63adb694a))
+* **admin:** add component-demo pages, move page-container demo from dashboard to compoennt-demo ([4478d73](https://github.com/d2-projects/d2-advance/commit/4478d73d04142601cc015d985d2e97df1fc8416c))
+* **admin:** add page-container components like d2-container ([9cce0cc](https://github.com/d2-projects/d2-advance/commit/9cce0cc9f6f35eea7fd1881678cab41222fc7cf3))
+* **i18n:** add english locale for element-ui ([6f92eff](https://github.com/d2-projects/d2-advance/commit/6f92efff294d0c77493edc88823653fa7f333bd8))
+
 # [1.6.0](https://github.com/d2-projects/d2-advance/compare/v1.5.0...v1.6.0) (2019-12-25)
 
 
