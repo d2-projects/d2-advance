@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.1](https://github.com/d2-projects/d2-advance/compare/v1.7.0...v1.7.1) (2019-12-28)
+
+
+### Bug Fixes
+
+* **start-loading:** remove debug code ([11e4d61](https://github.com/d2-projects/d2-advance/commit/11e4d614d8167e034c4db33b8a0eb220dca03150))
+
 # [1.7.0](https://github.com/d2-projects/d2-advance/compare/v1.6.0...v1.7.0) (2019-12-28)
 
 
