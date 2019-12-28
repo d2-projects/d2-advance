@@ -1,8 +1,5 @@
 <template>
-  <el-container
-    class="page-container"
-    :class="{ [type]: true, 'no-body-padding': noBodyPadding }"
-  >
+  <el-container class="page-container" :class="dynamicClass">
     <el-header v-if="$slots.header" class="header">
       <slot name="header" />
     </el-header>
@@ -31,6 +28,14 @@ export default {
     noBodyPadding: {
       type: Boolean,
       default: false
+    }
+  },
+  computed: {
+    dynamicClass() {
+      return {
+        [this.type]: true,
+        'no-body-padding': this.noBodyPadding
+      }
     }
   }
 }
