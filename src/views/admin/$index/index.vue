@@ -8,7 +8,7 @@
     </el-header>
     <el-container>
       <el-aside class="aside" width="auto">
-        <nav-menu :menu="menu" :collapse="isCollapse" />
+        <aside-nav-menu :menu="menu" :collapse="isCollapse" />
       </el-aside>
       <el-main class="main">
         <router-view />
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import NavMenu from './components/NavMenu'
+import AsideNavMenu from './components/AsideNavMenu'
 import menu from './menu'
 
 export default {
@@ -29,7 +29,7 @@ export default {
     }
   },
   components: {
-    NavMenu
+    AsideNavMenu
   }
 }
 </script>

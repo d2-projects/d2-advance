@@ -2,7 +2,7 @@
 import { map } from 'lodash'
 
 export default {
-  name: 'NavMenu',
+  name: 'AsideNavMenu',
   props: {
     menu: {
       type: Array,
