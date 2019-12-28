@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import VueRouter from 'vue-router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import locale from 'element-ui/lib/locale/lang/en'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
@@ -12,7 +13,7 @@ import { VueApplication, RoutingGuards } from './lib/core'
 
 Vue.use(Vuex)
 Vue.use(VueRouter)
-Vue.use(ElementUI)
+Vue.use(ElementUI, { locale })
 
 class MyApplication extends VueApplication {
   createStore() {
