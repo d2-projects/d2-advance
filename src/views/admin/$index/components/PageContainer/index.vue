@@ -32,11 +32,6 @@ export default {
 <style lang="stylus" scoped>
 @import '../../../../../style/variable.styl'
 
-$base-radius = 5px
-$top-radius = $base-radius $base-radius 0 0
-$solid-border = 1px solid $border-base-color
-$base-padding = 20px
-
 .page-container
   display flex
   flex-direction column
