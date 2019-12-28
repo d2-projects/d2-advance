@@ -11,13 +11,19 @@ export default class VueApplication extends Emitter {
     this.waitSet = new Set()
   }
 
-  start() {
-    this.beforeStart()
-    this.store = this.createStore()
-    this.router = this.createRouter()
-    this.vm = this.createVM({ store: this.store, router: this.router })
-    this.afterStart()
-    this.checkWait(true)
+  start(starter) {
+    try {
+      this.beforeStart()
+      this.store = this.createStore()
+      this.router = this.createRouter()
+      this.vm = this.createVM({ store: this.store, router: this.router })
+      this.afterStart()
+      this.checkWait(true)
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error('Application start error!')
+      starter.fail(error)
+    }
   }
 
   createStore() {}

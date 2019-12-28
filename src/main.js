@@ -31,6 +31,7 @@ class MyApplication extends VueApplication {
     router.beforeEach(
       new RoutingGuards()
         .use(this.firstRoutingMiddleware())
+        .use(this.hello())
         .use(async (_, next) => {
           NProgress.start()
           await next()
