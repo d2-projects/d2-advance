@@ -19,6 +19,11 @@ const routes = [
         path: 'component-demo/page-container',
         name: 'admin-component-demo-page-container',
         component: () => import('../views/admin/component-demo/page-container')
+      },
+      {
+        path: 'component-demo/aside-nav-menu',
+        name: 'admin-component-demo-aside-nav-menu',
+        component: () => import('../views/admin/component-demo/aside-nav-menu')
       }
     ]
   }
