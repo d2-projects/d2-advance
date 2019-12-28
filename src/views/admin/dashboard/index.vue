@@ -1,7 +1,9 @@
 <template>
   <page-container :type="type">
     <div v-if="header" slot="header">Header</div>
-    <div v-if="aside" slot="aside">Aside</div>
+    <div v-if="aside" slot="aside">
+      <demo-tree-side />
+    </div>
     <h1>PageContainer</h1>
     <p>
       <b>Type：</b>
@@ -24,12 +26,18 @@
       <el-switch v-model="footer" />
     </p>
     <el-divider />
+    <p>
+      <b>Scroll bar test</b>
+    </p>
+    <demo-article />
     <div v-if="footer" slot="footer">Footer</div>
   </page-container>
 </template>
 
 <script>
 import PageContainer from '../$index/components/PageContainer'
+import DemoArticle from './components/DemoArticle'
+import DemoTreeSide from './components/DemoTreeSide'
 
 export default {
   data() {
@@ -41,7 +49,9 @@ export default {
     }
   },
   components: {
-    PageContainer
+    PageContainer,
+    DemoArticle,
+    DemoTreeSide
   }
 }
 </script>

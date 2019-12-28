@@ -45,14 +45,17 @@ $base-padding = 20px
   >
     .header, .footer
       padding $base-padding
-    .center-wapper >
-      .aside, .body
-        padding $base-padding
     .center-wapper
+      height 0
       >
+        .aside, .body
+          overflow auto
+          height 100%
         .aside
           min-width 200px
+          max-width 360px
         .body
+          padding $base-padding
           flex 1
   &.card
     background $background-white-color
