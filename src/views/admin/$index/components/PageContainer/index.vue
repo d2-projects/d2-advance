@@ -1,5 +1,8 @@
 <template>
-  <el-container class="page-container" :class="[type]">
+  <el-container
+    class="page-container"
+    :class="{ [type]: true, 'no-body-padding': noBodyPadding }"
+  >
     <el-header v-if="$slots.header" class="header">
       <slot name="header" />
     </el-header>
@@ -24,6 +27,10 @@ export default {
     type: {
       type: String,
       default: 'card' // card | ghost | none
+    },
+    noBodyPadding: {
+      type: Boolean,
+      default: false
     }
   }
 }
@@ -76,4 +83,6 @@ export default {
       .footer
         border-bottom none
         border-radius $top-radius
+  &.no-body-padding > .center-wapper > .body
+    padding 0
 </style>
