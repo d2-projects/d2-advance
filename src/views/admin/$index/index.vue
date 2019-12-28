@@ -1,10 +1,7 @@
 <template>
   <el-container class="admin-container">
     <el-header class="header">
-      <el-radio-group v-model="isCollapse" size="mini">
-        <el-radio-button :label="false">Open</el-radio-button>
-        <el-radio-button :label="true">Close</el-radio-button>
-      </el-radio-group>
+      <aside-nav-menu-toggle v-model="isCollapse" />
     </el-header>
     <el-container>
       <el-aside class="aside" width="auto">
@@ -19,6 +16,7 @@
 
 <script>
 import AsideNavMenu from './components/AsideNavMenu'
+import AsideNavMenuToggle from './components/AsideNavMenuToggle'
 import menu from './menu'
 
 export default {
@@ -28,8 +26,14 @@ export default {
       menu
     }
   },
+  methods: {
+    switchCollapse() {
+      this.isCollapse = !this.isCollapse
+    }
+  },
   components: {
-    AsideNavMenu
+    AsideNavMenu,
+    AsideNavMenuToggle
   }
 }
 </script>
@@ -49,6 +53,8 @@ $header-height = 60px
   .header
     height $header-height
     line-height @height
+    padding-left 0
+    display flex
   .aside
     >>> .el-menu-vertical:not(.el-menu--collapse)
       width $aside-width
