@@ -1,5 +1,5 @@
 <template>
-  <page-container>
+  <page-container :type="type">
     <div v-if="header" slot="header">Header</div>
     <div v-if="aside" slot="aside">
       <demo-tree-side />
