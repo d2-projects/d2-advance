@@ -1,5 +1,5 @@
 <template>
-  <el-tree :data="data" />
+  <el-tree :data="data" class="tree" />
 </template>
 
 <script>
@@ -29,3 +29,8 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus" scoped>
+.tree
+  background transparent
+</style>
