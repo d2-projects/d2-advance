@@ -45,6 +45,7 @@ $base-padding = 20px
   >
     .header, .footer
       padding $base-padding
+      height unset !important
     .center-wapper
       height 0
       >
