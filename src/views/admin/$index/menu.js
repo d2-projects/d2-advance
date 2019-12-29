@@ -17,5 +17,9 @@ export default [
         index: '/admin/component-demo/aside-nav-menu'
       }
     ]
+  },
+  {
+    label: 'Global 404',
+    index: '/not-found'
   }
 ]

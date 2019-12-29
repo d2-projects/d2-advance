@@ -26,6 +26,15 @@ const routes = [
         component: () => import('../views/admin/component-demo/aside-nav-menu')
       }
     ]
+  },
+  {
+    path: '/not-found',
+    name: 'not-found',
+    component: () => import('../views/NotFound')
+  },
+  {
+    path: '*',
+    redirect: '/not-found'
   }
 ]
 
