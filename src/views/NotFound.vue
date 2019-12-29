@@ -3,8 +3,21 @@
     <img width="100px" src="../assets/logo.png" />
     <h1>Ops!</h1>
     <p>Page not found</p>
+    <el-button type="primary" icon="el-icon-back" @click="handleGoBack"
+      >Go back</el-button
+    >
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    handleGoBack() {
+      this.$router.go(-1)
+    }
+  }
+}
+</script>
 
 <style lang="stylus" scoped>
 .wrapper
