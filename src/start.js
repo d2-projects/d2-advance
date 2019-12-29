@@ -7,7 +7,7 @@ import StartLoading from '@/components/StartLoading.vue'
 Vue.config.productionTip = false
 
 const startApp = async failHandler => {
-  const MIN_LOADING_TIME = 800
+  const MIN_LOADING_TIME = process.env.VUE_APP_MIN_LOADING_TIME || 800
 
   if (process.env.VUE_APP_START_LOADING_DEBUG === 'on') {
     // eslint-disable-next-line no-console
