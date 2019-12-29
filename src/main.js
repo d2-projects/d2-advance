@@ -28,6 +28,13 @@ class MyApplication extends VueApplication {
   createRouter() {
     const router = new VueRouter({ routes })
 
+    router.onError(error => {
+      if (/loading chunk \d* failed./i.test(error.message)) {
+        NProgress.done()
+        this.vm.loadingChunkFailed(error)
+      }
+    })
+
     router.beforeEach(
       new RoutingGuards()
         .use(this.firstRoutingMiddleware())
@@ -57,7 +64,18 @@ class MyApplication extends VueApplication {
     return new Vue({
       store,
       router,
-      render: h => h(App)
+      render: h => h(App),
+      methods: {
+        loadingChunkFailed(_) {
+          this.$alert('Application out-of-date or loading failed', 'Ops!', {
+            confirmButtonText: 'Reloading',
+            center: true,
+            callback: () => {
+              window.location.reload()
+            }
+          })
+        }
+      }
     })
   }
 
