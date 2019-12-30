@@ -8,7 +8,11 @@
         <aside-nav-menu :menu="menu" :collapse="isCollapse" />
       </el-aside>
       <el-main class="main">
-        <router-view />
+        <transition :name="transition">
+          <div class="transition-wrapper" :key="$route.path">
+            <router-view />
+          </div>
+        </transition>
       </el-main>
     </el-container>
   </el-container>
@@ -23,7 +27,8 @@ export default {
   data() {
     return {
       isCollapse: false,
-      menu
+      menu,
+      transition: 'fade-transverse'
     }
   },
   methods: {
@@ -43,6 +48,7 @@ export default {
 
 $aside-width = 200px
 $header-height = 60px
+$right-margin = 20px
 
 .admin-container
   position absolute
@@ -61,5 +67,24 @@ $header-height = 60px
   .main
     position relative
     padding 0
-    padding-right 20px
+    .transition-wrapper
+      position absolute
+      top 0
+      left 0
+      right $right-margin
+      bottom 0
+      overflow auto
+
+.fade-transverse
+  &-leave-active
+  &-enter-active
+    transition-property opacity transform
+    transition-duration .45s
+    transition-timing-function ease-out
+  &-enter
+    opacity 0
+    transform translateX(-$right-margin)
+  &-leave-to
+    opacity 0
+    transform translateX($right-margin)
 </style>
