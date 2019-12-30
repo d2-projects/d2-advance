@@ -90,4 +90,11 @@ export default {
         border-radius $top-radius
   &.no-body-padding > .center-wapper > .body
     padding 0
+
+  // for <PageTabs />
+  &.sharp-top
+  &.sharp-top > .header
+    border-top none
+    border-top-left-radius 0
+    border-top-right-radius 0
 </style>

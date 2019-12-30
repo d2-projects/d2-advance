@@ -7,38 +7,61 @@
       <el-aside class="aside" width="auto">
         <aside-nav-menu :menu="menu" :collapse="isCollapse" />
       </el-aside>
-      <el-main class="main">
-        <transition :name="transition">
-          <div class="transition-wrapper" :key="$route.path">
-            <router-view />
-          </div>
-        </transition>
-      </el-main>
+      <el-container>
+        <el-header class="tabs-wrapper" height="auto" v-if="hasTabs">
+          <page-tabs
+            :current="$route.path"
+            v-bind.sync="tabsData"
+            @switch="handleSwitchTabs"
+          />
+        </el-header>
+        <el-main class="main">
+          <transition :name="pageTransition">
+            <div class="page-wrapper" :key="$route.path">
+              <router-view :class="{ 'sharp-top': hasTabs }" />
+            </div>
+          </transition>
+        </el-main>
+      </el-container>
     </el-container>
   </el-container>
 </template>
 
 <script>
+import { filter, uniqBy } from 'lodash'
 import AsideNavMenu from './components/AsideNavMenu'
 import AsideNavMenuToggle from './components/AsideNavMenuToggle'
+import PageTabs from './components/PageTabs'
 import menu from './menu'
+import { flattenMenuItemOfAdmin } from './utils'
 
 export default {
   data() {
+    const tabOptions = flattenMenuItemOfAdmin(menu)
+    const tabOpened = [tabOptions[0]]
+
     return {
-      isCollapse: false,
       menu,
-      transition: 'fade-transverse'
+
+      hasTabs: true,
+      tabsData: {
+        opened: tabOpened,
+        options: tabOptions
+      },
+
+      isCollapse: false,
+      pageTransition: 'fade-transverse' // '[name]' | ''
     }
   },
   methods: {
-    switchCollapse() {
-      this.isCollapse = !this.isCollapse
+    handleSwitchTabs({ index }) {
+      this.$router.push(index)
     }
   },
   components: {
     AsideNavMenu,
-    AsideNavMenuToggle
+    AsideNavMenuToggle,
+    PageTabs
   }
 }
 </script>
@@ -64,10 +87,13 @@ $right-margin = 20px
   .aside
     >>> .el-menu-vertical:not(.el-menu--collapse)
       width $aside-width
+  .tabs-wrapper
+    padding 0
+    margin-right $right-margin
   .main
     position relative
     padding 0
-    .transition-wrapper
+    .page-wrapper
       position absolute
       top 0
       left 0
@@ -79,7 +105,7 @@ $right-margin = 20px
   &-leave-active
   &-enter-active
     transition-property opacity transform
-    transition-duration .45s
+    transition-duration .3s
     transition-timing-function ease-out
   &-enter
     opacity 0
