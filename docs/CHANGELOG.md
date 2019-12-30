@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/d2-projects/d2-advance/compare/v1.7.1...v1.8.0) (2019-12-30)
+
+
+### Features
+
+* **admin:** add basic page-tabs ([1d92e0d](https://github.com/d2-projects/d2-advance/commit/1d92e0d49a892002215226e79512563d17b417fd))
+
 ## [1.7.1](https://github.com/d2-projects/d2-advance/compare/v1.7.0...v1.7.1) (2019-12-28)
 
 
