@@ -10,5 +10,14 @@ module.exports = {
       // https://webpack.js.org/configuration/performance/#performancehints
       hints: false // false | "error" | "warning"
     }
+  },
+
+  chainWebpack(config) {
+    /**
+     * be fast
+     * https://cli.vuejs.org/zh/guide/html-and-static-assets.html#prefetch
+     * https://cli.vuejs.org/zh/guide/html-and-static-assets.html#preload
+     */
+    config.plugins.delete('prefetch').delete('preload')
   }
 }
