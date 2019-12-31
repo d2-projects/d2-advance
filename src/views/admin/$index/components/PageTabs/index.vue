@@ -1,23 +1,44 @@
 <template>
-  <el-tabs
-    :value="current"
-    type="card"
-    class="tabs"
-    @tab-remove="onClose"
-    @tab-click="onClick"
-  >
-    <el-tab-pane
-      v-for="(item, index) in opened"
-      :key="item.index"
-      :label="item.label"
-      :name="item.index"
-      :closable="item.closeable || !!index"
-    />
-  </el-tabs>
+  <div class="wrapper">
+    <div class="tabs">
+      <div class="tabs-inner">
+        <el-tabs
+          :value="current"
+          type="card"
+          @tab-remove="onClose"
+          @tab-click="onClick"
+        >
+          <el-tab-pane
+            v-for="(item, index) in opened"
+            :key="item.index"
+            :label="item.label"
+            :name="item.index"
+            :closable="item.closeable !== undefined || !!index"
+          />
+        </el-tabs>
+      </div>
+    </div>
+    <div class="controller">
+      <el-dropdown
+        split-button
+        @click="handleCommand('closeAll')"
+        @command="handleCommand"
+      >
+        <i class="el-icon-close" />
+        <el-dropdown-menu slot="dropdown">
+          <!-- <el-dropdown-item command="closeLeft">Close Left</el-dropdown-item>
+          <el-dropdown-item command="closeRight">Close Right</el-dropdown-item> -->
+          <el-dropdown-item command="closeOther">Close Other</el-dropdown-item>
+          <el-dropdown-item command="closeAll">Close All</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
+    </div>
+  </div>
 </template>
 
 <script>
-import { find, uniqBy } from 'lodash'
+import { find, uniqBy, filter, isUndefined, findIndex, slice } from 'lodash'
+import { closeAll, closeOther } from './utils'
 
 export default {
   name: 'PageTabs',
@@ -54,6 +75,37 @@ export default {
     }
   },
   methods: {
+    handleCommand(type) {
+      let tabs = this.opened
+      let result = null
+      let currentValue = this.current
+
+      switch (type) {
+        case 'closeAll':
+          result = closeAll(tabs, currentValue)
+          break
+        case 'closeLeft':
+          // TODO
+          break
+        case 'closeRight':
+          // TODO
+          break
+        case 'closeOther':
+          result = closeOther(tabs, currentValue)
+          break
+        default:
+          // eslint-disable-next-line no-console
+          console.warn('not found command', type)
+          break
+      }
+
+      if (result) {
+        if (result.switchTo) {
+          this.emitSwitch(result.switchTo.index)
+        }
+        this.$emit('update:opened', result.tabs)
+      }
+    },
     onClose(targetIndex) {
       let tabs = this.opened
       let current = this.current
@@ -67,17 +119,18 @@ export default {
           }
         })
       }
-      if (this.current !== current) {
-        this.$emit('switch', find(this.opened, { index: current }))
-      }
+      this.emitSwitch(current)
       this.$emit(
         'update:opened',
         tabs.filter(tab => tab.index !== targetIndex)
       )
     },
     onClick(tab) {
-      if (tab.name !== this.current) {
-        this.$emit('switch', find(this.opened, { index: tab.name }))
+      this.emitSwitch(tab.name)
+    },
+    emitSwitch(targetIndex) {
+      if (targetIndex !== this.current) {
+        this.$emit('switch', find(this.opened, { index: targetIndex }))
       }
     }
   }
@@ -85,30 +138,5 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '../../../../../style/variable.styl'
-
-.tabs
-  color $regular-text-color
-  >
-    >>>
-      .el-tabs__header
-        margin 0
-        border-color $border-base-color
-        .el-tabs__nav
-          overflow hidden
-        .el-tabs__nav
-        .el-tabs__item
-          color inherit
-          border-color $border-base-color
-          background $background-solid-color
-        .el-tabs__item
-          &.is-active
-            color $foreground-color
-            border-bottom none
-            background $background-white-color
-          &:not(.is-active)
-            &:hover, &:active
-              color inherit
-      .el-tabs__content
-        display none
+@import './style.styl'
 </style>

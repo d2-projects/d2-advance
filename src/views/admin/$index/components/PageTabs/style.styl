@@ -1,0 +1,49 @@
+@import '../../../../../style/variable.styl'
+
+.wrapper
+  display flex
+  .tabs
+    width 0
+    position relative
+    flex 1
+    color $regular-text-color
+    .tabs-inner >>>
+      .el-tabs >
+        .el-tabs__header
+          margin 0
+          border-color $border-base-color
+          .el-tabs__nav
+            overflow hidden
+          .el-tabs__nav
+          .el-tabs__item
+            color inherit
+            border-color $border-base-color
+            background $background-solid-color
+          .el-tabs__item
+            &.is-active
+              color $foreground-color
+              border-bottom none
+              background $background-white-color
+            &:not(.is-active)
+              &:hover, &:active
+                color inherit
+          .el-tabs__nav-prev
+          .el-tabs__nav-next
+            width 20px
+            line-height 40px
+            i
+              font-size 18px
+              vertical-align middle
+        .el-tabs__content
+          display none
+  .controller
+    position relative
+    bottom -1px
+    >>>
+      &.el-dropdown
+        .el-button
+          border-color $border-base-color
+        .el-button:nth-of-type(1)
+          border-bottom-left-radius 0
+        .el-button:nth-of-type(2)
+          border-bottom-right-radius 0
