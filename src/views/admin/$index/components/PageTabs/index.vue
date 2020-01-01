@@ -26,8 +26,8 @@
       >
         <i class="el-icon-close" />
         <el-dropdown-menu slot="dropdown">
-          <!-- <el-dropdown-item command="closeLeft">Close Left</el-dropdown-item>
-          <el-dropdown-item command="closeRight">Close Right</el-dropdown-item> -->
+          <el-dropdown-item command="closeLeft">Close Left</el-dropdown-item>
+          <el-dropdown-item command="closeRight">Close Right</el-dropdown-item>
           <el-dropdown-item command="closeOther">Close Other</el-dropdown-item>
           <el-dropdown-item command="closeAll">Close All</el-dropdown-item>
         </el-dropdown-menu>
@@ -38,7 +38,7 @@
 
 <script>
 import { find, uniqBy, filter, isUndefined, findIndex, slice } from 'lodash'
-import { closeAll, closeOther } from './utils'
+import { closeAll, closeOther, closeLeft, closeRight } from './utils'
 
 export default {
   name: 'PageTabs',
@@ -85,10 +85,10 @@ export default {
           result = closeAll(tabs, currentValue)
           break
         case 'closeLeft':
-          // TODO
+          result = closeLeft(tabs, currentValue)
           break
         case 'closeRight':
-          // TODO
+          result = closeRight(tabs, currentValue)
           break
         case 'closeOther':
           result = closeOther(tabs, currentValue)

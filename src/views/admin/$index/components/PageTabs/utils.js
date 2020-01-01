@@ -1,4 +1,4 @@
-import { filter } from 'lodash'
+import { filter, findIndex } from 'lodash'
 
 export const closeAll = (tabs, currentValue) => {
   const filteredTabs = filter(
@@ -17,6 +17,32 @@ export const closeOther = (tabs, currentValue) => {
     tabs,
     ({ closeable = true, index: value }, index) =>
       !closeable || !index || currentValue === value
+  )
+  return {
+    tabs: filteredTabs,
+    switchTo: undefined
+  }
+}
+
+export const closeLeft = (tabs, currentValue) => {
+  const whereCurrent = findIndex(tabs, { index: currentValue })
+  const filteredTabs = filter(
+    tabs,
+    ({ closeable = true, index: value }, index) =>
+      !closeable || !index || currentValue === value || index >= whereCurrent
+  )
+  return {
+    tabs: filteredTabs,
+    switchTo: undefined
+  }
+}
+
+export const closeRight = (tabs, currentValue) => {
+  const whereCurrent = findIndex(tabs, { index: currentValue })
+  const filteredTabs = filter(
+    tabs,
+    ({ closeable = true, index: value }, index) =>
+      !closeable || !index || currentValue === value || index <= whereCurrent
   )
   return {
     tabs: filteredTabs,

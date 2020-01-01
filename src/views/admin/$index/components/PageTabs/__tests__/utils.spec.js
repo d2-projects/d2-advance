@@ -1,4 +1,4 @@
-import { closeAll, closeOther } from '../utils'
+import { closeAll, closeOther, closeLeft, closeRight } from '../utils'
 
 describe('closeAll', () => {
   it('should close all except fisrt, without switchTo', () => {
@@ -47,6 +47,34 @@ describe('closeOther', () => {
       )
     ).toEqual({
       tabs: [{ index: '/a' }, { index: '/c' }],
+      switchTo: undefined
+    })
+  })
+})
+
+describe('closeLeft', () => {
+  it('should close left except fisrt, without switchTo', () => {
+    expect(
+      closeLeft(
+        [{ index: '/a' }, { index: '/b' }, { index: '/c' }, { index: '/d' }],
+        '/c'
+      )
+    ).toEqual({
+      tabs: [{ index: '/a' }, { index: '/c' }, { index: '/d' }],
+      switchTo: undefined
+    })
+  })
+})
+
+describe('closeRight', () => {
+  it('should close right except fisrt, without switchTo', () => {
+    expect(
+      closeRight(
+        [{ index: '/a' }, { index: '/b' }, { index: '/c' }, { index: '/d' }],
+        '/c'
+      )
+    ).toEqual({
+      tabs: [{ index: '/a' }, { index: '/b' }, { index: '/c' }],
       switchTo: undefined
     })
   })
