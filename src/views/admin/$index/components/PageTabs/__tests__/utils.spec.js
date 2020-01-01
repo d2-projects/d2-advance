@@ -34,11 +34,7 @@ describe('closeOther', () => {
         '/a'
       )
     ).toEqual({
-      tabs: [
-        {
-          index: '/a'
-        }
-      ],
+      tabs: [{ index: '/a' }],
       switchTo: undefined
     })
   })
@@ -50,14 +46,7 @@ describe('closeOther', () => {
         '/c'
       )
     ).toEqual({
-      tabs: [
-        {
-          index: '/a'
-        },
-        {
-          index: '/c'
-        }
-      ],
+      tabs: [{ index: '/a' }, { index: '/c' }],
       switchTo: undefined
     })
   })
