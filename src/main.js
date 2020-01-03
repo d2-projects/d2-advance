@@ -9,6 +9,7 @@ import 'nprogress/nprogress.css'
 
 import App from './App.vue'
 import routes from './routes'
+import store from './store'
 import { VueApplication, RoutingGuards } from './lib/core'
 
 Vue.use(Vuex)
@@ -17,12 +18,7 @@ Vue.use(ElementUI, { locale })
 
 class MyApplication extends VueApplication {
   createStore() {
-    return new Vuex.Store({
-      state: {},
-      mutations: {},
-      actions: {},
-      modules: {}
-    })
+    return store()
   }
 
   createRouter() {

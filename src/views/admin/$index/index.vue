@@ -11,7 +11,8 @@
         <el-header class="tabs-wrapper" height="auto" v-if="hasTabs">
           <page-tabs
             :current="$route.path"
-            v-bind.sync="tabsData"
+            :opened.sync="tabOpened"
+            :options.sync="tabOptions"
             @switch="handleSwitchTabs"
           />
         </el-header>
@@ -32,24 +33,15 @@ import { filter, uniqBy } from 'lodash'
 import AsideNavMenu from './components/AsideNavMenu'
 import AsideNavMenuToggle from './components/AsideNavMenuToggle'
 import PageTabs from './components/PageTabs'
+import { isCollapse, tabsData } from '@/store/modules/admin/mixins'
 import menu from './menu'
-import { flattenMenuItemOfAdmin } from './utils'
 
 export default {
+  mixins: [isCollapse, tabsData],
   data() {
-    const tabOptions = flattenMenuItemOfAdmin(menu)
-    const tabOpened = [tabOptions[0]]
-
     return {
       menu,
-
       hasTabs: true,
-      tabsData: {
-        opened: tabOpened,
-        options: tabOptions
-      },
-
-      isCollapse: false,
       pageTransition: 'fade-transverse' // '[name]' | ''
     }
   },
