@@ -31,22 +31,18 @@
 </template>
 
 <script>
-import PageContainer from '../../$index/components/PageContainer'
-import AsideNavMenu from '../../$index/components/AsideNavMenu'
+import { layout, container } from '@/views/admin/$index/components/mixins'
 import menu from './menu'
 import realMenu from '../../$index/menu'
 
 export default {
+  mixins: [layout, container],
   data() {
     return {
       menu,
       realMenu,
       isCollapse: false
     }
-  },
-  components: {
-    PageContainer,
-    AsideNavMenu
   }
 }
 </script>

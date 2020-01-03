@@ -5,11 +5,9 @@
 </template>
 
 <script>
-import PageContainer from '../$index/components/PageContainer'
+import { container } from '@/views/admin/$index/components/mixins'
 
 export default {
-  components: {
-    PageContainer
-  }
+  mixins: [container]
 }
 </script>

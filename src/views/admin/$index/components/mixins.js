@@ -9,3 +9,11 @@ export const layout = {
     PageTabs
   }
 }
+
+import PageContainer from './PageContainer'
+
+export const container = {
+  components: {
+    PageContainer
+  }
+}
