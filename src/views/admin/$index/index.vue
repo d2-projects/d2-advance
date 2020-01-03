@@ -30,14 +30,12 @@
 
 <script>
 import { filter, uniqBy } from 'lodash'
-import AsideNavMenu from './components/AsideNavMenu'
-import AsideNavMenuToggle from './components/AsideNavMenuToggle'
-import PageTabs from './components/PageTabs'
 import { isCollapse, tabsData } from '@/store/modules/admin/mixins'
+import { layout } from './components/mixins'
 import menu from './menu'
 
 export default {
-  mixins: [isCollapse, tabsData],
+  mixins: [layout, isCollapse, tabsData],
   data() {
     return {
       menu,
@@ -49,11 +47,6 @@ export default {
     handleSwitchTabs({ index }) {
       this.$router.push(index)
     }
-  },
-  components: {
-    AsideNavMenu,
-    AsideNavMenuToggle,
-    PageTabs
   }
 }
 </script>
