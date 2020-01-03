@@ -11,8 +11,8 @@
         <el-header class="tabs-wrapper" height="auto" v-if="hasTabs">
           <page-tabs
             :current="$route.path"
-            :opened.sync="tabOpened"
-            :options.sync="tabOptions"
+            v-model="tabOpened"
+            :options="tabOptions"
             @switch="handleSwitchTabs"
           />
         </el-header>

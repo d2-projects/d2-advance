@@ -48,13 +48,18 @@ export default {
       type: String,
       required: true
     },
-    opened: {
+    value: {
       type: Array,
       required: true
     },
     options: {
       type: Array,
       required: true
+    }
+  },
+  computed: {
+    opened() {
+      return this.value
     }
   },
   watch: {
@@ -65,7 +70,7 @@ export default {
         if (optional) {
           const opened = find(this.opened, { index })
           if (!opened) {
-            this.$emit('update:opened', [...this.opened, optional])
+            this.$emit('input', [...this.opened, optional])
           }
         } else {
           // eslint-disable-next-line no-console
@@ -103,7 +108,7 @@ export default {
         if (result.switchTo) {
           this.emitSwitch(result.switchTo.index)
         }
-        this.$emit('update:opened', result.tabs)
+        this.$emit('input', result.tabs)
       }
     },
     onClose(targetIndex) {
@@ -121,7 +126,7 @@ export default {
       }
       this.emitSwitch(current)
       this.$emit(
-        'update:opened',
+        'input',
         tabs.filter(tab => tab.index !== targetIndex)
       )
     },
