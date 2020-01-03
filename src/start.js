@@ -3,8 +3,11 @@ import Vue from 'vue'
 import 'normalize.css'
 import './style/basic.styl'
 import StartLoading from '@/components/StartLoading.vue'
+import { createI18n } from './locales/start'
 
 Vue.config.productionTip = false
+
+export const i18n = createI18n()
 
 const startApp = async failHandler => {
   const MIN_LOADING_TIME = process.env.VUE_APP_MIN_LOADING_TIME || 800
@@ -26,6 +29,7 @@ const startApp = async failHandler => {
 
 document.getElementById('app').appendChild(
   new Vue({
+    i18n,
     data: { error: null },
     render(h) {
       return h(StartLoading, { props: { error: this.error } })

@@ -13,7 +13,7 @@
         <h1>Ops!</h1>
         <pre>{{ error }}</pre>
       </div>
-      <div v-else>Please wait for loading...</div>
+      <div v-else>{{ $t('waiting') }}</div>
     </div>
   </div>
 </template>

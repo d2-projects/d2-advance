@@ -11,12 +11,22 @@ import App from './App.vue'
 import routes from './routes'
 import store from './store'
 import { VueApplication, RoutingGuards } from './lib/core'
-
-Vue.use(Vuex)
-Vue.use(VueRouter)
-Vue.use(ElementUI, { locale })
+import { createI18n } from './locales/main'
 
 class MyApplication extends VueApplication {
+  constructor() {
+    super()
+    this.i18n = null
+  }
+
+  beforeStart() {
+    this.i18n = createI18n()
+
+    Vue.use(Vuex)
+    Vue.use(VueRouter)
+    Vue.use(ElementUI, { locale })
+  }
+
   createStore() {
     return store()
   }
@@ -61,6 +71,8 @@ class MyApplication extends VueApplication {
       store,
       router,
       render: h => h(App),
+      i18n: this.i18n,
+
       methods: {
         loadingChunkFailed(_) {
           this.$alert('Application out-of-date or loading failed', 'Ops!', {
