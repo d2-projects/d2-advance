@@ -2,13 +2,12 @@ module.exports = {
   // https://cli.vuejs.org/zh/config/#productionsourcemap
   productionSourceMap: false,
 
-  configureWebpack: {
-    entry: {
-      app: ['./src/start.js']
-    }
-  },
-
   chainWebpack(config) {
+    config
+      .entry('app')
+      .clear()
+      .add('./src/start.js')
+
     // https://webpack.js.org/configuration/performance/#performancehints
     config.performance.hints(false) // false | "error" | "warning"
 
