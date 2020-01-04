@@ -3,10 +3,15 @@ module.exports = {
   productionSourceMap: false,
 
   chainWebpack(config) {
+    /**
+     * chunk split for start-loading page
+     * https://webpack.js.org/guides/code-splitting/#dynamic-imports
+     */
     config
       .entry('app')
       .clear()
       .add('./src/start.js')
+    config.output.chunkFilename('[name].bundle.js')
 
     // https://webpack.js.org/configuration/performance/#performancehints
     config.performance.hints(false) // false | "error" | "warning"

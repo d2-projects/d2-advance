@@ -19,7 +19,7 @@ const startApp = async failHandler => {
   }
 
   const startTime = new Date().getTime()
-  const module = await import('./main')
+  const module = await import(/* webpackChunkName: "main" */ './main')
   const start = () => !(module.default || module).start(failHandler)
   const loadingTime = new Date().getTime() - startTime
   loadingTime < MIN_LOADING_TIME
