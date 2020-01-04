@@ -1,4 +1,3 @@
-import { delay } from 'lodash'
 import Vue from 'vue'
 import 'normalize.css'
 import './style/basic.styl'
@@ -23,7 +22,7 @@ const startApp = async failHandler => {
   const start = () => !(module.default || module).start(failHandler)
   const loadingTime = new Date().getTime() - startTime
   loadingTime < MIN_LOADING_TIME
-    ? delay(start, MIN_LOADING_TIME - loadingTime)
+    ? setTimeout(start, MIN_LOADING_TIME - loadingTime)
     : start()
 }
 
