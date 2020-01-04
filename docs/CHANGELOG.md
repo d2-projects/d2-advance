@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/d2-projects/d2-advance/compare/v1.8.0...v1.9.0) (2020-01-04)
+
+
+### Features
+
+* **i18n:** vue add i18n ([4dada18](https://github.com/d2-projects/d2-advance/commit/4dada18a519d794b61b64a542602b0fdf3a7e3b8))
+
+
+### Performance Improvements
+
+* **start-loading:** replace lodash delay to setTimeout ([c426227](https://github.com/d2-projects/d2-advance/commit/c4262273b3cbf8d9436cff5dd6e804d51ba58dcd))
+* use webpack code-splitting by dynamic-imports for start-loading page ([a0f9027](https://github.com/d2-projects/d2-advance/commit/a0f9027f9949c228c384440e7dc06fb73a12c5f3))
+
 # [1.8.0](https://github.com/d2-projects/d2-advance/compare/v1.7.1...v1.8.0) (2019-12-30)
 
 
