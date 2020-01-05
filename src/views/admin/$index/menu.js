@@ -19,6 +19,11 @@ export default [
     ]
   },
   {
+    icon: 'el-icon-magic-stick',
+    label: 'Development',
+    index: '/admin/development'
+  },
+  {
     label: 'Global 404',
     index: '/not-found'
   }
