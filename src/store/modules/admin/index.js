@@ -1,3 +1,5 @@
+import { includes } from 'lodash'
+import FLAGS from '@/constants/flags'
 import { getField, updateField } from 'vuex-map-fields'
 import menu from '@/views/admin/$index/menu'
 import { flattenMenuItemOfAdmin } from '@/views/admin/$index/utils'
@@ -9,12 +11,20 @@ const init = _app => {
   return {
     namespaced: true,
     state: {
+      flags: [FLAGS.TRANSITION],
+
       isCollapse: false,
       tabOpened: [tabOptions[0]],
-      tabOptions
+      tabOptions,
+      pageTransition: 'fade-transverse'
     },
     getters: {
-      getField
+      getField,
+      pageTransition(state) {
+        return includes(state.flags, FLAGS.TRANSITION)
+          ? state.pageTransition
+          : null
+      }
     },
     mutations: {
       updateField

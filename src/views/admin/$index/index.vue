@@ -31,17 +31,20 @@
 
 <script>
 import { filter, uniqBy } from 'lodash'
-import { isCollapse, tabsData } from '@/store/modules/admin/mixins'
 import { layout } from './components/mixins'
 import menu from './menu'
+import {
+  isCollapse,
+  tabsData,
+  pageTransition
+} from '@/store/modules/admin/mixins'
 
 export default {
-  mixins: [layout, isCollapse, tabsData],
+  mixins: [layout, isCollapse, tabsData, pageTransition],
   data() {
     return {
       menu,
-      hasTabs: true,
-      pageTransition: 'fade-transverse' // '[name]' | ''
+      hasTabs: true
     }
   },
   methods: {
