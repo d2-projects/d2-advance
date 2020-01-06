@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.9.1](https://github.com/d2-projects/d2-advance/compare/v1.9.0...v1.9.1) (2020-01-06)
+
+
+### Performance Improvements
+
+* performance flags ([d206a17](https://github.com/d2-projects/d2-advance/commit/d206a171b95919d82dc99ee1684ce053eef69e93))
+
 # [1.9.0](https://github.com/d2-projects/d2-advance/compare/v1.8.0...v1.9.0) (2020-01-04)
 
 
