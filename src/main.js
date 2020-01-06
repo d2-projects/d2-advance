@@ -7,6 +7,8 @@ import locale from 'element-ui/lib/locale/lang/en'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
+NProgress.configure({ showSpinner: false })
+
 import App from './App.vue'
 import routes from './routes'
 import store from './store'
