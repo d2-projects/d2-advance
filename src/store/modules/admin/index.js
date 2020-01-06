@@ -1,5 +1,5 @@
 import { includes } from 'lodash'
-import FLAGS from '@/constants/flags'
+import { FLAGS } from '@/constants/flags'
 import { getField, updateField } from 'vuex-map-fields'
 import menu from '@/views/admin/$index/menu'
 import { flattenMenuItemOfAdmin } from '@/views/admin/$index/utils'
