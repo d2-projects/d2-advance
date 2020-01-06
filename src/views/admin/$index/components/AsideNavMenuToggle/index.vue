@@ -37,4 +37,5 @@ export default {
   .icon
     font-size 24px
     text-align center
+    vertical-align middle
 </style>

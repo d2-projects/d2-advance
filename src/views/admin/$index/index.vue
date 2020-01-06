@@ -1,6 +1,7 @@
 <template>
   <el-container class="admin-container">
     <el-header class="header">
+      <smart-logo :collapse="isCollapse" />
       <aside-nav-menu-toggle v-model="isCollapse" />
     </el-header>
     <el-container>
