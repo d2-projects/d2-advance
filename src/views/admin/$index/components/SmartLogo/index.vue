@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper" :class="{ collapse }">
+  <div class="wrapper" :class="{ collapse, 'has-transition': hasTransition }">
     <img
       src="../../../../../assets/logo.png"
       alt="logo"
@@ -14,6 +14,10 @@
 export default {
   name: 'SmartLogo',
   props: {
+    hasTransition: {
+      type: Boolean,
+      default: true
+    },
     collapse: {
       type: Boolean,
       required: true
@@ -31,13 +35,14 @@ $header-height = 60px
   line-height $header-height
   width $aside-width
   text-align center
-  transition width .3s ease-in-out
   overflow hidden
   img
     vertical-align middle
   .text
     vertical-align middle
     padding 0 10px
+  &.has-transition
+    transition width .3s ease-in-out
   &.collapse
     width $aside-min-width
     .text

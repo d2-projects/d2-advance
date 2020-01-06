@@ -16,10 +16,16 @@ const init = _app => {
       isCollapse: false,
       tabOpened: [tabOptions[0]],
       tabOptions,
+      asideTransition: true,
       pageTransition: 'fade-transverse'
     },
     getters: {
       getField,
+      asideTransition(state) {
+        return includes(state.flags, FLAGS.TRANSITION)
+          ? state.asideTransition
+          : null
+      },
       pageTransition(state) {
         return includes(state.flags, FLAGS.TRANSITION)
           ? state.pageTransition

@@ -24,6 +24,11 @@ export default [
     index: '/admin/development'
   },
   {
+    icon: 'el-icon-s-flag',
+    label: 'System Flags',
+    index: '/admin/flags'
+  },
+  {
     label: 'Global 404',
     index: '/not-found'
   }

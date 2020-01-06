@@ -29,6 +29,11 @@ const routes = [
         path: 'development',
         name: 'admin-development',
         component: () => import('../views/admin/development')
+      },
+      {
+        path: 'flags',
+        name: 'admin-flags',
+        component: () => import('../views/admin/flags')
       }
     ]
   },

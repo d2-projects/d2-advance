@@ -4,6 +4,10 @@ import { map } from 'lodash'
 export default {
   name: 'AsideNavMenu',
   props: {
+    hasTransition: {
+      type: Boolean,
+      default: true
+    },
     menu: {
       type: Array,
       required: true
@@ -49,21 +53,24 @@ export default {
       }
     }
 
-    return h(
-      'el-menu',
-      {
-        class: {
-          'el-menu-vertical': true,
-          'collapse': this.collapse
+    return h('div', { key: this.hasTransition }, [
+      h(
+        'el-menu',
+        {
+          class: {
+            'el-menu-vertical': true,
+            'collapse': this.collapse
+          },
+          props: {
+            'collapse-transition': this.hasTransition,
+            router: true,
+            'default-active': this.$route.path,
+            collapse: this.collapse
+          }
         },
-        props: {
-          router: true,
-          'default-active': this.$route.path,
-          collapse: this.collapse
-        }
-      },
-      map(this.menu, it)
-    )
+        map(this.menu, it)
+      )
+    ])
   }
 }
 </script>

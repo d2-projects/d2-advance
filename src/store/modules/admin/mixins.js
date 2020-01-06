@@ -19,3 +19,15 @@ export const pageTransition = {
     ...mapGetters(namespace, ['pageTransition'])
   }
 }
+
+export const asideTransition = {
+  computed: {
+    ...mapGetters(namespace, ['asideTransition'])
+  }
+}
+
+export const flags = {
+  computed: {
+    ...mapFields(namespace, ['flags'])
+  }
+}

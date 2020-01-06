@@ -1,12 +1,16 @@
 <template>
   <el-container class="admin-container">
     <el-header class="header">
-      <smart-logo :collapse="isCollapse" />
+      <smart-logo :has-transition="asideTransition" :collapse="isCollapse" />
       <aside-nav-menu-toggle v-model="isCollapse" />
     </el-header>
     <el-container>
       <el-aside class="aside" width="auto">
-        <aside-nav-menu :menu="menu" :collapse="isCollapse" />
+        <aside-nav-menu
+          :has-transition="asideTransition"
+          :menu="menu"
+          :collapse="isCollapse"
+        />
       </el-aside>
       <el-container>
         <el-header class="tabs-wrapper" height="auto" v-if="hasTabs">
@@ -36,11 +40,12 @@ import menu from './menu'
 import {
   isCollapse,
   tabsData,
-  pageTransition
+  pageTransition,
+  asideTransition
 } from '@/store/modules/admin/mixins'
 
 export default {
-  mixins: [layout, isCollapse, tabsData, pageTransition],
+  mixins: [layout, isCollapse, tabsData, pageTransition, asideTransition],
   data() {
     return {
       menu,
