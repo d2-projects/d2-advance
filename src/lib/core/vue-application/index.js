@@ -9,6 +9,8 @@ export default class VueApplication extends Emitter {
     this.state = {}
     this.ready = false
     this.waitSet = new Set()
+
+    this.on('loadingChunkFailed', this.onLoadingChunkFailed)
   }
 
   start(starter) {
@@ -17,6 +19,13 @@ export default class VueApplication extends Emitter {
       this.store = this.createStore()
       this.router = this.createRouter()
       this.vm = this.createVM({ store: this.store, router: this.router })
+
+      this.router.onError(error => {
+        if (/loading chunk \d* failed./i.test(error.message)) {
+          this.emit('loadingChunkFailed', error)
+        }
+      })
+
       this.afterStart()
       this.checkWait(true)
     } catch (error) {
@@ -26,6 +35,7 @@ export default class VueApplication extends Emitter {
     }
   }
 
+  onLoadingChunkFailed() {}
   createStore() {}
   createRouter() {}
   beforeStart() {}

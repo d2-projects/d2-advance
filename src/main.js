@@ -15,16 +15,13 @@ class MyApplication extends VueApplication {
   constructor() {
     super()
     this.i18n = null
+    this.progress = NProgress
     this.on('changeLanguage', this.onChangeLanguage)
-  }
-
-  onChangeLanguage(lang) {
-    document.querySelector('html').setAttribute('lang', lang)
   }
 
   beforeStart() {
     this.i18n = createI18n()
-    NProgress.configure({ showSpinner: false })
+    this.progress.configure({ showSpinner: false })
     Vue.use(Vuex)
     Vue.use(VueRouter)
     Vue.use(ElementUI, {
@@ -39,34 +36,23 @@ class MyApplication extends VueApplication {
   createRouter() {
     const router = new VueRouter({ routes })
 
-    router.onError(error => {
-      if (/loading chunk \d* failed./i.test(error.message)) {
-        NProgress.done()
-        this.vm.loadingChunkFailed(error)
-      }
-    })
-
     router.beforeEach(
       new RoutingGuards()
         .use(this.firstRoutingMiddleware())
+        .use((_, next) => (this.progress.start(), next()))
         .use(async (_, next) => {
-          NProgress.start()
-          await next()
-        })
-        .use(async () => {
           // router guards here...
+
+          // if (!auth) {
+          //   _.done('/forbidden')
+          // }
+
+          await next()
         })
         .callback()
     )
 
-    router.afterEach(
-      new RoutingGuards()
-        .use(async (_, next) => {
-          NProgress.done()
-          await next()
-        })
-        .callback()
-    )
+    router.afterEach(() => this.progress.done())
 
     return router
   }
@@ -76,24 +62,27 @@ class MyApplication extends VueApplication {
       store,
       router,
       render: h => h(App),
-      i18n: this.i18n,
-
-      methods: {
-        loadingChunkFailed(_) {
-          this.$alert('Application out-of-date or loading failed', 'Ops!', {
-            confirmButtonText: 'Reloading',
-            center: true,
-            callback: () => {
-              window.location.reload()
-            }
-          })
-        }
-      }
+      i18n: this.i18n
     })
   }
 
   mount(vm) {
     vm.$mount('#app')
+  }
+
+  onChangeLanguage(lang) {
+    document.querySelector('html').setAttribute('lang', lang)
+  }
+
+  onLoadingChunkFailed(_error) {
+    this.progress.done()
+    this.vm.$alert('Application out-of-date or loading failed', 'Ops!', {
+      confirmButtonText: 'Reloading',
+      center: true,
+      callback: () => {
+        window.location.reload()
+      }
+    })
   }
 }
 
