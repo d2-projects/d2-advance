@@ -10,7 +10,7 @@
       >
       <el-container>
         <el-aside class="aside" width="auto">
-          <aside-nav-menu :menu="realMenu" :collapse="isCollapse" />
+          <aside-nav-menu :menu="menu" :collapse="isCollapse" />
         </el-aside>
         <el-main></el-main>
       </el-container>
@@ -22,7 +22,7 @@
       >
       <el-container>
         <el-aside class="aside" width="auto">
-          <aside-nav-menu :menu="menu" :collapse="isCollapse" />
+          <aside-nav-menu :menu="customMenu" :collapse="isCollapse" />
         </el-aside>
         <el-main></el-main>
       </el-container>
@@ -32,15 +32,14 @@
 
 <script>
 import { layout, container } from '@/views/admin/$index/components/mixins'
-import menu from './menu'
-import realMenu from '../../$index/menu'
+import customMenu from './menu'
+import { menu } from '@/store/modules/admin/mixins'
 
 export default {
-  mixins: [layout, container],
+  mixins: [layout, container, menu],
   data() {
     return {
-      menu,
-      realMenu,
+      customMenu,
       isCollapse: false
     }
   }

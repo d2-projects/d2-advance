@@ -36,19 +36,18 @@
 <script>
 import { filter, uniqBy } from 'lodash'
 import { layout } from './components/mixins'
-import menu from './menu'
 import {
   isCollapse,
   tabsData,
   pageTransition,
-  asideTransition
+  asideTransition,
+  menu
 } from '@/store/modules/admin/mixins'
 
 export default {
-  mixins: [layout, isCollapse, tabsData, pageTransition, asideTransition],
+  mixins: [layout, isCollapse, tabsData, pageTransition, asideTransition, menu],
   data() {
     return {
-      menu,
       hasTabs: true
     }
   },

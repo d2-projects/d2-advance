@@ -26,6 +26,12 @@ export const asideTransition = {
   }
 }
 
+export const menu = {
+  computed: {
+    ...mapGetters(namespace, ['menu'])
+  }
+}
+
 export const flags = {
   computed: {
     ...mapFields(namespace, ['flags'])

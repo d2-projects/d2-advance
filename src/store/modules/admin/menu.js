@@ -1,4 +1,4 @@
-export default [
+export const createMenu = () => [
   {
     icon: 'el-icon-odometer',
     label: 'Dashboard',
