@@ -14,5 +14,9 @@
   "Coffee": "咖啡",
   "Fruits": "水果",
   "Apple": "苹果",
-  "Cherry": "樱桃"
+  "Cherry": "樱桃",
+  "Close Left": "关闭左侧",
+  "Close Right": "关闭右侧",
+  "Close Other": "关闭其他",
+  "Close All": "关闭全部"
 }

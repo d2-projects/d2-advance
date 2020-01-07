@@ -14,5 +14,9 @@
   "Coffee": "Coffee",
   "Fruits": "Fruits",
   "Apple": "Apple",
-  "Cherry": "Cherry"
+  "Cherry": "Cherry",
+  "Close Left": "Close Left",
+  "Close Right": "Close Right",
+  "Close Other": "Close Other",
+  "Close All": "Close All"
 }

@@ -26,10 +26,18 @@
       >
         <i class="el-icon-close" />
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item command="closeLeft">Close Left</el-dropdown-item>
-          <el-dropdown-item command="closeRight">Close Right</el-dropdown-item>
-          <el-dropdown-item command="closeOther">Close Other</el-dropdown-item>
-          <el-dropdown-item command="closeAll">Close All</el-dropdown-item>
+          <el-dropdown-item command="closeLeft">{{
+            translate('Close Left')
+          }}</el-dropdown-item>
+          <el-dropdown-item command="closeRight">{{
+            translate('Close Right')
+          }}</el-dropdown-item>
+          <el-dropdown-item command="closeOther">{{
+            translate('Close Other')
+          }}</el-dropdown-item>
+          <el-dropdown-item command="closeAll">{{
+            translate('Close All')
+          }}</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
     </div>
