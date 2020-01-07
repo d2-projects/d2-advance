@@ -5,9 +5,6 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
-
-NProgress.configure({ showSpinner: false })
-
 import App from './App.vue'
 import routes from './routes'
 import store from './store'
@@ -27,7 +24,7 @@ class MyApplication extends VueApplication {
 
   beforeStart() {
     this.i18n = createI18n()
-
+    NProgress.configure({ showSpinner: false })
     Vue.use(Vuex)
     Vue.use(VueRouter)
     Vue.use(ElementUI, {
