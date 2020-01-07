@@ -1,3 +1,18 @@
 {
-  "welcome": "Hello"
+  "welcome": "Hello",
+  "Dashboard": "Dashboard",
+  "Components": "Components",
+  "Page Container": "Page Container",
+  "Aside Nav Menu": "Aside Nav Menu",
+  "Development": "Development",
+  "Global 404": "Global 404",
+  "Submenu": "Submenu",
+  "Foo": "Foo",
+  "Bar": "Bar",
+  "Drink": "Drink",
+  "Milk tea": "Milk tea",
+  "Coffee": "Coffee",
+  "Fruits": "Fruits",
+  "Apple": "Apple",
+  "Cherry": "Cherry"
 }

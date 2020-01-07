@@ -22,6 +22,9 @@ export default {
     }
   },
   render(h) {
+    // * i18n support
+    const translate = this.$t ? text => this.$t(text) : i => i
+
     const it = ({ icon, label, group, children, ...props }, level = 0) => {
       const next = data => it(data, level + 1)
 
@@ -30,7 +33,11 @@ export default {
         return h('i', { class: icon || defaultIcon })
       }
       const labelComp = (defaultLabel = 'Untitled') =>
-        h('span', { class: 'text', slot: 'title' }, label || defaultLabel)
+        h(
+          'span',
+          { class: 'text', slot: 'title' },
+          translate(label || defaultLabel)
+        )
 
       if (group) {
         return h('el-menu-item-group', { props }, [

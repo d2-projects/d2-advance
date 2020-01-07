@@ -11,7 +11,7 @@
           <el-tab-pane
             v-for="(item, index) in opened"
             :key="item.index"
-            :label="item.label"
+            :label="translate(item.label)"
             :name="item.index"
             :closable="item.closeable !== undefined || !!index"
           />
@@ -137,6 +137,10 @@ export default {
       if (targetIndex !== this.current) {
         this.$emit('switch', find(this.opened, { index: targetIndex }))
       }
+    },
+    translate(text) {
+      // * i18n support
+      return this.$t ? this.$t(text) : text
     }
   }
 }

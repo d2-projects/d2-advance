@@ -1,3 +1,18 @@
 {
-  "welcome": "你好"
+  "welcome": "你好",
+  "Dashboard": "控制台",
+  "Components": "定制组件",
+  "Page Container": "页面容器",
+  "Aside Nav Menu": "侧边菜单",
+  "Development": "开发相关",
+  "Global 404": "全局 404",
+  "Submenu": "子菜单",
+  "Foo": "Foo",
+  "Bar": "Bar",
+  "Drink": "饮料",
+  "Milk tea": "奶茶",
+  "Coffee": "咖啡",
+  "Fruits": "水果",
+  "Apple": "苹果",
+  "Cherry": "樱桃"
 }
