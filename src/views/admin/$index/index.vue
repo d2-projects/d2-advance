@@ -1,15 +1,15 @@
 <template>
   <el-container class="admin-container">
     <el-header class="header">
-      <smart-logo :has-transition="asideTransition" :collapse="isCollapse" />
-      <aside-nav-menu-toggle v-model="isCollapse" />
+      <smart-logo :has-transition="asideTransition" :collapse="asideCollapse" />
+      <aside-nav-menu-toggle v-model="asideCollapse" />
     </el-header>
     <el-container>
       <el-aside class="aside" width="auto">
         <aside-nav-menu
           :has-transition="asideTransition"
           :menu="menu"
-          :collapse="isCollapse"
+          :collapse="asideCollapse"
         />
       </el-aside>
       <el-container>
@@ -37,7 +37,7 @@
 import { filter, uniqBy } from 'lodash'
 import { layout } from './components/mixins'
 import {
-  isCollapse,
+  asideCollapse,
   tabsData,
   pageTransition,
   asideTransition,
@@ -45,7 +45,14 @@ import {
 } from '@/store/modules/admin/mixins'
 
 export default {
-  mixins: [layout, isCollapse, tabsData, pageTransition, asideTransition, menu],
+  mixins: [
+    layout,
+    asideCollapse,
+    tabsData,
+    pageTransition,
+    asideTransition,
+    menu
+  ],
   data() {
     return {
       hasTabs: true

@@ -2,9 +2,9 @@ import { mapGetters } from 'vuex'
 import { mapFields } from 'vuex-map-fields'
 import { namespace } from './index'
 
-export const isCollapse = {
+export const asideCollapse = {
   computed: {
-    ...mapFields(namespace, ['isCollapse'])
+    ...mapFields(namespace, ['asideCollapse'])
   }
 }
 

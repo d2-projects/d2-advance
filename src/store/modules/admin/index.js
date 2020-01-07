@@ -15,7 +15,7 @@ const init = _app => {
     state: {
       flags: [FLAGS.TRANSITION],
 
-      isCollapse: false,
+      asideCollapse: false,
       tabOpened: [tabOptions[0]],
       tabOptions,
       asideTransition: true,
