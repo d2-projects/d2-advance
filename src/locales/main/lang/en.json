@@ -1,5 +1,5 @@
 {
-  "welcome": "Hello",
+  "hello": "Hello",
   "Dashboard": "Dashboard",
   "Components": "Components",
   "Page Container": "Page Container",
@@ -18,5 +18,15 @@
   "Close Left": "Close Left",
   "Close Right": "Close Right",
   "Close Other": "Close Other",
-  "Close All": "Close All"
+  "Close All": "Close All",
+  "ooops": "Ooops!",
+  "page-not-found": "Page not found",
+  "go-back": "Go back",
+  "loading-chunk-failed": "Application out-of-date or loading failed",
+  "reload": "Reload",
+  "home": {
+    "admin": {
+      "desc": "Frontend solution for admin interfaces"
+    }
+  }
 }

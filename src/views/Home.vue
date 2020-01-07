@@ -24,7 +24,7 @@
       <div class="colorful-box">
         <div class="box-body demo">
           <h2>Admin</h2>
-          <p>Frontend solution for admin interfaces</p>
+          <p>{{ $t('home.admin.desc') }}</p>
           <router-link to="/admin">
             <el-button
               size="medium"

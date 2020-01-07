@@ -1,6 +1,6 @@
 <template>
   <page-container>
-    <h1>{{ $t('welcome') }}</h1>
+    <h1>{{ $t('hello') }}</h1>
   </page-container>
 </template>
 

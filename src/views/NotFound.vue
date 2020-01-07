@@ -1,11 +1,11 @@
 <template>
   <div class="wrapper">
     <img width="100px" src="../assets/logo.png" />
-    <h1>Ops!</h1>
-    <p>Page not found</p>
-    <el-button type="primary" icon="el-icon-back" @click="handleGoBack"
-      >Go back</el-button
-    >
+    <h1>{{ $t('ooops') }}</h1>
+    <p>{{ $t('page-not-found') }}</p>
+    <el-button type="primary" icon="el-icon-back" @click="handleGoBack">{{
+      $t('go-back')
+    }}</el-button>
   </div>
 </template>
 

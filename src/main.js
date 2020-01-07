@@ -76,8 +76,9 @@ class MyApplication extends VueApplication {
 
   onLoadingChunkFailed(_error) {
     this.progress.done()
-    this.vm.$alert('Application out-of-date or loading failed', 'Ops!', {
-      confirmButtonText: 'Reloading',
+
+    this.vm.$alert(this.vm.$t('loading-chunk-failed'), this.vm.$t('ooops'), {
+      confirmButtonText: this.vm.$t('reload'),
       center: true,
       callback: () => {
         window.location.reload()
