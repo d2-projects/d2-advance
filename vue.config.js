@@ -1,4 +1,7 @@
 module.exports = {
+  // https://cli.vuejs.org/zh/config/#publicpath
+  publicPath: process.env.BASE_URL || '/',
+
   // https://cli.vuejs.org/zh/config/#productionsourcemap
   productionSourceMap: false,
 
