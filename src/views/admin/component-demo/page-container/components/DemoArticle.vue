@@ -1,6 +1,10 @@
 <template>
   <article>
-    <el-switch v-model="longText" active-text="Long" inactive-text="Short" />
+    <el-switch
+      v-model="longText"
+      :active-text="$t('Long text')"
+      :inactive-text="$t('Short text')"
+    />
     <p v-for="i in row" :key="i">
       Magna enim elit proident deserunt ipsum elit officia eu in sit sint esse.
       Eu amet laboris laborum excepteur laborum sunt esse elit officia mollit

@@ -27,7 +27,7 @@
     </p>
     <el-divider />
     <p>
-      <b>Scroll bar test</b>
+      <b>{{ $t('Scroll bar test') }}</b>
     </p>
     <demo-article />
     <div v-if="footer" slot="footer">Footer</div>
