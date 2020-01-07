@@ -18,6 +18,11 @@ class MyApplication extends VueApplication {
   constructor() {
     super()
     this.i18n = null
+    this.on('changeLanguage', this.onChangeLanguage)
+  }
+
+  onChangeLanguage(lang) {
+    document.querySelector('html').setAttribute('lang', lang)
   }
 
   beforeStart() {

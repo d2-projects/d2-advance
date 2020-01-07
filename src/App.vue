@@ -9,10 +9,17 @@
 </template>
 
 <script>
+import app from '@/main'
+
 export default {
   data() {
     return {
       show: false
+    }
+  },
+  watch: {
+    '$i18n.locale'(lang) {
+      app.emit('changeLanguage', lang)
     }
   },
   mounted() {
