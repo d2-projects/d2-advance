@@ -28,5 +28,9 @@
     "admin": {
       "desc": "Frontend solution for admin interfaces"
     }
-  }
+  },
+  "Open": "Open",
+  "Close": "Close",
+  "Real Menu": "Real Menu",
+  "Custom Menu": "Custom Menu"
 }

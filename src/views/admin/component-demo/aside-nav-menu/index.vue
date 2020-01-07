@@ -1,12 +1,14 @@
 <template>
   <page-container type="ghost">
     <el-radio-group slot="header" v-model="isCollapse" size="mini">
-      <el-radio-button :label="false">Open</el-radio-button>
-      <el-radio-button :label="true">Close</el-radio-button>
+      <el-radio-button :label="false">{{ $t('Open') }}</el-radio-button>
+      <el-radio-button :label="true">{{ $t('Close') }}</el-radio-button>
     </el-radio-group>
     <el-container class="demo-container">
       <el-header
-        ><p><b>Real Menu</b></p></el-header
+        ><p>
+          <b>{{ $t('Real Menu') }}</b>
+        </p></el-header
       >
       <el-container>
         <el-aside class="aside" width="auto">
@@ -18,7 +20,9 @@
 
     <el-container class="demo-container">
       <el-header
-        ><p><b>Custom Menu</b></p></el-header
+        ><p>
+          <b>{{ $t('Custom Menu') }}</b>
+        </p></el-header
       >
       <el-container>
         <el-aside class="aside" width="auto">
