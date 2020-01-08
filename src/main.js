@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import VueI18n from 'vue-i18n'
 import VueRouter from 'vue-router'
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import App from './App.vue'
@@ -10,6 +9,8 @@ import routes from './routes'
 import store from './store'
 import { VueApplication, RoutingGuards } from './lib/core'
 import { createI18n } from './locales/main'
+
+import useElementUI from './utils/use-element-ui'
 
 class MyApplication extends VueApplication {
   constructor() {
@@ -20,13 +21,12 @@ class MyApplication extends VueApplication {
   }
 
   beforeStart() {
+    Vue.use(Vuex)
+    Vue.use(VueI18n)
+    Vue.use(VueRouter)
     this.i18n = createI18n()
     this.progress.configure({ showSpinner: false })
-    Vue.use(Vuex)
-    Vue.use(VueRouter)
-    Vue.use(ElementUI, {
-      i18n: (key, value) => this.i18n.t(key, value)
-    })
+    useElementUI(this)
   }
 
   createStore() {

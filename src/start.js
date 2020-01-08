@@ -1,10 +1,13 @@
 import Vue from 'vue'
+import VueI18n from 'vue-i18n'
 import 'normalize.css'
 import './style/basic.styl'
 import StartLoading from '@/components/StartLoading.vue'
 import { createI18n } from './locales/start'
 
 Vue.config.productionTip = false
+
+Vue.use(VueI18n)
 
 export const i18n = createI18n()
 
