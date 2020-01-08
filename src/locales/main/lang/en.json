@@ -37,5 +37,7 @@
   "Long text": "Long text",
   "Short text": "Short text",
   "Forbidden": "Forbidden",
-  "forbidden-page-alert": "Page access forbidden"
+  "forbidden-page-alert": "Page access forbidden",
+  "Not Found": "Not found",
+  "Inner 404": "Inner 404"
 }

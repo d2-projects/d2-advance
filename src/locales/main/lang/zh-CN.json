@@ -37,5 +37,7 @@
   "Long text": "长文本",
   "Short text": "短文本",
   "Forbidden": "禁止访问",
-  "forbidden-page-alert": "该页面被禁止访问"
+  "forbidden-page-alert": "该页面被禁止访问",
+  "Not Found": "页面不存在",
+  "Inner 404": "页内 404"
 }

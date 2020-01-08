@@ -30,6 +30,11 @@ export const createMenu = () => [
   },
   {
     icon: 'el-icon-help',
+    label: 'Inner 404',
+    index: '/admin/not-found'
+  },
+  {
+    icon: 'el-icon-help',
     label: 'Global 404',
     index: '/not-found'
   }
