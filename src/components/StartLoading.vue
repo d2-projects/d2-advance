@@ -10,8 +10,9 @@
         />
       </div>
       <div v-if="error" class="error-info">
-        <h1>Ops!</h1>
-        <pre>{{ error }}</pre>
+        <h2>{{ $t('startup-failed-title') }}</h2>
+        <p>{{ $t('startup-failed-desc') }}</p>
+        <pre class="error-text">{{ error.stack }}</pre>
       </div>
       <div v-else>{{ $t('waiting') }}</div>
     </div>
@@ -46,6 +47,17 @@ export default {
       background no-repeat center/70% url('../assets/logo.png')
     .error-info
       color red
+      .error-text
+        color #909399
+        display inline-block
+        border 1px solid #cfd7e5
+        padding 10px
+        border-radius 5px
+        background #e5e9ee
+        text-align left
+        max-width 90vw
+        white-space pre-wrap
+        font-size 12px
 </style>
 
 <style lang="stylus">

@@ -1,3 +1,5 @@
 {
-  "waiting": "Please wait for loading..."
+  "waiting": "Please wait for loading...",
+  "startup-failed-title": "Ooops!",
+  "startup-failed-desc": "Please try again, or contact the technician with the following information:"
 }
