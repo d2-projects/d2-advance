@@ -68,7 +68,7 @@
   },
   "license": "MIT",
   "release": {
-    "branch": "refactor",
+    "branch": "master",
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",

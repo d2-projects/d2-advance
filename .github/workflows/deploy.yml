@@ -3,7 +3,7 @@ name: Deploy preview
 on:
   push:
     branches:
-      - refactor
+      - master
 
 jobs:
 

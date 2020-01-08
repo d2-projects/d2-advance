@@ -3,7 +3,7 @@ name: Release pipeline
 on:
   push:
     branches:
-      - refactor
+      - master
 
 jobs:
   build:
