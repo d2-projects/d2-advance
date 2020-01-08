@@ -1,6 +1,9 @@
 <template>
   <page-container>
-    <h1>{{ $t('hello') }}</h1>
+    <template slot="header">
+      <h1>{{ $t('hello') }}</h1>
+    </template>
+    <el-calendar v-model="date" />
   </page-container>
 </template>
 
@@ -8,6 +11,11 @@
 import { container } from '@/views/admin/$index/components/mixins'
 
 export default {
-  mixins: [container]
+  mixins: [container],
+  data() {
+    return {
+      date: new Date()
+    }
+  }
 }
 </script>
