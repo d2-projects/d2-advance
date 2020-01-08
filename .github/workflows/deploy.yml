@@ -85,7 +85,7 @@ jobs:
         ARGS: --delete --verbose --parallel=100
 
   gh-pages:
-    name: Github pages
+    name: Github Pages
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
