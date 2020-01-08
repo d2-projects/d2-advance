@@ -1,5 +1,9 @@
 <template>
   <page-container>
+    <template slot="header">
+      <h1>{{ $t('Development') }} <i class="el-icon-magic-stick"></i></h1>
+    </template>
+
     <h2>flags</h2>
     <el-checkbox-group v-model="flags">
       <el-checkbox v-for="flag in flagOptions" :label="flag" :key="flag">{{
