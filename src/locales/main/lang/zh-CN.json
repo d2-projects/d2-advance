@@ -35,5 +35,7 @@
   "Custom Menu": "自定义菜单",
   "Scroll bar test": "滚动条测试",
   "Long text": "长文本",
-  "Short text": "短文本"
+  "Short text": "短文本",
+  "Forbidden": "禁止访问",
+  "forbidden-page-alert": "该页面被禁止访问"
 }

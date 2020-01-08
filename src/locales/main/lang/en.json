@@ -35,5 +35,7 @@
   "Custom Menu": "Custom Menu",
   "Scroll bar test": "Scroll bar test",
   "Long text": "Long text",
-  "Short text": "Short text"
+  "Short text": "Short text",
+  "Forbidden": "Forbidden",
+  "forbidden-page-alert": "Page access forbidden"
 }

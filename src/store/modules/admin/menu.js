@@ -24,6 +24,11 @@ export const createMenu = () => [
     index: '/admin/development'
   },
   {
+    icon: 'el-icon-no-smoking',
+    label: 'Forbidden',
+    index: '/admin/forbidden'
+  },
+  {
     label: 'Global 404',
     index: '/not-found'
   }

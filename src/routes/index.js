@@ -29,6 +29,11 @@ const routes = [
         path: 'development',
         name: 'admin-development',
         component: () => import('../views/admin/development')
+      },
+      {
+        path: 'forbidden',
+        name: 'admin-forbidden',
+        component: () => import('../views/admin/forbidden')
       }
     ]
   },
