@@ -8,9 +8,9 @@ export const asideCollapse = {
   }
 }
 
-export const tabsData = {
+export const pageTabs = {
   computed: {
-    ...mapFields(namespace, ['tabOpened', 'tabOptions'])
+    ...mapFields(namespace, ['tabOpened', 'tabOptions', 'showTabs'])
   }
 }
 

@@ -15,9 +15,11 @@ const init = _app => {
     state: {
       flags: [FLAGS.TRANSITION],
 
-      asideCollapse: false,
+      showTabs: true,
       tabOpened: [tabOptions[0]],
       tabOptions,
+
+      asideCollapse: false,
       asideTransition: true,
       pageTransition: 'fade-transverse',
 

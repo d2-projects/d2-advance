@@ -13,7 +13,7 @@
         />
       </el-aside>
       <el-container>
-        <el-header class="tabs-wrapper" height="auto" v-if="hasTabs">
+        <el-header class="tabs-wrapper" height="auto" v-show="showTabs">
           <page-tabs
             :current="$route.path"
             v-model="tabOpened"
@@ -24,7 +24,7 @@
         <el-main class="main">
           <transition :name="pageTransition">
             <div class="page-wrapper" :key="$route.path">
-              <router-view :class="{ 'sharp-top': hasTabs }" />
+              <router-view :class="{ 'sharp-top': showTabs }" />
             </div>
           </transition>
         </el-main>
@@ -38,7 +38,7 @@ import { filter, uniqBy } from 'lodash'
 import { layout } from './components/mixins'
 import {
   asideCollapse,
-  tabsData,
+  pageTabs,
   pageTransition,
   asideTransition,
   menu
@@ -48,16 +48,11 @@ export default {
   mixins: [
     layout,
     asideCollapse,
-    tabsData,
+    pageTabs,
     pageTransition,
     asideTransition,
     menu
   ],
-  data() {
-    return {
-      hasTabs: true
-    }
-  },
   methods: {
     handleSwitchTabs({ index }) {
       this.$router.push(index)

@@ -13,6 +13,11 @@
 
     <el-divider />
 
+    <h2>tabs</h2>
+    <el-switch v-model="showTabs"></el-switch>
+
+    <el-divider />
+
     <h2>i18n</h2>
     <el-radio-group v-model="$i18n.locale">
       <el-radio v-for="item in langs" :key="item.value" :label="item.value">{{
@@ -30,12 +35,12 @@
 <script>
 import { container } from '@/views/admin/$index/components/mixins'
 import { values } from 'lodash'
-import { flags } from '@/store/modules/admin/mixins'
+import { flags, pageTabs } from '@/store/modules/admin/mixins'
 import { FLAGS } from '@/constants/flags'
 import { langs } from '@/locales'
 
 export default {
-  mixins: [container, flags],
+  mixins: [container, flags, pageTabs],
 
   data() {
     return {
