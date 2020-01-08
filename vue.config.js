@@ -14,7 +14,6 @@ module.exports = {
       .entry('app')
       .clear()
       .add('./src/start.js')
-    config.output.chunkFilename('[name].bundle.js')
 
     // https://webpack.js.org/configuration/performance/#performancehints
     config.performance.hints(false) // false | "error" | "warning"
