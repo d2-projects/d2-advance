@@ -66,6 +66,10 @@ class MyApplication extends VueApplication {
     })
   }
 
+  afterStart() {
+    this.vm.$watch('$i18n.locale', lang => this.emit('changeLanguage', lang))
+  }
+
   mount(vm) {
     vm.$mount('#app')
   }
