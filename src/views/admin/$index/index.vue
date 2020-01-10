@@ -3,6 +3,24 @@
     <el-header class="header">
       <smart-logo :has-transition="asideTransition" :collapse="asideCollapse" />
       <aside-nav-menu-toggle v-model="asideCollapse" />
+      <action-bar class="action-bar">
+        <action-bar-item>
+          <el-dropdown style="cursor: pointer" size="small">
+            <span style="padding-left: 10px; padding-right: 10px">
+              {{ $t('hello') }}
+            </span>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item>menu item</el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
+        </action-bar-item>
+        <action-bar-item
+          type="button"
+          tooltip="tooltip"
+          icon="el-icon-shopping-cart-full"
+          >action</action-bar-item
+        >
+      </action-bar>
     </el-header>
     <el-container>
       <el-aside class="aside" width="auto">
