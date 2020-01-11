@@ -48,7 +48,7 @@
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-vue": "^6.1.2",
     "prettier": "^1.19.1",
-    "semantic-release": "^16.0.0",
+    "semantic-release": "^16.0.1",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
     "vue-cli-plugin-i18n": "^0.6.0",
