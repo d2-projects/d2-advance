@@ -1,6 +1,6 @@
 <template>
   <page-container>
-    <template slot="header">
+    <template #header>
       <h1>{{ $t('Development') }} <i class="el-icon-magic-stick"></i></h1>
     </template>
 

@@ -1,6 +1,6 @@
 <template>
   <page-container>
-    <template slot="header">
+    <template #header>
       <h1>{{ $t('hello') }}</h1>
     </template>
     <el-calendar v-model="date" />
