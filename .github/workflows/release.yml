@@ -17,7 +17,12 @@ jobs:
       run: yarn test:unit
     - name: Build
       run: yarn build
-    - uses: codfish/semantic-release-action@v1
+    - name: Semantic Release
+      uses: cycjimmy/semantic-release-action@v2
+      with:
+        extra_plugins: |
+          @semantic-release/changelog@3.0.6
+          @semantic-release/git@8.0.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
