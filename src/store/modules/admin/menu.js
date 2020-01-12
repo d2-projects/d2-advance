@@ -19,6 +19,11 @@ export const createMenu = () => [
     ]
   },
   {
+    icon: 'el-icon-star-off',
+    label: 'Some icon',
+    index: '/admin/some-icon'
+  },
+  {
     icon: 'el-icon-magic-stick',
     label: 'Development',
     index: '/admin/development'

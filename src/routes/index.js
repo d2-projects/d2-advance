@@ -26,6 +26,11 @@ const routes = [
         component: () => import('../views/admin/component-demo/aside-nav-menu')
       },
       {
+        path: 'some-icon',
+        name: 'admin-some-icon',
+        component: () => import('../views/admin/some-icon')
+      },
+      {
         path: 'development',
         name: 'admin-development',
         component: () => import('../views/admin/development')

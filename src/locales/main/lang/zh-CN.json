@@ -39,5 +39,7 @@
   "Forbidden": "禁止访问",
   "forbidden-page-alert": "该页面被禁止访问",
   "Not Found": "页面不存在",
-  "Inner 404": "页内 404"
+  "Inner 404": "页内 404",
+  "Some icon": "图标集合",
+  "TODO": "待开发"
 }
