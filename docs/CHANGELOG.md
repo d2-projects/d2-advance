@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.1](https://github.com/d2-projects/d2-advance/compare/v1.10.0...v1.10.1) (2020-01-13)
+
+
+### Bug Fixes
+
+* **github-actions:** update trigger to full type release ([da6f19e](https://github.com/d2-projects/d2-advance/commit/da6f19e1f995879ad0127436441ad3c31f8c4af5))
+
 # [1.10.0](https://github.com/d2-projects/d2-advance/compare/v1.9.3...v1.10.0) (2020-01-13)
 
 
