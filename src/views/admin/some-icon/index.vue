@@ -3,7 +3,7 @@
     <template #header>
       <h1>{{ $t('Some icon') }} <i class="el-icon-star-off"></i></h1>
     </template>
-    <P>{{ $t('TODO') }}</P>
+    <p>{{ $t('TODO') }}</p>
   </page-container>
 </template>
 
