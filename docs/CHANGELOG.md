@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.6](https://github.com/d2-projects/d2-advance/compare/v1.10.5...v1.10.6) (2020-01-13)
+
+
+### Bug Fixes
+
+* **github-actions:** fix condition return error ([7e9cb52](https://github.com/d2-projects/d2-advance/commit/7e9cb52b0e767cdb64757203a815d3af244492fa))
+
 ## [1.10.5](https://github.com/d2-projects/d2-advance/compare/v1.10.4...v1.10.5) (2020-01-13)
 
 
