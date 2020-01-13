@@ -46,7 +46,7 @@
             </div>
           </transition>
         </el-main>
-        <source-link />
+        <source-link v-if="showSourceLink" />
       </el-container>
     </el-container>
   </el-container>
@@ -60,7 +60,8 @@ import {
   pageTabs,
   pageTransition,
   asideTransition,
-  menu
+  menu,
+  sourceLink
 } from '@/store/modules/admin/mixins'
 import SourceLink from './components/SourceLink'
 
@@ -71,7 +72,8 @@ export default {
     pageTabs,
     pageTransition,
     asideTransition,
-    menu
+    menu,
+    sourceLink
   ],
   methods: {
     handleSwitchTabs({ index }) {

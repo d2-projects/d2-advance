@@ -37,3 +37,9 @@ export const flags = {
     ...mapFields(namespace, ['flags'])
   }
 }
+
+export const sourceLink = {
+  computed: {
+    ...mapFields(namespace, ['showSourceLink'])
+  }
+}

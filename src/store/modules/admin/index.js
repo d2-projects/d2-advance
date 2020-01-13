@@ -23,6 +23,8 @@ const init = _app => {
       asideTransition: true,
       pageTransition: 'fade-transverse',
 
+      showSourceLink: true,
+
       menu
     },
     getters: {
