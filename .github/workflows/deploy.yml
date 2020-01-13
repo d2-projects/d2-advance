@@ -1,8 +1,6 @@
 name: Deploy preview
 
-on:
-  release:
-    types: [published, created, edited]
+on: [release]
 
 jobs:
 
