@@ -1,3 +1,5 @@
+const VueFilenameInjector = require('@d2-projects/vue-filename-injector')
+
 module.exports = {
   // https://cli.vuejs.org/zh/config/#publicpath
   publicPath: process.env.BASE_URL || '/',
@@ -14,6 +16,14 @@ module.exports = {
       .entry('app')
       .clear()
       .add('./src/start.js')
+
+    // for SourceLink component
+    // https://github.com/d2-projects/vue-filename-injector
+    if (process.env.VUE_APP_SOURCE_LINK === 'on') {
+      VueFilenameInjector(config, {
+        propName: process.env.VUE_APP_SOURCE_LINK_PROP_NAME
+      })
+    }
 
     // https://webpack.js.org/configuration/performance/#performancehints
     config.performance.hints(false) // false | "error" | "warning"

@@ -46,6 +46,7 @@
             </div>
           </transition>
         </el-main>
+        <source-link />
       </el-container>
     </el-container>
   </el-container>
@@ -61,6 +62,7 @@ import {
   asideTransition,
   menu
 } from '@/store/modules/admin/mixins'
+import SourceLink from './components/SourceLink'
 
 export default {
   mixins: [
@@ -75,6 +77,9 @@ export default {
     handleSwitchTabs({ index }) {
       this.$router.push(index)
     }
+  },
+  components: {
+    SourceLink
   }
 }
 </script>

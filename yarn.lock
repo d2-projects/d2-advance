@@ -747,6 +747,13 @@
     resolve-from "^5.0.0"
     resolve-global "^1.0.0"
 
+"@d2-projects/vue-filename-injector@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@d2-projects/vue-filename-injector/-/vue-filename-injector-1.1.0.tgz#32f73ed115fec5c544f715c1a19942dfa3a2350f"
+  integrity sha512-cXzRuavNcBkMcv8iSPT2q1gci2zw2HJGfURs/QLw8DasjuqIEwaNNC0F5sQ0PDuxB5Qtx6v54lUUmVpaacyq1w==
+  dependencies:
+    loader-utils "^1.2.3"
+
 "@hapi/address@2.x.x":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@hapi/address/-/address-2.1.4.tgz#5d67ed43f3fd41a69d4b9ff7b56e7c0d1d0a81e5"
