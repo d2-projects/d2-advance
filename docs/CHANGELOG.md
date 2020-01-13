@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://github.com/d2-projects/d2-advance/compare/v1.9.3...v1.10.0) (2020-01-13)
+
+
+### Features
+
+* **source-link:** source-link of admin page-container ([67ebaea](https://github.com/d2-projects/d2-advance/commit/67ebaeac684d90d6c132eed299b297632268ecf9))
+
 ## [1.9.3](https://github.com/d2-projects/d2-advance/compare/v1.9.2...v1.9.3) (2020-01-12)
 
 
