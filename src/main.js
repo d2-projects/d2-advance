@@ -9,6 +9,7 @@ import routes from './routes'
 import store from './store'
 import { VueApplication, RoutingGuards } from './lib/core'
 import { createI18n } from './locales/main'
+import { client as createRtaClient } from './api/roll-tools-api'
 
 import useElementUI from './utils/use-element-ui'
 
@@ -16,6 +17,7 @@ class MyApplication extends VueApplication {
   constructor() {
     super()
     this.i18n = null
+    this.rta = null
     this.progress = NProgress
     this.on('changeLanguage', this.onChangeLanguage)
   }
@@ -24,6 +26,7 @@ class MyApplication extends VueApplication {
     Vue.use(Vuex)
     Vue.use(VueI18n)
     Vue.use(VueRouter)
+    Vue.prototype.$rta = this.rta = createRtaClient()
     this.i18n = createI18n()
     this.progress.configure({ showSpinner: false })
     useElementUI(this)
