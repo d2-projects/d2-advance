@@ -17,6 +17,7 @@
     "lint:strict": "vue-cli-service lint --no-fix --max-warnings=0"
   },
   "dependencies": {
+    "axios": "^0.19.1",
     "core-js": "^3.6.4",
     "element-ui": "^2.13.0",
     "epic-spinners": "^1.1.0",
