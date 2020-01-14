@@ -2,11 +2,11 @@ import { map, kebabCase } from 'lodash'
 
 export const pathPrefix = '/admin'
 
-export const routes = (prefix = pathPrefix) => [
+export const routes = () => [
   {
-    path: prefix,
+    path: pathPrefix,
     name: 'admin',
-    redirect: `${prefix}/dashboard`,
+    redirect: `${pathPrefix}/dashboard`,
     component: () => import('../views/admin/$index'),
     children: map(
       [

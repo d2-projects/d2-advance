@@ -1,7 +1,7 @@
 import { includes } from 'lodash'
 import { FLAGS } from '@/constants/flags'
 import { getField, updateField } from 'vuex-map-fields'
-import { flattenMenuItemOfAdmin } from '@/views/admin/$index/utils'
+import { flattenMenuItemOfAdmin } from './utils'
 import { createMenu } from './menu'
 
 export const namespace = 'admin'
