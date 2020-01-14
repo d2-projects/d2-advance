@@ -8,7 +8,7 @@ export const createMenu = () => [
   },
   {
     label: 'Components',
-    index: `${pathPrefix}/components`,
+    index: `${pathPrefix}/component-demo`,
     children: [
       {
         label: 'Page Container',
