@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.11.0](https://github.com/d2-projects/d2-advance/compare/v1.10.7...v1.11.0) (2020-01-14)
+
+
+### Bug Fixes
+
+* **admin:** menu index of component-demo ([51641c8](https://github.com/d2-projects/d2-advance/commit/51641c820c870808337d78cad2554ebe016da1d7))
+* **roll-tools-api:** rename from baseUrl to baseURL of axios.create ([b5716e7](https://github.com/d2-projects/d2-advance/commit/b5716e77d49a132a99f5312bd83afbc922395015))
+
+
+### Features
+
+* **admin:** infinite image list by roll-tools-api ([b69f6da](https://github.com/d2-projects/d2-advance/commit/b69f6dac8f4a46cc6c104927fca793eda67081f1))
+* **roll-tools-api:** roll-tools-api http client ([0de5399](https://github.com/d2-projects/d2-advance/commit/0de539954684be2415f68b2cc7be4812d9fc26a2))
+* axios ([35d4401](https://github.com/d2-projects/d2-advance/commit/35d440116aeee0dc883b4696600cfd8017db8942))
+
 ## [1.10.7](https://github.com/d2-projects/d2-advance/compare/v1.10.6...v1.10.7) (2020-01-14)
 
 
