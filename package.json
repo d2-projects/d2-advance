@@ -17,7 +17,7 @@
     "lint:strict": "vue-cli-service lint --no-fix --max-warnings=0"
   },
   "dependencies": {
-    "core-js": "^3.6.3",
+    "core-js": "^3.6.4",
     "element-ui": "^2.13.0",
     "epic-spinners": "^1.1.0",
     "lodash": "^4.17.15",
