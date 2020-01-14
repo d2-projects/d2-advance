@@ -13,6 +13,7 @@ export const routes = () => [
         'dashboard',
         'component-demo/page-container',
         'component-demo/aside-nav-menu',
+        'roll-tools-api/fuli-images',
         'some-icon',
         'development',
         'forbidden',

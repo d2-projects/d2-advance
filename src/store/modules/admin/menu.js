@@ -21,6 +21,16 @@ export const createMenu = () => [
     ]
   },
   {
+    label: 'Roll Tools Api',
+    index: `${pathPrefix}/roll-tools-api`,
+    children: [
+      {
+        label: 'Fuli Images',
+        index: `${pathPrefix}/roll-tools-api/fuli-images`
+      }
+    ]
+  },
+  {
     icon: 'el-icon-star-off',
     label: 'Some icon',
     index: `${pathPrefix}/some-icon`
