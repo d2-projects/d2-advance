@@ -7,7 +7,7 @@
       <el-aside v-if="$slots.aside" width="auto" class="aside">
         <slot name="aside" />
       </el-aside>
-      <el-main class="body">
+      <el-main class="body" :class="bodyClass">
         <slot />
       </el-main>
     </el-container>
@@ -28,6 +28,10 @@ export default {
     noBodyPadding: {
       type: Boolean,
       default: false
+    },
+    bodyClass: {
+      type: String,
+      required: false
     }
   },
   computed: {
