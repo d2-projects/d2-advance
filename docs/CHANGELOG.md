@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.7](https://github.com/d2-projects/d2-advance/compare/v1.10.6...v1.10.7) (2020-01-14)
+
+
+### Bug Fixes
+
+* **admin:** flattenMenuItemOfAdmin use pathPrefix of routes ([f66b400](https://github.com/d2-projects/d2-advance/commit/f66b400f1747b62d642e27a8809ade15dae45eed))
+
 ## [1.10.6](https://github.com/d2-projects/d2-advance/compare/v1.10.5...v1.10.6) (2020-01-13)
 
 
