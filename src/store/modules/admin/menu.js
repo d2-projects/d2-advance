@@ -1,42 +1,44 @@
+import { pathPrefix } from '@/routes/admin'
+
 export const createMenu = () => [
   {
     icon: 'el-icon-odometer',
     label: 'Dashboard',
-    index: '/admin/dashboard'
+    index: `${pathPrefix}/dashboard`
   },
   {
     label: 'Components',
-    index: '/admin/components',
+    index: `${pathPrefix}/components`,
     children: [
       {
         label: 'Page Container',
-        index: '/admin/component-demo/page-container'
+        index: `${pathPrefix}/component-demo/page-container`
       },
       {
         label: 'Aside Nav Menu',
-        index: '/admin/component-demo/aside-nav-menu'
+        index: `${pathPrefix}/component-demo/aside-nav-menu`
       }
     ]
   },
   {
     icon: 'el-icon-star-off',
     label: 'Some icon',
-    index: '/admin/some-icon'
+    index: `${pathPrefix}/some-icon`
   },
   {
     icon: 'el-icon-magic-stick',
     label: 'Development',
-    index: '/admin/development'
+    index: `${pathPrefix}/development`
   },
   {
     icon: 'el-icon-no-smoking',
     label: 'Forbidden',
-    index: '/admin/forbidden'
+    index: `${pathPrefix}/forbidden`
   },
   {
     icon: 'el-icon-help',
     label: 'Inner 404',
-    index: '/admin/not-found'
+    index: `${pathPrefix}/not-found`
   },
   {
     icon: 'el-icon-help',
