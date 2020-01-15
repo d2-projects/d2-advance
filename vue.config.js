@@ -1,3 +1,4 @@
+const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const VueFilenameInjector = require('@d2-projects/vue-filename-injector')
 
 module.exports = {
@@ -27,6 +28,19 @@ module.exports = {
 
     // https://webpack.js.org/configuration/performance/#performancehints
     config.performance.hints(false) // false | "error" | "warning"
+
+    // for gzip outputs
+    // https://github.com/webpack-contrib/compression-webpack-plugin
+    config.plugin('compression-webpack-plugin').use(CompressionWebpackPlugin, [
+      {
+        filename: '[path].gz[query]',
+        algorithm: 'gzip',
+        test: /\.js$|\.css$|\.html$/,
+        threshold: 10240,
+        minRatio: 0.8,
+        deleteOriginalAssets: false
+      }
+    ])
 
     /**
      * be fast
