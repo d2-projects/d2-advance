@@ -46,6 +46,7 @@ export default {
         this.page = page
         this.loading = false
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.error(error)
         this.loading = false
       }
