@@ -45,6 +45,10 @@ export default {
       width 120px
       display inline-block
       background no-repeat center/70% url('../assets/logo.png')
+      >>>
+        .atom-spinner
+          .spinner-circle
+            display none !important
     .error-info
       color red
       .error-text
@@ -58,11 +62,4 @@ export default {
         max-width 90vw
         white-space pre-wrap
         font-size 12px
-</style>
-
-<style lang="stylus">
-.start-loading
-  .atom-spinner
-    .spinner-circle
-      display none !important
 </style>
