@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.11.1](https://github.com/d2-projects/d2-advance/compare/v1.11.0...v1.11.1) (2020-01-15)
+
+
+### Bug Fixes
+
+* **admin:** eslint no-console ([5442d2f](https://github.com/d2-projects/d2-advance/commit/5442d2f9a4ce4f56a408f885bf174f5b49f3bdbc))
+
+
+### Performance Improvements
+
+* **gzip:** use compression-webpack-plugin ([beee006](https://github.com/d2-projects/d2-advance/commit/beee006bf30c0634031c5a3c24f24d42f3593048))
+
 # [1.11.0](https://github.com/d2-projects/d2-advance/compare/v1.10.7...v1.11.0) (2020-01-14)
 
 
