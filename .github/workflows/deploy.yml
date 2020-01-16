@@ -29,7 +29,7 @@ jobs:
     - name: Check unit test
       run: yarn test:unit
     - name: Build
-      run: yarn build
+      run: yarn build --report
 
     - name: CDN upload
       run: |
@@ -69,7 +69,7 @@ jobs:
     - name: Check unit test
       run: yarn test:unit
     - name: Build
-      run: yarn build
+      run: yarn build --report
 
     - name: Deploy
       uses: SamKirkland/FTP-Deploy-Action@2.0.0
@@ -98,7 +98,7 @@ jobs:
     - name: Check unit test
       run: yarn test:unit
     - name: Build
-      run: yarn build
+      run: yarn build --report
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v2
       env:
