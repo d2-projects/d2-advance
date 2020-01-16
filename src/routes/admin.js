@@ -1,6 +1,7 @@
 import { map, kebabCase } from 'lodash'
 
 export const pathPrefix = '/admin'
+export const homePath = pathPrefix
 
 export const routes = () => [
   {

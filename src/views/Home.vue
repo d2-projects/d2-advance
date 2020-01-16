@@ -25,7 +25,7 @@
         <div class="box-body demo">
           <h2>Admin</h2>
           <p>{{ $t('home.admin.desc') }}</p>
-          <router-link to="/admin">
+          <router-link :to="adminHomePath">
             <el-button
               size="medium"
               type="primary"
@@ -38,6 +38,18 @@
     </div>
   </div>
 </template>
+
+<script>
+import { homePath as adminHomePath } from '@/routes/admin'
+
+export default {
+  data() {
+    return {
+      adminHomePath
+    }
+  }
+}
+</script>
 
 <style lang="stylus" scoped>
 @import '../style/variable.styl'
