@@ -56,6 +56,16 @@
       "name": "lodash",
       "library": "_",
       "js": "https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"
+    },
+    {
+      "name": "nprogress",
+      "library": "NProgress",
+      "js": "https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"
+    },
+    {
+      "name": "nprogress/nprogress.css",
+      "library": "NProgress",
+      "css": "https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css"
     }
   ],
   "dependencies": {
