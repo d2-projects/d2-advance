@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import VueI18n from 'vue-i18n'
 import VueRouter from 'vue-router'
+import Async from '@/components/Async'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import App from './App.vue'
@@ -26,6 +27,7 @@ class MyApplication extends VueApplication {
     Vue.use(Vuex)
     Vue.use(VueI18n)
     Vue.use(VueRouter)
+    Vue.component('async', Async)
     Vue.prototype.$rta = this.rta = createRtaClient()
     this.i18n = createI18n()
     this.progress.configure({ showSpinner: false })
