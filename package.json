@@ -45,7 +45,11 @@
     {
       "name": "element-ui",
       "library": "ELEMENT",
-      "js": "https://cdn.jsdelivr.net/npm/element-ui@2.13.0/lib/index.js",
+      "js": "https://cdn.jsdelivr.net/npm/element-ui@2.13.0/lib/index.js"
+    },
+    {
+      "name": "element-ui/lib/theme-chalk/index.css",
+      "library": "ELEMENT",
       "css": "https://cdn.jsdelivr.net/npm/element-ui@2.13.0/lib/theme-chalk/index.css"
     },
     {
