@@ -16,6 +16,44 @@
     "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'",
     "lint:strict": "vue-cli-service lint --no-fix --max-warnings=0"
   },
+  "cdnDependencies": [
+    {
+      "name": "vue",
+      "library": "Vue",
+      "js": "https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"
+    },
+    {
+      "name": "vue-i18n",
+      "library": "VueI18n",
+      "js": "https://cdn.jsdelivr.net/npm/vue-i18n@8.0.0/dist/vue-i18n.min.js"
+    },
+    {
+      "name": "vue-router",
+      "library": "VueRouter",
+      "js": "https://cdn.jsdelivr.net/npm/vue-router@3.1.5/dist/vue-router.min.js"
+    },
+    {
+      "name": "vuex",
+      "library": "Vuex",
+      "js": "https://cdn.jsdelivr.net/npm/vuex@3.1.2/dist/vuex.min.js"
+    },
+    {
+      "name": "axios",
+      "library": "axios",
+      "js": "https://cdn.jsdelivr.net/npm/axios@0.19.1/dist/axios.min.js"
+    },
+    {
+      "name": "element-ui",
+      "library": "ELEMENT",
+      "js": "https://cdn.jsdelivr.net/npm/element-ui@2.13.0/lib/index.js",
+      "css": "https://cdn.jsdelivr.net/npm/element-ui@2.13.0/lib/theme-chalk/index.css"
+    },
+    {
+      "name": "lodash",
+      "library": "_",
+      "js": "https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"
+    }
+  ],
   "dependencies": {
     "axios": "^0.19.1",
     "core-js": "^3.6.4",

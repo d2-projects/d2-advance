@@ -6,12 +6,34 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= VUE_APP_TITLE %></title>
+    <!-- use public cdn dependencies -->
+    <% if (htmlWebpackPlugin.options.cdnDependencies) { %>
+    <%   for (const item of htmlWebpackPlugin.options.cdnDependencies) { %>
+    <%     if (item.css) { %>
+    <link href="<%= item.css %>" rel="preload" as="style">
+    <link href="<%= item.css %>" rel="stylesheet">
+    <%     } %>
+    <%   } %>
+    <%   for (const item of htmlWebpackPlugin.options.cdnDependencies) { %>
+    <%     if (item.js) { %>
+    <link href="<%= item.js %>" rel="preload" as="script">
+    <%     } %>
+    <%   } %>
+    <% } %>
   </head>
   <body>
     <noscript>
       <strong>We're sorry but d2-advance doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
+    <!-- use public cdn dependencies -->
+    <% if (htmlWebpackPlugin.options.cdnDependencies) { %>
+    <%   for (const item of htmlWebpackPlugin.options.cdnDependencies) { %>
+    <%     if (item.js) { %>
+    <script src="<%= item.js %>"></script>
+    <%     } %>
+    <%   } %>
+    <% } %>
     <!-- built files will be auto injected -->
   </body>
 </html>
