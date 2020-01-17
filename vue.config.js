@@ -1,6 +1,6 @@
-const { get, set, reduce } = require('lodash')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const VueFilenameInjector = require('@d2-projects/vue-filename-injector')
+const { get, set, reduce } = require('lodash')
 const packageInfo = require('./package.json')
 
 module.exports = {
@@ -50,14 +50,19 @@ module.exports = {
     ])
 
     /**
-     * use public cdn dependencies
+     * use public cdn dependencies by webpack externals and htmlWebpackPlugin
+     * https://webpack.js.org/configuration/externals
+     * https://github.com/jantimon/html-webpack-plugin
      */
     const cdnDependencies = get(packageInfo, 'cdnDependencies', [])
     if (process.env.VUE_APP_CDN_DEPENDENCIES === 'on') {
       config.externals(
         reduce(
           cdnDependencies,
-          (prev, { name, library }) => ((prev[name] = library), prev),
+          (prev, { name, library }) => (
+            library ? (prev[name] = library) : (prev[name] = { root: null }),
+            prev
+          ),
           {}
         )
       )

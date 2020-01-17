@@ -18,11 +18,6 @@
   },
   "cdnDependencies": [
     {
-      "name": "normalize.css",
-      "library": "normalize.css",
-      "js": "https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"
-    },
-    {
       "name": "vue",
       "library": "Vue",
       "js": "https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"
@@ -48,19 +43,12 @@
       "js": "https://cdn.jsdelivr.net/npm/axios@0.19.1/dist/axios.min.js"
     },
     {
-      "name": "element-ui",
-      "library": "ELEMENT",
-      "js": "https://cdn.jsdelivr.net/npm/element-ui@2.13.0/lib/index.js"
+      "name": "normalize.css",
+      "css": "https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"
     },
     {
-      "name": "element-ui/lib/theme-chalk/index.css",
-      "library": "ELEMENT",
-      "css": "https://cdn.jsdelivr.net/npm/element-ui@2.13.0/lib/theme-chalk/index.css"
-    },
-    {
-      "name": "lodash",
-      "library": "_",
-      "js": "https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"
+      "name": "nprogress/nprogress.css",
+      "css": "https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css"
     },
     {
       "name": "nprogress",
@@ -68,9 +56,18 @@
       "js": "https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"
     },
     {
-      "name": "nprogress/nprogress.css",
-      "library": "NProgress",
-      "css": "https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css"
+      "name": "element-ui/lib/theme-chalk/index.css",
+      "css": "https://cdn.jsdelivr.net/npm/element-ui@2.13.0/lib/theme-chalk/index.css"
+    },
+    {
+      "name": "element-ui",
+      "library": "ELEMENT",
+      "js": "https://cdn.jsdelivr.net/npm/element-ui@2.13.0/lib/index.js"
+    },
+    {
+      "name": "lodash",
+      "library": "_",
+      "js": "https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"
     }
   ],
   "dependencies": {
