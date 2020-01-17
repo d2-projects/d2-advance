@@ -12,44 +12,63 @@
         >
       </p>
     </template>
-    <div class="infinite-list" v-infinite-scroll="fetchData">
-      <el-image
-        v-for="item in list"
-        class="infinite-list-item"
-        :key="item.imageUrl"
-        :src="item.imageUrl"
-      ></el-image>
+    <div
+      class="infinite-list"
+      v-infinite-scroll="loadNext"
+      infinite-scroll-distance="100"
+      :infinite-scroll-disabled="lock"
+    >
+      <template v-for="pageNumber in page">
+        <async
+          :key="pageNumber"
+          :api="$rta.apis.image.girl"
+          :args="[pageNumber]"
+          :transform="transform"
+          @success="lock = false"
+          static
+        >
+          <template v-slot:default="{ pending, error, data }">
+            <div v-if="pending" class="infinite-list-fragment pending">
+              Loading ...
+            </div>
+            <div v-else-if="error" class="infinite-list-fragment error">
+              {{ error }}
+            </div>
+            <div v-else class="infinite-list-fragment success">
+              <el-image
+                v-for="item in data"
+                class="infinite-list-item"
+                :key="item.imageUrl"
+                :src="item.imageUrl"
+                :preview-src-list="[item.imageUrl]"
+              ></el-image>
+            </div>
+          </template>
+        </async>
+      </template>
     </div>
   </page-container>
 </template>
 
 <script>
 import { container } from '@/views/admin/$index/components/mixins'
-import { get, uniqBy } from 'lodash'
+import { get, debounce } from 'lodash'
 
 export default {
   mixins: [container],
   data() {
     return {
-      page: 0,
-      list: [],
-      loading: false
+      page: 1,
+      lock: true
     }
   },
   methods: {
-    async fetchData() {
-      try {
-        this.loading = true
-        const response = await this.$rta.apis.image.girl(this.page + 1)
-        const { page, list } = get(response, 'data.data')
-        this.list = uniqBy([...this.list, ...list], 'imageUrl')
-        this.page = page
-        this.loading = false
-      } catch (error) {
-        // eslint-disable-next-line no-console
-        console.error(error)
-        this.loading = false
-      }
+    transform(response) {
+      return get(response, 'data.data.list', [])
+    },
+    loadNext() {
+      this.lock = true
+      this.page++
     }
   }
 }
