@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.12.1](https://github.com/d2-projects/d2-advance/compare/v1.12.0...v1.12.1) (2020-01-17)
+
+
+### Bug Fixes
+
+* **cdn:** support library without external root ([fffa035](https://github.com/d2-projects/d2-advance/commit/fffa0354da374dcf7507df29aff56f5e186ff87f))
+
 # [1.12.0](https://github.com/d2-projects/d2-advance/compare/v1.11.1...v1.12.0) (2020-01-17)
 
 
