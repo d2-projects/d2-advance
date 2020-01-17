@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.12.2](https://github.com/d2-projects/d2-advance/compare/v1.12.1...v1.12.2) (2020-01-17)
+
+
+### Performance Improvements
+
+* **roll-tools-api:** move secret from headers to params ([24bda61](https://github.com/d2-projects/d2-advance/commit/24bda61194eb25561f6e0cd101923520d2436857))
+
 ## [1.12.1](https://github.com/d2-projects/d2-advance/compare/v1.12.0...v1.12.1) (2020-01-17)
 
 
