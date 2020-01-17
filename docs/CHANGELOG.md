@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.12.0](https://github.com/d2-projects/d2-advance/compare/v1.11.1...v1.12.0) (2020-01-17)
+
+
+### Features
+
+* **cdn:** add VUE_APP_CDN_DEPENDENCIES ([008424a](https://github.com/d2-projects/d2-advance/commit/008424a7ba45b570f3b8e221bf3be29b96e1de13))
+
+
+### Performance Improvements
+
+* **cdn:** cdnDependencies ([bbcf3ce](https://github.com/d2-projects/d2-advance/commit/bbcf3ce5880a64ae925a82c086c001b2043f24c1))
+* **cdn:** without element-ui styles ([511c0d7](https://github.com/d2-projects/d2-advance/commit/511c0d771fa845c6989d5c7a23cc61afa26a7200))
+
 ## [1.11.1](https://github.com/d2-projects/d2-advance/compare/v1.11.0...v1.11.1) (2020-01-15)
 
 
