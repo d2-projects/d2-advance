@@ -36,10 +36,11 @@
 
 <script>
 import { container } from '@/views/admin/$index/components/mixins'
-import { all } from './components/mixins'
+import DemoArticle from './components/DemoArticle'
+import DemoTreeSide from './components/DemoTreeSide'
 
 export default {
-  mixins: [all, container],
+  mixins: [container],
   data() {
     return {
       header: true,
@@ -47,6 +48,10 @@ export default {
       aside: true,
       type: 'card'
     }
+  },
+  components: {
+    DemoArticle,
+    DemoTreeSide
   }
 }
 </script>
