@@ -53,17 +53,19 @@ module.exports = {
      * use public cdn dependencies
      */
     const cdnDependencies = get(packageInfo, 'cdnDependencies', [])
-    config.externals(
-      reduce(
-        cdnDependencies,
-        (prev, { name, library }) => ((prev[name] = library), prev),
-        {}
+    if (process.env.VUE_APP_CDN_DEPENDENCIES === 'on') {
+      config.externals(
+        reduce(
+          cdnDependencies,
+          (prev, { name, library }) => ((prev[name] = library), prev),
+          {}
+        )
       )
-    )
-    config.plugin('html').tap(args => {
-      set(args, '[0].cdnDependencies', cdnDependencies)
-      return args
-    })
+      config.plugin('html').tap(args => {
+        set(args, '[0].cdnDependencies', cdnDependencies)
+        return args
+      })
+    }
 
     /**
      * be fast
