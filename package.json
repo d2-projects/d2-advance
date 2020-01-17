@@ -18,6 +18,11 @@
   },
   "cdnDependencies": [
     {
+      "name": "normalize.css",
+      "library": "normalize.css",
+      "js": "https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"
+    },
+    {
       "name": "vue",
       "library": "Vue",
       "js": "https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"
