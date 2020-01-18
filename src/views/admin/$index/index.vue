@@ -43,9 +43,12 @@
         </el-header>
         <el-main class="main">
           <transition :name="pageTransition">
-            <div class="page-wrapper" :key="$route.path">
-              <router-view :class="{ 'sharp-top': showTabs }" />
-            </div>
+            <keep-alive>
+              <router-view
+                class="page-wrapper"
+                :class="{ 'sharp-top': showTabs }"
+              />
+            </keep-alive>
           </transition>
         </el-main>
         <source-link v-if="showSourceLink" />
