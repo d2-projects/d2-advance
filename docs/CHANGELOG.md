@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.12.3](https://github.com/d2-projects/d2-advance/compare/v1.12.2...v1.12.3) (2020-01-18)
+
+
+### Bug Fixes
+
+* **admin:** add better-scroll for aside-nav-menu ([883f59a](https://github.com/d2-projects/d2-advance/commit/883f59ad2b11eb6422a6b602c7c288cdb49713ea))
+* **admin:** add div wrapper for aside-nav-menu scroll ([475ce17](https://github.com/d2-projects/d2-advance/commit/475ce17962770c6a20ee289818d51c1c231a08e4))
+
 ## [1.12.2](https://github.com/d2-projects/d2-advance/compare/v1.12.1...v1.12.2) (2020-01-17)
 
 
