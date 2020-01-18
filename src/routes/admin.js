@@ -13,6 +13,7 @@ export const routes = () => [
     children: map(
       [
         'dashboard',
+        'preferences',
         'component-demo/page-container',
         'component-demo/aside-nav-menu',
         'roll-tools-api/fuli-images',

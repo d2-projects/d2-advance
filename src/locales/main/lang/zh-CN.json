@@ -45,5 +45,12 @@
   "SourceCode": "本页源码",
   "Roll Tools Api": "通用 API",
   "Fuli Images": "福利图片",
-  "Document link": "文档链接"
+  "Document link": "文档链接",
+  "Preferences": "首选项",
+  "admin.preferences.showTabs": "显示页便签",
+  "admin.preferences.showSourceLink": "显示源码链接",
+  "admin.preferences.asideCollapse": "侧边栏折叠",
+  "admin.preferences.pageTransition": "页面过渡动画",
+  "admin.preferences.asideTransition": "侧边栏折叠动画",
+  "admin.preferences.language": "语言"
 }

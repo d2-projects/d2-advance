@@ -45,5 +45,12 @@
   "SourceCode": "SourceCode",
   "Roll Tools Api": "Roll Tools Api",
   "Fuli Images": "Fuli Images",
-  "Document link": "document link"
+  "Document link": "document link",
+  "Preferences": "Preferences",
+  "admin.preferences.showTabs": "Show tabs",
+  "admin.preferences.showSourceLink": "Show source link",
+  "admin.preferences.asideCollapse": "Aside collapse",
+  "admin.preferences.pageTransition": "Page transition",
+  "admin.preferences.asideTransition": "Aside transition",
+  "admin.preferences.language": "Language"
 }
