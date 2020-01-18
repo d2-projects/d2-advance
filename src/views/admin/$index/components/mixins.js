@@ -5,7 +5,7 @@ import SmartLogo from './SmartLogo'
 import ActionBar from './ActionBar'
 import ActionBarItem from './ActionBarItem'
 
-export const layout = {
+export const internal = {
   components: {
     AsideNavMenu,
     AsideNavMenuToggle,

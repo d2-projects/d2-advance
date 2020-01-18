@@ -54,7 +54,7 @@
 
 <script>
 import { filter, uniqBy } from 'lodash'
-import { layout } from './components/mixins'
+import { internal } from './components/mixins'
 import {
   asideCollapse,
   pageTabs,
@@ -67,7 +67,7 @@ import SourceLink from './components/SourceLink'
 
 export default {
   mixins: [
-    layout,
+    internal,
     asideCollapse,
     pageTabs,
     pageTransition,
