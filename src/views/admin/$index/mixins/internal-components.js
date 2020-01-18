@@ -4,6 +4,7 @@ import PageTabs from '../components/PageTabs'
 import SmartLogo from '../components/SmartLogo'
 import ActionBar from '../components/ActionBar'
 import ActionBarItem from '../components/ActionBarItem'
+import SourceLink from '../components/SourceLink'
 
 export default {
   components: {
@@ -12,6 +13,7 @@ export default {
     PageTabs,
     SmartLogo,
     ActionBar,
-    ActionBarItem
+    ActionBarItem,
+    SourceLink
   }
 }

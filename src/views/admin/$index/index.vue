@@ -64,7 +64,6 @@ import {
   menu,
   sourceLink
 } from '@/store/modules/admin/mixins'
-import SourceLink from './components/SourceLink'
 
 export default {
   mixins: [
@@ -81,9 +80,6 @@ export default {
     handleSwitchTabs({ index }) {
       this.$router.push(index)
     }
-  },
-  components: {
-    SourceLink
   }
 }
 </script>
