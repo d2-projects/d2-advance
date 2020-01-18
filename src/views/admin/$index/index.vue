@@ -54,7 +54,8 @@
 
 <script>
 import { filter, uniqBy } from 'lodash'
-import { internal } from './components/mixins'
+import internalComponents from './mixins/internal-components'
+import asideBscroll from './mixins/aside-bscroll'
 import {
   asideCollapse,
   pageTabs,
@@ -64,11 +65,10 @@ import {
   sourceLink
 } from '@/store/modules/admin/mixins'
 import SourceLink from './components/SourceLink'
-import asideBscroll from './mixins/aside-bscroll'
 
 export default {
   mixins: [
-    internal,
+    internalComponents,
     asideCollapse,
     pageTabs,
     pageTransition,
