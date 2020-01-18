@@ -89,6 +89,4 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-@import './style.styl'
-</style>
+<style lang="stylus" scoped src="./style.styl" />
