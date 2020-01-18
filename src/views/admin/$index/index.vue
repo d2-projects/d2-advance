@@ -42,7 +42,7 @@
           />
         </el-header>
         <el-main class="main">
-          <transition :name="pageTransition">
+          <transition :name="pageTransition ? 'fade-transverse' : null">
             <keep-alive>
               <router-view
                 class="page-wrapper"

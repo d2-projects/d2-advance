@@ -4,22 +4,19 @@
       <h1>{{ $t('Development') }} <i class="el-icon-magic-stick"></i></h1>
     </template>
 
-    <h2>flags</h2>
-    <el-checkbox-group v-model="flags">
-      <el-checkbox v-for="flag in flagOptions" :label="flag" :key="flag">{{
-        flag
-      }}</el-checkbox>
-    </el-checkbox-group>
+    <h2>Preferences</h2>
 
-    <el-divider />
-
-    <h2>tabs</h2>
-    <el-switch v-model="showTabs"></el-switch>
-
-    <el-divider />
-
-    <h2>source link</h2>
-    <el-switch v-model="showSourceLink"></el-switch>
+    <p><b>showTabs：</b><el-switch v-model="showTabs"></el-switch></p>
+    <p>
+      <b>showSourceLink：</b><el-switch v-model="showSourceLink"></el-switch>
+    </p>
+    <p><b>asideCollapse：</b><el-switch v-model="asideCollapse"></el-switch></p>
+    <p>
+      <b>pageTransition：</b><el-switch v-model="pageTransition"></el-switch>
+    </p>
+    <p>
+      <b>asideTransition：</b><el-switch v-model="asideTransition"></el-switch>
+    </p>
 
     <el-divider />
 
@@ -39,22 +36,28 @@
 
 <script>
 import { values } from 'lodash'
-import { flags, pageTabs, sourceLink } from '@/store/modules/admin/mixins'
-import { FLAGS } from '@/constants/flags'
+import {
+  pageTabs,
+  sourceLink,
+  asideCollapse,
+  pageTransition,
+  asideTransition
+} from '@/store/modules/admin/mixins'
 import { langs } from '@/locales'
 
 export default {
-  mixins: [flags, pageTabs, sourceLink],
+  mixins: [
+    pageTabs,
+    sourceLink,
+    asideCollapse,
+    pageTransition,
+    asideTransition
+  ],
 
   data() {
     return {
       langs,
       env: process.env
-    }
-  },
-  computed: {
-    flagOptions() {
-      return values(FLAGS)
     }
   }
 }

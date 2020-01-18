@@ -1,5 +1,3 @@
-import { includes } from 'lodash'
-import { FLAGS } from '@/constants/flags'
 import { getField, updateField } from 'vuex-map-fields'
 import { flattenMenuItemOfAdmin } from './utils'
 import { createMenu } from './menu'
@@ -13,15 +11,13 @@ const init = _app => {
   return {
     namespaced: true,
     state: {
-      flags: [FLAGS.TRANSITION],
-
       showTabs: true,
       tabOpened: [tabOptions[0]],
       tabOptions,
 
       asideCollapse: false,
       asideTransition: true,
-      pageTransition: 'fade-transverse',
+      pageTransition: true,
 
       showSourceLink: true,
 
@@ -31,16 +27,6 @@ const init = _app => {
       getField,
       menu(state) {
         return state.menu
-      },
-      asideTransition(state) {
-        return includes(state.flags, FLAGS.TRANSITION)
-          ? state.asideTransition
-          : null
-      },
-      pageTransition(state) {
-        return includes(state.flags, FLAGS.TRANSITION)
-          ? state.pageTransition
-          : null
       }
     },
     mutations: {
