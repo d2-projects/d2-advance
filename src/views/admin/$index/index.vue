@@ -32,7 +32,7 @@
           />
         </div>
       </el-aside>
-      <el-container>
+      <el-container class="center-wrapper">
         <el-header class="tabs-wrapper" height="auto" v-show="showTabs">
           <page-tabs
             :current="$route.path"

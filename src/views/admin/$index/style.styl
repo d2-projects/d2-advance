@@ -10,32 +10,35 @@ $right-margin = 20px
   left 0
   right 0
   bottom 0
-  .header
-    height $header-height
-    line-height @height
-    padding-left 0
-    display flex
-    .action-bar
-      flex 1
-  .body
-    overflow hidden
-  .aside
-    overflow hidden // for bscroll
-    >>> .el-menu-vertical:not(.el-menu--collapse)
-      width $aside-width
-  .tabs-wrapper
-    padding 0
-    margin-right $right-margin
-  .main
-    position relative
-    padding 0
-    .page-wrapper
-      position absolute
-      top 0
-      left 0
-      right $right-margin
-      bottom 0
+  >
+    .header
+      height $header-height
+      line-height @height
+      padding-left 0
+      display flex
+      > .action-bar
+        flex 1
+    .body
       overflow hidden
+      >
+        .aside
+          overflow hidden // for bscroll
+          >>> .el-menu-vertical:not(.el-menu--collapse)
+            width $aside-width
+        .center-wrapper >
+          .tabs-wrapper
+            padding 0
+            margin-right $right-margin
+          .main
+            position relative
+            padding 0
+            > .page-wrapper
+              position absolute
+              top 0
+              left 0
+              right $right-margin
+              bottom 0
+              overflow hidden
 
 .fade-transverse
   &-leave-active
