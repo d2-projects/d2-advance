@@ -24,11 +24,13 @@
     </el-header>
     <el-container class="body">
       <el-aside class="aside" ref="aside" width="auto">
-        <aside-nav-menu
-          :has-transition="asideTransition"
-          :menu="menu"
-          :collapse="asideCollapse"
-        />
+        <div>
+          <aside-nav-menu
+            :has-transition="asideTransition"
+            :menu="menu"
+            :collapse="asideCollapse"
+          />
+        </div>
       </el-aside>
       <el-container>
         <el-header class="tabs-wrapper" height="auto" v-show="showTabs">
