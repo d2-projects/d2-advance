@@ -38,14 +38,13 @@
 </template>
 
 <script>
-import { container } from '@/views/admin/$index/components/mixins'
 import { values } from 'lodash'
 import { flags, pageTabs, sourceLink } from '@/store/modules/admin/mixins'
 import { FLAGS } from '@/constants/flags'
 import { langs } from '@/locales'
 
 export default {
-  mixins: [container, flags, pageTabs, sourceLink],
+  mixins: [flags, pageTabs, sourceLink],
 
   data() {
     return {

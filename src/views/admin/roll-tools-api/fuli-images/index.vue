@@ -51,11 +51,9 @@
 </template>
 
 <script>
-import { container } from '@/views/admin/$index/components/mixins'
 import { get, debounce } from 'lodash'
 
 export default {
-  mixins: [container],
   data() {
     return {
       page: 1,

@@ -35,12 +35,10 @@
 </template>
 
 <script>
-import { container } from '@/views/admin/$index/components/mixins'
 import DemoArticle from './components/DemoArticle'
 import DemoTreeSide from './components/DemoTreeSide'
 
 export default {
-  mixins: [container],
   data() {
     return {
       header: true,

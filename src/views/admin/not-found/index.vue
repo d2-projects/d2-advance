@@ -11,10 +11,7 @@
 </template>
 
 <script>
-import { container } from '@/views/admin/$index/components/mixins'
-
 export default {
-  mixins: [container],
   methods: {
     handleGoBack() {
       this.$router.go(-1)

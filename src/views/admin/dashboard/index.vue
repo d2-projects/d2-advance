@@ -8,10 +8,7 @@
 </template>
 
 <script>
-import { container } from '@/views/admin/$index/components/mixins'
-
 export default {
-  mixins: [container],
   data() {
     return {
       date: new Date()

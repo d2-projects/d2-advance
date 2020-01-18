@@ -6,11 +6,3 @@
     <p>{{ $t('TODO') }}</p>
   </page-container>
 </template>
-
-<script>
-import { container } from '@/views/admin/$index/components/mixins'
-
-export default {
-  mixins: [container]
-}
-</script>

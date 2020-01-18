@@ -35,12 +35,12 @@
 </template>
 
 <script>
-import { layout, container } from '@/views/admin/$index/components/mixins'
+import { layout } from '@/views/admin/$index/components/mixins'
 import customMenu from './menu'
 import { menu } from '@/store/modules/admin/mixins'
 
 export default {
-  mixins: [layout, container, menu],
+  mixins: [layout, menu],
   data() {
     return {
       customMenu,
