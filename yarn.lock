@@ -9871,10 +9871,10 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
-vue-cli-plugin-i18n@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/vue-cli-plugin-i18n/-/vue-cli-plugin-i18n-0.6.0.tgz#8b15a5e817b6f55a05e411a565f7f3c5bb86c16b"
-  integrity sha512-tNF35Xjq5SnwN8VwbwIZaVKjYTRKU/Hg8tnx6ZrznI5OcFeYNXkmmazAyKTOFrxPHXxqspDOUqx/ougVLU04Lg==
+vue-cli-plugin-i18n@^0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/vue-cli-plugin-i18n/-/vue-cli-plugin-i18n-0.6.1.tgz#5b22fbaec6166ef2a34c8044d98ef5c8729e2e43"
+  integrity sha512-/2T/T47x8Aj3xLfrNYe5L1pzw+TnoDdKahcQflsPPjkXCuDss4rRVXVH0zzI3gpx2B1s9WW+yMYsg0JUlxgGEw==
   dependencies:
     debug "^3.1.0"
     deepmerge "^2.1.1"
@@ -9883,7 +9883,7 @@ vue-cli-plugin-i18n@^0.6.0:
     rimraf "^2.6.3"
     vue "^2.5.16"
     vue-i18n "^8.0.0"
-    vue-i18n-extract "^0.4.13"
+    vue-i18n-extract "^1.0.2"
 
 vue-eslint-parser@^7.0.0:
   version "7.0.0"
@@ -9902,10 +9902,10 @@ vue-hot-reload-api@^2.3.0:
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
   integrity sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==
 
-vue-i18n-extract@^0.4.13:
-  version "0.4.14"
-  resolved "https://registry.yarnpkg.com/vue-i18n-extract/-/vue-i18n-extract-0.4.14.tgz#ed48137944b562fec67bca41a9dcaaee93909738"
-  integrity sha512-gfbhyOU+zo8/dg1kHudBGHTJx9cvS7bsO2G/3mvSjzb3jCIu/HSbBT/EFaJMbo3y82zODq9+ehZZyVj5UH2qNA==
+vue-i18n-extract@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/vue-i18n-extract/-/vue-i18n-extract-1.0.2.tgz#0a136e12d1634d6799e187aad81a7003d02f67a5"
+  integrity sha512-+zwDKvle4KcfloXZnj5hF01ViKDiFr5RMx5507D7oyDXpSleRpekF5YHgZa/+Ra6Go68//z0Nya58J9tKFsCjw==
   dependencies:
     cli-table3 "^0.5.1"
     dot-object "^1.7.1"
