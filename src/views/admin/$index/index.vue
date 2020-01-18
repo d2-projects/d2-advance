@@ -22,7 +22,7 @@
         >
       </action-bar>
     </el-header>
-    <el-container>
+    <el-container class="body">
       <el-aside class="aside" width="auto">
         <aside-nav-menu
           :has-transition="asideTransition"
