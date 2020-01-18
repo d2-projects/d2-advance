@@ -23,7 +23,7 @@
       </action-bar>
     </el-header>
     <el-container class="body">
-      <el-aside class="aside" width="auto">
+      <el-aside class="aside" ref="aside" width="auto">
         <aside-nav-menu
           :has-transition="asideTransition"
           :menu="menu"
@@ -64,6 +64,7 @@ import {
   sourceLink
 } from '@/store/modules/admin/mixins'
 import SourceLink from './components/SourceLink'
+import asideBscroll from './mixins/aside-bscroll'
 
 export default {
   mixins: [
@@ -73,7 +74,8 @@ export default {
     pageTransition,
     asideTransition,
     menu,
-    sourceLink
+    sourceLink,
+    asideBscroll
   ],
   methods: {
     handleSwitchTabs({ index }) {
