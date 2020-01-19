@@ -1,8 +1,8 @@
 <template>
   <page-container type="ghost" :body-class="$style.body">
     <template #header>
-      <h1>{{ $t('Fuli Images') }}</h1>
-      <p>
+      <h2>
+        {{ $t('Fuli Images') }}
         <el-link
           icon="el-icon-link"
           type="primary"
@@ -10,7 +10,7 @@
           target="_blank"
           >{{ $t('Document link') }}</el-link
         >
-      </p>
+      </h2>
     </template>
     <div
       class="infinite-list"
