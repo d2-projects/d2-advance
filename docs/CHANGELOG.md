@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.13.0](https://github.com/d2-projects/d2-advance/compare/v1.12.3...v1.13.0) (2020-01-19)
+
+
+### Features
+
+* **admin:** preferences page ([987bf9b](https://github.com/d2-projects/d2-advance/commit/987bf9ba718aad8712081fb2e8d3f7ebd8da613f))
+
 ## [1.12.3](https://github.com/d2-projects/d2-advance/compare/v1.12.2...v1.12.3) (2020-01-18)
 
 
