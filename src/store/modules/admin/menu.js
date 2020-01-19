@@ -7,7 +7,7 @@ export const createMenu = () => [
     index: `${pathPrefix}/dashboard`
   },
   {
-    icon: 'el-icon-odometer',
+    icon: 'el-icon-setting',
     label: 'Preferences',
     index: `${pathPrefix}/preferences`
   },

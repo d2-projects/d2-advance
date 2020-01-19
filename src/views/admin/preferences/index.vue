@@ -1,7 +1,7 @@
 <template>
   <page-container>
     <template #header>
-      <h1>{{ $t('Preferences') }} <i class="el-icon-magic-stick"></i></h1>
+      <h1>{{ $t('Preferences') }} <i class="el-icon-setting"></i></h1>
     </template>
 
     <p>
