@@ -34,6 +34,10 @@ export const createMenu = () => [
         index: `${pathPrefix}/roll-tools-api/ip-address`
       },
       {
+        label: 'China Cities',
+        index: `${pathPrefix}/roll-tools-api/china-cities`
+      },
+      {
         label: 'Fuli Images',
         index: `${pathPrefix}/roll-tools-api/fuli-images`
       }

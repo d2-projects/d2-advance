@@ -7,7 +7,8 @@ export default {
     api: { type: Function, required: true },
     args: { type: Array, default: () => [] },
     transform: { type: Function, default: i => i },
-    static: { type: Boolean, default: false }
+    static: { type: Boolean, default: false },
+    freeze: { type: Boolean, default: false }
   },
   data() {
     return {
@@ -34,7 +35,7 @@ export default {
       try {
         const result = await this.api(...this.args)
         const data = this.transform(result)
-        this.data = data
+        this.data = this.freeze ? Object.freeze(data) : data
         this.error = false
         this.$emit('success', data)
       } catch (error) {

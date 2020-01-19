@@ -43,6 +43,9 @@ export const client = () => {
     ip: {
       self: () => instance.get('/ip/self'),
       aim_ip: ip => instance.get('/ip/aim_ip', { params: { ip } })
+    },
+    address: {
+      list: () => instance.get('/address/list')
     }
   }
 

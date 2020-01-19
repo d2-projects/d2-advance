@@ -16,6 +16,7 @@ export const routes = () => [
         'preferences',
         'component-demo/page-container',
         'component-demo/aside-nav-menu',
+        'roll-tools-api/china-cities',
         'roll-tools-api/fuli-images',
         'roll-tools-api/ip-address',
         'some-icon',
