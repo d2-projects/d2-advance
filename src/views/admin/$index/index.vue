@@ -4,6 +4,12 @@
       <smart-logo :has-transition="asideTransition" :collapse="asideCollapse" />
       <aside-nav-menu-toggle v-model="asideCollapse" />
       <action-bar class="action-bar">
+        <!-- <action-bar-item
+          type="button"
+          tooltip="tooltip"
+          icon="el-icon-shopping-cart-full"
+          >action</action-bar-item
+        > -->
         <action-bar-item>
           <el-dropdown style="cursor: pointer" size="small">
             <span style="padding-left: 10px; padding-right: 10px">
@@ -14,12 +20,6 @@
             </el-dropdown-menu>
           </el-dropdown>
         </action-bar-item>
-        <action-bar-item
-          type="button"
-          tooltip="tooltip"
-          icon="el-icon-shopping-cart-full"
-          >action</action-bar-item
-        >
       </action-bar>
     </el-header>
     <el-container class="body">

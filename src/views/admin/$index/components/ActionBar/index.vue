@@ -15,6 +15,7 @@ $gutter = 5px
 
 .action-bar-container
   display flex
-  flex-direction row-reverse
+  flex-direction row
+  justify-content flex-end
   padding $gutter * .5
 </style>
