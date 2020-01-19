@@ -33,7 +33,11 @@ $right-margin = 20px
             position relative
             padding 0
             > .page-wrapper
-              margin-right $right-margin
+              position absolute
+              top 0
+              left 0
+              right $right-margin
+              overflow-x hidden
 
 .fade-transverse
   &-leave-active
@@ -41,12 +45,6 @@ $right-margin = 20px
     transition-property opacity transform
     transition-duration .3s
     transition-timing-function ease-out
-    position absolute
-    top 0
-    left 0
-    right 0
-    bottom 0
-    overflow hidden
   &-enter
     opacity 0
     transform translateX(-$right-margin)
