@@ -36,7 +36,7 @@ export default {
         const data = this.transform(result)
         this.data = data
         this.error = false
-        this.$emit('success')
+        this.$emit('success', data)
       } catch (error) {
         this.data = null
         this.error = error
