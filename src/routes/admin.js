@@ -17,6 +17,7 @@ export const routes = () => [
         'component-demo/page-container',
         'component-demo/aside-nav-menu',
         'roll-tools-api/fuli-images',
+        'roll-tools-api/ip-address',
         'some-icon',
         'development',
         'forbidden',

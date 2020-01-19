@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { get } from 'lodash'
 
 // https://github.com/MZCretin/RollToolsApi
 
@@ -24,9 +25,24 @@ export const client = () => {
     error => Promise.reject(error)
   )
 
+  instance.interceptors.response.use(
+    response => {
+      const code = get(response, 'data.code')
+      if (code !== 1) {
+        return Promise.reject(new Error(get(response, 'data.msg')))
+      }
+      return response
+    },
+    error => Promise.reject(error)
+  )
+
   const apis = {
     image: {
       girl: (page = 1) => instance.get('/image/girl/list', { params: { page } })
+    },
+    ip: {
+      self: () => instance.get('/ip/self'),
+      aim_ip: ip => instance.get('/ip/aim_ip', { params: { ip } })
     }
   }
 

@@ -52,5 +52,9 @@
   "admin.preferences.asideCollapse": "Aside collapse",
   "admin.preferences.pageTransition": "Page transition",
   "admin.preferences.asideTransition": "Aside transition",
-  "admin.preferences.language": "Language"
+  "admin.preferences.language": "Language",
+  "IP Address": "IP Address",
+  "admin.roll-tools-api.ip-address.input": "IP Address",
+  "admin.roll-tools-api.ip-address.desc": "Description",
+  "admin.roll-tools-api.ip-address.raw": "Raw Data"
 }

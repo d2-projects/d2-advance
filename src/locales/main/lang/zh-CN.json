@@ -52,5 +52,9 @@
   "admin.preferences.asideCollapse": "侧边栏折叠",
   "admin.preferences.pageTransition": "页面过渡动画",
   "admin.preferences.asideTransition": "侧边栏折叠动画",
-  "admin.preferences.language": "语言"
+  "admin.preferences.language": "语言",
+  "IP Address": "IP 地址",
+  "admin.roll-tools-api.ip-address.input": "IP 地址",
+  "admin.roll-tools-api.ip-address.desc": "地址信息",
+  "admin.roll-tools-api.ip-address.raw": "原始数据"
 }

@@ -30,6 +30,10 @@ export const createMenu = () => [
     index: `${pathPrefix}/roll-tools-api`,
     children: [
       {
+        label: 'IP Address',
+        index: `${pathPrefix}/roll-tools-api/ip-address`
+      },
+      {
         label: 'Fuli Images',
         index: `${pathPrefix}/roll-tools-api/fuli-images`
       }
