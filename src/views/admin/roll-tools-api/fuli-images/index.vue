@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import { get, debounce } from 'lodash'
+import { get } from 'lodash'
 
 export default {
   data() {
