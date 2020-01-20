@@ -10,13 +10,24 @@
           </div>
         </div>
         <div class="box-body main">
-          <img
-            class="right-logo"
-            width="100"
-            height="100"
-            src="../assets/logo.png"
-          />
-          <h1><span class="foreground-text">D2</span> Advance</h1>
+          <div class="banner">
+            <img
+              class="right-logo"
+              width="100"
+              height="100"
+              src="../assets/logo.png"
+            />
+            <h1><span class="foreground-text">D2</span> Advance</h1>
+          </div>
+          <template v-for="item in langs">
+            <el-link
+              class="lang-link"
+              :type="$i18n.locale === item.value ? 'primary' : ''"
+              :key="item.value"
+              @click="$i18n.locale = item.value"
+              >{{ item.label }}</el-link
+            >
+          </template>
         </div>
       </div>
     </div>
@@ -41,11 +52,13 @@
 
 <script>
 import { homePath as adminHomePath } from '@/routes/admin'
+import { langs } from '@/locales'
 
 export default {
   data() {
     return {
-      adminHomePath
+      adminHomePath,
+      langs
     }
   }
 }
@@ -100,8 +113,12 @@ export default {
         p
           color $secondary-text-color
         &.main
-          padding 100px 10px
+          padding 40px 10px
           text-align center
+          .banner
+            padding 40px 10px
+          .lang-link + .lang-link
+            margin-left 10px
         &.demo
           padding 10px 10px 20px
           text-align center
