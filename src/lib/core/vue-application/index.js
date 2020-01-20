@@ -16,9 +16,13 @@ export default class VueApplication extends Emitter {
   start(starter) {
     try {
       this.beforeStart()
+      this.emit('done:beforeStart', this)
       this.store = this.createStore()
+      this.emit('done:createStore', this)
       this.router = this.createRouter()
+      this.emit('done:createRouter', this)
       this.vm = this.createVM({ store: this.store, router: this.router })
+      this.emit('done:createVM', this)
 
       this.router.onError(error => {
         if (/loading chunk \d* failed./i.test(error.message)) {
@@ -27,6 +31,7 @@ export default class VueApplication extends Emitter {
       })
 
       this.afterStart()
+      this.emit('done:afterStart', this)
       this.checkWait(true)
     } catch (error) {
       // eslint-disable-next-line no-console
@@ -48,9 +53,11 @@ export default class VueApplication extends Emitter {
     }
 
     this.waitSet.add(note)
+    this.emit('wait:add', note)
 
     return () => {
       this.waitSet.delete(note)
+      this.emit('wait:delete', note)
       this.checkWait()
     }
   }
@@ -61,6 +68,7 @@ export default class VueApplication extends Emitter {
     }
     if (this.ready && this.waitSet.size === 0) {
       this.mount(this.vm)
+      this.emit('done:mount', this)
     }
   }
 
