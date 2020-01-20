@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.14.0](https://github.com/d2-projects/d2-advance/compare/v1.13.1...v1.14.0) (2020-01-20)
+
+
+### Bug Fixes
+
+* **admin:** lose create store app argument ([bf0f574](https://github.com/d2-projects/d2-advance/commit/bf0f574716704ebda722d673bad3debc6d8fc9c3))
+
+
+### Features
+
+* **admin:** persist basic preferences ([9928eee](https://github.com/d2-projects/d2-advance/commit/9928eee48726d1c977695d0c8bdb4c196feb8365))
+* **storage:** lowdb with LocalStorage ([bab8240](https://github.com/d2-projects/d2-advance/commit/bab824068f319e85b9e8597d61f2f1d97d4b64d0))
+
 ## [1.13.1](https://github.com/d2-projects/d2-advance/compare/v1.13.0...v1.13.1) (2020-01-19)
 
 
