@@ -20,27 +20,32 @@
     {
       "name": "vue",
       "library": "Vue",
-      "js": "https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"
+      "js": "https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js",
+      "js.dev": "https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"
     },
     {
       "name": "vue-i18n",
       "library": "VueI18n",
-      "js": "https://cdn.jsdelivr.net/npm/vue-i18n@8.0.0/dist/vue-i18n.min.js"
+      "js": "https://cdn.jsdelivr.net/npm/vue-i18n@8.0.0/dist/vue-i18n.min.js",
+      "js.dev": "https://cdn.jsdelivr.net/npm/vue-i18n@8.0.0/dist/vue-i18n.js"
     },
     {
       "name": "vue-router",
       "library": "VueRouter",
-      "js": "https://cdn.jsdelivr.net/npm/vue-router@3.1.5/dist/vue-router.min.js"
+      "js": "https://cdn.jsdelivr.net/npm/vue-router@3.1.5/dist/vue-router.min.js",
+      "js.dev": "https://cdn.jsdelivr.net/npm/vue-router@3.1.5/dist/vue-router.js"
     },
     {
       "name": "vuex",
       "library": "Vuex",
-      "js": "https://cdn.jsdelivr.net/npm/vuex@3.1.2/dist/vuex.min.js"
+      "js": "https://cdn.jsdelivr.net/npm/vuex@3.1.2/dist/vuex.min.js",
+      "js.dev": "https://cdn.jsdelivr.net/npm/vuex@3.1.2/dist/vuex.js"
     },
     {
       "name": "axios",
       "library": "axios",
-      "js": "https://cdn.jsdelivr.net/npm/axios@0.19.1/dist/axios.min.js"
+      "js": "https://cdn.jsdelivr.net/npm/axios@0.19.1/dist/axios.min.js",
+      "js.dev": "https://cdn.jsdelivr.net/npm/axios@0.19.1/dist/axios.js"
     },
     {
       "name": "normalize.css",
