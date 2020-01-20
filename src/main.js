@@ -11,7 +11,6 @@ import store from './store'
 import { VueApplication, RoutingGuards } from './lib/core'
 import { createI18n } from './locales/main'
 import { client as createRtaClient } from './api/roll-tools-api'
-
 import useElementUI from './utils/use-element-ui'
 
 class MyApplication extends VueApplication {
@@ -35,7 +34,7 @@ class MyApplication extends VueApplication {
   }
 
   createStore() {
-    return store()
+    return store(this)
   }
 
   createRouter() {
