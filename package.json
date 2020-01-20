@@ -63,11 +63,6 @@
       "name": "element-ui",
       "library": "ELEMENT",
       "js": "https://cdn.jsdelivr.net/npm/element-ui@2.13.0/lib/index.js"
-    },
-    {
-      "name": "lodash",
-      "library": "_",
-      "js": "https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"
     }
   ],
   "dependencies": {
