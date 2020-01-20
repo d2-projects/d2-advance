@@ -4,6 +4,8 @@ import 'normalize.css'
 import './style/basic.styl'
 import StartLoading from '@/components/StartLoading.vue'
 import { createI18n } from './locales/start'
+import getStorage from './utils/get-storage'
+import { langs } from './locales'
 
 Vue.config.productionTip = false
 
@@ -35,6 +37,14 @@ document.getElementById('app').appendChild(
     data: { error: null },
     render(h) {
       return h(StartLoading, { props: { error: this.error } })
+    },
+    beforeCreate() {
+      const lang = getStorage()
+        .get('lang')
+        .value()
+      if (langs.find(item => item.value === lang)) {
+        this.$i18n.locale = lang
+      }
     },
     async mounted() {
       try {

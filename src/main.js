@@ -12,6 +12,8 @@ import { VueApplication, RoutingGuards } from './lib/core'
 import { createI18n } from './locales/main'
 import { client as createRtaClient } from './api/roll-tools-api'
 import useElementUI from './utils/use-element-ui'
+import getStorage from './utils/get-storage'
+import { langs } from './locales'
 
 class MyApplication extends VueApplication {
   constructor() {
@@ -65,13 +67,27 @@ class MyApplication extends VueApplication {
     return new Vue({
       store,
       router,
+      i18n: this.i18n,
       render: h => h(App),
-      i18n: this.i18n
+      beforeCreate() {
+        const lang = getStorage()
+          .get('lang')
+          .value()
+        if (langs.find(item => item.value === lang)) {
+          this.$i18n.locale = lang
+        }
+      },
+      watch: {
+        '$i18n.locale': {
+          handler: lang => this.emit('changeLanguage', lang),
+          immediate: true
+        }
+      }
     })
   }
 
   afterStart() {
-    this.vm.$watch('$i18n.locale', lang => this.emit('changeLanguage', lang))
+    // ...
   }
 
   mount(vm) {
@@ -80,6 +96,9 @@ class MyApplication extends VueApplication {
 
   onChangeLanguage(lang) {
     document.querySelector('html').setAttribute('lang', lang)
+    getStorage()
+      .set('lang', lang)
+      .write()
   }
 
   onLoadingChunkFailed(_error) {
