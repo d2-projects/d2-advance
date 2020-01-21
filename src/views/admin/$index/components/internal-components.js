@@ -7,13 +7,11 @@ import ActionBarItem from '../components/ActionBarItem'
 import SourceLink from '../components/SourceLink'
 
 export default {
-  components: {
-    AsideNavMenu,
-    AsideNavMenuToggle,
-    PageTabs,
-    SmartLogo,
-    ActionBar,
-    ActionBarItem,
-    SourceLink
-  }
+  AsideNavMenu,
+  AsideNavMenuToggle,
+  PageTabs,
+  SmartLogo,
+  ActionBar,
+  ActionBarItem,
+  SourceLink
 }

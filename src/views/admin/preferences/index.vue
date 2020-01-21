@@ -48,6 +48,7 @@ import {
 import { langs } from '@/locales'
 
 export default {
+  inject: ['@adminContainer'],
   mixins: [
     pageTabs,
     sourceLink,

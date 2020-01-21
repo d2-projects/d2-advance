@@ -6,3 +6,9 @@
     </template>
   </page-container>
 </template>
+
+<script>
+export default {
+  inject: ['@adminContainer']
+}
+</script>

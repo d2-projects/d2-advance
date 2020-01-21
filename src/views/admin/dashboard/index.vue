@@ -9,6 +9,7 @@
 
 <script>
 export default {
+  inject: ['@adminContainer'],
   data() {
     return {
       date: new Date()

@@ -11,6 +11,7 @@
 
 <script>
 export default {
+  inject: ['@adminContainer'],
   data() {
     return {
       env: process.env

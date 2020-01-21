@@ -65,6 +65,7 @@
 import { get, debounce } from 'lodash'
 
 export default {
+  inject: ['@adminContainer'],
   data() {
     return {
       ip: ''

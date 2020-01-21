@@ -35,13 +35,13 @@
 </template>
 
 <script>
-import internalComponents from '@/views/admin/$index/mixins/internal-components'
 import { menu } from '@/store/modules/admin/mixins'
 
 import customMenu from './menu'
 
 export default {
-  mixins: [internalComponents, menu],
+  inject: ['@adminContainer', '@adminInternal'],
+  mixins: [menu],
   data() {
     return {
       customMenu,

@@ -42,6 +42,7 @@
 import { get, map } from 'lodash'
 
 export default {
+  inject: ['@adminContainer'],
   data() {
     return {
       address: []

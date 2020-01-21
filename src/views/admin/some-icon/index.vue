@@ -6,3 +6,9 @@
     <p>{{ $t('TODO') }}</p>
   </page-container>
 </template>
+
+<script>
+export default {
+  inject: ['@adminContainer']
+}
+</script>

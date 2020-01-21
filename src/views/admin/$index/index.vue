@@ -58,8 +58,9 @@
 </template>
 
 <script>
-import { filter, uniqBy } from 'lodash'
-import internalComponents from './mixins/internal-components'
+import { filter, uniqBy, assign } from 'lodash'
+import internalComponents from './components/internal-components'
+import containerComponents from './components/container-components'
 import asideBscroll from './mixins/aside-bscroll'
 import {
   asideCollapse,
@@ -72,7 +73,6 @@ import {
 
 export default {
   mixins: [
-    internalComponents,
     asideCollapse,
     pageTabs,
     pageTransition,
@@ -81,11 +81,20 @@ export default {
     sourceLink,
     asideBscroll
   ],
+  provide: {
+    '@adminContainer'(v) {
+      assign(v.$options.components, containerComponents)
+    },
+    '@adminInternal'(v) {
+      assign(v.$options.components, internalComponents)
+    }
+  },
   methods: {
     handleSwitchTabs({ index }) {
       this.$router.push(index)
     }
-  }
+  },
+  components: internalComponents
 }
 </script>
 

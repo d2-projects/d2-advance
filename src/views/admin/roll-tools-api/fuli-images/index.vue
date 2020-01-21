@@ -54,6 +54,7 @@
 import { get } from 'lodash'
 
 export default {
+  inject: ['@adminContainer'],
   data() {
     return {
       page: 1,

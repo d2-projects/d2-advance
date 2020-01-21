@@ -1,5 +1,4 @@
 import { map, kebabCase } from 'lodash'
-import containerComponents from '@/views/admin/$index/mixins/container-components'
 
 export const pathPrefix = '/admin'
 export const homePath = pathPrefix
@@ -34,14 +33,7 @@ export const routes = () => [
             /* webpackExclude: /(components)/ */
             /* webpackMode: "lazy" */
             '@/views/admin/' + path
-          ).then(module => {
-            // !TRICKY inject mixin for top level component
-            const component = module.default || module
-            const mixins = component.mixins || []
-            mixins.push(containerComponents)
-            component.mixins = mixins
-            return module
-          })
+          )
       })
     )
   }

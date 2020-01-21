@@ -14,6 +14,7 @@ import { client as createRtaClient } from './api/roll-tools-api'
 import useElementUI from './utils/use-element-ui'
 import getStorage from './utils/get-storage'
 import { langs } from './locales'
+import autoInjector from './utils/auto-injector'
 
 class MyApplication extends VueApplication {
   constructor() {
@@ -29,6 +30,7 @@ class MyApplication extends VueApplication {
     Vue.use(VueI18n)
     Vue.use(VueRouter)
     Vue.component('async', Async)
+    Vue.mixin(autoInjector)
     Vue.prototype.$rta = this.rta = createRtaClient()
     this.i18n = createI18n()
     this.progress.configure({ showSpinner: false })

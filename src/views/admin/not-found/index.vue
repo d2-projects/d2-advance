@@ -12,6 +12,7 @@
 
 <script>
 export default {
+  inject: ['@adminContainer'],
   methods: {
     handleGoBack() {
       this.$router.go(-1)

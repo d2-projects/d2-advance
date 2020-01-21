@@ -39,6 +39,7 @@ import DemoArticle from './components/DemoArticle'
 import DemoTreeSide from './components/DemoTreeSide'
 
 export default {
+  inject: ['@adminContainer'],
   data() {
     return {
       header: true,
