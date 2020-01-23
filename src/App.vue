@@ -1,7 +1,7 @@
 <template>
   <transition name="fade">
     <div id="app" v-show="show">
-      <transition name="fade">
+      <transition name="fade" mode="out-in">
         <router-view />
       </transition>
     </div>
