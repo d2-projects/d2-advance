@@ -19,45 +19,47 @@
         }}
       </template>
     </el-input>
-    <async
-      :api="$rta.apis.ip.self"
-      :transform="transform"
-      @success="onSelfSuccess"
-    >
-      <template v-slot:default="{ pending, error }">
-        <div v-if="pending">
-          Loading ...
-        </div>
-        <div v-else-if="error">
-          {{ error.message }}
-        </div>
-        <div v-else>
-          <async
-            v-if="targetIP"
-            :api="$rta.apis.ip.aim_ip"
-            :args="[ip]"
-            :transform="transform"
-          >
-            <template v-slot:default="{ pending, error, data }">
-              <div v-if="pending">
-                Loading ...
-              </div>
-              <div v-else-if="error">
-                {{ error.message }}
-              </div>
-              <div v-else>
-                <p>
-                  <b>{{ $t('admin.roll-tools-api.ip-address.desc') }}：</b
-                  >{{ data.desc }}
-                </p>
-                <b>{{ $t('admin.roll-tools-api.ip-address.raw') }}：</b>
-                <pre>{{ data }}</pre>
-              </div>
-            </template>
-          </async>
-        </div>
-      </template>
-    </async>
+    <p>
+      <async
+        :api="$rta.apis.ip.self"
+        :transform="transform"
+        @success="onSelfSuccess"
+      >
+        <template v-slot:default="{ pending, error }">
+          <div v-if="pending">
+            Loading ...
+          </div>
+          <div v-else-if="error">
+            {{ error.message }}
+          </div>
+          <div v-else>
+            <async
+              v-if="targetIP"
+              :api="$rta.apis.ip.aim_ip"
+              :args="[ip]"
+              :transform="transform"
+            >
+              <template v-slot:default="{ pending, error, data }">
+                <div v-if="pending">
+                  Loading ...
+                </div>
+                <div v-else-if="error">
+                  {{ error.message }}
+                </div>
+                <div v-else>
+                  <p>
+                    <b>{{ $t('admin.roll-tools-api.ip-address.desc') }}：</b
+                    >{{ data.desc }}
+                  </p>
+                  <b>{{ $t('admin.roll-tools-api.ip-address.raw') }}：</b>
+                  <pre>{{ data }}</pre>
+                </div>
+              </template>
+            </async>
+          </div>
+        </template>
+      </async>
+    </p>
   </page-container>
 </template>
 

@@ -28,13 +28,13 @@
           static
         >
           <template v-slot:default="{ pending, error, data }">
-            <div v-if="pending" class="infinite-list-fragment pending">
+            <div v-if="pending">
               Loading ...
             </div>
-            <div v-else-if="error" class="infinite-list-fragment error">
-              {{ error }}
+            <div v-else-if="error">
+              {{ error.message }}
             </div>
-            <div v-else class="infinite-list-fragment success">
+            <div v-else>
               <el-image
                 v-for="item in data"
                 class="infinite-list-item"
