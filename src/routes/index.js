@@ -3,25 +3,27 @@ import { routes as adminRoutes } from './admin'
 export const pathPrefix = '/'
 export const homePath = pathPrefix
 
-const routes = [
-  // global home
-  {
-    path: pathPrefix,
-    component: () => import('../views/Home.vue')
-  },
+export default app => {
+  // const store = app.store.state
 
-  // admin demo
-  ...adminRoutes(),
+  return [
+    // global home
+    {
+      path: pathPrefix,
+      component: () => import('../views/Home.vue')
+    },
 
-  // global 404
-  {
-    path: '/not-found',
-    component: () => import('../views/NotFound')
-  },
-  {
-    path: '*',
-    redirect: '/not-found'
-  }
-]
+    // admin demo
+    ...adminRoutes(app),
 
-export default routes
+    // global 404
+    {
+      path: '/not-found',
+      component: () => import('../views/NotFound')
+    },
+    {
+      path: '*',
+      redirect: '/not-found'
+    }
+  ]
+}
