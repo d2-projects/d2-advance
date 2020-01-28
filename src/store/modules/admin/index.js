@@ -1,8 +1,7 @@
 import { getField, updateField } from 'vuex-map-fields'
 import { flattenMenuItemOfAdmin } from './utils'
 import { createMenu } from './menu'
-import { pick, keys } from 'lodash'
-import getStorage from '@/utils/get-storage'
+import storeAutoPersist from '@/utils/store-auto-persist'
 
 export const namespace = 'admin'
 
@@ -10,30 +9,26 @@ const init = app => {
   const menu = createMenu()
   const tabOptions = flattenMenuItemOfAdmin(menu)
 
-  const defaults = {
+  const { savedValues, watchValues } = storeAutoPersist(
+    app,
+    namespace
+  )({
     showTabs: true,
     tabOpened: [tabOptions[0]],
     asideCollapse: false,
     asideTransition: true,
     pageTransition: true,
-    showSourceLink: true
-  }
+    showSourceLink: true,
 
-  const storage = getStorage(namespace, { defaults })
-  const watchValues = state => pick(state, keys(defaults))
-  app.on('done:createStore', ({ store }) => {
-    store.watch(
-      rootState => watchValues(rootState[namespace]),
-      values => storage.setState(values).write()
-    )
+    token: null
   })
 
   return {
     namespaced: true,
     state: {
       tabOptions,
-      ...storage.getState(),
-      menu
+      menu,
+      ...savedValues
     },
     getters: {
       getField,

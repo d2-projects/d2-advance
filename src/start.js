@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import VueI18n from 'vue-i18n'
 import 'normalize.css'
 import './style/basic.styl'
 import StartLoading from '@/views/StartLoading'
@@ -8,8 +7,6 @@ import getStorage from './utils/get-storage'
 import { langs } from './locales'
 
 Vue.config.productionTip = false
-
-Vue.use(VueI18n)
 
 export const i18n = createI18n()
 
@@ -24,7 +21,7 @@ const startApp = async failHandler => {
 
   const startTime = new Date().getTime()
   const module = await import(/* webpackChunkName: "main" */ './main')
-  const start = () => !(module.default || module).start(failHandler)
+  const start = () => !(module.default || module).ready(failHandler)
   const loadingTime = new Date().getTime() - startTime
   loadingTime < MIN_LOADING_TIME
     ? setTimeout(start, MIN_LOADING_TIME - loadingTime)

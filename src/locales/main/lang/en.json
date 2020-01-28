@@ -57,5 +57,8 @@
   "admin.roll-tools-api.ip-address.input": "IP Address",
   "admin.roll-tools-api.ip-address.desc": "Description",
   "admin.roll-tools-api.ip-address.raw": "Raw Data",
-  "China Cities": "China Cities"
+  "China Cities": "China Cities",
+  "admin.login.placeholder.username": "Username",
+  "admin.login.placeholder.password": "Password",
+  "admin.login.button.login": "Login"
 }

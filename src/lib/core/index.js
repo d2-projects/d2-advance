@@ -1,4 +1,4 @@
 import RoutingGuards from './routing-guards'
-import VueApplication from './vue-application'
+import { VueApplication, EventNames } from './vue-application'
 
-export { RoutingGuards, VueApplication }
+export { RoutingGuards, VueApplication, EventNames }

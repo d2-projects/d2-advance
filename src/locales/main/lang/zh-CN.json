@@ -57,5 +57,8 @@
   "admin.roll-tools-api.ip-address.input": "IP 地址",
   "admin.roll-tools-api.ip-address.desc": "地址信息",
   "admin.roll-tools-api.ip-address.raw": "原始数据",
-  "China Cities": "全国城市"
+  "China Cities": "全国城市",
+  "admin.login.placeholder.username": "用户名",
+  "admin.login.placeholder.password": "密码",
+  "admin.login.button.login": "登录"
 }

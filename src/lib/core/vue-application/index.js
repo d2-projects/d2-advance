@@ -1,51 +1,62 @@
 import Emitter from 'events'
 
-export default class VueApplication extends Emitter {
+export const EventNames = {
+  beforeDone: 'beforeDone',
+  storeReady: 'storeReady',
+  routerReady: 'routerReady',
+  vmReady: 'vmReady',
+  afterDone: 'afterDone',
+  waitFor: 'waitFor',
+  waitDone: 'waitDone',
+  allReady: 'allReady',
+  mounted: 'mounted'
+}
+
+export class VueApplication extends Emitter {
   constructor() {
     super()
+    this.store = null
     this.router = null
     this.vm = null
-    this.store = null
-    this.state = {}
-    this.ready = false
+
+    this.readyState = false
     this.waitSet = new Set()
 
-    this.on('loadingChunkFailed', this.onLoadingChunkFailed)
+    this.state = {}
   }
 
-  start(starter) {
+  ready(starter) {
     try {
-      this.beforeStart()
-      this.emit('done:beforeStart', this)
+      this.before()
+      this.life(EventNames.beforeDone)
+
       this.store = this.createStore()
-      this.emit('done:createStore', this)
+      this.life(EventNames.storeReady)
+
       this.router = this.createRouter()
-      this.emit('done:createRouter', this)
+      this.life(EventNames.routerReady)
+
       this.vm = this.createVM({ store: this.store, router: this.router })
-      this.emit('done:createVM', this)
+      this.life(EventNames.vmReady)
 
-      this.router.onError(error => {
-        if (/loading chunk \d* failed./i.test(error.message)) {
-          this.emit('loadingChunkFailed', error)
-        }
-      })
+      this.after()
+      this.life(EventNames.afterDone)
 
-      this.afterStart()
-      this.emit('done:afterStart', this)
       this.checkWait(true)
     } catch (error) {
       // eslint-disable-next-line no-console
-      console.error('Application start error!')
-      starter.fail(error)
+      console.error('Application start error!', error)
+      if (starter && starter.fail) {
+        starter.fail(error)
+      }
     }
   }
 
-  onLoadingChunkFailed() {}
+  before() {}
   createStore() {}
   createRouter() {}
-  beforeStart() {}
-  afterStart() {}
   createVM() {}
+  after() {}
 
   waitFor(note) {
     if (typeof note !== 'string' || note.length < 1) {
@@ -53,34 +64,26 @@ export default class VueApplication extends Emitter {
     }
 
     this.waitSet.add(note)
-    this.emit('wait:add', note)
+    this.life(EventNames.waitFor, note)
 
     return () => {
       this.waitSet.delete(note)
-      this.emit('wait:delete', note)
+      this.life(EventNames.waitDone, note)
       this.checkWait()
     }
   }
 
-  checkWait(ready) {
-    if (ready) {
-      this.ready = true
+  checkWait(readyState) {
+    if (readyState) {
+      this.readyState = true
     }
-    if (this.ready && this.waitSet.size === 0) {
+    if (this.readyState && this.waitSet.size === 0) {
       this.mount(this.vm)
-      this.emit('done:mount', this)
+      this.life(EventNames.mounted)
     }
   }
 
-  firstRoutingMiddleware() {
-    const done = this.waitFor('first routing')
-    let called = false
-    return async (_, next) => {
-      await next()
-      if (!called) {
-        called = true
-        done()
-      }
-    }
+  life(eventName, ...args) {
+    this.emit(eventName, this, ...args)
   }
 }
