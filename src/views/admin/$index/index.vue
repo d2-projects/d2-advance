@@ -11,12 +11,18 @@
           >action</action-bar-item
         > -->
         <action-bar-item>
-          <el-dropdown style="cursor: pointer" size="small">
+          <el-dropdown
+            @command="handleCommand"
+            style="cursor: pointer"
+            size="small"
+          >
             <span style="padding-left: 10px; padding-right: 10px">
               {{ $t('hello') }}
             </span>
             <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item>menu item</el-dropdown-item>
+              <el-dropdown-item command="logout">{{
+                $t('admin.logout')
+              }}</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
         </action-bar-item>
@@ -68,8 +74,10 @@ import {
   pageTransition,
   asideTransition,
   menu,
-  sourceLink
+  sourceLink,
+  token
 } from '@/store/modules/admin/mixins'
+import { loginPath } from '@/routes/admin'
 
 export default {
   mixins: [
@@ -79,7 +87,8 @@ export default {
     asideTransition,
     menu,
     sourceLink,
-    asideBscroll
+    asideBscroll,
+    token
   ],
   provide: {
     '@adminContainer'(v) {
@@ -92,6 +101,12 @@ export default {
   methods: {
     handleSwitchTabs({ index }) {
       this.$router.push(index)
+    },
+    handleCommand(command) {
+      if (command === 'logout') {
+        this.token = null
+        this.$router.push(loginPath)
+      }
     }
   },
   components: internalComponents

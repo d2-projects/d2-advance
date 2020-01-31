@@ -37,3 +37,9 @@ export const sourceLink = {
     ...mapFields(namespace, ['showSourceLink'])
   }
 }
+
+export const token = {
+  computed: {
+    ...mapFields(namespace, ['token'])
+  }
+}

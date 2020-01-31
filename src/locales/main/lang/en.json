@@ -60,5 +60,10 @@
   "China Cities": "China Cities",
   "admin.login.placeholder.username": "Username",
   "admin.login.placeholder.password": "Password",
-  "admin.login.button.login": "Login"
+  "admin.login.button.login": "Login",
+  "admin.login.rules.username.required": "username is required",
+  "admin.login.rules.password.required": "password is required",
+  "admin.login.rules.username.range": "username must be between {min} and {max} characters",
+  "admin.login.rules.password.range": "password must be between {min} and {max} characters",
+  "admin.logout": "Logout"
 }

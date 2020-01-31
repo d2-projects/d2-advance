@@ -3,6 +3,7 @@ import { namespace } from '@/store/modules/admin'
 
 export const pathPrefix = '/admin'
 export const homePath = pathPrefix
+export const loginPath = pathPrefix + '/login'
 
 export const routes = app => {
   const state = app.store.state[namespace]

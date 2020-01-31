@@ -60,5 +60,10 @@
   "China Cities": "全国城市",
   "admin.login.placeholder.username": "用户名",
   "admin.login.placeholder.password": "密码",
-  "admin.login.button.login": "登录"
+  "admin.login.button.login": "登录",
+  "admin.login.rules.username.required": "请填写用户名",
+  "admin.login.rules.password.required": "请填写密码",
+  "admin.login.rules.username.range": "用户名在 {min} 到 {max} 个字符内",
+  "admin.login.rules.password.range": "密码在 {min} 到 {max} 个字符内",
+  "admin.logout": "退出登陆"
 }
