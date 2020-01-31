@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.15.0](https://github.com/d2-projects/d2-advance/compare/v1.14.1...v1.15.0) (2020-01-31)
+
+
+### Bug Fixes
+
+* main transition with out-in mode ([b4b1df7](https://github.com/d2-projects/d2-advance/commit/b4b1df724f323cb717daf1378b48ef04445f9b53))
+
+
+### Features
+
+* **admin:** login & logout demo ([8331808](https://github.com/d2-projects/d2-advance/commit/833180891dd4feef3c3b2c9725a142c8c7a93488))
+* refactor core code, add login demo ([3946d50](https://github.com/d2-projects/d2-advance/commit/3946d50592aa9c1cdd1372f0b44e63df9bb75ca0))
+
 ## [1.14.1](https://github.com/d2-projects/d2-advance/compare/v1.14.0...v1.14.1) (2020-01-21)
 
 
