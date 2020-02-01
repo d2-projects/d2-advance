@@ -22,7 +22,6 @@
         </div>
         <div v-else>
           <el-cascader
-            placeholder="试试搜索：指南"
             :options="data"
             filterable
             clearable
