@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.16.0](https://github.com/d2-projects/d2-advance/compare/v1.15.1...v1.16.0) (2020-02-01)
+
+
+### Bug Fixes
+
+* remove useless placeholder ([248b07e](https://github.com/d2-projects/d2-advance/commit/248b07e8e355e68f7f95bfc29c0d82023f5d89f2))
+
+
+### Features
+
+* **roll-tools-api:** add single qrcode generate demo ([52d5728](https://github.com/d2-projects/d2-advance/commit/52d57281e1b5ff875ba0a19b6bbfc2f27b4830fb))
+
 ## [1.15.1](https://github.com/d2-projects/d2-advance/compare/v1.15.0...v1.15.1) (2020-02-01)
 
 
