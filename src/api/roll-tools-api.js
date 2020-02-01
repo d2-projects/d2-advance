@@ -48,6 +48,16 @@ export const client = () => {
     },
     address: {
       list: () => instance.get('/address/list')
+    },
+    qrcode: {
+      single: (content, { size = 500, type = 1 } = {}) =>
+        instance.get('/qrcode/create/single', {
+          params: {
+            content,
+            size,
+            type
+          }
+        })
     }
   }
 

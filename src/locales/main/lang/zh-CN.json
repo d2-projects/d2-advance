@@ -65,5 +65,8 @@
   "admin.login.rules.password.required": "请填写密码",
   "admin.login.rules.username.range": "用户名在 {min} 到 {max} 个字符内",
   "admin.login.rules.password.range": "密码在 {min} 到 {max} 个字符内",
-  "admin.logout": "退出登陆"
+  "admin.logout": "退出登陆",
+  "QR Code": "二维码",
+  "admin.roll-tools-api.qrcode.placeholder.content": "请输入内容",
+  "admin.roll-tools-api.qrcode.generate": "立即生成"
 }

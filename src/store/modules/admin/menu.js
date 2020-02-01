@@ -38,6 +38,10 @@ export const createMenu = () => [
         index: `${pathPrefix}/roll-tools-api/china-cities`
       },
       {
+        label: 'QR Code',
+        index: `${pathPrefix}/roll-tools-api/qrcode`
+      },
+      {
         label: 'Fuli Images',
         index: `${pathPrefix}/roll-tools-api/fuli-images`
       }

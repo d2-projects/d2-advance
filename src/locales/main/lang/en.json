@@ -65,5 +65,8 @@
   "admin.login.rules.password.required": "password is required",
   "admin.login.rules.username.range": "username must be between {min} and {max} characters",
   "admin.login.rules.password.range": "password must be between {min} and {max} characters",
-  "admin.logout": "Logout"
+  "admin.logout": "Logout",
+  "QR Code": "QR Code",
+  "admin.roll-tools-api.qrcode.placeholder.content": "Please input content",
+  "admin.roll-tools-api.qrcode.generate": "Generate"
 }

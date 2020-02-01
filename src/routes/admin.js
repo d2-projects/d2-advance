@@ -40,6 +40,7 @@ export const routes = app => {
           'roll-tools-api/china-cities',
           'roll-tools-api/fuli-images',
           'roll-tools-api/ip-address',
+          'roll-tools-api/qrcode',
           'some-icon',
           'development',
           'forbidden',
