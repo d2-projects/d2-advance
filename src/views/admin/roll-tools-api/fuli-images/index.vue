@@ -16,15 +16,14 @@
       class="infinite-list"
       v-infinite-scroll="loadNext"
       infinite-scroll-distance="100"
-      :infinite-scroll-disabled="lock"
+      :infinite-scroll-disabled="!!lock"
     >
       <template v-for="pageNumber in page">
         <async
           :key="pageNumber"
-          :api="$rta.apis.image.girl"
-          :args="[pageNumber]"
+          :api="$rta.apis.image.girl_random"
           :transform="transform"
-          @success="lock = false"
+          @success="success"
           static
         >
           <template v-slot:default="{ pending, error, data }">
@@ -37,10 +36,11 @@
             <div v-else>
               <el-image
                 v-for="item in data"
+                lazy
                 class="infinite-list-item"
                 :key="item.imageUrl"
                 :src="item.imageUrl"
-                :preview-src-list="[item.imageUrl]"
+                :preview-src-list="urls"
               ></el-image>
             </div>
           </template>
@@ -51,23 +51,28 @@
 </template>
 
 <script>
-import { get } from 'lodash'
+import { get, map } from 'lodash'
 
 export default {
   inject: ['@adminContainer'],
   data() {
     return {
       page: 1,
-      lock: true
+      lock: 1,
+      urls: []
     }
   },
   methods: {
     transform(response) {
-      return get(response, 'data.data.list', [])
+      return get(response, 'data.data', [])
     },
     loadNext() {
-      this.lock = true
-      this.page++
+      this.lock += 1
+      this.page += 1
+    },
+    success(list) {
+      this.urls = [...this.urls, ...map(list, 'imageUrl')]
+      this.lock -= 1
     }
   }
 }
@@ -78,7 +83,7 @@ export default {
   overflow auto
   flex 1
   .infinite-list-item
-    width 25%
+    width 20%
     min-height 100px
 </style>
 

@@ -38,7 +38,9 @@ export const client = () => {
 
   const apis = {
     image: {
-      girl: (page = 1) => instance.get('/image/girl/list', { params: { page } })
+      girl: (page = 1) =>
+        instance.get('/image/girl/list', { params: { page } }),
+      girl_random: () => instance.get('/image/girl/list/random')
     },
     ip: {
       self: () => instance.get('/ip/self'),
