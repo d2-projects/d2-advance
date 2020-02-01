@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.15.1](https://github.com/d2-projects/d2-advance/compare/v1.15.0...v1.15.1) (2020-02-01)
+
+
+### Performance Improvements
+
+* **roll-tools-api:** use random girl api ([231c5f6](https://github.com/d2-projects/d2-advance/commit/231c5f6e84a0829e4b6c7db9f5ef3e6493675bed))
+
 # [1.15.0](https://github.com/d2-projects/d2-advance/compare/v1.14.1...v1.15.0) (2020-01-31)
 
 
