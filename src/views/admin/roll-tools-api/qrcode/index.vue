@@ -12,56 +12,96 @@
         >
       </h2>
     </template>
-    <el-input
-      type="textarea"
-      :placeholder="$t('admin.roll-tools-api.qrcode.placeholder.content')"
-      v-model="content"
-      maxlength="255"
-      show-word-limit
-    />
-    <p>
-      <el-slider
-        :format-tooltip="v => v + 'px'"
-        v-model="size"
-        :max="maxSize"
-        :min="minSize"
-        show-input
-      ></el-slider>
-    </p>
-    <p>
-      <el-button
-        type="primary"
-        :disabled="!content.length"
-        @click="handleGenerate"
-        >{{ $t('admin.roll-tools-api.qrcode.generate') }}</el-button
+    <div class="body-wrapper">
+      <el-input
+        type="textarea"
+        :placeholder="$t('admin.roll-tools-api.qrcode.placeholder.content')"
+        v-model="content"
+        maxlength="255"
+        show-word-limit
+        :rows="5"
+      />
+      <p>
+        <el-slider
+          :format-tooltip="v => v + 'px'"
+          v-model="size"
+          :max="maxSize"
+          :min="minSize"
+          show-input
+        ></el-slider>
+      </p>
+      <p>
+        <el-upload
+          action="#"
+          class="updater"
+          :limit="1"
+          :auto-upload="false"
+          :show-file-list="false"
+          :multiple="false"
+          :on-change="loadLogo"
+          ref="logo"
+        >
+          <template v-if="logo_src">
+            <img :src="logo_src" class="logo" />
+          </template>
+          <template v-else>
+            <i class="el-icon-plus updater-icon"></i>
+            <span class="updater-icon-desc">Logo</span>
+          </template>
+        </el-upload>
+        <el-button
+          v-if="logo_src"
+          type="danger"
+          icon="el-icon-delete"
+          circle
+          @click="handleRemove"
+        ></el-button>
+      </p>
+      <p>
+        <el-slider
+          :disabled="!logo"
+          :format-tooltip="v => v + 'px'"
+          v-model="logo_size"
+          :max="size / 2"
+          :min="minSize / 5"
+          show-input
+        ></el-slider>
+      </p>
+      <p>
+        <el-button
+          type="primary"
+          :disabled="!content.length"
+          @click="handleGenerate"
+          >{{ $t('admin.roll-tools-api.qrcode.generate') }}</el-button
+        >
+      </p>
+      <async
+        v-if="confirmed"
+        :api="$rta.apis.qrcode"
+        :args="confirmed"
+        :transform="transform"
       >
-    </p>
-    <async
-      v-if="confirmed"
-      :api="$rta.apis.qrcode.single"
-      :args="confirmed"
-      :transform="transform"
-    >
-      <template v-slot:default="{ pending, error, data }">
-        <div v-if="pending">
-          Loading ...
-        </div>
-        <div v-else-if="error">
-          {{ error.message }}
-        </div>
-        <div v-else>
-          <el-image
-            :src="data.qrCodeUrl || data.qrCodeBase64"
-            fit="contain"
-          ></el-image>
-        </div>
-      </template>
-    </async>
+        <template v-slot:default="{ pending, error, data }">
+          <div v-if="pending">
+            Loading ...
+          </div>
+          <div v-else-if="error">
+            {{ error.message }}
+          </div>
+          <div v-else>
+            <el-image
+              :src="data.qrCodeUrl || data.qrCodeBase64"
+              fit="contain"
+            ></el-image>
+          </div>
+        </template>
+      </async>
+    </div>
   </page-container>
 </template>
 
 <script>
-import { get } from 'lodash'
+import { get, pick } from 'lodash'
 
 export default {
   inject: ['@adminContainer'],
@@ -71,7 +111,15 @@ export default {
       content: '',
       size: 500,
       maxSize: 1024,
-      minSize: 100
+      minSize: 100,
+      logo: null,
+      logo_size: 100,
+      logo_src: null
+    }
+  },
+  watch: {
+    size(value) {
+      this.logo_size = ~~(value / 5)
     }
   },
   methods: {
@@ -79,8 +127,78 @@ export default {
       return get(result, 'data.data', {})
     },
     handleGenerate() {
-      this.confirmed = [this.content, { size: this.size }]
+      this.confirmed = [this.content, pick(this, ['size', 'logo', 'logo_size'])]
+    },
+    loadLogo({ size, raw: file }) {
+      const isJPG = file.type === 'image/jpeg'
+      const isLt2M = file.size / 1024 / 1024 < 2
+
+      if (!isJPG) {
+        this.$message.warning(
+          this.$t('admin.roll-tools-api.qrcode.logo_type_limit', ['JPG'])
+        )
+        return this.$refs.logo.clearFiles()
+      }
+      if (!isLt2M) {
+        this.$message.warning(
+          this.$t('admin.roll-tools-api.qrcode.logo_size_limit', ['2MB'])
+        )
+        return this.$refs.logo.clearFiles()
+      }
+
+      this.$refs.logo.clearFiles()
+      this.logo = file
+      if (file) {
+        const reader = new FileReader()
+        reader.readAsDataURL(file)
+        reader.onloadend = event => {
+          this.logo_src = event.target.result
+        }
+      }
+    },
+    handleRemove() {
+      this.$refs.logo.clearFiles()
+      this.logo = null
+      this.logo_src = null
     }
   }
 }
 </script>
+
+<style lang="stylus" scoped>
+$logo-size = 140px
+
+.body-wrapper
+  max-width 720px
+
+.updater
+  display inline-block
+  margin-right 10px
+  vertical-align middle
+  >>>
+    .el-upload
+      border 1px dashed #d9d9d9
+      border-radius 6px
+      cursor pointer
+      position relative
+      overflow hidden
+      &:hover
+        border-color #409eff
+  &-icon
+    font-size 28px
+    color #8c939d
+    width $logo-size
+    height $logo-size
+    line-height $logo-size
+    text-align center
+    &-desc
+      position absolute
+      bottom 10px
+      color #8c939d
+      left 0
+      right 0
+.logo
+  width $logo-size
+  height $logo-size
+  display block
+</style>

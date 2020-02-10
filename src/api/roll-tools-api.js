@@ -49,15 +49,24 @@ export const client = () => {
     address: {
       list: () => instance.get('/address/list')
     },
-    qrcode: {
-      single: (content, { size = 500, type = 1 } = {}) =>
-        instance.get('/qrcode/create/single', {
-          params: {
-            content,
-            size,
-            type
-          }
+    qrcode: (
+      content,
+      { size = 500, type = 1, logo = null, logo_size = 100 } = {}
+    ) => {
+      const baseParams = { content, size, type }
+      const logoParams = { logo, logo_size }
+      if (logo) {
+        const formData = new FormData()
+        formData.append('logo_img', logo)
+        return instance.post('/qrcode/create/logo', formData, {
+          params: { ...baseParams, ...logoParams },
+          headers: { 'Content-Type': 'multipart/form-data' }
         })
+      } else {
+        return instance.get('/qrcode/create/single', {
+          params: baseParams
+        })
+      }
     }
   }
 

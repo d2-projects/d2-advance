@@ -68,5 +68,7 @@
   "admin.logout": "退出登陆",
   "QR Code": "二维码",
   "admin.roll-tools-api.qrcode.placeholder.content": "请输入内容",
-  "admin.roll-tools-api.qrcode.generate": "立即生成"
+  "admin.roll-tools-api.qrcode.generate": "立即生成",
+  "admin.roll-tools-api.qrcode.logo_type_limit": "Logo 图片只能是 {0} 格式",
+  "admin.roll-tools-api.qrcode.logo_size_limit": "Logo 文件大小不能超过 {0}"
 }
