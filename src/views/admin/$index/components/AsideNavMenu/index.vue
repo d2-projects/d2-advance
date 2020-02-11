@@ -73,6 +73,11 @@ export default {
             router: true,
             'default-active': this.$route.path,
             collapse: this.collapse
+          },
+          on: {
+            select: (index, deepIndex, targetComponent) => {
+              this.$emit('select', index, deepIndex, targetComponent)
+            }
           }
         },
         map(this.menu, it)

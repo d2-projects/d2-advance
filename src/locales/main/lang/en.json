@@ -70,5 +70,6 @@
   "admin.roll-tools-api.qrcode.placeholder.content": "Please input content",
   "admin.roll-tools-api.qrcode.generate": "Generate",
   "admin.roll-tools-api.qrcode.logo_type_limit": "Logo file type must be {0}",
-  "admin.roll-tools-api.qrcode.logo_size_limit": "Logo file size cannot exceed {0}"
+  "admin.roll-tools-api.qrcode.logo_size_limit": "Logo file size cannot exceed {0}",
+  "admin.preferences.flat": "Flat mode"
 }

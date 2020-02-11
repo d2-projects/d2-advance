@@ -27,6 +27,13 @@
 
     <el-divider />
 
+    <p>
+      <b>{{ $t('admin.preferences.flat') }}：</b
+      ><el-switch v-model="flat"></el-switch>
+    </p>
+
+    <el-divider />
+
     <h2>{{ $t('admin.preferences.language') }}</h2>
     <el-radio-group v-model="$i18n.locale">
       <el-radio v-for="item in langs" :key="item.value" :label="item.value">{{
@@ -43,7 +50,8 @@ import {
   sourceLink,
   asideCollapse,
   pageTransition,
-  asideTransition
+  asideTransition,
+  flat
 } from '@/store/modules/admin/mixins'
 import { langs } from '@/locales'
 
@@ -54,7 +62,8 @@ export default {
     sourceLink,
     asideCollapse,
     pageTransition,
-    asideTransition
+    asideTransition,
+    flat
   ],
 
   data() {

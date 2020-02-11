@@ -43,3 +43,9 @@ export const token = {
     ...mapFields(namespace, ['token'])
   }
 }
+
+export const flat = {
+  computed: {
+    ...mapFields(namespace, ['flat'])
+  }
+}

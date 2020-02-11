@@ -1,6 +1,7 @@
 @import '../../../style/variable.styl'
 
 $aside-width = 200px
+$aside-collapse-width = 65px
 $header-height = 60px
 $right-margin = 20px
 
@@ -19,6 +20,7 @@ $right-margin = 20px
       > .action-bar
         flex 1
     .body
+      position relative
       overflow hidden
       >
         .aside
@@ -38,6 +40,30 @@ $right-margin = 20px
               left 0
               right $right-margin
               overflow-x hidden
+  &.flat >
+    .body >
+      .aside
+        position absolute
+        z-index 2000
+        top 0
+        bottom 0
+        background #ecf1f6
+        border-right 1px solid #cfd7e5
+        border-top 1px solid #cfd7e5
+        border-top-right-radius 4px
+      .center-wrapper >
+        .tabs-wrapper
+          margin-right 0
+        .main > .page-wrapper
+          right 0
+  &.flat.collapse >
+    .body >
+      .aside
+        margin-left - $aside-collapse-width
+  &.flat:not(.tabs)
+    .body >
+      .aside
+        border-top-right-radius 0
 
 .fade-transverse
   &-leave-active

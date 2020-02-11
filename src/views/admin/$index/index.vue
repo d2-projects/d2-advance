@@ -1,5 +1,8 @@
 <template>
-  <el-container class="admin-container">
+  <el-container
+    class="admin-container"
+    :class="{ collapse: asideCollapse, tabs: showTabs, flat }"
+  >
     <el-header class="header">
       <smart-logo :has-transition="asideTransition" :collapse="asideCollapse" />
       <aside-nav-menu-toggle v-model="asideCollapse" />
@@ -35,6 +38,7 @@
             :has-transition="asideTransition"
             :menu="menu"
             :collapse="asideCollapse"
+            @select="handleAsideMenuItemSelected"
           />
         </div>
       </el-aside>
@@ -52,7 +56,7 @@
             <keep-alive>
               <router-view
                 class="page-wrapper"
-                :class="{ 'sharp-top': showTabs }"
+                :class="{ 'sharp-top': showTabs, flat }"
               />
             </keep-alive>
           </transition>
@@ -75,7 +79,8 @@ import {
   asideTransition,
   menu,
   sourceLink,
-  token
+  token,
+  flat
 } from '@/store/modules/admin/mixins'
 import { loginPath } from '@/routes/admin'
 
@@ -88,7 +93,8 @@ export default {
     menu,
     sourceLink,
     asideBscroll,
-    token
+    token,
+    flat
   ],
   provide: {
     '@adminContainer'(v) {
@@ -96,6 +102,16 @@ export default {
     },
     '@adminInternal'(v) {
       assign(v.$options.components, internalComponents)
+    }
+  },
+  watch: {
+    flat(value) {
+      if (value) {
+        this.asideCollapse = true
+        this.asideTransition = false
+        this.pageTransition = false
+        this.showTabs = false
+      }
     }
   },
   methods: {
@@ -106,6 +122,11 @@ export default {
       if (command === 'logout') {
         this.token = null
         this.$router.push(loginPath)
+      }
+    },
+    handleAsideMenuItemSelected(...args) {
+      if (this.flat) {
+        this.asideCollapse = true
       }
     }
   },

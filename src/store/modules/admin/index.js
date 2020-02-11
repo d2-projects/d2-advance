@@ -19,6 +19,7 @@ const init = app => {
     asideTransition: true,
     pageTransition: true,
     showSourceLink: true,
+    flat: false,
 
     token: null
   })
