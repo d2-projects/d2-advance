@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.17.0](https://github.com/d2-projects/d2-advance/compare/v1.16.0...v1.17.0) (2020-02-11)
+
+
+### Features
+
+* **admin:** add flat mode ([7f83464](https://github.com/d2-projects/d2-advance/commit/7f8346403effc9dc3292214de1229a0fe25997cb))
+* **roll-tools-api:** generate qrcode with logo ([a7a4aac](https://github.com/d2-projects/d2-advance/commit/a7a4aacfaa01ed1d0e7cfb56ebc6e16a397c76c4))
+
 # [1.16.0](https://github.com/d2-projects/d2-advance/compare/v1.15.1...v1.16.0) (2020-02-01)
 
 
