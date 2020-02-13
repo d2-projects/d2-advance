@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.17.1](https://github.com/d2-projects/d2-advance/compare/v1.17.0...v1.17.1) (2020-02-13)
+
+
+### Bug Fixes
+
+* **admin:** improve flat mode with flat-padding and smart-logo ([228a7dd](https://github.com/d2-projects/d2-advance/commit/228a7ddd13435ec5c95b91365c3029477633b7b4))
+
 # [1.17.0](https://github.com/d2-projects/d2-advance/compare/v1.16.0...v1.17.0) (2020-02-11)
 
 
