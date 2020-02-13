@@ -4,7 +4,11 @@
     :class="{ collapse: asideCollapse, tabs: showTabs, flat }"
   >
     <el-header class="header">
-      <smart-logo :has-transition="asideTransition" :collapse="asideCollapse" />
+      <smart-logo
+        v-if="!flat"
+        :has-transition="asideTransition"
+        :collapse="asideCollapse"
+      />
       <aside-nav-menu-toggle v-model="asideCollapse" />
       <action-bar class="action-bar">
         <!-- <action-bar-item
