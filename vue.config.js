@@ -31,9 +31,6 @@ module.exports = {
       })
     }
 
-    // https://webpack.js.org/configuration/performance/#performancehints
-    config.performance.hints(false) // false | "error" | "warning"
-
     /**
      * for gzip outputs
      * https://github.com/webpack-contrib/compression-webpack-plugin
