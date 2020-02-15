@@ -32,7 +32,7 @@ export const vm = new Vue({
 
       const startTime = new Date().getTime()
       const module = await import(/* webpackChunkName: "main" */ './main')
-      const start = () => !(module.default || module).ready(this)
+      const start = () => !(module.default || module).init(this)
       const loadingTime = new Date().getTime() - startTime
       loadingTime < MIN_LOADING_TIME
         ? setTimeout(start, MIN_LOADING_TIME - loadingTime)

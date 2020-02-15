@@ -19,13 +19,13 @@ export class VueApplication extends Emitter {
     this.router = null
     this.vm = null
 
-    this.readyState = false
+    this.ready = false
     this.waitSet = new Set()
 
     this.state = {}
   }
 
-  ready(starter) {
+  init(starter) {
     try {
       this.before()
       this.life(EventNames.beforeDone)
@@ -73,11 +73,11 @@ export class VueApplication extends Emitter {
     }
   }
 
-  checkWait(readyState) {
-    if (readyState) {
-      this.readyState = true
+  checkWait(ready) {
+    if (ready) {
+      this.ready = true
     }
-    if (this.readyState && this.waitSet.size === 0) {
+    if (this.ready && this.waitSet.size === 0) {
       this.mount(this.vm)
       this.life(EventNames.mounted)
     }
