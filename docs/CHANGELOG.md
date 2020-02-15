@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.18.0](https://github.com/d2-projects/d2-advance/compare/v1.17.1...v1.18.0) (2020-02-15)
+
+
+### Features
+
+* **admin:** responsive layout ([a0ac52b](https://github.com/d2-projects/d2-advance/commit/a0ac52b22c5d164bb844c364b51a21e48b783aa2))
+
+
+### Performance Improvements
+
+* **admin:** debounce responsive event ([050b484](https://github.com/d2-projects/d2-advance/commit/050b484751d4dfaaa11c8677c9fd25b991a1d74b))
+
 ## [1.17.1](https://github.com/d2-projects/d2-advance/compare/v1.17.0...v1.17.1) (2020-02-13)
 
 
