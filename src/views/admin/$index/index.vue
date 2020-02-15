@@ -108,16 +108,6 @@ export default {
       assign(v.$options.components, internalComponents)
     }
   },
-  watch: {
-    flat(value) {
-      if (value) {
-        this.asideCollapse = true
-        this.asideTransition = false
-        this.pageTransition = false
-        this.showTabs = false
-      }
-    }
-  },
   methods: {
     handleSwitchTabs({ index }) {
       this.$router.push(index)
