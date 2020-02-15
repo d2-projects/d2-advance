@@ -87,6 +87,7 @@ import {
   flat
 } from '@/store/modules/admin/mixins'
 import { loginPath } from '@/routes/admin'
+import screenSizeMixin from '@/utils/screen-size-mixin'
 
 export default {
   mixins: [
@@ -98,7 +99,8 @@ export default {
     sourceLink,
     asideBscroll,
     token,
-    flat
+    flat,
+    screenSizeMixin
   ],
   provide: {
     '@adminContainer'(v) {
@@ -106,6 +108,14 @@ export default {
     },
     '@adminInternal'(v) {
       assign(v.$options.components, internalComponents)
+    }
+  },
+  watch: {
+    $vssWidth: {
+      handler(size) {
+        this.asideCollapse = size < 1024
+        this.flat = size < 768
+      }
     }
   },
   methods: {
