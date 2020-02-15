@@ -113,6 +113,7 @@ export default {
   },
   watch: {
     $vssWidth: {
+      immediate: true,
       handler: debounce(function(size) {
         this.asideCollapse = size < 1024
         this.flat = size < 768
