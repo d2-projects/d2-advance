@@ -1,9 +1,6 @@
 <template>
   <div class="wrapper" @click="handleClick">
-    <i
-      class="icon"
-      :class="value ? 'el-icon-arrow-right' : 'el-icon-arrow-left'"
-    ></i>
+    <i class="icon" :class="value ? 'el-icon-s-unfold' : 'el-icon-s-fold'"></i>
   </div>
 </template>
 
