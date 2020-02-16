@@ -114,12 +114,12 @@ export default {
   watch: {
     $vssWidth: {
       immediate: true,
-      handler: debounce(function(size, oldSize) {
+      handler(size, oldSize) {
         if (!isUndefined(oldSize) && inRange(1024, size, oldSize)) {
           this.asideCollapse = size < 1024
         }
         this.flat = size < 768
-      }, 200)
+      }
     }
   },
   methods: {
