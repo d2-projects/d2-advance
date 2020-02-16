@@ -88,7 +88,7 @@ import {
 } from '@/store/modules/admin/mixins'
 import { loginPath } from '@/routes/admin'
 import screenSizeMixin from '@/utils/screen-size-mixin'
-import { debounce } from 'lodash'
+import { debounce, isUndefined, inRange } from 'lodash'
 
 export default {
   mixins: [
@@ -114,8 +114,10 @@ export default {
   watch: {
     $vssWidth: {
       immediate: true,
-      handler: debounce(function(size) {
-        this.asideCollapse = size < 1024
+      handler: debounce(function(size, oldSize) {
+        if (!isUndefined(oldSize) && inRange(1024, size, oldSize)) {
+          this.asideCollapse = size < 1024
+        }
         this.flat = size < 768
       }, 200)
     }
