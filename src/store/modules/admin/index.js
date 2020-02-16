@@ -9,7 +9,7 @@ const init = app => {
   const menu = createMenu()
   const tabOptions = flattenMenuItemOfAdmin(menu)
 
-  const { savedValues, watchValues } = storeAutoPersist(
+  const { savedValues } = storeAutoPersist(
     app,
     namespace
   )({
@@ -33,7 +33,6 @@ const init = app => {
     },
     getters: {
       getField,
-      watchValues,
       menu(state) {
         return state.menu
       }
