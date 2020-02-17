@@ -35,16 +35,20 @@ module.exports = {
      * for gzip outputs
      * https://github.com/webpack-contrib/compression-webpack-plugin
      */
-    config.plugin('compression-webpack-plugin').use(CompressionWebpackPlugin, [
-      {
-        filename: '[path].gz[query]',
-        algorithm: 'gzip',
-        test: /\.js$|\.css$|\.html$/,
-        threshold: 10240,
-        minRatio: 0.8,
-        deleteOriginalAssets: false
-      }
-    ])
+    if (process.env.VUE_APP_GZIP === 'on') {
+      config
+        .plugin('compression-webpack-plugin')
+        .use(CompressionWebpackPlugin, [
+          {
+            filename: '[path].gz[query]',
+            algorithm: 'gzip',
+            test: /\.js$|\.css$|\.html$/,
+            threshold: 10240,
+            minRatio: 0.8,
+            deleteOriginalAssets: false
+          }
+        ])
+    }
 
     /**
      * use public cdn dependencies by webpack externals and htmlWebpackPlugin
