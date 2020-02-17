@@ -55,8 +55,8 @@ module.exports = {
      * https://webpack.js.org/configuration/externals
      * https://github.com/jantimon/html-webpack-plugin
      */
-    const cdnDependencies = get(packageInfo, 'cdnDependencies', [])
     if (process.env.VUE_APP_CDN_DEPENDENCIES === 'on') {
+      const cdnDependencies = get(packageInfo, 'cdnDependencies', [])
       config.externals(
         reduce(
           cdnDependencies,
