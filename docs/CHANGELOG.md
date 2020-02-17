@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.19.0](https://github.com/d2-projects/d2-advance/compare/v1.18.1...v1.19.0) (2020-02-17)
+
+
+### Bug Fixes
+
+* **cdn:** cdn for multi-page mode ([5967553](https://github.com/d2-projects/d2-advance/commit/596755344f1af8ab2eb1c86e358890de30c0c3be))
+
+
+### Features
+
+* add VUE_APP_GZIP ([230bd3b](https://github.com/d2-projects/d2-advance/commit/230bd3b46e37a3de5aede21b892abbd0ca92c2b5))
+
 ## [1.18.1](https://github.com/d2-projects/d2-advance/compare/v1.18.0...v1.18.1) (2020-02-15)
 
 
