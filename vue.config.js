@@ -26,9 +26,7 @@ module.exports = {
      * https://github.com/d2-projects/vue-filename-injector
      */
     if (process.env.VUE_APP_SOURCE_LINK === 'on') {
-      VueFilenameInjector(config, {
-        propName: process.env.VUE_APP_SOURCE_LINK_PROP_NAME
-      })
+      VueFilenameInjector(config)
     }
 
     /**
