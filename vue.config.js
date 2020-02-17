@@ -1,11 +1,21 @@
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const VueFilenameInjector = require('@d2-projects/vue-filename-injector')
-const { get, set, reduce } = require('lodash')
+const { get, set, reduce, chain, each } = require('lodash')
 const packageInfo = require('./package.json')
+
+// ! Multi-page config here. must be undefind or object
+// https://cli.vuejs.org/zh/config/#pages
+const pages = undefined
+// const pages = {
+//   index: './src/start.js',
+//   subpage: './src/subpage.js'
+// }
 
 module.exports = {
   // https://cli.vuejs.org/zh/config/#publicpath
   publicPath: process.env.BASE_URL || '/',
+
+  pages,
 
   // https://cli.vuejs.org/zh/config/#productionsourcemap
   productionSourceMap: false,
@@ -55,6 +65,24 @@ module.exports = {
      */
     if (process.env.VUE_APP_CDN_DEPENDENCIES === 'on') {
       const cdnDependencies = get(packageInfo, 'cdnDependencies', [])
+
+      // inject cdn config to all html. like `htmlWebpackPlugin.options.cdn`
+      // already adapt to multi-page mode
+      const multiHtmlPluginNames = chain(pages)
+        .keys()
+        .map(page => 'html-' + page)
+        .value()
+      const targetHtmlPluginNames = multiHtmlPluginNames.length
+        ? multiHtmlPluginNames
+        : ['html']
+      each(targetHtmlPluginNames, name => {
+        config.plugin(name).tap(args => {
+          set(args, '[0].cdnDependencies', cdnDependencies)
+          return args
+        })
+      })
+
+      // with webpack externals. for fast devServer and build
       config.externals(
         reduce(
           cdnDependencies,
@@ -65,10 +93,6 @@ module.exports = {
           {}
         )
       )
-      config.plugin('html').tap(args => {
-        set(args, '[0].cdnDependencies', cdnDependencies)
-        return args
-      })
     }
 
     /**
