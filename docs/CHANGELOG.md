@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.19.1](https://github.com/d2-projects/d2-advance/compare/v1.19.0...v1.19.1) (2020-02-21)
+
+
+### Bug Fixes
+
+* **dependencies:** eslint-plugin-vue@6.2.1 ([8e184cf](https://github.com/d2-projects/d2-advance/commit/8e184cfe4104711280c0ddb2113f92bf450606ff))
+* revert VUE_APP_SOURCE_LINK_PROP_NAME ([07ca027](https://github.com/d2-projects/d2-advance/commit/07ca027ca0424cb1c39ab336a22baa1f61904c53))
+
 # [1.19.0](https://github.com/d2-projects/d2-advance/compare/v1.18.1...v1.19.0) (2020-02-17)
 
 
