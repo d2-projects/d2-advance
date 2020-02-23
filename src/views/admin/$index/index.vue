@@ -118,11 +118,9 @@ export default {
         if (!isUndefined(oldSize)) {
           this.asideCollapse = size < 1024
         }
-        if (!isUndefined(oldSize)) {
-          this.flat = size < 768
-          if (size < 768) {
-            this.asideCollapse = true
-          }
+        this.flat = size < 768
+        if (size < 768) {
+          this.asideCollapse = true
         }
       }
     }
