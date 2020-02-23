@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.19.2](https://github.com/d2-projects/d2-advance/compare/v1.19.1...v1.19.2) (2020-02-23)
+
+
+### Bug Fixes
+
+* **admin:** flat mode ([15e9a0e](https://github.com/d2-projects/d2-advance/commit/15e9a0e1e32bd913f32d4729ea02df8d4fedb0ca))
+
 ## [1.19.1](https://github.com/d2-projects/d2-advance/compare/v1.19.0...v1.19.1) (2020-02-21)
 
 
