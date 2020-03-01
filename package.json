@@ -13,6 +13,7 @@
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
+    "inspect": "vue-cli-service inspect",
     "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'",
     "lint:strict": "vue-cli-service lint --no-fix --max-warnings=0"
   },
