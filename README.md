@@ -5,3 +5,8 @@
 ## Documents
 
 [简体中文](docs/zh/README.md)
+
+
+## License
+
+D2Advance is licensed under a [MIT License](./LICENSE).
