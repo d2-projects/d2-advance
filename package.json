@@ -89,7 +89,7 @@
     "vuex-map-fields": "^1.4.0"
   },
   "devDependencies": {
-    "@d2-projects/vue-filename-injector": "^1.1.0",
+    "@d2-projects/vue-filename-injector": "^1.1.1",
     "@vue/cli-plugin-babel": "^4.2.3",
     "@vue/cli-plugin-eslint": "^4.2.3",
     "@vue/cli-plugin-router": "^4.2.3",
