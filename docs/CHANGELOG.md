@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.19.4](https://github.com/d2-projects/d2-advance/compare/v1.19.3...v1.19.4) (2020-03-01)
+
+
+### Bug Fixes
+
+* **cdn:** upgrade out-of-date cdnDependencies ([d064552](https://github.com/d2-projects/d2-advance/commit/d064552b3fd149b4b410c21fb7ea3680ca4e2070))
+
 ## [1.19.3](https://github.com/d2-projects/d2-advance/compare/v1.19.2...v1.19.3) (2020-03-01)
 
 
