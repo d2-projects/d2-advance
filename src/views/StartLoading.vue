@@ -3,17 +3,23 @@
     <div class="start-loading-inner">
       <div class="logo-for-spinner">
         <atom-spinner
-          v-if="!error"
+          v-if="!error || isUpgrading"
           :animation-duration="800"
           :size="120"
           color="#589ff8"
         />
       </div>
-      <div v-if="error" class="error-info">
-        <h2>{{ $t('startup-failed-title') }}</h2>
-        <p>{{ $t('startup-failed-desc') }}</p>
-        <pre class="error-text">{{ error.stack }}</pre>
-      </div>
+      <template v-if="error">
+        <template v-if="isUpgrading">
+          <h2>{{ $t('application-upgrading-title') }}</h2>
+          <p>{{ $t('application-upgrading-desc') }}</p>
+        </template>
+        <div v-else class="error-info">
+          <h2>{{ $t('startup-failed-title') }}</h2>
+          <p>{{ $t('startup-failed-desc') }}</p>
+          <pre class="error-text">{{ error.stack }}</pre>
+        </div>
+      </template>
       <div v-else>{{ $t('waiting') }}</div>
     </div>
   </div>
@@ -24,6 +30,11 @@ import AtomSpinner from 'epic-spinners/src/components/lib/AtomSpinner'
 
 export default {
   props: ['error'],
+  computed: {
+    isUpgrading() {
+      return this.error && /loading chunk .* failed./i.test(this.error.message)
+    }
+  },
   components: {
     AtomSpinner
   }
