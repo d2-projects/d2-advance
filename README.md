@@ -9,6 +9,8 @@
 
 > 🧗Advanced, colourful front-end integration practice. be inspired by D2Admin :)
 
+Preview here 👉 https://d2.pub/d2-advance/preview
+
 ## Documents
 
 [简体中文](docs/zh/README.md)
