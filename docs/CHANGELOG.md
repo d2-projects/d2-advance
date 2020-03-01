@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.19.3](https://github.com/d2-projects/d2-advance/compare/v1.19.2...v1.19.3) (2020-03-01)
+
+
+### Bug Fixes
+
+* **dependencies:** upgrade ([6095fcf](https://github.com/d2-projects/d2-advance/commit/6095fcf416401da5dc6985bcaaad2dc593bc12b8))
+
 ## [1.19.2](https://github.com/d2-projects/d2-advance/compare/v1.19.1...v1.19.2) (2020-02-23)
 
 
