@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.19.5](https://github.com/d2-projects/d2-advance/compare/v1.19.4...v1.19.5) (2020-03-01)
+
+
+### Bug Fixes
+
+* **start-loading:** show upgrading alert when main chunk loading failed ([7215e2b](https://github.com/d2-projects/d2-advance/commit/7215e2bc4185130f9e27752a67e8509814058f34))
+* regexp for loading chunk failed ([89e66ab](https://github.com/d2-projects/d2-advance/commit/89e66abb43cfc768eef60678efc7a6fd141f6a1a))
+
 ## [1.19.4](https://github.com/d2-projects/d2-advance/compare/v1.19.3...v1.19.4) (2020-03-01)
 
 
