@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.19.6](https://github.com/d2-projects/d2-advance/compare/v1.19.5...v1.19.6) (2020-03-02)
+
+
+### Performance Improvements
+
+* add VUE_APP_BROTLI option for brotli compression ([2bcb681](https://github.com/d2-projects/d2-advance/commit/2bcb6815f13c3f6df6cbf3e70662008a5107627d))
+
 ## [1.19.5](https://github.com/d2-projects/d2-advance/compare/v1.19.4...v1.19.5) (2020-03-01)
 
 
