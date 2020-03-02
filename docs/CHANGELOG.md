@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.19.7](https://github.com/d2-projects/d2-advance/compare/v1.19.6...v1.19.7) (2020-03-02)
+
+
+### Bug Fixes
+
+* **build:** brotil config ([a9fe3a8](https://github.com/d2-projects/d2-advance/commit/a9fe3a85e1e1b23fe4397a6a4f72e7fa9efae4d2))
+
 ## [1.19.6](https://github.com/d2-projects/d2-advance/compare/v1.19.5...v1.19.6) (2020-03-02)
 
 
