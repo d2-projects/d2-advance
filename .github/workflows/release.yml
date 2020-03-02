@@ -18,6 +18,11 @@ jobs:
       run: yarn test:unit
     - name: Build
       run: yarn build
+
+    # !TRICKY for reduce unimportant in project root
+    - name: Ready for release
+      run: mv .github/workflows/.releaserc.js .releaserc.js
+
     - name: Semantic Release
       uses: cycjimmy/semantic-release-action@v2
       with:
