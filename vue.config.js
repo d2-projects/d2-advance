@@ -1,6 +1,7 @@
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const VueFilenameInjector = require('@d2-projects/vue-filename-injector')
 const { get, set, reduce, chain, each } = require('lodash')
+const check = require('check-node-version')
 const packageInfo = require('./package.json')
 
 // ! Multi-page config here. must be undefind or object
@@ -40,21 +41,44 @@ module.exports = {
     }
 
     /**
-     * for gzip outputs
+     * compress assets
      * https://github.com/webpack-contrib/compression-webpack-plugin
      */
-    if (process.env.VUE_APP_GZIP === 'on') {
-      config
-        .plugin('compression-webpack-plugin')
-        .use(CompressionWebpackPlugin, [
-          {
-            filename: '[path].gz[query]',
-            algorithm: 'gzip',
-            test: /\.js$|\.css$|\.html$/,
-            threshold: 10240,
-            minRatio: 0.8,
+    if (process.env.NODE_ENV !== 'development') {
+      const multipleCompression = []
+      if (process.env.VUE_APP_GZIP === 'on') {
+        multipleCompression.push({
+          filename: '[path].gz[query]',
+          algorithm: 'gzip',
+          test: /\.js$|\.css$|\.html$/,
+          threshold: 10240,
+          minRatio: 0.8
+        })
+      }
+      if (process.env.VUE_APP_BROTLI === 'on') {
+        /**
+         * https://github.com/webpack-contrib/compression-webpack-plugin#using-brotli
+         */
+        check({ node: '>= 11.7.0' }, (error, result) => {
+          if (result.isSatisfied) {
+            multipleCompression.push({
+              filename: '[path].br[query]',
+              algorithm: 'brotliCompress',
+              test: /\.(js|css|html|svg)$/,
+              compressionOptions: { level: 11 },
+              threshold: 10240,
+              minRatio: 0.8
+            })
+          } else {
+            console.error('Node version need >= 11.7.0 for brotli compress')
           }
-        ])
+        })
+      }
+      if (multipleCompression.length) {
+        config
+          .plugin('compression-webpack-plugin')
+          .use(CompressionWebpackPlugin, multipleCompression)
+      }
     }
 
     /**
