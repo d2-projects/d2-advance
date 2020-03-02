@@ -1,11 +1,6 @@
 <template>
   <div class="wrapper" :class="{ collapse, 'has-transition': hasTransition }">
-    <img
-      src="../../../../../assets/logo.png"
-      alt="logo"
-      height="32px"
-      width="32px"
-    />
+    <img src="@/assets/logo.png" alt="logo" height="32px" width="32px" />
     <b class="text">Admin</b>
   </div>
 </template>

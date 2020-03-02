@@ -39,7 +39,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '../../../../../style/variable.styl'
+@import '~@/style/variable.styl'
 
 $aside-width = 200px
 $header-height = 60px

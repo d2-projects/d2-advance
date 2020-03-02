@@ -88,7 +88,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '../../../../../style/variable.styl'
+@import '~@/style/variable.styl'
 
 custom-items()
   .el-menu-item

@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import 'normalize.css'
-import './style/basic.styl'
+import '@/style/global.styl'
 import StartLoading from '@/views/StartLoading'
-import { createI18n } from './locales/start'
-import getStorage from './utils/get-storage'
-import { langs } from './locales'
+import { createI18n } from '@/locales/start'
+import getStorage from '@/utils/get-storage'
+import { langs } from '@/locales'
 
 Vue.config.productionTip = false
 

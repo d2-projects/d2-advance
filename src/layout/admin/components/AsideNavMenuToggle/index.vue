@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '../../../../../style/variable.styl'
+@import '~@/style/variable.styl'
 
 .wrapper
   padding 0 20px

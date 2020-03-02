@@ -24,7 +24,7 @@ export const routes = app => {
       path: pathPrefix,
       name: 'admin',
       redirect: `${pathPrefix}/dashboard`,
-      component: () => import('../views/admin/$index'),
+      component: () => import('../layout/admin'),
       beforeEnter(to, from, next) {
         if (!state.token) {
           return next({ name: 'admin-login' })
