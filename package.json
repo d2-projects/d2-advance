@@ -20,53 +20,63 @@
   },
   "cdnDependencies": [
     {
+      "group": 1,
       "name": "vue",
       "library": "Vue",
       "js": "https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js",
       "js.dev": "https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"
     },
     {
+      "group": 1,
       "name": "vue-i18n",
       "library": "VueI18n",
       "js": "https://cdn.jsdelivr.net/npm/vue-i18n@8.15.4/dist/vue-i18n.min.js",
       "js.dev": "https://cdn.jsdelivr.net/npm/vue-i18n@8.15.4/dist/vue-i18n.js"
     },
     {
+      "group": 1,
       "name": "vue-router",
       "library": "VueRouter",
       "js": "https://cdn.jsdelivr.net/npm/vue-router@3.1.6/dist/vue-router.min.js",
       "js.dev": "https://cdn.jsdelivr.net/npm/vue-router@3.1.6/dist/vue-router.js"
     },
     {
+      "group": 1,
       "name": "vuex",
       "library": "Vuex",
       "js": "https://cdn.jsdelivr.net/npm/vuex@3.1.2/dist/vuex.min.js",
       "js.dev": "https://cdn.jsdelivr.net/npm/vuex@3.1.2/dist/vuex.js"
     },
     {
+      "group": 1,
       "name": "axios",
       "library": "axios",
       "js": "https://cdn.jsdelivr.net/npm/axios@0.19.2/dist/axios.min.js",
       "js.dev": "https://cdn.jsdelivr.net/npm/axios@0.19.2/dist/axios.js"
     },
     {
+      "group": 1,
       "name": "normalize.css",
       "css": "https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"
     },
     {
+      "group": 2,
       "name": "nprogress/nprogress.css",
       "css": "https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css"
     },
     {
+      "group": 2,
       "name": "nprogress",
       "library": "NProgress",
       "js": "https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"
     },
     {
+      "group": 2,
       "name": "element-ui/lib/theme-chalk/index.css",
       "css": "https://cdn.jsdelivr.net/npm/element-ui@2.13.0/lib/theme-chalk/index.css"
     },
     {
+      "group": 2,
       "name": "element-ui",
       "library": "ELEMENT",
       "js": "https://cdn.jsdelivr.net/npm/element-ui@2.13.0/lib/index.js"
