@@ -91,15 +91,8 @@ module.exports = {
 
       // inject cdn config to all html. like `htmlWebpackPlugin.options.cdn`
       // already adapt to multi-page mode
-      const multiHtmlPluginNames = chain(pages)
-        .keys()
-        .map(page => 'html-' + page)
-        .value()
-      const targetHtmlPluginNames = multiHtmlPluginNames.length
-        ? multiHtmlPluginNames
-        : ['html']
-      each(targetHtmlPluginNames, name => {
-        config.plugin(name).tap(args => {
+      eachHtmlPlugins(pages, config, plugin => {
+        plugin.tap(args => {
           set(args, '[0].cdnDependencies', cdnDependencies)
           return args
         })
@@ -125,6 +118,20 @@ module.exports = {
       enableInSFC: false
     }
   }
+}
+
+const eachHtmlPlugins = (webpackPagesConfig, chainConfig, callback) => {
+  const multiHtmlPluginNames = chain(webpackPagesConfig)
+    .keys()
+    .map(page => 'html-' + page)
+    .value()
+  const targetHtmlPluginNames = multiHtmlPluginNames.length
+    ? multiHtmlPluginNames
+    : ['html']
+  each(targetHtmlPluginNames, name => {
+    callback(chainConfig.plugin(name), name)
+  })
+  return targetHtmlPluginNames
 }
 
 const cdnDependenciesToWebpackExternals = dependencies => {
