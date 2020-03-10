@@ -1,6 +1,6 @@
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const VueFilenameInjector = require('@d2-projects/vue-filename-injector')
-const { get, set, reduce, chain, each } = require('lodash')
+const { get, set, reduce, chain, each, map } = require('lodash')
 const checkNode = require('node-version-matches')
 const packageInfo = require('./package.json')
 
@@ -85,7 +85,9 @@ module.exports = {
      * https://github.com/jantimon/html-webpack-plugin
      */
     if (process.env.VUE_APP_CDN_DEPENDENCIES === 'on') {
-      const cdnDependencies = get(packageInfo, 'cdnDependencies', [])
+      const cdnDependencies = cdnDependenciesModePreproccess(
+        get(packageInfo, 'cdnDependencies', [])
+      )
 
       // inject cdn config to all html. like `htmlWebpackPlugin.options.cdn`
       // already adapt to multi-page mode
@@ -132,4 +134,21 @@ module.exports = {
       enableInSFC: false
     }
   }
+}
+
+const cdnDependenciesModePreproccess = dependencies => {
+  return process.env.NODE_ENV === 'development'
+    ? map(dependencies, item => {
+        const overrides = chain(item)
+          .pick(
+            chain(item)
+              .keys()
+              .filter(key => /(.+\.dev)$/.test(key))
+              .value()
+          )
+          .mapKeys((_, key) => key.replace(/(\.dev)$/, ''))
+          .value()
+        return { ...item, ...overrides }
+      })
+    : dependencies
 }

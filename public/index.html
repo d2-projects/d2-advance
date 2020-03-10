@@ -10,16 +10,14 @@
   <!-- use public cdn dependencies -->
   <% if (htmlWebpackPlugin.options.cdnDependencies) { %>
   <%   for (const item of htmlWebpackPlugin.options.cdnDependencies) { %>
-  <%     const css = NODE_ENV === "development" && item['css.dev'] ? item['css.dev'] : item.css %>
-  <%     if (css) { %>
-  <link href="<%= css %>" rel="preload" as="style">
-  <link href="<%= css %>" rel="stylesheet">
+  <%     if (item.css) { %>
+  <link href="<%= item.css %>" rel="preload" as="style">
+  <link href="<%= item.css %>" rel="stylesheet">
   <%     } %>
   <%   } %>
   <%   for (const item of htmlWebpackPlugin.options.cdnDependencies) { %>
-  <%     const js = NODE_ENV === 'development' && item['js.dev'] ? item['js.dev'] : item.js %>
-  <%     if (js) { %>
-  <link href="<%= js %>" rel="preload" as="script">
+  <%     if (item.js) { %>
+  <link href="<%= item.js %>" rel="preload" as="script">
   <%     } %>
   <%   } %>
   <% } %>
@@ -34,9 +32,8 @@
   <!-- use public cdn dependencies -->
   <% if (htmlWebpackPlugin.options.cdnDependencies) { %>
   <%   for (const item of htmlWebpackPlugin.options.cdnDependencies) { %>
-  <%     const js = NODE_ENV === 'development' && item['js.dev'] ? item['js.dev'] : item.js %>
-  <%     if (js) { %>
-  <script src="<%= js %>"></script>
+  <%     if (item.js) { %>
+  <script src="<%= item.js %>"></script>
   <%     } %>
   <%   } %>
   <% } %>
