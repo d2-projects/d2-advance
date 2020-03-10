@@ -7,7 +7,11 @@ const packageInfo = require('./package.json')
 // ! Mutil page always
 // https://cli.vuejs.org/zh/config/#pages
 const pages = {
-  app: './src/start.js'
+  index: {
+    entry: 'src/start.js',
+    template: 'public/index.html',
+    filename: 'index.html'
+  }
 }
 
 module.exports = {
