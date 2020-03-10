@@ -3,6 +3,8 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.19.8](https://github.com/d2-projects/d2-advance/compare/v1.19.7...v1.19.8) (2020-03-10)
+
 ## [1.19.7](https://github.com/d2-projects/d2-advance/compare/v1.19.6...v1.19.7) (2020-03-02)
 
 
