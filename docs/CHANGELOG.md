@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.19.10](https://github.com/d2-projects/d2-advance/compare/v1.19.9...v1.19.10) (2020-03-10)
+
+
+### Chores
+
+* **release:** extends semantic-release-npm-github-publish ([e8f9b6c](https://github.com/d2-projects/d2-advance/commit/e8f9b6cbf46748783a26e9f7b6e4f2636cd68bfc))
+* **release:** fix inside code ([24ea997](https://github.com/d2-projects/d2-advance/commit/24ea997c977bd011da5deff55cd4b54587e802b9))
+* **release:** use inside code, move config to project root ([4f3697e](https://github.com/d2-projects/d2-advance/commit/4f3697e9670bed149ee74f95704614c23c46b308))
+
 ## [1.19.9](https://github.com/d2-projects/d2-advance/compare/v1.19.8...v1.19.9) (2020-03-10)
 
 ## [1.19.8](https://github.com/d2-projects/d2-advance/compare/v1.19.7...v1.19.8) (2020-03-10)
