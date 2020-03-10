@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.19.11](https://github.com/d2-projects/d2-advance/compare/v1.19.10...v1.19.11) (2020-03-10)
+
+
+### Bug Fixes
+
+* pages config with index page ([edcd7fe](https://github.com/d2-projects/d2-advance/commit/edcd7fefae53fb97960eb2fd007f4bc84e02fd9a))
+
 ## [1.19.10](https://github.com/d2-projects/d2-advance/compare/v1.19.9...v1.19.10) (2020-03-10)
 
 
