@@ -4,13 +4,11 @@ const { get, set, reduce, chain, each, map } = require('lodash')
 const checkNode = require('node-version-matches')
 const packageInfo = require('./package.json')
 
-// ! Multi-page config here. must be undefind or object
+// ! Mutil page always
 // https://cli.vuejs.org/zh/config/#pages
-const pages = undefined
-// const pages = {
-//   index: './src/start.js',
-//   subpage: './src/subpage.js'
-// }
+const pages = {
+  app: './src/start.js'
+}
 
 module.exports = {
   // https://cli.vuejs.org/zh/config/#publicpath
@@ -23,15 +21,6 @@ module.exports = {
 
   // https://github.com/neutrinojs/webpack-chain
   chainWebpack(config) {
-    /**
-     * chunk split for start-loading page
-     * https://webpack.js.org/guides/code-splitting/#dynamic-imports
-     */
-    config
-      .entry('app')
-      .clear()
-      .add('./src/start.js')
-
     /**
      * for SourceLink component
      * https://github.com/d2-projects/vue-filename-injector
