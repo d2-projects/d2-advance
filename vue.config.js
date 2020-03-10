@@ -106,16 +106,7 @@ module.exports = {
       })
 
       // with webpack externals. for fast devServer and build
-      config.externals(
-        reduce(
-          cdnDependencies,
-          (prev, { name, library }) => (
-            library ? (prev[name] = library) : (prev[name] = { root: null }),
-            prev
-          ),
-          {}
-        )
-      )
+      config.externals(cdnDependenciesToWebpackExternals(cdnDependencies))
     }
 
     /**
@@ -134,6 +125,16 @@ module.exports = {
       enableInSFC: false
     }
   }
+}
+
+const cdnDependenciesToWebpackExternals = dependencies => {
+  return reduce(
+    dependencies,
+    (prev, { name, library }) => (
+      library ? (prev[name] = library) : (prev[name] = { root: null }), prev
+    ),
+    {}
+  )
 }
 
 const cdnDependenciesModePreproccess = dependencies => {
