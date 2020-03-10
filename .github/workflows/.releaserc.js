@@ -4,20 +4,35 @@ module.exports = {
     [
       '@semantic-release/commit-analyzer',
       {
-        'preset': 'angular',
         'releaseRules': [
-          { breaking: true, release: 'major' },
-          { revert: true, release: 'patch' },
-          { type: 'feat', release: 'minor' },
-          { type: 'fix', release: 'patch' },
-          { type: 'perf', release: 'patch' },
-          { type: 'revert', release: 'patch' },
-          { type: 'docs', release: 'patch' },
-          { type: 'style', release: 'patch' },
-          { type: 'refactor', release: 'patch' },
-          { type: 'test', release: 'patch' },
-          { type: 'build', release: 'patch' },
-          { type: 'ci', release: 'patch' }
+          {
+            'type': 'build',
+            'release': 'patch'
+          },
+          {
+            'type': 'ci',
+            'release': 'patch'
+          },
+          {
+            'type': 'chore',
+            'release': 'patch'
+          },
+          {
+            'type': 'docs',
+            'release': 'patch'
+          },
+          {
+            'type': 'refactor',
+            'release': 'patch'
+          },
+          {
+            'type': 'style',
+            'release': 'patch'
+          },
+          {
+            'type': 'test',
+            'release': 'patch'
+          }
         ]
       }
     ],
