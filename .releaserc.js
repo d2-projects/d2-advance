@@ -26,36 +26,6 @@ const transformCommitType = type => {
   return commitTypeMapping[type] || commitTypeMapping['default']
 }
 
-module.exports = {
-  branch: 'master',
-  releaseRules,
-  parserOpts: {
-    mergePattern: /^Merge pull request #(\d+) from (.*)$/,
-    mergeCorrespondence: ['id', 'source']
-  },
-  writerOpts: { transform: customTransform },
-  plugins: [
-    [
-      '@semantic-release/commit-analyzer',
-      {
-        releaseRules
-      }
-    ],
-    '@semantic-release/release-notes-generator',
-    [
-      '@semantic-release/changelog',
-      {
-        changelogFile: 'docs/CHANGELOG.md',
-        changelogTitle:
-          '# Changelog\n\nAll notable changes to this project will be documented in this file. See\n[Conventional Commits](https://conventionalcommits.org) for commit guidelines.'
-      }
-    ],
-    ['@semantic-release/npm', { npmPublish: false }],
-    '@semantic-release/github',
-    ['@semantic-release/git', { assets: ['docs/CHANGELOG.md', 'package.json'] }]
-  ]
-}
-
 const customTransform = (commit, context) => {
   const issues = []
 
@@ -110,4 +80,34 @@ const customTransform = (commit, context) => {
   })
 
   return commit
+}
+
+module.exports = {
+  branch: 'master',
+  releaseRules,
+  parserOpts: {
+    mergePattern: /^Merge pull request #(\d+) from (.*)$/,
+    mergeCorrespondence: ['id', 'source']
+  },
+  writerOpts: { transform: customTransform },
+  plugins: [
+    [
+      '@semantic-release/commit-analyzer',
+      {
+        releaseRules
+      }
+    ],
+    '@semantic-release/release-notes-generator',
+    [
+      '@semantic-release/changelog',
+      {
+        changelogFile: 'docs/CHANGELOG.md',
+        changelogTitle:
+          '# Changelog\n\nAll notable changes to this project will be documented in this file. See\n[Conventional Commits](https://conventionalcommits.org) for commit guidelines.'
+      }
+    ],
+    ['@semantic-release/npm', { npmPublish: false }],
+    '@semantic-release/github',
+    ['@semantic-release/git', { assets: ['docs/CHANGELOG.md', 'package.json'] }]
+  ]
 }
