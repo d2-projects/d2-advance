@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.19.12](https://github.com/d2-projects/d2-advance/compare/v1.19.11...v1.19.12) (2020-03-10)
+
+
+### Build System
+
+* **cdn:** support cdn dependencie group combine by jsDelivr ([85a1d89](https://github.com/d2-projects/d2-advance/commit/85a1d89d3b01b4a35f0c055c9d7ee4c84f1bbfb4))
+* **npm:** update yarn lock ([b7d74c8](https://github.com/d2-projects/d2-advance/commit/b7d74c89b386906a278802d96bdfeb49bfb12895))
+
+
+### Chores
+
+* update resolutions and yarn lock ([551bbed](https://github.com/d2-projects/d2-advance/commit/551bbed945667a1edb613e8b76a84030acf3db39))
+* **audit:** add resolutions ([54f37b1](https://github.com/d2-projects/d2-advance/commit/54f37b165affae73a9a264980f40d9005d4e53f7))
+
 ## [1.19.11](https://github.com/d2-projects/d2-advance/compare/v1.19.10...v1.19.11) (2020-03-10)
 
 
