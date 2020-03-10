@@ -1,41 +1,8 @@
 module.exports = {
+  extends: 'semantic-release-npm-github-publish',
   branch: 'master',
   plugins: [
-    [
-      '@semantic-release/commit-analyzer',
-      {
-        'releaseRules': [
-          {
-            'type': 'build',
-            'release': 'patch'
-          },
-          {
-            'type': 'ci',
-            'release': 'patch'
-          },
-          {
-            'type': 'chore',
-            'release': 'patch'
-          },
-          {
-            'type': 'docs',
-            'release': 'patch'
-          },
-          {
-            'type': 'refactor',
-            'release': 'patch'
-          },
-          {
-            'type': 'style',
-            'release': 'patch'
-          },
-          {
-            'type': 'test',
-            'release': 'patch'
-          }
-        ]
-      }
-    ],
+    '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
     [
       '@semantic-release/changelog',
@@ -47,11 +14,6 @@ module.exports = {
     ],
     ['@semantic-release/npm', { npmPublish: false }],
     '@semantic-release/github',
-    [
-      '@semantic-release/git',
-      {
-        assets: ['docs/CHANGELOG.md', 'package.json']
-      }
-    ]
+    ['@semantic-release/git', { assets: ['docs/CHANGELOG.md', 'package.json'] }]
   ]
 }
