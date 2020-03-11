@@ -137,8 +137,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/d2-projects/d2-advance.git"
-  },
-  "resolutions": {
-    "@vue/cli-plugin-unit-jest/jest/jest-cli/jest-config/jest-environment-jsdom/jsdom/acorn": ">=6.4.1 <7.0.0 || >=7.1.1"
   }
 }
