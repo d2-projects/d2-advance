@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import { find, filter, findIndex } from 'lodash'
+import { find } from 'lodash'
 import { closeAll, closeOther, closeLeft, closeRight } from './utils'
 
 export default {

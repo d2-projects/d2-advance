@@ -2,7 +2,7 @@ const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const VueFilenameInjector = require('@d2-projects/vue-filename-injector')
 const checkNode = require('node-version-matches')
 const packageInfo = require('./package.json')
-const { get, set, reduce, chain, each, map, filter } = require('lodash')
+const { get, set, reduce, chain, each, map } = require('lodash')
 
 // ! Mutil page always
 // https://cli.vuejs.org/zh/config/#pages
