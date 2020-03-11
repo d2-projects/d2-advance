@@ -72,7 +72,7 @@
 </template>
 
 <script>
-import { filter, uniqBy, assign } from 'lodash'
+import { assign } from 'lodash'
 import internalComponents from './components/internal-components'
 import containerComponents from './components/container-components'
 import asideBscroll from './mixins/aside-bscroll'
@@ -88,7 +88,7 @@ import {
 } from '@/store/modules/admin/mixins'
 import { loginPath } from '@/routes/admin'
 import screenSizeMixin from '@/utils/screen-size-mixin'
-import { isUndefined, inRange } from 'lodash'
+import { isUndefined } from 'lodash'
 
 export default {
   mixins: [

@@ -78,7 +78,7 @@ export default {
       get() {
         return this.ip
       },
-      set: _.debounce(function(newValue) {
+      set: debounce(function(newValue) {
         this.ip = newValue
       }, 500)
     }

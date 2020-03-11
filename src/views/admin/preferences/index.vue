@@ -44,7 +44,6 @@
 </template>
 
 <script>
-import { values } from 'lodash'
 import {
   pageTabs,
   sourceLink,

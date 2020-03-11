@@ -1,4 +1,3 @@
-import Vuex from 'vuex'
 import admin from './modules/admin'
 
 export default app => ({
