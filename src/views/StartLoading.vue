@@ -29,14 +29,19 @@
 import AtomSpinner from 'epic-spinners/src/components/lib/AtomSpinner'
 
 export default {
-  props: ['error'],
+  components: {
+    AtomSpinner
+  },
+  props: {
+    error: {
+      type: [Object, null],
+      default: null
+    }
+  },
   computed: {
     isUpgrading() {
       return this.error && /loading chunk .* failed./i.test(this.error.message)
     }
-  },
-  components: {
-    AtomSpinner
   }
 }
 </script>

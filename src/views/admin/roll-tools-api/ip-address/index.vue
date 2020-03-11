@@ -12,7 +12,7 @@
         >
       </h2>
     </template>
-    <el-input placeholder="192.168.0.1" v-model="ip" clearable>
+    <el-input v-model="ip" placeholder="192.168.0.1" clearable>
       <template #prepend>
         <i class="el-icon-location-information" />{{
           $t('admin.roll-tools-api.ip-address.input')
@@ -25,12 +25,12 @@
         :transform="transform"
         @success="onSelfSuccess"
       >
-        <template v-slot:default="{ pending, error }">
-          <div v-if="pending">
+        <template v-slot:default="{ selfPending, selfError }">
+          <div v-if="selfPending">
             Loading ...
           </div>
-          <div v-else-if="error">
-            {{ error.message }}
+          <div v-else-if="selfError">
+            {{ selfError.message }}
           </div>
           <div v-else>
             <async

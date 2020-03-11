@@ -13,8 +13,8 @@
       </h2>
     </template>
     <div
-      class="infinite-list"
       v-infinite-scroll="loadNext"
+      class="infinite-list"
       infinite-scroll-distance="100"
       :infinite-scroll-disabled="!!lock"
     >
@@ -23,8 +23,8 @@
           :key="pageNumber"
           :api="$rta.apis.image.girl_random"
           :transform="transform"
-          @success="success"
           static
+          @success="success"
         >
           <template v-slot:default="{ pending, error, data }">
             <div v-if="pending">
@@ -36,9 +36,9 @@
             <div v-else>
               <el-image
                 v-for="item in data"
+                :key="item.imageUrl"
                 lazy
                 class="infinite-list-item"
-                :key="item.imageUrl"
                 :src="item.imageUrl"
                 :preview-src-list="urls"
               ></el-image>

@@ -14,17 +14,17 @@
     </template>
     <div class="body-wrapper">
       <el-input
+        v-model="content"
         type="textarea"
         :placeholder="$t('admin.roll-tools-api.qrcode.placeholder.content')"
-        v-model="content"
         maxlength="255"
         show-word-limit
         :rows="5"
       />
       <p>
         <el-slider
-          :format-tooltip="v => v + 'px'"
           v-model="size"
+          :format-tooltip="v => v + 'px'"
           :max="maxSize"
           :min="minSize"
           show-input
@@ -32,6 +32,7 @@
       </p>
       <p>
         <el-upload
+          ref="logo"
           action="#"
           class="updater"
           :limit="1"
@@ -39,7 +40,6 @@
           :show-file-list="false"
           :multiple="false"
           :on-change="loadLogo"
-          ref="logo"
         >
           <template v-if="logo_src">
             <img :src="logo_src" class="logo" />
@@ -59,9 +59,9 @@
       </p>
       <p>
         <el-slider
+          v-model="logo_size"
           :disabled="!logo"
           :format-tooltip="v => v + 'px'"
-          v-model="logo_size"
           :max="size / 2"
           :min="minSize / 5"
           show-input
@@ -129,7 +129,7 @@ export default {
     handleGenerate() {
       this.confirmed = [this.content, pick(this, ['size', 'logo', 'logo_size'])]
     },
-    loadLogo({ size, raw: file }) {
+    loadLogo({ raw: file }) {
       const isJPG = file.type === 'image/jpeg'
       const isLt2M = file.size / 1024 / 1024 < 2
 

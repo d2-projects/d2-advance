@@ -42,8 +42,8 @@ class MyApplication extends VueApplication {
       store,
       router,
       i18n: this.i18n,
-      render: h => h(App),
-      mixins: [i18nRootMixin(this), loadingChunkFailedRootMixin(this)]
+      mixins: [i18nRootMixin(this), loadingChunkFailedRootMixin(this)],
+      render: h => h(App)
     })
   }
 

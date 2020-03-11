@@ -21,14 +21,14 @@
 <script>
 export default {
   name: 'DemoArticle',
-  computed: {
-    row() {
-      return this.longText ? 20 : 1
-    }
-  },
   data() {
     return {
       longText: true
+    }
+  },
+  computed: {
+    row() {
+      return this.longText ? 20 : 1
     }
   }
 }

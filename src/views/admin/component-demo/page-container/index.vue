@@ -40,6 +40,10 @@ import DemoTreeSide from './components/DemoTreeSide'
 
 export default {
   inject: ['@adminContainer'],
+  components: {
+    DemoArticle,
+    DemoTreeSide
+  },
   data() {
     return {
       header: true,
@@ -47,10 +51,6 @@ export default {
       aside: true,
       type: 'card'
     }
-  },
-  components: {
-    DemoArticle,
-    DemoTreeSide
   }
 }
 </script>

@@ -2,10 +2,10 @@
   <div class="page-container">
     <div class="login-wrapper">
       <h1>Admin</h1>
-      <div class="form-container" v-loading="pending">
+      <div v-loading="pending" class="form-container">
         <el-form
-          :style="{ visibility: pending ? 'hidden' : 'visible' }"
           ref="form"
+          :style="{ visibility: pending ? 'hidden' : 'visible' }"
           :model="form"
           :rules="rules"
           label-width="0"
@@ -13,8 +13,8 @@
         >
           <el-form-item prop="username">
             <el-input
-              :placeholder="$t('admin.login.placeholder.username')"
               v-model.trim="form.username"
+              :placeholder="$t('admin.login.placeholder.username')"
               :maxlength="64"
               clearable
               @keyup.enter.native="onSubmit"
@@ -24,9 +24,9 @@
           </el-form-item>
           <el-form-item prop="password">
             <el-input
+              v-model="form.password"
               type="password"
               :placeholder="$t('admin.login.placeholder.password')"
-              v-model="form.password"
               :maxlength="64"
               clearable
               @keyup.enter.native="onSubmit"
@@ -34,7 +34,7 @@
               <template #prepend><i class="el-icon-key"/></template>
             </el-input>
           </el-form-item>
-          <el-button type="primary" @click="onSubmit" class="submit-button">{{
+          <el-button type="primary" class="submit-button" @click="onSubmit">{{
             $t('admin.login.button.login')
           }}</el-button>
         </el-form>

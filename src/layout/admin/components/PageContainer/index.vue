@@ -31,7 +31,7 @@ export default {
     },
     bodyClass: {
       type: String,
-      required: false
+      default: ''
     }
   },
   computed: {

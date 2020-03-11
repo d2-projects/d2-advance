@@ -21,9 +21,9 @@
           </div>
           <template v-for="item in langs">
             <el-link
+              :key="item.value"
               class="lang-link"
               :type="$i18n.locale === item.value ? 'primary' : ''"
-              :key="item.value"
               @click="$i18n.locale = item.value"
               >{{ item.label }}</el-link
             >

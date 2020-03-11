@@ -2,7 +2,7 @@ import Vue from 'vue'
 import 'nprogress/nprogress.css'
 import nprogress from 'nprogress'
 
-export default _app => ({
+export default (/* app */) => ({
   mounted() {
     nprogress.configure({ showSpinner: false })
 
@@ -17,7 +17,7 @@ export default _app => ({
       nprogress.done()
     })
 
-    this.$router.onError(_error => {
+    this.$router.onError((/* error */) => {
       nprogress.done()
     })
   }

@@ -22,11 +22,11 @@
         </div>
         <div v-else>
           <el-cascader
+            v-model="address"
             :options="data"
             filterable
             clearable
             style="width: 100%"
-            v-model="address"
           ></el-cascader>
           <p>
             <el-cascader-panel :options="data"></el-cascader-panel>

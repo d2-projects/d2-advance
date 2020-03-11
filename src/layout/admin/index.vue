@@ -19,9 +19,9 @@
         > -->
         <action-bar-item>
           <el-dropdown
-            @command="handleCommand"
             style="cursor: pointer"
             size="small"
+            @command="handleCommand"
           >
             <span style="padding-left: 10px; padding-right: 10px">
               {{ $t('hello') }}
@@ -36,7 +36,7 @@
       </action-bar>
     </el-header>
     <el-container class="body">
-      <el-aside class="aside" ref="aside" width="auto">
+      <el-aside ref="aside" class="aside" width="auto">
         <div>
           <aside-nav-menu
             :has-transition="asideTransition"
@@ -47,10 +47,10 @@
         </div>
       </el-aside>
       <el-container class="center-wrapper">
-        <el-header class="tabs-wrapper" height="auto" v-show="showTabs">
+        <el-header v-show="showTabs" class="tabs-wrapper" height="auto">
           <page-tabs
-            :current="$route.path"
             v-model="tabOpened"
+            :current="$route.path"
             :options="tabOptions"
             @switch="handleSwitchTabs"
           />
@@ -91,6 +91,7 @@ import screenSizeMixin from '@/utils/screen-size-mixin'
 import { isUndefined } from 'lodash'
 
 export default {
+  components: internalComponents,
   mixins: [
     asideCollapse,
     pageTabs,
@@ -135,13 +136,12 @@ export default {
         this.$router.push(loginPath)
       }
     },
-    handleAsideMenuItemSelected(...args) {
+    handleAsideMenuItemSelected(/* selectedTarget */) {
       if (this.flat) {
         this.asideCollapse = true
       }
     }
-  },
-  components: internalComponents
+  }
 }
 </script>
 
