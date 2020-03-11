@@ -148,12 +148,11 @@ export default {
 
       this.$refs.logo.clearFiles()
       this.logo = file
-      if (file) {
-        const reader = new FileReader()
-        reader.readAsDataURL(file)
-        reader.onloadend = event => {
-          this.logo_src = event.target.result
-        }
+
+      const reader = new FileReader()
+      reader.readAsDataURL(file)
+      reader.onloadend = event => {
+        this.logo_src = event.target.result
       }
     },
     handleRemove() {
