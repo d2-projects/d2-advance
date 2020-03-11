@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.19.13](https://github.com/d2-projects/d2-advance/compare/v1.19.12...v1.19.13) (2020-03-11)
+
+
+### Bug Fixes
+
+* **cdn:** improve cdn combine ([d8a8eaa](https://github.com/d2-projects/d2-advance/commit/d8a8eaa6b9c441e2e0819ba2d76376ba49e17070))
+
+
+### Build System
+
+* **cdn:** remove cdn combine ([7f00ce9](https://github.com/d2-projects/d2-advance/commit/7f00ce962f232e5593a9bb248851cf0078cf25dd))
+
+
+### Chores
+
+* **audit:** remove out-of-date resolutions ([5c2a662](https://github.com/d2-projects/d2-advance/commit/5c2a662d938dee723d2740553ec203b457d70941))
+
+
+### Code Refactoring
+
+* **deepscan:** remove useless null check ([d9d5ce5](https://github.com/d2-projects/d2-advance/commit/d9d5ce580c1db875649c16eeab5f3a2587eea483))
+* **deepscan:** remove useless variables ([efc1918](https://github.com/d2-projects/d2-advance/commit/efc1918e0f479695c0121a1dbee28f40320b9bd2))
+* **deepscan:** remove useless variables ([4b9447b](https://github.com/d2-projects/d2-advance/commit/4b9447bce601fcb89954a6b63adef6c759f0995c))
+
+
+### Documentation
+
+* add DeepScan grade badge ([00e2279](https://github.com/d2-projects/d2-advance/commit/00e2279b9e98f799c0e3b4b5172d18dbbe797ea0))
+
+
+### Tests
+
+* **dependencies:** @vue/test-utils@1.0.0-beta.32 ([7e9749c](https://github.com/d2-projects/d2-advance/commit/7e9749cae79c0a0b44fc10388dd05ea27adbac73))
+
 ## [1.19.12](https://github.com/d2-projects/d2-advance/compare/v1.19.11...v1.19.12) (2020-03-10)
 
 
