@@ -1,8 +1,8 @@
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const VueFilenameInjector = require('@d2-projects/vue-filename-injector')
-const { get, set, reduce, chain, each, map } = require('lodash')
 const checkNode = require('node-version-matches')
 const packageInfo = require('./package.json')
+const { get, set, reduce, chain, each, map, filter } = require('lodash')
 
 // ! Mutil page always
 // https://cli.vuejs.org/zh/config/#pages
@@ -170,10 +170,14 @@ const jsDelivrCombineMaybe = items => {
 
     return {
       js: jsCollection.length
-        ? `https://cdn.jsdelivr.net/combine/${jsCollection.join(',')}`
+        ? (jsCollection.length > 1
+            ? 'https://cdn.jsdelivr.net/combine/'
+            : 'https://cdn.jsdelivr.net/') + jsCollection.join(',')
         : undefined,
       css: cssCollection.length
-        ? `https://cdn.jsdelivr.net/combine/${cssCollection.join(',')}`
+        ? (cssCollection.length > 1
+            ? 'https://cdn.jsdelivr.net/combine/'
+            : 'https://cdn.jsdelivr.net/') + cssCollection.join(',')
         : undefined
     }
   } else {
@@ -183,8 +187,10 @@ const jsDelivrCombineMaybe = items => {
 
 const cdnDependencieGroupCombine = dependencies => {
   return chain(dependencies)
+    .filter(item => item.group)
     .groupBy('group')
     .values()
     .map(jsDelivrCombineMaybe)
+    .concat(filter(dependencies, item => !item.group))
     .value()
 }
