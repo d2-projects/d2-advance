@@ -84,10 +84,9 @@ module.exports = {
 
       // inject cdn config to all html. like `htmlWebpackPlugin.options.cdn`
       // already adapt to multi-page mode
-      const cdnCombined = cdnDependencieGroupCombine(cdnDependencies)
       eachHtmlPlugins(pages, config, plugin => {
         plugin.tap(args => {
-          set(args, '[0].cdnDependencies', cdnCombined)
+          set(args, '[0].cdnDependencies', cdnDependencies)
           return args
         })
       })
@@ -153,44 +152,4 @@ const cdnDependenciesModePreproccess = dependencies => {
         return { ...item, ...overrides }
       })
     : dependencies
-}
-
-const jsDelivrCombineMaybe = items => {
-  if (items.length && items.length > 1) {
-    const jsCollection = chain(items)
-      .filter('js')
-      .map('js')
-      .map(url => url.replace('https://cdn.jsdelivr.net/', ''))
-      .value()
-    const cssCollection = chain(items)
-      .filter('css')
-      .map('css')
-      .map(url => url.replace('https://cdn.jsdelivr.net/', ''))
-      .value()
-
-    return {
-      js: jsCollection.length
-        ? (jsCollection.length > 1
-            ? 'https://cdn.jsdelivr.net/combine/'
-            : 'https://cdn.jsdelivr.net/') + jsCollection.join(',')
-        : undefined,
-      css: cssCollection.length
-        ? (cssCollection.length > 1
-            ? 'https://cdn.jsdelivr.net/combine/'
-            : 'https://cdn.jsdelivr.net/') + cssCollection.join(',')
-        : undefined
-    }
-  } else {
-    return items[0]
-  }
-}
-
-const cdnDependencieGroupCombine = dependencies => {
-  return chain(dependencies)
-    .filter(item => item.group)
-    .groupBy('group')
-    .values()
-    .map(jsDelivrCombineMaybe)
-    .concat(filter(dependencies, item => !item.group))
-    .value()
 }
