@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.19.14](https://github.com/d2-projects/d2-advance/compare/v1.19.13...v1.19.14) (2020-03-11)
+
+
+### Chores
+
+* **eslint:** add eslint recommended config, change vue essential to recommended config ([4c8cbe6](https://github.com/d2-projects/d2-advance/commit/4c8cbe646fcce70b071e6c9a35e39a178376b806))
+
+
+### Code Refactoring
+
+* fix code by current eslint rules ([a3007da](https://github.com/d2-projects/d2-advance/commit/a3007da2eeb949eac5bac3cd9c4aaa5e0e2dc6d0))
+
 ## [1.19.13](https://github.com/d2-projects/d2-advance/compare/v1.19.12...v1.19.13) (2020-03-11)
 
 
