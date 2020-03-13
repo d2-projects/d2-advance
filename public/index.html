@@ -14,8 +14,6 @@
   <link href="<%= item.css %>" rel="preload" as="style">
   <link href="<%= item.css %>" rel="stylesheet">
   <%     } %>
-  <%   } %>
-  <%   for (const item of htmlWebpackPlugin.options.cdnDependencies) { %>
   <%     if (item.js) { %>
   <link href="<%= item.js %>" rel="preload" as="script">
   <%     } %>
