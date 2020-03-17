@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.19.15](https://github.com/d2-projects/d2-advance/compare/v1.19.14...v1.19.15) (2020-03-17)
+
+
+### Code Refactoring
+
+* **cdn:** clean html template ([a3eed72](https://github.com/d2-projects/d2-advance/commit/a3eed72248ea9720a7c2b6ff77a4603015ff2960))
+
 ## [1.19.14](https://github.com/d2-projects/d2-advance/compare/v1.19.13...v1.19.14) (2020-03-11)
 
 
