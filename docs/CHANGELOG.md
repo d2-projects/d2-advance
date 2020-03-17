@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.19.16](https://github.com/d2-projects/d2-advance/compare/v1.19.15...v1.19.16) (2020-03-17)
+
+
+### Chores
+
+* **dependencies:** recreate yarn.lock ([5c2bffc](https://github.com/d2-projects/d2-advance/commit/5c2bffc0db2e9875ebc9131aa1ccdb1d0932e796))
+
 ## [1.19.15](https://github.com/d2-projects/d2-advance/compare/v1.19.14...v1.19.15) (2020-03-17)
 
 
