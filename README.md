@@ -16,9 +16,14 @@ Preview here 👉 https://d2.pub/d2-advance/preview
 
 [简体中文](docs/zh/README.md)
 
+## Public Repositories
+
+- [Github](https://gitee.com/d2-projects/d2-advance)
+- [码云](https://gitee.com/d2-projects/d2-advance) (mirror)
+
 ## Related
 
-- [d2-admin](https://github.com/d2-projects/d2-admin)
+- [d2-projects/d2-admin](https://github.com/d2-projects/d2-admin)
 - [MZCretin/RollToolsApi](https://github.com/MZCretin/RollToolsApi)
 
 ## License
