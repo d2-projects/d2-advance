@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.19.17](https://github.com/d2-projects/d2-advance/compare/v1.19.16...v1.19.17) (2020-03-20)
+
+
+### Bug Fixes
+
+* **audit:** add resolutions for minimist ([bd81dd1](https://github.com/d2-projects/d2-advance/commit/bd81dd14be3bac3b630726823f8e67f1847b209a))
+
+
+### Chores
+
+* recreate yarn.lock for yarn audit ([243a366](https://github.com/d2-projects/d2-advance/commit/243a366cf9bd70414cf1c8d648ef8adf90be2227))
+* **dependencies:** register-service-worker@1.7.1 ([366110c](https://github.com/d2-projects/d2-advance/commit/366110c512ae3b6f155943358a3b64c9109fa64a))
+
+
+### Documentation
+
+* add link on badge, remove dependencies badge ([a23bb59](https://github.com/d2-projects/d2-advance/commit/a23bb59f2f98a3fc18309673181097635206ae1c))
+* add public repositories link with gitee ([8830944](https://github.com/d2-projects/d2-advance/commit/8830944d9bc5ed7bebca0e2a5595b4708ba5ac31))
+* replace badge DeepScan to Codacy ([4651f0a](https://github.com/d2-projects/d2-advance/commit/4651f0ad68bb5b662cf51a4cbafa9e8c43dc6bbd))
+
 ## [1.19.16](https://github.com/d2-projects/d2-advance/compare/v1.19.15...v1.19.16) (2020-03-17)
 
 
