@@ -1,6 +1,8 @@
 import axios from 'axios'
 import { get, set, map } from 'lodash'
 
+const gotResponse = fn => response => (response.got = () => fn(response))
+
 // https://github.com/MZCretin/RollToolsApi
 
 // !TRICKY
@@ -26,6 +28,7 @@ client.interceptors.request.use(
 client.interceptors.response.use(
   response => {
     const code = get(response, 'data.code')
+    gotResponse(response => get(response, 'data.data'))(response)
     if (code !== 1) {
       const error = new Error(get(response, 'data.msg'))
       error.response = response

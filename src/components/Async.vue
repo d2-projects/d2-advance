@@ -6,7 +6,7 @@ export default {
   props: {
     api: { type: Function, required: true },
     args: { type: Array, default: () => [] },
-    transform: { type: Function, default: i => i },
+    transform: { type: Function, default: undefined },
     static: { type: Boolean, default: false },
     freeze: { type: Boolean, default: false }
   },
@@ -34,7 +34,9 @@ export default {
       this.pending = true
       try {
         const result = await this.api(...this.args)
-        const data = this.transform(result)
+        const data = this.transform
+          ? this.transform(result)
+          : result.got && result.got()
         this.data = this.freeze ? Object.freeze(data) : data
         this.error = false
         this.$emit('success', data)
