@@ -12,6 +12,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
+    "test:unit:ci": "vue-cli-service test:unit --testPathIgnorePatterns=\"<rootDir>/src/lib/roll-tools-api/\" --coverage",
     "lint": "vue-cli-service lint",
     "inspect": "vue-cli-service inspect",
     "commit": "git-cz",

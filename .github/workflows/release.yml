@@ -15,7 +15,7 @@ jobs:
     - name: Check lint
       run: yarn lint:strict
     - name: Check unit test
-      run: yarn test:unit
+      run: yarn test:unit:ci
     - name: Build
       run: yarn build
 

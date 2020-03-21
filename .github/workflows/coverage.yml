@@ -10,8 +10,8 @@ jobs:
       - uses: actions/checkout@v1
       - uses: bahmutov/npm-install@v1
       - name: Unit test with coverage
-        run: yarn run test:unit --testPathIgnorePatterns="<rootDir>/src/lib/roll-tools-api/" --coverage
+        run: yarn run test:unit:ci
       - name: Run codacy-coverage-reporter
-        uses: mrfyda/codacy-coverage-reporter-action@master
+        uses: mrfyda/codacy-coverage-reporter-action@0.1.0
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
