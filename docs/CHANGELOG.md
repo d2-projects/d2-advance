@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.20.1](https://github.com/d2-projects/d2-advance/compare/v1.20.0...v1.20.1) (2020-03-21)
+
+
+### Continuous Integration
+
+* **github-actions:** fix action version and skip ci commit ([411be10](https://github.com/d2-projects/d2-advance/commit/411be107239cb0e7490e0b3c94b31b039eb8a598))
+
 # [1.20.0](https://github.com/d2-projects/d2-advance/compare/v1.19.17...v1.20.0) (2020-03-21)
 
 
