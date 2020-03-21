@@ -1,7 +1,7 @@
-import { client as createRtaClient } from '@/api/roll-tools-api'
+import * as client from '@/lib/roll-tools-api'
 
 export default {
   install(Vue) {
-    Vue.prototype.$rta = createRtaClient()
+    Vue.prototype.$rtApi = client
   }
 }

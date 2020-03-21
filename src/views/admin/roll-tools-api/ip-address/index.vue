@@ -21,7 +21,7 @@
     </el-input>
     <p>
       <async
-        :api="$rta.apis.ip.self"
+        :api="$rtApi.getSelfIpInfo"
         :transform="transform"
         @success="onSelfSuccess"
       >
@@ -33,12 +33,7 @@
             {{ selfError.message }}
           </div>
           <div v-else>
-            <async
-              v-if="targetIP"
-              :api="$rta.apis.ip.aim_ip"
-              :args="[ip]"
-              :transform="transform"
-            >
+            <async v-if="targetIP" :api="$rtApi.getTargetIpInfo" :args="[ip]">
               <template v-slot:default="{ pending, error, data }">
                 <div v-if="pending">
                   Loading ...
@@ -64,7 +59,7 @@
 </template>
 
 <script>
-import { get, debounce } from 'lodash'
+import { debounce } from 'lodash'
 
 export default {
   inject: ['@adminContainer'],
@@ -84,9 +79,6 @@ export default {
     }
   },
   methods: {
-    transform(response) {
-      return get(response, 'data.data', null)
-    },
     onSelfSuccess(data) {
       this.ip = data.ip
     }

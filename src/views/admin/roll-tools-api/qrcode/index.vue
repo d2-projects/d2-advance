@@ -75,12 +75,7 @@
           >{{ $t('admin.roll-tools-api.qrcode.generate') }}</el-button
         >
       </p>
-      <async
-        v-if="confirmed"
-        :api="$rta.apis.qrcode"
-        :args="confirmed"
-        :transform="transform"
-      >
+      <async v-if="confirmed" :api="$rtApi.getQrcodeImage" :args="confirmed">
         <template v-slot:default="{ pending, error, data }">
           <div v-if="pending">
             Loading ...
@@ -101,7 +96,7 @@
 </template>
 
 <script>
-import { get, pick } from 'lodash'
+import { pick } from 'lodash'
 
 export default {
   inject: ['@adminContainer'],
@@ -123,11 +118,8 @@ export default {
     }
   },
   methods: {
-    transform(result) {
-      return get(result, 'data.data', {})
-    },
     handleGenerate() {
-      this.confirmed = [this.content, pick(this, ['size', 'logo', 'logo_size'])]
+      this.confirmed = [pick(this, ['content', 'size', 'logo', 'logo_size'])]
     },
     loadLogo({ raw: file }) {
       const isJPG = file.type === 'image/jpeg'

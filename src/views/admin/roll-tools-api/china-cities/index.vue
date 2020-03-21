@@ -12,7 +12,7 @@
         >
       </h2>
     </template>
-    <async :api="$rta.apis.address.list" :transform="transform" freeze>
+    <async :api="$rtApi.getChinaCityTree" freeze>
       <template v-slot:default="{ pending, error, data }">
         <div v-if="pending">
           Loading ...
@@ -28,9 +28,7 @@
             clearable
             style="width: 100%"
           ></el-cascader>
-          <p>
-            <el-cascader-panel :options="data"></el-cascader-panel>
-          </p>
+          <p><el-cascader-panel :options="data" /></p>
         </div>
       </template>
     </async>
@@ -38,35 +36,11 @@
 </template>
 
 <script>
-import { get, map } from 'lodash'
-
 export default {
   inject: ['@adminContainer'],
   data() {
     return {
       address: []
-    }
-  },
-  methods: {
-    transform(response) {
-      return map(
-        get(response, 'data.data', []),
-        ({ code: value, name: label, pchilds: children = [] }) => ({
-          value,
-          label,
-          children: map(
-            children,
-            ({ code: value, name: label, cchilds: children = [] }) => ({
-              value,
-              label,
-              children: map(children, ({ code: value, name: label }) => ({
-                value,
-                label
-              }))
-            })
-          )
-        })
-      )
     }
   }
 }

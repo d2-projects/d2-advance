@@ -21,8 +21,7 @@
       <template v-for="pageNumber in page">
         <async
           :key="pageNumber"
-          :api="$rta.apis.image.girl_random"
-          :transform="transform"
+          :api="$rtApi.getRandomGirlImages"
           static
           @success="success"
         >
@@ -51,7 +50,7 @@
 </template>
 
 <script>
-import { get, map } from 'lodash'
+import { map } from 'lodash'
 
 export default {
   inject: ['@adminContainer'],
@@ -63,9 +62,6 @@ export default {
     }
   },
   methods: {
-    transform(response) {
-      return get(response, 'data.data', [])
-    },
     loadNext() {
       this.lock += 1
       this.page += 1
