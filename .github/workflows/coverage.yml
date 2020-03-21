@@ -1,0 +1,17 @@
+name: Coverage reporter
+
+on: ["push"]
+
+jobs:
+  codacy-coverage-reporter:
+    runs-on: ubuntu-latest
+    name: Codacy Coverage Reporter
+    steps:
+      - uses: actions/checkout@v1
+      - uses: bahmutov/npm-install@v1
+      - name: Unit test with coverage
+        run: yarn run test:unit --coverage
+      - name: Run codacy-coverage-reporter
+        uses: mrfyda/codacy-coverage-reporter-action@master
+        with:
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
