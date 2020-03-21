@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.20.0](https://github.com/d2-projects/d2-advance/compare/v1.19.17...v1.20.0) (2020-03-21)
+
+
+### Chores
+
+* **git-hook:** prepush unit test only changed ([ea7b29c](https://github.com/d2-projects/d2-advance/commit/ea7b29ca47c83c5a4f2a0853c8e7309558aeddd8))
+* **jest:** strict options in comments ([22e8b57](https://github.com/d2-projects/d2-advance/commit/22e8b57f03506ab338079aafd86cce7ccf13f6ff))
+* ignore root coverage folder ([fca26bf](https://github.com/d2-projects/d2-advance/commit/fca26bff46cf98858c281cf1ec787d6e43d3c34f))
+
+
+### Code Refactoring
+
+* **roll-tools-api:** migrate roll-tools-api to lib version ([1d2c56e](https://github.com/d2-projects/d2-advance/commit/1d2c56e80ad85b72c6d63d10ccc979afc484668d))
+
+
+### Continuous Integration
+
+* **github-actions:** add ci mode for unit test ([6f6b4cb](https://github.com/d2-projects/d2-advance/commit/6f6b4cbb7da8df2e17d29e3cc4f6c0b12b7e76cc))
+* **github-actions:** add codacy coverage reporter ([c542fee](https://github.com/d2-projects/d2-advance/commit/c542feef7894437fee44d77e5ce83cd0f50d2bd1))
+* **github-actions:** unit test without roll-tools-api ([1144af9](https://github.com/d2-projects/d2-advance/commit/1144af9c867116452ffa66f79fa25e026acbdf4e))
+
+
+### Documentation
+
+* update badge with logo ([a623015](https://github.com/d2-projects/d2-advance/commit/a623015c94d762e2c34940f6f1c45f16d60468e2))
+
+
+### Features
+
+* xhr response with 'got' for better data transform ([d83692c](https://github.com/d2-projects/d2-advance/commit/d83692c2479700821ed72418fca6496c4e2213c1))
+* **lib:** add standard roll-tools-api ([5fc2938](https://github.com/d2-projects/d2-advance/commit/5fc293845ed4916dd991feca5efe3f1103ed5693))
+
 ## [1.19.17](https://github.com/d2-projects/d2-advance/compare/v1.19.16...v1.19.17) (2020-03-20)
 
 
