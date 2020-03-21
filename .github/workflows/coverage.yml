@@ -4,6 +4,7 @@ on: ["push"]
 
 jobs:
   codacy-coverage-reporter:
+    if: "! contains(github.event.head_commit.message, '[skip ci]')"
     runs-on: ubuntu-latest
     name: Codacy Coverage Reporter
     steps:
@@ -12,6 +13,15 @@ jobs:
       - name: Unit test with coverage
         run: yarn run test:unit:ci
       - name: Run codacy-coverage-reporter
-        uses: mrfyda/codacy-coverage-reporter-action@0.1.0
+        uses: mrfyda/codacy-coverage-reporter-action@master
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+
+  # !TRICKY
+  # https://github.community/t5/GitHub-Actions/Workflow-is-failing-if-no-job-can-be-ran-due-to-condition/td-p/38085
+  always_job:
+    name: Always run job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Always run
+        run: echo "TRICKY run"
