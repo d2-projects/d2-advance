@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.20.2](https://github.com/d2-projects/d2-advance/compare/v1.20.1...v1.20.2) (2020-03-22)
+
+
+### Documentation
+
+* **zh:** add development environment requires and quick start ([e54fe62](https://github.com/d2-projects/d2-advance/commit/e54fe62ce90568689f74d9f95e7c10eb2873984c))
+* update badge label ([c7a93be](https://github.com/d2-projects/d2-advance/commit/c7a93be9400b2d8c53c5ef0083adeceb281a239a))
+
 ## [1.20.1](https://github.com/d2-projects/d2-advance/compare/v1.20.0...v1.20.1) (2020-03-21)
 
 
