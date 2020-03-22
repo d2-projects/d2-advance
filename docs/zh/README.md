@@ -1,6 +1,6 @@
 # D2 Advance
 
-D2 Advance 是受 [D2 Admin](https://github.com/d2-projects/d2-admin/) 交互设计影响下，另起的新项目。在保留 D2 Admin 经典设计的同时，**整理出清晰的架构、提升代码质量和规范开发流程**，并探索 Vue 在中后台之外的更多应用场景。
+D2 Advance 是受 [D2 Admin](https://github.com/d2-projects/d2-admin/) 交互设计影响下，开的新项目。在保留 D2 Admin 经典设计的同时，**整理出清晰的架构、提升代码质量和规范开发流程**，探索中后台及其以外的更多应用场景。
 
 使用须知：
 
@@ -9,11 +9,44 @@ D2 Advance 是受 [D2 Admin](https://github.com/d2-projects/d2-admin/) 交互设
 - 基于 vue-cli@4，请一定要熟悉 [vue-cli](https://cli.vuejs.org/) 的文档，它能解决你遇到的大部分问题
 - 更规范的代码提交、版本演进和自动化发布，可以了解下
 
-**请花一点时间阅读本文档，对了解该项目有帮助**
+## 环境要求
+
+### NodeJS
+
+NodeJS 的版本需求大部分受 `devDependencies` 影响，以下是主要的版本需求清单，其中一些新版本依赖，该项目可能还未采用，但会在后续的升级中采用，所以此处以新版本为准。
+
+推荐 `node@12`
+
+-   打包使用的 brotli 压缩算法需要 `>= node@11.7.0`
+
+最低 `node@10`
+
+-   `webpack@5` 需要 `>= node@10.13.0`
+-   `prettier@2` 需要 `>= node@10`
+
+### npm or yarn ?
+
+该项目使用 yarn 作为包管理器，如果没有全局安装，请运行 `npm i -g yarn` 安装。
 
 ## 快速开始
 
-TODO
+该项目可以直接作为项目模版，进行二次开发，以下几种推荐几种初始化方式，任选其一：
+
+-   适合私有项目二次开发：点击仓库上方工具栏的下载 zip 按钮，直接下在纯源码。在本地解压后，自行初始化为 git 仓库或其他类型的仓库。
+-   适合开源项目二次开发：使用 github 的模版初始化功能，创建一个只带一次文件初始化提交的 github 仓库，并 `git clone` 到本地。
+-   适合该项目贡献者：直接 `git clone` 到本地。
+
+本地项目文件夹准备完毕后，将命令行切换到项目根目录，并按以下命令操作：
+
+``` bash
+# 安装依赖
+yarn
+
+# 启动开发服务
+yarn serve
+```
+
+启动完成后，浏览器访问 [http://localhost:8080](http://localhost:8080) 即可预览。
 
 ## 开发规范
 
