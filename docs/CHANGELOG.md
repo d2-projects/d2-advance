@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.21.0](https://github.com/d2-projects/d2-advance/compare/v1.20.2...v1.21.0) (2020-03-22)
+
+
+### Bug Fixes
+
+* **roll-tools-api:** remove useless transform in demo page ([d825933](https://github.com/d2-projects/d2-advance/commit/d8259338ae762492ab7dc558ed672c59ee1981c3))
+
+
+### Features
+
+* add hot query ([211e3d3](https://github.com/d2-projects/d2-advance/commit/211e3d3765ab51fde7c04c5f4472328a25d4e9c8))
+* **store:** store auto persist support storageKey and deep watch ([b8460a2](https://github.com/d2-projects/d2-advance/commit/b8460a20506a5f1d50ebee147ded47d337fab3b5))
+* **utils:** add getStringHash method ([22a44db](https://github.com/d2-projects/d2-advance/commit/22a44dba3b05987d01ae2c3f952297ed52f83f35))
+
 ## [1.20.2](https://github.com/d2-projects/d2-advance/compare/v1.20.1...v1.20.2) (2020-03-22)
 
 
