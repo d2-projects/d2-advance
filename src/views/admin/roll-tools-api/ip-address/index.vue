@@ -20,11 +20,7 @@
       </template>
     </el-input>
     <p>
-      <async
-        :api="$rtApi.getSelfIpInfo"
-        :transform="transform"
-        @success="onSelfSuccess"
-      >
+      <async :api="$rtApi.getSelfIpInfo" @success="onSelfSuccess">
         <template v-slot:default="{ selfPending, selfError }">
           <div v-if="selfPending">
             Loading ...
