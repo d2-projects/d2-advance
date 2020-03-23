@@ -9,11 +9,11 @@ const treeData = [
   {
     label: 'Side menu'
   },
-  ...map(range(1, 10), index1 => ({
+  ...map(range(1, 10), (index1) => ({
     label: 'Menu item ' + index1,
-    children: map(range(1, 20), index2 => ({
+    children: map(range(1, 20), (index2) => ({
       label: 'Menu item ' + index1 + '-' + index2,
-      children: map(range(1, 5), index3 => ({
+      children: map(range(1, 5), (index3) => ({
         label: 'Menu item ' + index1 + '-' + index2 + '-' + index3
       }))
     }))

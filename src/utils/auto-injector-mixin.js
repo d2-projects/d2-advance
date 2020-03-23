@@ -6,10 +6,10 @@ export default {
       values(
         pick(
           this,
-          filter(keys(this), key => /^@.+/.test(key) && isFunction(this[key]))
+          filter(keys(this), (key) => /^@.+/.test(key) && isFunction(this[key]))
         )
       ),
-      fn => fn(this)
+      (fn) => fn(this)
     )
   }
 }

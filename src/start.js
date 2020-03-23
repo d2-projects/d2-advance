@@ -14,10 +14,8 @@ export const vm = new Vue({
   i18n,
   data: { error: null },
   beforeCreate() {
-    const lang = getStorage()
-      .get('lang')
-      .value()
-    if (langs.find(item => item.value === lang)) {
+    const lang = getStorage().get('lang').value()
+    if (langs.find((item) => item.value === lang)) {
       this.$i18n.locale = lang
     }
   },

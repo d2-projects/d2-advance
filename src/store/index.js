@@ -1,6 +1,6 @@
 import admin from './modules/admin'
 
-export default app => ({
+export default (app) => ({
   state: {},
   mutations: {},
   actions: {},

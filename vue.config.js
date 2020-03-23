@@ -84,8 +84,8 @@ module.exports = {
 
       // inject cdn config to all html. like `htmlWebpackPlugin.options.cdn`
       // already adapt to multi-page mode
-      eachHtmlPlugins(pages, config, plugin => {
-        plugin.tap(args => {
+      eachHtmlPlugins(pages, config, (plugin) => {
+        plugin.tap((args) => {
           set(args, '[0].cdnDependencies', cdnDependencies)
           return args
         })
@@ -116,18 +116,18 @@ module.exports = {
 const eachHtmlPlugins = (webpackPagesConfig, chainConfig, callback) => {
   const multiHtmlPluginNames = chain(webpackPagesConfig)
     .keys()
-    .map(page => 'html-' + page)
+    .map((page) => 'html-' + page)
     .value()
   const targetHtmlPluginNames = multiHtmlPluginNames.length
     ? multiHtmlPluginNames
     : ['html']
-  each(targetHtmlPluginNames, name => {
+  each(targetHtmlPluginNames, (name) => {
     callback(chainConfig.plugin(name), name)
   })
   return targetHtmlPluginNames
 }
 
-const cdnDependenciesToWebpackExternals = dependencies => {
+const cdnDependenciesToWebpackExternals = (dependencies) => {
   return reduce(
     dependencies,
     (prev, { name, library }) => (
@@ -137,14 +137,14 @@ const cdnDependenciesToWebpackExternals = dependencies => {
   )
 }
 
-const cdnDependenciesModePreproccess = dependencies => {
+const cdnDependenciesModePreproccess = (dependencies) => {
   return process.env.NODE_ENV === 'development'
-    ? map(dependencies, item => {
+    ? map(dependencies, (item) => {
         const overrides = chain(item)
           .pick(
             chain(item)
               .keys()
-              .filter(key => /(.+\.dev)$/.test(key))
+              .filter((key) => /(.+\.dev)$/.test(key))
               .value()
           )
           .mapKeys((_, key) => key.replace(/(\.dev)$/, ''))

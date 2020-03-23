@@ -5,7 +5,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import en from 'element-ui/lib/locale/lang/en'
 import zh_CN from 'element-ui/lib/locale/lang/zh-CN'
 
-export default app => {
+export default (app) => {
   app.i18n.mergeLocaleMessage('en', en)
   app.i18n.mergeLocaleMessage('zh-CN', zh_CN)
 

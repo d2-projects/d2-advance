@@ -23,10 +23,10 @@ export default {
   },
   render(h) {
     // * i18n support
-    const translate = this.$t ? text => this.$t(text) : i => i
+    const translate = this.$t ? (text) => this.$t(text) : (i) => i
 
     const it = ({ icon, label, group, children, ...props }, level = 0) => {
-      const next = data => it(data, level + 1)
+      const next = (data) => it(data, level + 1)
 
       const iconComp = (defaultIcon = 'el-icon-tickets') => {
         if (this.onlyMainIcon && level > 1) return null

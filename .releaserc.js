@@ -8,7 +8,7 @@ const releaseRules = [
   { type: 'test', release: 'patch' }
 ]
 
-const transformCommitType = type => {
+const transformCommitType = (type) => {
   const commitTypeMapping = {
     feat: 'Features',
     fix: 'Bug Fixes',
@@ -29,7 +29,7 @@ const transformCommitType = type => {
 const customTransform = (commit, context) => {
   const issues = []
 
-  commit.notes.forEach(note => {
+  commit.notes.forEach((note) => {
     note.title = `BREAKING CHANGES`
   })
 
@@ -71,7 +71,7 @@ const customTransform = (commit, context) => {
   }
 
   // remove references that already appear in the subject
-  commit.references = commit.references.filter(reference => {
+  commit.references = commit.references.filter((reference) => {
     if (issues.indexOf(reference.issue) === -1) {
       return true
     }

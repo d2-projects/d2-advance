@@ -7,7 +7,7 @@ import { keys, chain } from 'lodash'
 
 export const namespace = 'admin'
 
-const init = app => {
+const init = (app) => {
   const menu = createMenu()
   const tabOptions = flattenMenuItemOfAdmin(menu)
 
@@ -63,7 +63,7 @@ const init = app => {
         if (allKey.length > 50) {
           chain(allKey)
             .take(allKey.length - 10)
-            .map(key => ({ count: state.hotQueryMap[key].count, key }))
+            .map((key) => ({ count: state.hotQueryMap[key].count, key }))
             .sortBy('count')
             .take(allKey.length - 20)
             .value()

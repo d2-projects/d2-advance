@@ -43,7 +43,7 @@ class MyApplication extends VueApplication {
       router,
       i18n: this.i18n,
       mixins: [i18nRootMixin(this), loadingChunkFailedRootMixin(this)],
-      render: h => h(App)
+      render: (h) => h(App)
     })
   }
 

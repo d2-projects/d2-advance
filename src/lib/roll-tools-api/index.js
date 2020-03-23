@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { get, set, map } from 'lodash'
 
-const gotResponse = fn => response => (response.got = () => fn(response))
+const gotResponse = (fn) => (response) => (response.got = () => fn(response))
 
 // https://github.com/MZCretin/RollToolsApi
 
@@ -14,7 +14,7 @@ const client = axios.create({
 })
 
 client.interceptors.request.use(
-  config => ({
+  (config) => ({
     ...config,
     params: {
       app_id,
@@ -22,13 +22,13 @@ client.interceptors.request.use(
       ...(config.params || {})
     }
   }),
-  error => Promise.reject(error)
+  (error) => Promise.reject(error)
 )
 
 client.interceptors.response.use(
-  response => {
+  (response) => {
     const code = get(response, 'data.code')
-    gotResponse(response => get(response, 'data.data'))(response)
+    gotResponse((response) => get(response, 'data.data'))(response)
     if (code !== 1) {
       const error = new Error(get(response, 'data.msg'))
       error.response = response
@@ -36,10 +36,10 @@ client.interceptors.response.use(
     }
     return response
   },
-  error => Promise.reject(error)
+  (error) => Promise.reject(error)
 )
 
-export const getGirlImages = page =>
+export const getGirlImages = (page) =>
   client({
     method: 'get',
     url: '/image/girl/list',
@@ -58,7 +58,7 @@ export const getSelfIpInfo = () =>
     url: '/ip/self'
   })
 
-export const getTargetIpInfo = ip =>
+export const getTargetIpInfo = (ip) =>
   client({
     method: 'get',
     url: '/ip/aim_ip',
@@ -69,7 +69,7 @@ export const getChinaCityTree = () =>
   client({
     method: 'get',
     url: '/address/list'
-  }).then(response => {
+  }).then((response) => {
     const it = (list = [], level = 0) => {
       const run = [
         ({ code, name, pchilds = [] }) => ({
@@ -96,7 +96,7 @@ export const getChinaCityTree = () =>
           type: 'region'
         })
       ][level]
-      return map(list, run || (i => i))
+      return map(list, run || ((i) => i))
     }
 
     set(response, 'data.data', it(get(response, 'data.data', [])))

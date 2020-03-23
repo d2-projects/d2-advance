@@ -19,7 +19,7 @@
               clearable
               @keyup.enter.native="onSubmit"
             >
-              <template #prepend><i class="el-icon-user"/></template>
+              <template #prepend><i class="el-icon-user" /></template>
             </el-input>
           </el-form-item>
           <el-form-item prop="password">
@@ -31,7 +31,7 @@
               clearable
               @keyup.enter.native="onSubmit"
             >
-              <template #prepend><i class="el-icon-key"/></template>
+              <template #prepend><i class="el-icon-key" /></template>
             </el-input>
           </el-form-item>
           <el-button type="primary" class="submit-button" @click="onSubmit">{{
@@ -49,7 +49,7 @@ import { token } from '@/store/modules/admin/mixins'
 import { homePath } from '../../../routes/admin'
 
 // ! DEMO
-const login = form =>
+const login = (form) =>
   new Promise((resolve, reject) => {
     setTimeout(() => {
       if (form.password === 'admin' && form.username === 'admin') {
@@ -78,7 +78,7 @@ export default {
   },
   methods: {
     onSubmit() {
-      this.$refs.form.validate(async valid => {
+      this.$refs.form.validate(async (valid) => {
         if (valid) {
           this.pending = true
           try {

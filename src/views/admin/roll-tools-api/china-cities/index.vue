@@ -26,7 +26,7 @@
             :options="data"
             filterable
             clearable
-            style="width: 100%"
+            style="width: 100%;"
           ></el-cascader>
           <p><el-cascader-panel :options="data" /></p>
         </div>

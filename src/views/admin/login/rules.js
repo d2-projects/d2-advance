@@ -1,4 +1,4 @@
-export default vm => ({
+export default (vm) => ({
   username: [
     {
       required: true,

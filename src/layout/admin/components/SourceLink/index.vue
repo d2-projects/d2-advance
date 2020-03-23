@@ -16,7 +16,7 @@ export default {
       if (process.env.VUE_APP_SOURCE_LINK === 'on') {
         const targetRoute = find(
           this.$route.matched,
-          item => get(item, 'parent.name') === 'admin'
+          (item) => get(item, 'parent.name') === 'admin'
         )
         const path = get(targetRoute, 'components.default.' + propName)
         return path

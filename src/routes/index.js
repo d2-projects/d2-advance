@@ -3,7 +3,7 @@ import { routes as adminRoutes } from './admin'
 export const pathPrefix = '/'
 export const homePath = pathPrefix
 
-export default app => {
+export default (app) => {
   // const store = app.store.state
 
   return [

@@ -135,7 +135,7 @@ export default {
       this.emitSwitch(current)
       this.$emit(
         'input',
-        tabs.filter(tab => tab.index !== targetIndex)
+        tabs.filter((tab) => tab.index !== targetIndex)
       )
     },
     onClick(tab) {

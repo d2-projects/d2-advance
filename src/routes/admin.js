@@ -5,7 +5,7 @@ export const pathPrefix = '/admin'
 export const homePath = pathPrefix
 export const loginPath = pathPrefix + '/login'
 
-export const routes = app => {
+export const routes = (app) => {
   const state = app.store.state[namespace]
 
   return [
@@ -46,7 +46,7 @@ export const routes = app => {
           'forbidden',
           'not-found'
         ],
-        path => ({
+        (path) => ({
           path,
           name: kebabCase('admin ' + path),
           component: () =>

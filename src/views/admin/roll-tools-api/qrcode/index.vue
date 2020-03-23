@@ -24,7 +24,7 @@
       <p>
         <el-slider
           v-model="size"
-          :format-tooltip="v => v + 'px'"
+          :format-tooltip="(v) => v + 'px'"
           :max="maxSize"
           :min="minSize"
           show-input
@@ -61,7 +61,7 @@
         <el-slider
           v-model="logo_size"
           :disabled="!logo"
-          :format-tooltip="v => v + 'px'"
+          :format-tooltip="(v) => v + 'px'"
           :max="size / 2"
           :min="minSize / 5"
           show-input
@@ -143,7 +143,7 @@ export default {
 
       const reader = new FileReader()
       reader.readAsDataURL(file)
-      reader.onloadend = event => {
+      reader.onloadend = (event) => {
         this.logo_src = event.target.result
       }
     },

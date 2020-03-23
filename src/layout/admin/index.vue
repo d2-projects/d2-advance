@@ -19,11 +19,11 @@
         > -->
         <action-bar-item>
           <el-dropdown
-            style="cursor: pointer"
+            style="cursor: pointer;"
             size="small"
             @command="handleCommand"
           >
-            <span style="padding-left: 10px; padding-right: 10px">
+            <span style="padding-left: 10px; padding-right: 10px;">
               {{ $t('hello') }}
             </span>
             <el-dropdown-menu slot="dropdown">

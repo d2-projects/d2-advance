@@ -17,7 +17,8 @@ module.exports = {
         singleQuote: true,
         semi: false,
         trailingComma: 'none',
-        quoteProps: 'preserve'
+        quoteProps: 'preserve',
+        arrowParens: 'always' // Prettier 2.0
       }
     ]
   },
