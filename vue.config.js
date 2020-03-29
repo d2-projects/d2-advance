@@ -4,10 +4,9 @@ const checkNode = require('node-version-matches')
 const packageInfo = require('./package.json')
 const { get, set, reduce, chain, each, map } = require('lodash')
 
-// ! Mutil page always
-// https://cli.vuejs.org/zh/config/#pages
 const pages = {
   index: {
+    title: 'D2 Advance --- 🧼 🏠 Stay Home 🦠 😷',
     entry: 'src/start.js',
     template: 'public/index.html',
     filename: 'index.html'
@@ -15,15 +14,10 @@ const pages = {
 }
 
 module.exports = {
-  // https://cli.vuejs.org/zh/config/#publicpath
+  pages,
+  productionSourceMap: false,
   publicPath: process.env.BASE_URL || '/',
 
-  pages,
-
-  // https://cli.vuejs.org/zh/config/#productionsourcemap
-  productionSourceMap: false,
-
-  // https://github.com/neutrinojs/webpack-chain
   chainWebpack(config) {
     /**
      * for SourceLink component
