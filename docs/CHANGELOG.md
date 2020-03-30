@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.21.1](https://github.com/d2-projects/d2-advance/compare/v1.21.0...v1.21.1) (2020-03-30)
+
+
+### Bug Fixes
+
+* **dependencies:** vue-i18n@8.16.0, webpack@4.42.1 ([018d828](https://github.com/d2-projects/d2-advance/commit/018d828efa6f5f2465cc0c55cdfcf16122219896))
+
+
+### Chores
+
+* add title option for html-webpack-plugin ([8330722](https://github.com/d2-projects/d2-advance/commit/83307227adde6e1c4c93ac6a79b7d448b1febc38))
+* **lint:** migrate perttier to 2.0 ([12f0f69](https://github.com/d2-projects/d2-advance/commit/12f0f698139c80ba8794ca352a099d58265b2262))
+
+
+### Code Refactoring
+
+* **start-loading:** extract to util ([b03c6c6](https://github.com/d2-projects/d2-advance/commit/b03c6c6d9632ab8a560ff6f2affacde21f4e8f6e))
+
 # [1.21.0](https://github.com/d2-projects/d2-advance/compare/v1.20.2...v1.21.0) (2020-03-22)
 
 
