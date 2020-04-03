@@ -18,6 +18,14 @@ module.exports = {
   productionSourceMap: false,
   publicPath: process.env.BASE_URL || '/',
 
+  devServer: {
+    // display console info on page
+    overlay: {
+      warnings: false,
+      errors: true
+    }
+  },
+
   chainWebpack(config) {
     /**
      * for SourceLink component
