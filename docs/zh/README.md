@@ -1,32 +1,31 @@
 # D2 Advance
 
-D2 Advance 是受 [D2 Admin](https://github.com/d2-projects/d2-admin/) 交互设计影响下，开的新项目。在保留 D2 Admin 经典设计的同时，**整理出清晰的架构、提升代码质量和规范开发流程**，探索中后台及其以外的更多应用场景。
+D2 Advance 是受 [D2 Admin](https://github.com/d2-projects/d2-admin/) 交互设计影响启发的新项目。保留 D2 Admin 经典设计的同时，**整理出清晰的架构、提升代码质量和规范开发流程**，探索中后台及其以外的更多应用场景。
 
 使用须知：
 
 - 和 D2 Admin 1x 版本的代码完全不一样，**你需要重新学习，先看懂再用**，避免风险
 - 代码里没有注释，**好的代码不需要注释**，如果有，要么是标注的文档地址，要么是有坑
 - 基于 vue-cli@4，请一定要熟悉 [vue-cli](https://cli.vuejs.org/) 的文档，它能解决你遇到的大部分问题
-- 更规范的代码提交、版本演进和自动化发布，可以了解下
+- 更规范的代码提交、版本演进和自动化发布，**需要开发者做好每一次提交**
+- **请不要关闭 lint 和测试等提示，这是代码质量的基本保障**，如果不能接受，请勿使用该项目
 
 ## 环境要求
 
 ### NodeJS
 
-NodeJS 的版本需求大部分受 `devDependencies` 影响，以下是主要的版本需求清单，其中一些新版本依赖，该项目可能还未采用，但会在后续的升级中采用，所以此处以新版本为准。
+NodeJS 版本要求受 `devDependencies` 影响，以下是主要的依赖清单。尽管有的依赖的新版本在该项目还未采用，但为了之后的升级，这里以新版本为准。
 
 推荐 `node@12`
 
--   打包使用的 brotli 压缩算法需要 `>= node@11.7.0`
+-   打包使用的 [brotli](https://github.com/webpack-contrib/compression-webpack-plugin#using-brotli) 压缩算法需要 `>= node@11.7.0`
 
 最低 `node@10`
 
 -   `webpack@5` 需要 `>= node@10.13.0`
 -   `prettier@2` 需要 `>= node@10`
 
-### npm or yarn ?
-
-该项目使用 yarn 作为包管理器，如果没有全局安装，请运行 `npm i -g yarn` 安装。
+**该项目使用 yarn 作为包管理器**，如果没有全局安装，请运行 `npm i -g yarn` 安装。
 
 ## 快速开始
 
@@ -90,7 +89,7 @@ git commit -m "chore(npm): 添加预览版本的打包命令"
 - 统一格式，方便查阅
 - 便于自动生产变更日志和版本号
 
-该项目采用了常见的 [angular 提交准则](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#commit)，具体可参考：https://www.conventionalcommits.org/zh-hans
+该项目采用常见的 [angular 提交准则](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#commit)，具体可参考：https://www.conventionalcommits.org/zh-hans
 
 为避免手写失误，该项目已经使用 [commitizen](https://github.com/commitizen/cz-cli) 工具进行初始化，可以直接在命令行中体验交互式提交，通过选择+填空的方式生成规范的 commit message：
 
@@ -109,7 +108,13 @@ yarn commit # 或 npm run commit
 
 #### 开源项目
 
-该仓库使用的简单的 master + dev 模式，在 github 默认展示 master 分支，master 最后一次提交永远是最近一次版本发布，并部署到预览版时的代码。平时的开发都在 dev 分支。当在 dev 完成一段功能的开发后，再合并到 master 触发自动发布，流程如下：
+该仓库使用的简单的 master + dev 模式：
+
+-   `master`：默认分支，包含了所有的版本 tag，最后一次提交永远是最近一次版本发布，保证同个版本下载的代码都是一致的，同时也和部署到预览的代码一致
+-   `dev`：开发分支，里面是上一次版本发布后，待发布的提交，当需要发布时直接合并到 `master`
+-   `gh-pages`：部署 Github Pages 时生产的分支，请忽略
+
+开发流程如下：
 
 ``` bash
 # ...在 dev 完成多次 commit 后
@@ -125,19 +130,63 @@ yarn commit # 或 npm run commit
 # ... 继续在 dev 开发
 ```
 
-好处：
-- 保证预览时的代码与 master 一致，不会和未发布的代码混淆
-
 #### 私有项目
 
 私有项目一般会有开发环境和测试、生产环境，在开发过程中更多关注开发环境与最新代码，所以多为 master + release 的方式。
 如果你是以该项目为模版的私有项目，直接在 master 开发，在必要的时候切 release 分支即可。
 
-**如果是通过 `git clone` 下载该项目为模版，请删除本地的 `dev` 分支，因为这是未发布的代码。**
-
 ### 代码风格
 
-TODO
+``` bash
+# 检查代码风格，并自动修复
+yarn lint
+
+# 严格检查，不会自动修复
+yarn lint:strict
+```
+
+#### 配置
+
+代码风格设置主要以 eslint 为主，搭配 [prettier](https://prettier.io/docs/en/options.html) 和 [vue](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/README.md) 的 lint 规则：
+
+``` js
+// .eslintrc
+
+module.exports = {
+  // ...
+  extends: [
+    'eslint:recommended',
+    'plugin:vue/recommended',
+    '@vue/prettier'
+  ],
+  // ...
+}
+```
+
+可以将 `'plugin:vue/recommended'` 换成 `'plugin:vue/essential'` 以使用更简单的 vue 规则。
+
+如何覆盖 prettier 的规则：
+
+``` js
+// .eslintrc
+
+module.exports = {
+  // ...
+  rules: {
+    'prettier/prettier': [
+      'warn',
+      {
+        singleQuote: true,
+        semi: false,
+        trailingComma: 'none',
+        quoteProps: 'preserve',
+        arrowParens: 'always'
+      }
+    ]
+  },
+  // ...
+}
+```
 
 ## 文件结构
 
@@ -147,12 +196,18 @@ TODO
 
 TODO
 
-## 调试
+## 测试
+
+TODO
 
 ## 打包
 
+TODO
+
 ## 部署
 
-## 持续集成与部署
+TODO
+
+## CI/CD
 
 TODO
