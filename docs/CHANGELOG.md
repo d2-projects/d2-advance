@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.21.2](https://github.com/d2-projects/d2-advance/compare/v1.21.1...v1.21.2) (2020-04-04)
+
+
+### Bug Fixes
+
+* **admin:** auto import for index.js file. hide source link when not path ([d2ac2bc](https://github.com/d2-projects/d2-advance/commit/d2ac2bc291cc3e6e9f4057bcc00b7953f560f22c))
+
+
+### Chores
+
+* **dev-server:** set devServer overlay warnings to false ([8419aeb](https://github.com/d2-projects/d2-advance/commit/8419aeb08588c81a56e75bec3783e0d45c775903))
+* **git-hook:** pre-push lint with eslint cache ([9e97da7](https://github.com/d2-projects/d2-advance/commit/9e97da788e365300eb3fa7e947cbcdab98c85439))
+
+
+### Code Refactoring
+
+* **admin:** for dark theme ([124972e](https://github.com/d2-projects/d2-advance/commit/124972e2dd0ff120633e53ecae4cafe2a30300d9))
+
+
+### Documentation
+
+* **zh:** code lint section ([87eb567](https://github.com/d2-projects/d2-advance/commit/87eb567632a1820065097eac5a6db2316b61a26c))
+
 ## [1.21.1](https://github.com/d2-projects/d2-advance/compare/v1.21.0...v1.21.1) (2020-03-30)
 
 
