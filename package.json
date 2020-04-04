@@ -132,7 +132,7 @@
     }
   },
   "gitHooks": {
-    "pre-push": "yarn lint:strict && yarn test:unit --onlyChanged"
+    "pre-push": "yarn lint:strict --cache && yarn test:unit --onlyChanged"
   },
   "license": "MIT",
   "repository": {
