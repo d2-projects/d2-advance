@@ -2,6 +2,7 @@ import Vue from 'vue'
 import { getField, updateField } from 'vuex-map-fields'
 import { flattenMenuItemOfAdmin } from './utils'
 import { createMenu } from './menu'
+import { getThemeConfig } from './theme'
 import storeAutoPersist from '@/utils/store-auto-persist'
 import { keys, chain } from 'lodash'
 
@@ -9,6 +10,7 @@ export const namespace = 'admin'
 
 const init = (app) => {
   const menu = createMenu()
+  const { theme, themes } = getThemeConfig()
   const tabOptions = flattenMenuItemOfAdmin(menu)
 
   const defaultAutoPersist = storeAutoPersist(
@@ -22,6 +24,7 @@ const init = (app) => {
     pageTransition: true,
     showSourceLink: true,
     flat: false,
+    theme,
 
     token: null
   })
@@ -38,6 +41,7 @@ const init = (app) => {
     state: {
       tabOptions,
       menu,
+      themes,
       ...defaultAutoPersist.savedValues,
       ...hotQueryAutoPersist.savedValues
     },

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import 'normalize.css'
-import '@/style/global.styl'
+import { getThemeConfig } from '@/store/modules/admin/theme'
+import '@/style/root.styl'
 import { createI18n } from '@/locales/start'
 import getStorage from '@/utils/get-storage'
 import { langs } from '@/locales'
@@ -18,6 +19,11 @@ export default (load, view) => {
       if (langs.find((item) => item.value === lang)) {
         this.$i18n.locale = lang
       }
+
+      document.body.setAttribute(
+        'data-admin-theme',
+        getStorage('admin').get('theme').value() || getThemeConfig().theme
+      )
     },
     async mounted() {
       try {

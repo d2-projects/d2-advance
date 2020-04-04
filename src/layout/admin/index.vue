@@ -1,42 +1,22 @@
 <template>
-  <el-container
-    class="admin-container"
-    :class="{ collapse: asideCollapse, tabs: showTabs, flat }"
+  <div
+    class="layout-wrapper"
+    :class="{
+      collapse: asideCollapse,
+      tabs: showTabs,
+      flat,
+      ['admin-theme--' + theme]: true
+    }"
   >
-    <el-header class="header">
-      <smart-logo
-        v-if="!flat"
-        :has-transition="asideTransition"
-        :collapse="asideCollapse"
-      />
-      <aside-nav-menu-toggle v-model="asideCollapse" />
-      <action-bar class="action-bar">
-        <!-- <action-bar-item
-          type="button"
-          tooltip="tooltip"
-          icon="el-icon-shopping-cart-full"
-          >action</action-bar-item
-        > -->
-        <action-bar-item>
-          <el-dropdown
-            style="cursor: pointer;"
-            size="small"
-            @command="handleCommand"
-          >
-            <span style="padding-left: 10px; padding-right: 10px;">
-              {{ $t('hello') }}
-            </span>
-            <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item command="logout">{{
-                $t('admin.logout')
-              }}</el-dropdown-item>
-            </el-dropdown-menu>
-          </el-dropdown>
-        </action-bar-item>
-      </action-bar>
-    </el-header>
-    <el-container class="body">
-      <el-aside ref="aside" class="aside" width="auto">
+    <aside class="layout-aside">
+      <header class="layout-header">
+        <smart-logo
+          v-if="!flat"
+          :has-transition="asideTransition"
+          :collapse="asideCollapse"
+        />
+      </header>
+      <nav class="layout-nav">
         <div>
           <aside-nav-menu
             :has-transition="asideTransition"
@@ -45,38 +25,59 @@
             @select="handleAsideMenuItemSelected"
           />
         </div>
-      </el-aside>
-      <el-container class="center-wrapper">
-        <el-header v-show="showTabs" class="tabs-wrapper" height="auto">
-          <page-tabs
-            v-model="tabOpened"
-            :current="$route.path"
-            :options="tabOptions"
-            @switch="handleSwitchTabs"
-          />
-        </el-header>
-        <el-main class="main">
-          <transition :name="pageTransition ? 'fade-transverse' : null">
-            <keep-alive>
-              <router-view
-                class="page-wrapper"
-                :class="{ 'sharp-top': showTabs, flat }"
-              />
-            </keep-alive>
-          </transition>
-        </el-main>
+      </nav>
+    </aside>
+    <section class="layout-main">
+      <header class="layout-header">
+        <aside-nav-menu-toggle v-model="asideCollapse" />
+        <el-button type="text" @click="handleSwitchTheme">
+          <i v-if="theme === 'dark'" class="el-icon-sunny" />
+          <i v-if="theme === 'd2-classic'" class="el-icon-moon" />
+        </el-button>
+        <action-bar class="action-bar">
+          <action-bar-item>
+            <el-dropdown
+              style="cursor: pointer;"
+              size="small"
+              @command="handleCommand"
+            >
+              <span style="padding-left: 10px; padding-right: 10px;">
+                {{ $t('hello') }}
+              </span>
+              <el-dropdown-menu slot="dropdown">
+                <el-dropdown-item command="logout">{{
+                  $t('admin.logout')
+                }}</el-dropdown-item>
+              </el-dropdown-menu>
+            </el-dropdown>
+          </action-bar-item>
+        </action-bar>
+      </header>
+      <el-header v-show="showTabs" class="tabs-wrapper" height="auto">
+        <page-tabs
+          v-model="tabOpened"
+          :current="$route.path"
+          :options="tabOptions"
+          @switch="handleSwitchTabs"
+        />
+      </el-header>
+      <section class="layout-content">
+        <transition :name="pageTransition ? routerViewTransition : null">
+          <router-view :class="{ 'sharp-top': showTabs, flat }" />
+        </transition>
         <source-link v-if="showSourceLink" />
-      </el-container>
-    </el-container>
-  </el-container>
+      </section>
+    </section>
+  </div>
 </template>
 
 <script>
 import { assign } from 'lodash'
 import internalComponents from './components/internal-components'
 import containerComponents from './components/container-components'
-import asideBscroll from './mixins/aside-bscroll'
+// import asideBscroll from './mixins/aside-bscroll'
 import {
+  theme,
   asideCollapse,
   pageTabs,
   pageTransition,
@@ -93,13 +94,14 @@ import { isUndefined } from 'lodash'
 export default {
   components: internalComponents,
   mixins: [
+    theme,
     asideCollapse,
     pageTabs,
     pageTransition,
     asideTransition,
     menu,
     sourceLink,
-    asideBscroll,
+    // asideBscroll,
     token,
     flat,
     screenSizeMixin
@@ -112,7 +114,17 @@ export default {
       assign(v.$options.components, internalComponents)
     }
   },
+  data() {
+    return {
+      routerViewTransition: 'fade-transverse'
+    }
+  },
   watch: {
+    theme: {
+      handler(val) {
+        document.body.setAttribute('data-admin-theme', val)
+      }
+    },
     $vssWidth: {
       immediate: true,
       handler(size, oldSize) {
@@ -140,9 +152,20 @@ export default {
       if (this.flat) {
         this.asideCollapse = true
       }
+    },
+    handleSwitchTheme() {
+      if (this.theme === 'dark') {
+        this.theme = 'd2-classic'
+        return
+      }
+      if (this.theme === 'd2-classic') {
+        this.theme = 'dark'
+        return
+      }
     }
   }
 }
 </script>
 
-<style lang="stylus" scoped src="./style.styl" />
+<style lang="stylus" scoped src="./index.styl"></style>
+<style lang="stylus" src="./themes.styl"></style>

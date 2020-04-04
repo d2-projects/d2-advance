@@ -52,6 +52,12 @@ export const flat = {
   }
 }
 
+export const theme = {
+  computed: {
+    ...mapFields(namespace, ['theme', 'themes'])
+  }
+}
+
 export const hotQueryMapQueryKey = '_qs'
 export const hotQueryMap = {
   computed: {

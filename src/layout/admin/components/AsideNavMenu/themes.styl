@@ -1,0 +1,49 @@
+custom-items(foreground-color, background-color)
+  .el-menu-item
+  .el-submenu > .el-submenu__title
+    color inherit
+    i
+      color inherit
+    &:focus, &:hover, &.is-active
+      color foreground-color
+      background background-color
+  .el-submenu.is-active > .el-submenu__title
+    color foreground-color
+
+/* d2-classic */
+body[data-admin-theme='d2-classic']
+  .layout-wrapper > .layout-aside > .layout-nav
+    .el-menu-vertical
+      border none
+      color #606266
+      background transparent
+      &.collapse
+        .text, .el-menu--inline
+          display none
+      .el-submenu__icon-arrow
+        margin-top -4px
+      >
+        custom-items(#2f74ff, #ffffff80)
+      &:not(.el-menu--collapse)
+        .el-menu
+          background transparent
+        custom-items(#2f74ff, #ffffff80)
+
+/* dark */
+body[data-admin-theme='dark']
+  .layout-wrapper > .layout-aside > .layout-nav
+    .el-menu-vertical
+      border none
+      color #606266
+      background transparent
+      &.collapse
+        .text, .el-menu--inline
+          display none
+      .el-submenu__icon-arrow
+        margin-top -4px
+      >
+        custom-items(#2f74ff, #303133)
+      &:not(.el-menu--collapse)
+        .el-menu
+          background transparent
+        custom-items(#2f74ff, #303133)

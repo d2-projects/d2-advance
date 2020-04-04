@@ -154,4 +154,5 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped src="./style.styl" />
+<style lang="stylus" scoped src="./index.styl"></style>
+<style lang="stylus" src="./themes.styl"></style>

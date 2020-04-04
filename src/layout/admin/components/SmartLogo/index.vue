@@ -22,13 +22,12 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-$aside-width = 200px
 $aside-min-width = 64px
 $header-height = 60px
 
 .wrapper
   line-height $header-height
-  width $aside-width
+  width 100%
   text-align center
   overflow hidden
   img

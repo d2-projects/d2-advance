@@ -22,7 +22,6 @@
           padding $base-padding
           flex 1
   &.card
-    background $background-white-color
     border $solid-border
     border-radius $top-radius
     border-bottom none
@@ -37,7 +36,7 @@
     background transparent
     >
       .header, .footer
-        background $background-white-color
+
         border $solid-border
       .header
         border-radius $base-radius
@@ -47,14 +46,12 @@
   &.no-body-padding > .center-wapper > .body
     padding 0
 
-  // for <PageTabs />
   &.sharp-top
   &.sharp-top > .header
     border-top none
     border-top-left-radius 0
     border-top-right-radius 0
 
-  // for flat mode
   &.flat
     border-radius 0
     border-right 0

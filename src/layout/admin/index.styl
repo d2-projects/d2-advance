@@ -1,0 +1,97 @@
+$header-height = 60px
+$aside-width = 240px
+$aside-collapse-width = 65px
+
+border-box()
+  box-sizing border-box
+
+theme-transition()
+  transition-duration .28s
+  transition-property all
+
+.layout-wrapper
+  position absolute
+  width 100%
+  height 100%
+  display flex
+  flex-direction row
+  overflow hidden
+  border-box()
+  theme-transition()
+  > .layout-aside
+    position relative
+    display flex
+    flex-direction column
+    border-box()
+    > .layout-header
+      position relative
+      display flex
+      justify-content space-between
+      height $header-height
+      overflow hidden
+      border-box()
+    > .layout-nav
+      position relative
+      flex 1
+      overflow auto
+      border-box()
+      >>> .el-menu-vertical:not(.el-menu--collapse)
+        width $aside-width
+  > .layout-main
+    position relative
+    flex 1
+    display flex
+    flex-direction column
+    border-box()
+    > .layout-header
+      position relative
+      display flex
+      align-items center
+      justify-content space-between
+      height $header-height
+      border-box()
+    > .tabs-wrapper
+      padding 0
+    > .layout-content
+      position relative
+      border-box()
+      flex 1
+      overflow-y auto
+      >>> > .page-container
+        position absolute
+        width 100%
+        height 100%
+        overflow-y auto
+        border-box()
+
+  &.flat >
+    .layout-aside >
+      .layout-nav
+        position absolute
+        z-index 2000
+        top 0
+        bottom 0
+        border-right 1px solid
+    .layout-main >
+      .tabs-wrapper
+        margin-right 0
+      .layout-content >
+        .page-container
+          width 100%
+  &.flat.collapse >
+    .layout-aside >
+      .layout-nav
+        margin-left - $aside-collapse-width
+
+.fade-transverse
+  &-leave-active
+  &-enter-active
+    transition-property opacity transform
+    transition-duration .28s
+    transition-timing-function ease-out
+  &-enter
+    opacity 0
+    transform translateX(-20px)
+  &-leave-to
+    opacity 0
+    transform translateX(20px)
