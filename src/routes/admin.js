@@ -52,7 +52,7 @@ export const routes = (app) => {
           component: () =>
             import(
               // https://webpack.js.org/api/module-methods/#magic-comments
-              /* webpackInclude: /index\.vue$/ */
+              /* webpackInclude: /index\.(vue|js)$/ */
               /* webpackExclude: /(components)/ */
               /* webpackMode: "lazy" */
               '@/views/admin/' + path

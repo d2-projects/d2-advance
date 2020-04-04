@@ -26,19 +26,21 @@ export default {
   },
   render(h) {
     if (process.env.VUE_APP_SOURCE_LINK === 'on') {
-      return h('div', { class: 'source-link-wrapper' }, [
-        h(
-          'a',
-          {
-            class: 'link',
-            attrs: { href: basePath + this.link, target: '__blank' }
-          },
-          [
-            h('i', { class: 'el-icon-link el-icon--left' }),
-            this.$t('SourceCode')
-          ]
-        )
-      ])
+      return !this.link
+        ? null
+        : h('div', { class: 'source-link-wrapper' }, [
+            h(
+              'a',
+              {
+                class: 'link',
+                attrs: { href: basePath + this.link, target: '__blank' }
+              },
+              [
+                h('i', { class: 'el-icon-link el-icon--left' }),
+                this.$t('SourceCode')
+              ]
+            )
+          ])
     }
     return null
   }
