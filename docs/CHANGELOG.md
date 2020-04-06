@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.22.0](https://github.com/d2-projects/d2-advance/compare/v1.21.2...v1.22.0) (2020-04-06)
+
+
+### Bug Fixes
+
+* **dependencies:** prettier@2.0.3 ([c134336](https://github.com/d2-projects/d2-advance/commit/c1343360d1faa6e45dbff88673bae30d3eb45b58)), closes [/github.com/prettier/prettier/blob/master/CHANGELOG.md#203](https://github.com//github.com/prettier/prettier/blob/master/CHANGELOG.md/issues/203)
+
+
+### Chores
+
+* **eslint:** sort extends ([5bd5e0f](https://github.com/d2-projects/d2-advance/commit/5bd5e0f381aba3ea5b00cf77128e7e1a4557fab9))
+
+
+### Documentation
+
+* **zh:** update eslint config ([49088ce](https://github.com/d2-projects/d2-advance/commit/49088ce703b362fe791c66aacd18e176a7760ff4))
+
+
+### Features
+
+* **dependencies:** upgrade vue-cli-service to 4.3.0 ([f25d7df](https://github.com/d2-projects/d2-advance/commit/f25d7df0079361291c349c77a6574cf46ba218a9))
+
 ## [1.21.2](https://github.com/d2-projects/d2-advance/compare/v1.21.1...v1.21.2) (2020-04-04)
 
 
