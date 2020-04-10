@@ -65,7 +65,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '../style/variable.styl'
+@import '~@/style/variable.styl'
 
 .home
   width 100%

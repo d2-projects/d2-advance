@@ -12,7 +12,7 @@ export const routes = (app) => {
     {
       path: `${pathPrefix}/login`,
       name: 'admin-login',
-      component: () => import('../views/admin/login'),
+      component: () => import('@/views/admin/login'),
       beforeEnter(to, from, next) {
         if (state.token) {
           return next({ name: 'admin' })
@@ -24,7 +24,7 @@ export const routes = (app) => {
       path: pathPrefix,
       name: 'admin',
       redirect: `${pathPrefix}/dashboard`,
-      component: () => import('../layout/admin'),
+      component: () => import('@/layout/admin'),
       beforeEnter(to, from, next) {
         if (!state.token) {
           return next({ name: 'admin-login' })

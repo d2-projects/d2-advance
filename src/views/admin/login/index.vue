@@ -46,7 +46,7 @@
 <script>
 import rules from './rules'
 import { token } from '@/store/modules/admin/mixins'
-import { homePath } from '../../../routes/admin'
+import { homePath } from '@/routes/admin'
 
 // ! DEMO
 const login = (form) =>
@@ -100,7 +100,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '../../../style/variable.styl'
+@import '~@/style/variable.styl'
 
 $min-height = 480px
 $max-width = 280px
