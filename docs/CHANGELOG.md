@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.22.1](https://github.com/d2-projects/d2-advance/compare/v1.22.0...v1.22.1) (2020-04-11)
+
+
+### Bug Fixes
+
+* **dependencies:** core-js@3.6.5 ([0846def](https://github.com/d2-projects/d2-advance/commit/0846def061785ce790d5be9f0d9bc7016514e164))
+* **dependencies:** prettier@2.0.4 ([acdbe00](https://github.com/d2-projects/d2-advance/commit/acdbe004abd877d5ed0579cd05544f4c087edd7f))
+* **dependencies:** upgrade vue-cli-service to 4.3.1 ([5f6348e](https://github.com/d2-projects/d2-advance/commit/5f6348ed1eee5ecfacc91c6992f291b6dea8e2d8))
+
+
+### Chores
+
+* **dependencies:** @vue/test-utils@1.0.0-beta.33 ([a762ed3](https://github.com/d2-projects/d2-advance/commit/a762ed30f9cda2dcb4c94df02591505424a70a9e))
+
+
+### Code Refactoring
+
+* replace relative path to alias path ([3680c9f](https://github.com/d2-projects/d2-advance/commit/3680c9f1a60fa3f92a3ebe0d631d10e8677b5f7e))
+
 # [1.22.0](https://github.com/d2-projects/d2-advance/compare/v1.21.2...v1.22.0) (2020-04-06)
 
 
