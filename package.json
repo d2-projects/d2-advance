@@ -47,8 +47,8 @@
       "group": 1,
       "name": "vue-i18n",
       "library": "VueI18n",
-      "js": "https://cdn.jsdelivr.net/npm/vue-i18n@8.16.0/dist/vue-i18n.min.js",
-      "js.dev": "https://cdn.jsdelivr.net/npm/vue-i18n@8.16.0/dist/vue-i18n.js"
+      "js": "https://cdn.jsdelivr.net/npm/vue-i18n@8.17.0/dist/vue-i18n.min.js",
+      "js.dev": "https://cdn.jsdelivr.net/npm/vue-i18n@8.17.0/dist/vue-i18n.js"
     },
     {
       "group": 1,
@@ -93,7 +93,7 @@
     "nprogress": "^0.2.0",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.10",
-    "vue-i18n": "^8.16.0",
+    "vue-i18n": "^8.17.0",
     "vue-router": "^3.1.6",
     "vuex": "^3.1.2",
     "vuex-map-fields": "^1.4.0"
