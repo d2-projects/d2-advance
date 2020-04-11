@@ -85,7 +85,7 @@ export default {
             const { token: newToken } = await login(this.form)
             this.token = newToken
             this.success = true
-            this.$router.push(homePath)
+            this.$router.push(this.$route.query.redirect || homePath)
           } catch (error) {
             this.pending = false
             this.$message.error(error.message)

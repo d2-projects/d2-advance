@@ -27,7 +27,7 @@ export const routes = (app) => {
       component: () => import('@/layout/admin'),
       beforeEnter(to, from, next) {
         if (!state.token) {
-          return next({ name: 'admin-login' })
+          return next({ name: 'admin-login', query: { redirect: to.fullPath } })
         }
         next()
       },
