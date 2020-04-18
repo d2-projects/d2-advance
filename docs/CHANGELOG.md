@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.23.0](https://github.com/d2-projects/d2-advance/compare/v1.22.1...v1.23.0) (2020-04-18)
+
+
+### Bug Fixes
+
+* **admin:** redirect for login ([3293c65](https://github.com/d2-projects/d2-advance/commit/3293c65555cce69dade5bfca54c59a32020e3cfe))
+* **cdn:** use latest element-ui and vue-i18n ([1c27c4e](https://github.com/d2-projects/d2-advance/commit/1c27c4e6c3bc3c4233363b65e717c108a7f7cee7))
+* **dependencies:** element-ui@2.13.1, eslint-plugin-prettier@3.1.3 ([c48d246](https://github.com/d2-projects/d2-advance/commit/c48d2468838c50fb8cc41614244a6666cb03d342))
+* **dependencies:** vue-i18n@8.17.1 ([386660b](https://github.com/d2-projects/d2-advance/commit/386660b0a0cbe15e0fb6c9a319d5701f6187c101))
+
+
+### Features
+
+* **dependencies:** vue-i18n@8.17.0 ([0e92fbf](https://github.com/d2-projects/d2-advance/commit/0e92fbffee18ced72c78ae224509e114418158c6))
+
 ## [1.22.1](https://github.com/d2-projects/d2-advance/compare/v1.22.0...v1.22.1) (2020-04-11)
 
 
