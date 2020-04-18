@@ -47,8 +47,8 @@
       "group": 1,
       "name": "vue-i18n",
       "library": "VueI18n",
-      "js": "https://cdn.jsdelivr.net/npm/vue-i18n@8.17.0/dist/vue-i18n.min.js",
-      "js.dev": "https://cdn.jsdelivr.net/npm/vue-i18n@8.17.0/dist/vue-i18n.js"
+      "js": "https://cdn.jsdelivr.net/npm/vue-i18n@8.17.1/dist/vue-i18n.min.js",
+      "js.dev": "https://cdn.jsdelivr.net/npm/vue-i18n@8.17.1/dist/vue-i18n.js"
     },
     {
       "group": 1,
@@ -74,11 +74,11 @@
     {
       "name": "element-ui",
       "library": "ELEMENT",
-      "js": "https://cdn.jsdelivr.net/npm/element-ui@2.13.0/lib/index.js"
+      "js": "https://cdn.jsdelivr.net/npm/element-ui@2.13.1/lib/index.js"
     },
     {
       "name": "element-ui/lib/theme-chalk/index.css",
-      "css": "https://cdn.jsdelivr.net/npm/element-ui@2.13.0/lib/theme-chalk/index.css"
+      "css": "https://cdn.jsdelivr.net/npm/element-ui@2.13.1/lib/theme-chalk/index.css"
     }
   ],
   "dependencies": {
