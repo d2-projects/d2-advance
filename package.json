@@ -47,8 +47,8 @@
       "group": 1,
       "name": "vue-i18n",
       "library": "VueI18n",
-      "js": "https://cdn.jsdelivr.net/npm/vue-i18n@8.17.1/dist/vue-i18n.min.js",
-      "js.dev": "https://cdn.jsdelivr.net/npm/vue-i18n@8.17.1/dist/vue-i18n.js"
+      "js": "https://cdn.jsdelivr.net/npm/vue-i18n@8.17.4/dist/vue-i18n.min.js",
+      "js.dev": "https://cdn.jsdelivr.net/npm/vue-i18n@8.17.4/dist/vue-i18n.js"
     },
     {
       "group": 1,
@@ -61,8 +61,8 @@
       "group": 1,
       "name": "vuex",
       "library": "Vuex",
-      "js": "https://cdn.jsdelivr.net/npm/vuex@3.1.2/dist/vuex.min.js",
-      "js.dev": "https://cdn.jsdelivr.net/npm/vuex@3.1.2/dist/vuex.js"
+      "js": "https://cdn.jsdelivr.net/npm/vuex@3.3.0/dist/vuex.min.js",
+      "js.dev": "https://cdn.jsdelivr.net/npm/vuex@3.3.0/dist/vuex.js"
     },
     {
       "group": 1,
@@ -93,9 +93,9 @@
     "nprogress": "^0.2.0",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.10",
-    "vue-i18n": "^8.17.1",
+    "vue-i18n": "^8.17.4",
     "vue-router": "^3.1.6",
-    "vuex": "^3.1.2",
+    "vuex": "^3.3.0",
     "vuex-map-fields": "^1.4.0"
   },
   "devDependencies": {
