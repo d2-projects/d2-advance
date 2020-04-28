@@ -37,6 +37,8 @@
     "vuex-map-fields": "^1.4.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "@d2-projects/vue-filename-injector": "^1.1.1",
     "@vue/cli-plugin-babel": "^4.3.1",
     "@vue/cli-plugin-eslint": "^4.3.1",
@@ -127,12 +129,18 @@
       "css": "https://cdn.jsdelivr.net/npm/element-ui@2.13.1/lib/theme-chalk/index.css"
     }
   ],
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
   "gitHooks": {
+    "commit-msg": "commitlint -E GIT_PARAMS",
     "pre-push": "yarn lint:strict --cache && yarn test:unit --onlyChanged"
   },
   "license": "MIT",
