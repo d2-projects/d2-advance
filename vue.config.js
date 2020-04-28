@@ -16,7 +16,7 @@ const pages = {
 module.exports = {
   pages,
   productionSourceMap: false,
-  publicPath: process.env.BASE_URL || '/',
+  publicPath: process.env.BASE_URL || './',
 
   devServer: {
     // display console info on page
