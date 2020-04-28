@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.24.1](https://github.com/d2-projects/d2-advance/compare/v1.24.0...v1.24.1) (2020-04-28)
+
+
+### Chores
+
+* setup commitlint ([6e38472](https://github.com/d2-projects/d2-advance/commit/6e38472b89153beea444e7d44d85f9bcbe49dd0f))
+
+
+### Styles
+
+* sort fields ([7d98cf2](https://github.com/d2-projects/d2-advance/commit/7d98cf2298b7106855995989a5408e1aa6d355b3))
+
 # [1.24.0](https://github.com/d2-projects/d2-advance/compare/v1.23.0...v1.24.0) (2020-04-28)
 
 
