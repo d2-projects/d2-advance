@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.24.0](https://github.com/d2-projects/d2-advance/compare/v1.23.0...v1.24.0) (2020-04-28)
+
+
+### Build System
+
+* re-create yarn.lock ([88f4b58](https://github.com/d2-projects/d2-advance/commit/88f4b584d5bca684638dc18aeb94d78a57ee2e89))
+* **dependencies:** prettier@2.0.5 ([f1696a3](https://github.com/d2-projects/d2-advance/commit/f1696a3c30c78ef5798610008a16b011cea5f1a9))
+* **dependencies:** vue-cli-plugin-i18n@1.0.1 ([6a725d4](https://github.com/d2-projects/d2-advance/commit/6a725d457deebed9cfdfedc79a8c6f299a882f49))
+* **dependencies:** vue-i18n@8.17.4, vuex@3.3.0 ([80f351e](https://github.com/d2-projects/d2-advance/commit/80f351e53603be73d714295f8e2fca6393ff939d))
+* **dependencies:** webpack@4.43.0 ([619d3e8](https://github.com/d2-projects/d2-advance/commit/619d3e86730843b05f1cad215cdf2439a77d81fb))
+
+
+### Features
+
+* set default publicPath to `./` ([dd5b529](https://github.com/d2-projects/d2-advance/commit/dd5b529dd0f9963e50565235154d0218617c6930))
+
 # [1.23.0](https://github.com/d2-projects/d2-advance/compare/v1.22.1...v1.23.0) (2020-04-18)
 
 
