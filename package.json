@@ -32,8 +32,8 @@
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.10",
     "vue-i18n": "^8.17.7",
-    "vue-router": "^3.1.6",
-    "vuex": "^3.3.0",
+    "vue-router": "^3.2.0",
+    "vuex": "^3.4.0",
     "vuex-map-fields": "^1.4.0"
   },
   "devDependencies": {
