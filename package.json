@@ -10,7 +10,7 @@
   },
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --modern",
     "lint": "vue-cli-service lint",
     "lint:strict": "vue-cli-service lint --no-fix --max-warnings=0",
     "test:unit": "vue-cli-service test:unit",
