@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.24.2](https://github.com/d2-projects/d2-advance/compare/v1.24.1...v1.24.2) (2020-05-22)
+
+
+### Bug Fixes
+
+* element-ui@2.13.2, vue-i18n@8.17.7 ([273fc1b](https://github.com/d2-projects/d2-advance/commit/273fc1bc0ef5389ac38e25027b740d2afda739e2))
+
+
+### Build System
+
+* **dependencies:** vue-router@3.2.0, vuex@3.4.0 ([381c8e2](https://github.com/d2-projects/d2-advance/commit/381c8e2b7f59a95daf30a6502f16e6c1de7cb0f7))
+* build with morden mode ([fe236ab](https://github.com/d2-projects/d2-advance/commit/fe236ab43c4b453907012f0875ce421ac674e23e))
+
+
+### Chores
+
+* **commitizen:** cz-conventional-changelog@3.2.0 ([9743dd4](https://github.com/d2-projects/d2-advance/commit/9743dd4c833697b9d724aff872bcee94a41b4793))
+* **test:** @vue/test-utils@1.0.3 ([3df5e25](https://github.com/d2-projects/d2-advance/commit/3df5e25175ef98b05dee2b191fc33b5237b2fa0f))
+
+
+### Continuous Integration
+
+* **github-actions:** update codacy-coverage-reporter-action ([a51badd](https://github.com/d2-projects/d2-advance/commit/a51badddf64809ef655852a67d7fc31407440a90))
+
 ## [1.24.1](https://github.com/d2-projects/d2-advance/compare/v1.24.0...v1.24.1) (2020-04-28)
 
 
