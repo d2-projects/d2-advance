@@ -11,7 +11,7 @@ Preview here 👉 [https://d2.pub/d2-advance/preview](https://d2.pub/d2-advance/
 
 ## Documents
 
-[简体中文](docs/zh/README.md)
+[简体中文](docs/zh/README.md)（[问题汇总](docs/zh/WTF.md)）
 
 ## Public Repositories
 
