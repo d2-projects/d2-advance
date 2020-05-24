@@ -15,6 +15,13 @@ const pages = {
 
 module.exports = {
   pages,
+  css: {
+    loaderOptions: {
+      less: {
+        prependData: `@import "~@/style/variables.less";`
+      }
+    }
+  },
   productionSourceMap: false,
   publicPath: process.env.BASE_URL || './',
 
