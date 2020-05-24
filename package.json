@@ -25,6 +25,7 @@
     "core-js": "^3.6.5",
     "element-ui": "^2.13.2",
     "epic-spinners": "^1.1.0",
+    "less-loader": "^6.1.0",
     "lodash": "^4.17.15",
     "lowdb": "^1.0.0",
     "normalize.css": "^8.0.1",
