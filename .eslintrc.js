@@ -18,7 +18,8 @@ module.exports = {
         semi: false,
         trailingComma: 'none',
         quoteProps: 'preserve',
-        arrowParens: 'always' // Prettier 2.0
+        arrowParens: 'always', // Prettier 2.0
+        endOfLine: 'auto'
       }
     ]
   },
