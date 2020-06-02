@@ -1,5 +1,6 @@
 <script>
-import { map } from 'lodash'
+import { map, chain } from 'lodash'
+import { flattenMenuItemOfAdmin } from '@/store/modules/admin/utils'
 
 export default {
   name: 'AsideNavMenu',
@@ -19,6 +20,22 @@ export default {
     onlyMainIcon: {
       type: Boolean,
       default: false
+    }
+  },
+  computed: {
+    restrainedPath() {
+      const currentPath = this.$route.path
+      return (
+        chain(flattenMenuItemOfAdmin(this.menu))
+          .map('index')
+          .sort((a, b) => b.length - a.length)
+          .find(
+            (path) =>
+              path.length <= currentPath.length &&
+              currentPath.slice(0, path.length) === path
+          )
+          .value() || this.$route.path
+      )
     }
   },
   render(h) {
@@ -71,7 +88,7 @@ export default {
           props: {
             'collapse-transition': this.hasTransition,
             router: true,
-            'default-active': this.$route.path,
+            'default-active': this.restrainedPath,
             collapse: this.collapse
           },
           on: {
