@@ -150,6 +150,10 @@
     "url": "https://github.com/d2-projects/d2-advance.git"
   },
   "resolutions": {
-    "@vue/cli-service/webpack-dev-server/http-proxy-middleware/http-proxy": ">=1.18.1"
+    "@vue/cli-service/webpack-dev-server/http-proxy-middleware/http-proxy": ">=1.18.1",
+    "@commitlint/cli/@commitlint/lint/@commitlint/parse/conventional-commits-parser/meow/yargs-parser": ">=13.1.2 <14.0.0 || >=15.0.1 <16.0.0 || >=18.1.2",
+    "@commitlint/cli/@commitlint/read/git-raw-commits/meow/yargs-parser": ">=13.1.2 <14.0.0 || >=15.0.1 <16.0.0 || >=18.1.2",
+    "@commitlint/cli/meow/yargs-parser": ">=13.1.2 <14.0.0 || >=15.0.1 <16.0.0 || >=18.1.2",
+    "@vue/cli-plugin-unit-jest/ts-jest/yargs-parser": ">=13.1.2 <14.0.0 || >=15.0.1 <16.0.0 || >=18.1.2"
   }
 }
