@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.24.3](https://github.com/d2-projects/d2-advance/compare/v1.24.2...v1.24.3) (2020-06-27)
+
+
+### Bug Fixes
+
+* **admin:** layout error ([470b1ae](https://github.com/d2-projects/d2-advance/commit/470b1ae303a2fa38853dd2ceb1265e1a12d1a69d))
+* **admin:** menu match subpage ([37ebb21](https://github.com/d2-projects/d2-advance/commit/37ebb21b615be177d6474ec98e30c3f50cc04c1e))
+
+
+### Build System
+
+* **dependencies:** add less-loader ([2d69773](https://github.com/d2-projects/d2-advance/commit/2d6977315aaf8d178fd56fb288c244774e015684))
+
+
+### Chores
+
+* **audit:** http-proxy ([34acab6](https://github.com/d2-projects/d2-advance/commit/34acab654ccd54ff35e0d56dd0a501f19e739480))
+* **audit:** yargs-parser ([2736c9c](https://github.com/d2-projects/d2-advance/commit/2736c9cd7f28d31ea6772757d30e0e0e5cfd75c2))
+* **deps:** @commitlint/cli@9.0.1, @commitlint/config-conventional@9.0.1 ([5e2e263](https://github.com/d2-projects/d2-advance/commit/5e2e263e98ae0a9003f059f1c1ad6cd90c342fcd))
+* **deps:** compression-webpack-plugin@4.0.0 ([5c17770](https://github.com/d2-projects/d2-advance/commit/5c177706dfee4ee90ec5a3b9cb3cc617e6d4112d))
+* **deps:** eslint-plugin-prettier@3.1.4 ([603cd81](https://github.com/d2-projects/d2-advance/commit/603cd811a8c858a3545e3c764d2714b01fc1a17c))
+* **deps:** less-loader@6.1.2 ([67d50fb](https://github.com/d2-projects/d2-advance/commit/67d50fbcb68a081b6b26c5d8826dc7f619b0899a))
+* **deps:** move less-loader to devDependencies ([525c7ee](https://github.com/d2-projects/d2-advance/commit/525c7ee342363b45a44781d42a78dcfd6acf179b))
+* **deps:** vue upgrade from 4.3.1 to 4.4.6 ([30c8c9e](https://github.com/d2-projects/d2-advance/commit/30c8c9e1d9f461a03dca5a1f0ffe4cdcf5df48c4))
+* **deps:** vue-i18n@8.18.2, vue-router@3.3.4 ([1011892](https://github.com/d2-projects/d2-advance/commit/10118920953c6bac8a85db28c95a46a9ec710dec))
+* **lint:** auto endOfLine char ([8020ad2](https://github.com/d2-projects/d2-advance/commit/8020ad2127b05b152e6990cf801f3cbbea98f961))
+* **style:** support less global variables ([e29cec0](https://github.com/d2-projects/d2-advance/commit/e29cec079794fe3f87ff1b4118a2e12c463f2811))
+
+
+### Documentation
+
+* **zh:** add WTF doc ([8d4f6d4](https://github.com/d2-projects/d2-advance/commit/8d4f6d4051e98a271fa830bbfc5ebad925355cac))
+
 ## [1.24.2](https://github.com/d2-projects/d2-advance/compare/v1.24.1...v1.24.2) (2020-05-22)
 
 
