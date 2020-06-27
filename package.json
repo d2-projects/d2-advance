@@ -150,7 +150,6 @@
     "url": "https://github.com/d2-projects/d2-advance.git"
   },
   "resolutions": {
-    "@vue/cli-plugin-eslint/eslint-loader/loader-fs-cache/mkdirp/minimist": ">=0.2.1 <1.0.0 || >=1.2.3",
-    "cz-conventional-changelog/commitizen/minimist": ">=0.2.1 <1.0.0 || >=1.2.3"
+    "@vue/cli-service/webpack-dev-server/http-proxy-middleware/http-proxy": ">=1.18.1"
   }
 }
