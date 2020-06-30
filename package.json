@@ -33,7 +33,7 @@
     "vue": "^2.6.10",
     "vue-i18n": "^8.18.2",
     "vue-router": "^3.3.4",
-    "vuex": "^3.4.0",
+    "vuex": "^3.5.1",
     "vuex-map-fields": "^1.4.0"
   },
   "devDependencies": {
@@ -110,8 +110,8 @@
       "group": 1,
       "name": "vuex",
       "library": "Vuex",
-      "js": "https://cdn.jsdelivr.net/npm/vuex@3.3.0/dist/vuex.min.js",
-      "js.dev": "https://cdn.jsdelivr.net/npm/vuex@3.3.0/dist/vuex.js"
+      "js": "https://cdn.jsdelivr.net/npm/vuex@3.5.1/dist/vuex.min.js",
+      "js.dev": "https://cdn.jsdelivr.net/npm/vuex@3.5.1/dist/vuex.js"
     },
     {
       "group": 1,
