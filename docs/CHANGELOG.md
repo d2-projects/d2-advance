@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.24.5](https://github.com/d2-projects/d2-advance/compare/v1.24.4...v1.24.5) (2020-06-30)
+
+
+### Chores
+
+* **deps:** less-loader@6.1.3 ([42f3834](https://github.com/d2-projects/d2-advance/commit/42f38342a902722209b19c5365fa04f36b3201ba))
+* **deps:** vuex@3.5.1 ([48544a3](https://github.com/d2-projects/d2-advance/commit/48544a33d32f3160b8eba1e949674cfef1305fc0))
+
 ## [1.24.4](https://github.com/d2-projects/d2-advance/compare/v1.24.3...v1.24.4) (2020-06-27)
 
 
