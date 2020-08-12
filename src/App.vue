@@ -1,32 +1,32 @@
 <template>
-  <transition name="fade">
-    <div v-show="show" id="app">
-      <transition name="fade" mode="out-in">
-        <router-view />
-      </transition>
+  <div id="app">
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
     </div>
-  </transition>
+    <router-view />
+  </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      show: false
+<style lang="scss">
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+#nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
     }
-  },
-  mounted() {
-    this.show = true
   }
 }
-</script>
-
-<style lang="stylus" scoped>
-.fade
-  &-enter-active
-  &-leave-active
-    transition opacity .5s
-  &-enter
-  &-leave-to
-    opacity 0
 </style>
