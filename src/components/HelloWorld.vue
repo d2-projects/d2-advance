@@ -122,9 +122,12 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'HelloWorld',
+  name: 'hello-world',
   props: {
-    msg: String
+    msg: {
+      type: String,
+      default: ''
+    }
   }
 });
 </script>
