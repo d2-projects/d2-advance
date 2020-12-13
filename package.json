@@ -45,6 +45,7 @@
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
     "standard-version": "^9.0.0",
+    "tailwindcss": "yarn:@tailwindcss/postcss7-compat",
     "typescript": "~3.9.3",
     "vue-jest": "^5.0.0-0"
   },
