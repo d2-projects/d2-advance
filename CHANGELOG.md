@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0-3](https://github.com/d2-projects/d2-advance/compare/v2.0.0-2...v2.0.0-3) (2020-12-18)
+
+
+### Features
+
+* home and admin layout demo ([5b8154f](https://github.com/d2-projects/d2-advance/commit/5b8154f856bf5c0889928a189dd081afd4221717))
+
+
+### Bug Fixes
+
+* admin layout sidebar hide default ([043761e](https://github.com/d2-projects/d2-advance/commit/043761e07fb580e2049c8968b61cd17200ce9057))
+* admin layout sidebar toggle ([9d453b9](https://github.com/d2-projects/d2-advance/commit/9d453b9719fc670b022480aebf0c23232a5f259b))
+
 ## [2.0.0-2](https://github.com/d2-projects/d2-advance/compare/v2.0.0-1...v2.0.0-2) (2020-12-10)
 
 ## [2.0.0-1](https://github.com/d2-projects/d2-advance/compare/v2.0.0-0...v2.0.0-1) (2020-12-09)
