@@ -231,7 +231,7 @@ import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
   setup() {
-    const sidebarOpen = ref(true);
+    const sidebarOpen = ref(false);
     const notificationOpen = ref(false);
     const dropdownOpen = ref(false);
 
