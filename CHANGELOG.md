@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0-4](https://github.com/d2-projects/d2-advance/compare/v2.0.0-3...v2.0.0-4) (2021-01-27)
+
+
+### Features
+
+* **admin:** add no-match view ([7a553c1](https://github.com/d2-projects/d2-advance/commit/7a553c1a37a3be37a59a5087cac6e0f07ac8f88a))
+
 ## [2.0.0-3](https://github.com/d2-projects/d2-advance/compare/v2.0.0-2...v2.0.0-3) (2020-12-18)
 
 
