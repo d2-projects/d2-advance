@@ -1032,6 +1032,11 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
+"@icon-park/vue-next@^1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@icon-park/vue-next/-/vue-next-1.2.4.tgz#ad1644631fec4c648a05a71fe650b9b609949471"
+  integrity sha512-LwYYPJotI8vv1TarPrFWYi68s58dp2SLexZ+dmSUtM/3ELncF9f6BAmNOB9uf7MJZOcc4gqv5MHunEufxYOBMg==
+
 "@intervolga/optimize-cssnano-plugin@^1.0.5":
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@intervolga/optimize-cssnano-plugin/-/optimize-cssnano-plugin-1.0.6.tgz#be7c7846128b88f6a9b1d1261a0ad06eb5c0fdf8"

@@ -12,6 +12,7 @@
     "release": "standard-version"
   },
   "dependencies": {
+    "@icon-park/vue-next": "^1.2.4",
     "core-js": "^3.6.5",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
