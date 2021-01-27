@@ -20,6 +20,10 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: RouteMap.ADMIN_CRUD_DEMO,
         component: () => import('../views/admin/views/crud-demo.vue')
+      },
+      {
+        path: RouteMap.ADMIN__NO_MATCH,
+        component: () => import('../views/admin/views/no-match.vue')
       }
     ]
   }
