@@ -3,6 +3,8 @@ import { RouteMap } from '@/constants/route';
 import Home from '@/views/home/index.vue';
 import Admin from '@/views/admin/index.vue';
 
+const MATCH_ALL = ':_(.*)';
+
 const routes: Array<RouteRecordRaw> = [
   {
     path: RouteMap.HOME,
@@ -22,7 +24,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('../views/admin/views/crud-demo.vue')
       },
       {
-        path: RouteMap.ADMIN__NO_MATCH,
+        path: MATCH_ALL,
         component: () => import('../views/admin/views/no-match.vue')
       }
     ]
