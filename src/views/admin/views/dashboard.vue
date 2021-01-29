@@ -9,39 +9,34 @@
             class="flex items-center px-5 py-6 shadow-sm rounded-md bg-white"
           >
             <div class="p-3 rounded-full bg-indigo-600 bg-opacity-75 shadow-lg">
-              <icon-park type="PeoplesTwo" class="text-3xl text-white" />
+              <icon-peoples-two class="text-3xl text-white" />
             </div>
-
             <div class="mx-5">
               <h4 class="text-2xl font-semibold text-gray-700">8,282</h4>
               <div class="text-gray-500">New Users</div>
             </div>
           </div>
         </div>
-
         <div class="w-full mt-6 px-6 sm:w-1/2 xl:w-1/3 sm:mt-0">
           <div
             class="flex items-center px-5 py-6 shadow-sm rounded-md bg-white"
           >
             <div class="p-3 rounded-full bg-yellow-600 bg-opacity-75 shadow-lg">
-              <icon-park type="Shopping" class="text-3xl text-white" />
+              <icon-shopping class="text-3xl text-white" />
             </div>
-
             <div class="mx-5">
               <h4 class="text-2xl font-semibold text-gray-700">200,521</h4>
               <div class="text-gray-500">Total Orders</div>
             </div>
           </div>
         </div>
-
         <div class="w-full mt-6 px-6 sm:w-1/2 xl:w-1/3 xl:mt-0">
           <div
             class="flex items-center px-5 py-6 shadow-sm rounded-md bg-white"
           >
             <div class="p-3 rounded-full bg-pink-600 bg-opacity-75 shadow-lg">
-              <icon-park type="AdProduct" class="text-3xl text-white" />
+              <icon-ad-product class="text-3xl text-white" />
             </div>
-
             <div class="mx-5">
               <h4 class="text-2xl font-semibold text-gray-700">215,542</h4>
               <div class="text-gray-500">Available Products</div>
@@ -50,9 +45,7 @@
         </div>
       </div>
     </div>
-
     <div class="mt-8"></div>
-
     <div class="flex flex-col mt-8">
       <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
         <div
@@ -150,9 +143,17 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { IconPark } from '@icon-park/vue-next/es/all';
+import {
+  PeoplesTwo as IconPeoplesTwo,
+  Shopping as IconShopping,
+  AdProduct as IconAdProduct
+} from '@icon-park/vue-next';
 
 export default defineComponent({
-  components: { IconPark }
+  components: {
+    IconPeoplesTwo,
+    IconShopping,
+    IconAdProduct
+  }
 });
 </script>

@@ -56,7 +56,7 @@
               ]"
               @click="navigate"
             >
-              <icon-park v-bind="icon" class="text-xl" />
+              <component :is="icon" class="text-lg" />
               <span class="mx-3">{{ label }}</span>
             </a>
           </router-link>
@@ -204,29 +204,28 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { Component, defineComponent, ref, shallowRef } from 'vue';
 import { RouteMap } from '@/constants/route';
-import { IconPark, IIconAllProps } from '@icon-park/vue-next/es/all';
+import { Dashboard, ListView } from '@icon-park/vue-next';
 
 export default defineComponent({
-  components: { IconPark },
   setup() {
     const menu = ref<
       {
         label: string;
+        icon: Component;
         to: string;
-        icon: IIconAllProps;
       }[]
     >([
       {
         label: 'Dashboard',
-        to: RouteMap.ADMIN_DASHBOARD,
-        icon: { type: 'Dashboard' }
+        icon: shallowRef(Dashboard),
+        to: RouteMap.ADMIN_DASHBOARD
       },
       {
         label: 'CRUD Demo',
-        to: RouteMap.ADMIN_CRUD_DEMO,
-        icon: { type: 'ListView' }
+        icon: shallowRef(ListView),
+        to: RouteMap.ADMIN_CRUD_DEMO
       }
     ]);
 
