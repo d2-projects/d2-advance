@@ -7,6 +7,6 @@ declare module '@vue/runtime-core' {
   }
 }
 
-export default (app: App) => {
+export default (app: App): void => {
   app.config.globalProperties.$RouteMap = RouteMap;
 };
