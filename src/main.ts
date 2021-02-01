@@ -6,4 +6,9 @@ import global from './plugins/global';
 
 import './main.css';
 
+import { makeServer } from './mirage';
+if (process.env.NODE_ENV === 'development') {
+  makeServer({ environment: 'development' });
+}
+
 createApp(App).use(store).use(router).use(global).mount('#app');
