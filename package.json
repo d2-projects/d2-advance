@@ -50,9 +50,29 @@
     "typescript": "~3.9.3",
     "vue-jest": "^3.0.7"
   },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "babel": {
+    "presets": ["@vue/cli-plugin-babel/preset"]
+  },
+  "jest": {
+    "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel",
+    "transform": {
+      "^.+\\.vue$": "vue-jest"
+    }
+  },
   "gitHooks": {
     "pre-commit": "lint-staged",
     "commit-msg": "commitlint -E GIT_PARAMS"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue,ts,tsx}": "vue-cli-service lint"
+  },
+  "commitlint": {
+    "extends": ["@commitlint/config-conventional"]
   },
   "config": {
     "commitizen": {
