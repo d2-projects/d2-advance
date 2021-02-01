@@ -8,36 +8,19 @@
     </h1>
     <nav>
       <ul
-        class="
-          flex 
-          flex-row items-stretch justify-center flex-wrap
-          box-border p-2 font-sans select-none
-        "
+        class="flex flex-row items-stretch justify-center flex-wrap box-border p-2 font-sans select-none"
       >
         <li class="m-2">
           <router-link
             :to="$RouteMap.ADMIN"
-            class="
-              text-white 
-              p-5 rounded-md
-              bg-blue-500 space-x-4
-              bg-gradient-to-br
-              from-blue-400 to-blue-600
-              hover:bg-blue-600 shadow-md hover:shadow-lg
-              focus:outline-none focus:ring-4 focus:ring-blue-300
-              transition-all
-              w-72 min-h-full
-              flex flex-row items-center
-            "
+            class="text-white p-5 rounded-md bg-blue-500 space-x-4 bg-gradient-to-br from-blue-400 to-blue-600 hover:bg-blue-600 shadow-md hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all w-72 min-h-full flex flex-row items-center"
           >
             <form-one
               class="text-blue-500 text-4xl p-2 rounded-xl bg-white shadow-lg"
             />
             <div>
               <p class="font-semibold text-lg">Admin</p>
-              <p class="truncate">
-                An elegant dashboard
-              </p>
+              <p class="truncate">An elegant dashboard</p>
             </div>
           </router-link>
         </li>
@@ -52,7 +35,7 @@ import { FormOne } from '@icon-park/vue-next';
 
 export default defineComponent({
   components: {
-    FormOne
-  }
+    FormOne,
+  },
 });
 </script>

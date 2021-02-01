@@ -6,8 +6,4 @@ import global from './plugins/global';
 
 import './main.css';
 
-createApp(App)
-  .use(store)
-  .use(router)
-  .use(global)
-  .mount('#app');
+createApp(App).use(store).use(router).use(global).mount('#app');

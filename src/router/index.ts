@@ -8,7 +8,7 @@ const MATCH_ALL = ':_(.*)';
 const routes: Array<RouteRecordRaw> = [
   {
     path: RouteMap.HOME,
-    component: Home
+    component: Home,
   },
   {
     path: RouteMap.ADMIN,
@@ -17,23 +17,23 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: RouteMap.ADMIN_DASHBOARD,
-        component: () => import('../views/admin/views/dashboard.vue')
+        component: () => import('../views/admin/views/dashboard.vue'),
       },
       {
         path: RouteMap.ADMIN_CRUD_DEMO,
-        component: () => import('../views/admin/views/crud-demo.vue')
+        component: () => import('../views/admin/views/crud-demo.vue'),
       },
       {
         path: MATCH_ALL,
-        component: () => import('../views/admin/views/no-match.vue')
-      }
-    ]
-  }
+        component: () => import('../views/admin/views/no-match.vue'),
+      },
+    ],
+  },
 ];
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
+  routes,
 });
 
 export default router;

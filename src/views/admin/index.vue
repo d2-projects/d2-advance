@@ -16,10 +16,7 @@
       :class="
         sidebarOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'
       "
-      class="
-        fixed z-30 inset-y-0 left-0 w-64 transition duration-300 transform
-        bg-gray-900 overflow-y-auto lg:translate-x-0 lg:static lg:inset-0
-      "
+      class="fixed z-30 inset-y-0 left-0 w-64 transition duration-300 transform bg-gray-900 overflow-y-auto lg:translate-x-0 lg:static lg:inset-0"
     >
       <!-- logo in sidebar -->
       <div class="flex flex-col items-center justify-center mt-8 select-none">
@@ -30,11 +27,7 @@
         <p class="mt-2 text-sm text-gray-500 font-mono">An elegant dashboard</p>
         <router-link :to="$RouteMap.HOME" class="mt-4">
           <button
-            class="i
-              px-6 py-2 text-xs font-medium text-center 
-              text-white uppercase transition bg-blue-700 rounded shadow
-              hover:shadow-lg hover:bg-blue-800 focus:outline-none
-            "
+            class="i px-6 py-2 text-xs font-medium text-center text-white uppercase transition bg-blue-700 rounded shadow hover:shadow-lg hover:bg-blue-800 focus:outline-none"
           >
             back to home
           </button>
@@ -52,7 +45,7 @@
                 'flex items-center py-2 px-6 h-14 transition-all',
                 isActive
                   ? 'bg-gray-700 bg-opacity-25 text-gray-100'
-                  : 'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100'
+                  : 'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100',
               ]"
               @click="navigate"
             >
@@ -220,13 +213,13 @@ export default defineComponent({
       {
         label: 'Dashboard',
         icon: shallowRef(Dashboard),
-        to: RouteMap.ADMIN_DASHBOARD
+        to: RouteMap.ADMIN_DASHBOARD,
       },
       {
         label: 'CRUD Demo',
         icon: shallowRef(ListView),
-        to: RouteMap.ADMIN_CRUD_DEMO
-      }
+        to: RouteMap.ADMIN_CRUD_DEMO,
+      },
     ]);
 
     const sidebarOpen = ref(false);
@@ -237,8 +230,8 @@ export default defineComponent({
       sidebarOpen,
       notificationOpen,
       dropdownOpen,
-      menu
+      menu,
     };
-  }
+  },
 });
 </script>

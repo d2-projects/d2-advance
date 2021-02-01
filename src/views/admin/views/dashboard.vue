@@ -96,9 +96,7 @@
                       <div class="text-sm leading-5 font-medium text-gray-900">
                         CNine
                       </div>
-                      <div class="text-sm leading-5 text-gray-500">
-                        emmm
-                      </div>
+                      <div class="text-sm leading-5 text-gray-500">emmm</div>
                     </div>
                   </div>
                 </td>
@@ -146,14 +144,14 @@ import { defineComponent } from 'vue';
 import {
   PeoplesTwo as IconPeoplesTwo,
   Shopping as IconShopping,
-  AdProduct as IconAdProduct
+  AdProduct as IconAdProduct,
 } from '@icon-park/vue-next';
 
 export default defineComponent({
   components: {
     IconPeoplesTwo,
     IconShopping,
-    IconAdProduct
-  }
+    IconAdProduct,
+  },
 });
 </script>

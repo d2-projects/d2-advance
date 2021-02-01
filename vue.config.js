@@ -12,8 +12,8 @@ module.exports = {
     // display console info on page
     overlay: {
       warnings: false,
-      errors: true
-    }
+      errors: true,
+    },
   },
 
   chainWebpack(config) {
@@ -28,8 +28,8 @@ module.exports = {
               algorithm: 'gzip',
               test: /\.js$|\.css$|\.html$/,
               threshold: 10240,
-              minRatio: 0.8
-            }
+              minRatio: 0.8,
+            },
           ]);
       }
       if (process.env.VUE_APP_BROTLI === 'on') {
@@ -46,15 +46,15 @@ module.exports = {
                 test: /\.(js|css|html|svg)$/,
                 compressionOptions: {
                   params: {
-                    [zlib.constants.BROTLI_PARAM_QUALITY]: 11
-                  }
+                    [zlib.constants.BROTLI_PARAM_QUALITY]: 11,
+                  },
                 },
                 threshold: 10240,
-                minRatio: 0.8
-              }
+                minRatio: 0.8,
+              },
             ]);
         }
       }
     }
-  }
+  },
 };

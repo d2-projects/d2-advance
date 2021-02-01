@@ -9,13 +9,13 @@ module.exports = {
         d2sky: {
           light: '#3884fe',
           DEFAULT: '#2f74ff',
-          dark: '#1049bb'
-        }
-      }
-    }
+          dark: '#1049bb',
+        },
+      },
+    },
   },
   variants: {
-    extend: {}
+    extend: {},
   },
-  plugins: []
+  plugins: [],
 };
