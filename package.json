@@ -56,7 +56,9 @@
     "not dead"
   ],
   "babel": {
-    "presets": ["@vue/cli-plugin-babel/preset"]
+    "presets": [
+      "@vue/cli-plugin-babel/preset"
+    ]
   },
   "jest": {
     "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel",
@@ -72,7 +74,9 @@
     "*.{js,jsx,vue,ts,tsx}": "vue-cli-service lint"
   },
   "commitlint": {
-    "extends": ["@commitlint/config-conventional"]
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "config": {
     "commitizen": {
