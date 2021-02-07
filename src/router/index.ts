@@ -30,7 +30,7 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: MATCH_ALL,
-        component: () => import('../views/admin/system-views/no-match.vue'),
+        component: () => import('../views/admin/system-views/not-found.vue'),
       },
     ],
   },
