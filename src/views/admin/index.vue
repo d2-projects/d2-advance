@@ -161,8 +161,8 @@
                 >Profile</router-link
               >
               <a
-                href="/login"
                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-600 hover:text-white"
+                @click="handleClickLogout"
                 >Logout</a
               >
             </nav>
@@ -232,6 +232,12 @@ export default defineComponent({
   },
   methods: {
     fromAgo,
+    handleClickLogout() {
+      // ! fake action
+      if (confirm('Are you sure?')) {
+        this.$router.push(RoutePath.HOME);
+      }
+    },
   },
 });
 </script>
