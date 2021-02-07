@@ -24,6 +24,10 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('../views/admin/main-views/crud-demo.vue'),
       },
       {
+        path: RouteMap.ADMIN_PROFILE,
+        component: () => import('../views/admin/system-views/profile.vue'),
+      },
+      {
         path: RouteMap.ADMIN_NOTIFICATIONS,
         component: () =>
           import('../views/admin/system-views/notifications.vue'),

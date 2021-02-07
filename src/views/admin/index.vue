@@ -153,11 +153,12 @@
             <nav
               v-show="accountDropdownOpen"
               class="absolute right-0 mt-2 w-48 bg-white rounded-md overflow-hidden shadow-xl z-10 border-t-2"
+              @click="accountDropdownOpen = !accountDropdownOpen"
             >
-              <a
-                href="#"
+              <router-link
+                :to="$RouteMap.ADMIN_PROFILE"
                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-600 hover:text-white"
-                >Profile</a
+                >Profile</router-link
               >
               <a
                 href="/login"
