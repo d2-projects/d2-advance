@@ -17,15 +17,20 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: RouteMap.ADMIN_DASHBOARD,
-        component: () => import('../views/admin/views/dashboard.vue'),
+        component: () => import('../views/admin/main-views/dashboard.vue'),
       },
       {
         path: RouteMap.ADMIN_CRUD_DEMO,
-        component: () => import('../views/admin/views/crud-demo.vue'),
+        component: () => import('../views/admin/main-views/crud-demo.vue'),
+      },
+      {
+        path: RouteMap.ADMIN_NOTIFICATIONS,
+        component: () =>
+          import('../views/admin/system-views/notifications.vue'),
       },
       {
         path: MATCH_ALL,
-        component: () => import('../views/admin/views/no-match.vue'),
+        component: () => import('../views/admin/system-views/no-match.vue'),
       },
     ],
   },

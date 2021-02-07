@@ -3,4 +3,5 @@ export const RouteMap = {
   ADMIN: '/admin',
   ADMIN_DASHBOARD: '/admin/',
   ADMIN_CRUD_DEMO: '/admin/crud-demo',
+  ADMIN_NOTIFICATIONS: '/admin/notifications',
 };
