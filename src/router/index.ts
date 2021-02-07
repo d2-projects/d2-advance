@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
-import { RouteMap } from '@/constants/route';
+import { RouteMap, RouteName } from '@/constants/route';
 import Home from '@/views/home/index.vue';
 import Admin from '@/views/admin/index.vue';
 
@@ -27,6 +27,12 @@ const routes: Array<RouteRecordRaw> = [
         path: RouteMap.ADMIN_NOTIFICATIONS,
         component: () =>
           import('../views/admin/system-views/notifications.vue'),
+      },
+      {
+        path: RouteMap.ADMIN_NOTIFICATION_DETAIL,
+        name: RouteName.ADMIN_NOTIFICATION_DETAIL,
+        component: () =>
+          import('../views/admin/system-views/notification-detail.vue'),
       },
       {
         path: MATCH_ALL,

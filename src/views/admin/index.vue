@@ -114,7 +114,10 @@
                   :key="id"
                 >
                   <router-link
-                    :to="$RouteMap.ADMIN_NOTIFICATIONS"
+                    :to="{
+                      name: $RouteName.ADMIN_NOTIFICATION_DETAIL,
+                      params: { id },
+                    }"
                     class="flex items-center px-4 py-3 text-gray-600 hover:text-white hover:bg-blue-600 -mx-2"
                   >
                     <p class="text-sm mx-2">
