@@ -7,7 +7,7 @@
           :href="href"
           :class="[
             'flex items-center py-2 px-6 h-14 transition-all',
-            isActive
+            isActive || $route.path.startsWith(to + '/')
               ? 'bg-gray-700 bg-opacity-25 text-gray-100'
               : 'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100',
           ]"
