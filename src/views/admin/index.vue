@@ -25,39 +25,16 @@
           <span class="text-white text-2xl mx-2 font-semibold">Admin</span>
         </div>
         <p class="mt-2 text-sm text-gray-500 font-mono">An elegant dashboard</p>
-        <router-link :to="$RoutePath.HOME" class="mt-4">
-          <button
-            class="i px-6 py-2 text-xs font-medium text-center text-white uppercase transition bg-blue-700 rounded shadow hover:shadow-lg hover:bg-blue-800 focus:outline-none"
-          >
-            back to home
-          </button>
+        <router-link
+          :to="$RoutePath.HOME"
+          class="mt-4 text-blue-600 hover:underline"
+        >
+          back to home
         </router-link>
       </div>
 
       <!-- sidebar menu -->
-      <nav class="mt-10 select-none">
-        <template
-          v-for="({ label, to, icon }, index) in sidebarMenu"
-          :key="index"
-        >
-          <router-link v-slot="{ href, navigate, isActive }" :to="to" custom>
-            <a
-              :active="isActive"
-              :href="href"
-              :class="[
-                'flex items-center py-2 px-6 h-14 transition-all',
-                isActive
-                  ? 'bg-gray-700 bg-opacity-25 text-gray-100'
-                  : 'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100',
-              ]"
-              @click="navigate"
-            >
-              <component :is="icon" class="text-lg" />
-              <span class="mx-3">{{ label }}</span>
-            </a>
-          </router-link>
-        </template>
-      </nav>
+      <router-view name="SidebarMenu" />
     </aside>
 
     <main class="flex-1 flex flex-col overflow-hidden">
@@ -177,12 +154,10 @@
 </template>
 
 <script lang="ts">
-import { Component, defineComponent, ref, shallowRef } from 'vue';
+import { defineComponent, ref } from 'vue';
 import { RoutePath } from '@/constants/route';
 import { fromAgo } from '@/utils/time';
 import {
-  Dashboard,
-  ListView,
   Remind as IconRemind,
   HamburgerButton as IconHamburgerButton,
 } from '@icon-park/vue-next';
@@ -190,19 +165,6 @@ import {
 export default defineComponent({
   components: { IconRemind, IconHamburgerButton },
   setup() {
-    const sidebarMenu = ref<{ label: string; icon: Component; to: string }[]>([
-      {
-        label: 'Dashboard',
-        icon: shallowRef(Dashboard),
-        to: RoutePath.ADMIN_DASHBOARD,
-      },
-      {
-        label: 'CRUD Demo',
-        icon: shallowRef(ListView),
-        to: RoutePath.ADMIN_CRUD_DEMO,
-      },
-    ]);
-
     const notificationUnread = ref<number>(1);
     const notifications = ref<
       { id: string; timestamp: string; message: string; read: boolean }[]
@@ -220,8 +182,6 @@ export default defineComponent({
     const notificationDropdownOpen = ref(false);
 
     return {
-      sidebarMenu,
-
       notifications,
       notificationUnread,
 

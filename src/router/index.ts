@@ -2,6 +2,8 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 import { RoutePath, RouteMap, MATCH_ALL } from '@/constants/route';
 import Home from '@/views/home/index.vue';
 import Admin from '@/views/admin/index.vue';
+import AdminSidebarMenuMain from '@/views/admin/common/sidebar-menu-main.vue';
+import AdminSidebarMenuSystem from '@/views/admin/common/sidebar-menu-system.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -16,31 +18,48 @@ const routes: Array<RouteRecordRaw> = [
       // # main views
       {
         ...RouteMap.ADMIN_DASHBOARD,
-        component: () => import('../views/admin/main-views/dashboard.vue'),
+        components: {
+          SidebarMenu: AdminSidebarMenuMain,
+          default: () => import('../views/admin/main-views/dashboard.vue'),
+        },
       },
       {
         ...RouteMap.ADMIN_CRUD_DEMO,
-        component: () => import('../views/admin/main-views/crud-demo.vue'),
+        components: {
+          SidebarMenu: AdminSidebarMenuMain,
+          default: () => import('../views/admin/main-views/crud-demo.vue'),
+        },
       },
 
       // # system views
       {
         ...RouteMap.ADMIN_PROFILE,
-        component: () => import('../views/admin/system-views/profile.vue'),
+        components: {
+          SidebarMenu: AdminSidebarMenuSystem,
+          default: () => import('../views/admin/system-views/profile.vue'),
+        },
       },
       {
         ...RouteMap.ADMIN_NOTIFICATIONS,
-        component: () =>
-          import('../views/admin/system-views/notifications.vue'),
+        components: {
+          SidebarMenu: AdminSidebarMenuSystem,
+          default: () =>
+            import('../views/admin/system-views/notifications.vue'),
+        },
       },
       {
         ...RouteMap.ADMIN_NOTIFICATION_DETAIL,
-        component: () =>
-          import('../views/admin/system-views/notification-detail.vue'),
+        components: {
+          SidebarMenu: AdminSidebarMenuSystem,
+          default: () =>
+            import('../views/admin/system-views/notification-detail.vue'),
+        },
       },
+
+      // # common views
       {
         path: MATCH_ALL,
-        component: () => import('../views/admin/system-views/not-found.vue'),
+        component: () => import('../views/admin/common/not-found.vue'),
       },
     ],
   },
