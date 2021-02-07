@@ -6,7 +6,7 @@ import global from './plugins/global';
 
 import './main.css';
 
-if (process.env.MOCK === 'on') {
+if (process.env.VUE_APP_MOCK === 'on') {
   import('./mock').then(({ makeServer }) => {
     makeServer({ environment: process.env.NODE_ENV });
   });
