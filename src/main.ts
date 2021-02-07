@@ -6,9 +6,10 @@ import global from './plugins/global';
 
 import './main.css';
 
-import { makeServer } from './mock';
-if (process.env.NODE_ENV === 'development') {
-  makeServer({ environment: 'development' });
+if (process.env.MOCK === 'on') {
+  import('./mock').then(({ makeServer }) => {
+    makeServer({ environment: process.env.NODE_ENV });
+  });
 }
 
 createApp(App).use(store).use(router).use(global).mount('#app');
