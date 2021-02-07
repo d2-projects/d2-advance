@@ -15,9 +15,9 @@
     "@icon-park/vue-next": "^1.2.6",
     "core-js": "^3.8.3",
     "miragejs": "^0.1.41",
-    "vue": "^3.0.0",
-    "vue-router": "^4.0.0-0",
-    "vuex": "^4.0.0-0"
+    "vue": "^3.0.5",
+    "vue-router": "^4.0.3",
+    "vuex": "^4.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
