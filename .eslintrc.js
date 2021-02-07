@@ -45,7 +45,7 @@ module.exports = {
       },
     },
     {
-      files: ['**/mirage/*.{j,t}s?(x)'],
+      files: ['**/mock/*.{j,t}s?(x)'],
       rules: {
         '@typescript-eslint/explicit-module-boundary-types': 'off',
       },

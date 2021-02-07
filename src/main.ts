@@ -6,7 +6,7 @@ import global from './plugins/global';
 
 import './main.css';
 
-import { makeServer } from './mirage';
+import { makeServer } from './mock';
 if (process.env.NODE_ENV === 'development') {
   makeServer({ environment: 'development' });
 }
