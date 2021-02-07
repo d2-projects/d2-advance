@@ -12,7 +12,7 @@
       >
         <li class="m-2">
           <router-link
-            :to="$RouteMap.ADMIN"
+            :to="$RoutePath.ADMIN"
             class="text-white p-5 rounded-md bg-blue-500 space-x-4 bg-gradient-to-br from-blue-400 to-blue-600 hover:bg-blue-600 shadow-md hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all w-72 min-h-full flex flex-row items-center"
           >
             <form-one

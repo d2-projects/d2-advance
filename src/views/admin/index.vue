@@ -25,7 +25,7 @@
           <span class="text-white text-2xl mx-2 font-semibold">Admin</span>
         </div>
         <p class="mt-2 text-sm text-gray-500 font-mono">An elegant dashboard</p>
-        <router-link :to="$RouteMap.HOME" class="mt-4">
+        <router-link :to="$RoutePath.HOME" class="mt-4">
           <button
             class="i px-6 py-2 text-xs font-medium text-center text-white uppercase transition bg-blue-700 rounded shadow hover:shadow-lg hover:bg-blue-800 focus:outline-none"
           >
@@ -90,7 +90,7 @@
 
             <router-link
               v-else
-              :to="$RouteMap.ADMIN_NOTIFICATIONS"
+              :to="$RoutePath.ADMIN_NOTIFICATIONS"
               class="flex text-gray-600 focus:outline-none"
             >
               <icon-remind class="text-2xl" />
@@ -156,7 +156,7 @@
               @click="accountDropdownOpen = !accountDropdownOpen"
             >
               <router-link
-                :to="$RouteMap.ADMIN_PROFILE"
+                :to="$RoutePath.ADMIN_PROFILE"
                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-600 hover:text-white"
                 >Profile</router-link
               >
@@ -178,7 +178,7 @@
 
 <script lang="ts">
 import { Component, defineComponent, ref, shallowRef } from 'vue';
-import { RouteMap } from '@/constants/route';
+import { RoutePath } from '@/constants/route';
 import { fromAgo } from '@/utils/time';
 import {
   Dashboard,
@@ -194,12 +194,12 @@ export default defineComponent({
       {
         label: 'Dashboard',
         icon: shallowRef(Dashboard),
-        to: RouteMap.ADMIN_DASHBOARD,
+        to: RoutePath.ADMIN_DASHBOARD,
       },
       {
         label: 'CRUD Demo',
         icon: shallowRef(ListView),
-        to: RouteMap.ADMIN_CRUD_DEMO,
+        to: RoutePath.ADMIN_CRUD_DEMO,
       },
     ]);
 

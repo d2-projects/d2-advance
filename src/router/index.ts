@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
-import { RouteMap, RouteName } from '@/constants/route';
+import { RoutePath, RouteName } from '@/constants/route';
 import Home from '@/views/home/index.vue';
 import Admin from '@/views/admin/index.vue';
 
@@ -7,33 +7,33 @@ const MATCH_ALL = ':_(.*)';
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: RouteMap.HOME,
+    path: RoutePath.HOME,
     component: Home,
   },
   {
-    path: RouteMap.ADMIN,
+    path: RoutePath.ADMIN,
     component: Admin,
-    redirect: RouteMap.ADMIN_DASHBOARD,
+    redirect: RoutePath.ADMIN_DASHBOARD,
     children: [
       {
-        path: RouteMap.ADMIN_DASHBOARD,
+        path: RoutePath.ADMIN_DASHBOARD,
         component: () => import('../views/admin/main-views/dashboard.vue'),
       },
       {
-        path: RouteMap.ADMIN_CRUD_DEMO,
+        path: RoutePath.ADMIN_CRUD_DEMO,
         component: () => import('../views/admin/main-views/crud-demo.vue'),
       },
       {
-        path: RouteMap.ADMIN_PROFILE,
+        path: RoutePath.ADMIN_PROFILE,
         component: () => import('../views/admin/system-views/profile.vue'),
       },
       {
-        path: RouteMap.ADMIN_NOTIFICATIONS,
+        path: RoutePath.ADMIN_NOTIFICATIONS,
         component: () =>
           import('../views/admin/system-views/notifications.vue'),
       },
       {
-        path: RouteMap.ADMIN_NOTIFICATION_DETAIL,
+        path: RoutePath.ADMIN_NOTIFICATION_DETAIL,
         name: RouteName.ADMIN_NOTIFICATION_DETAIL,
         component: () =>
           import('../views/admin/system-views/notification-detail.vue'),

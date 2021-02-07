@@ -1,4 +1,4 @@
-export enum RouteMap {
+export enum RoutePath {
   HOME = '/',
   ADMIN = '/admin',
   ADMIN_DASHBOARD = '/admin/',
@@ -9,5 +9,5 @@ export enum RouteMap {
 }
 
 export const RouteName = Object.fromEntries(
-  Object.keys(RouteMap).map((i) => [i, i])
-) as Record<keyof typeof RouteMap, keyof typeof RouteMap>;
+  Object.keys(RoutePath).map((i) => [i, i])
+) as Record<keyof typeof RoutePath, keyof typeof RoutePath>;
