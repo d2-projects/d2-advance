@@ -8,19 +8,35 @@
 
 Preview here 👉 [https://d2.pub/d2-advance/preview](https://d2.pub/d2-advance/preview)
 
-## Documents
-
-[简体中文](docs/zh/README.md)（[问题汇总](docs/zh/WTF.md)）
-
 ## Public Repositories
 
 *   [Github](https://gitee.com/d2-projects/d2-advance)
 *   [码云](https://gitee.com/d2-projects/d2-advance) (mirror)
 
-## Related
+## Getting Started
 
-*   [d2-projects/d2-admin](https://github.com/d2-projects/d2-admin)
-*   [MZCretin/RollToolsApi](https://github.com/MZCretin/RollToolsApi)
+``` bash
+# setup
+yarn install
+
+# development mode (with lint)
+yarn serve
+
+# check code styles
+yarn lint
+
+# unit test by jest
+yarn test:unit
+
+# build production for deploy (with typescript check)
+yarn build
+
+# git commit by commitizen cli
+yarn commit
+
+# take a release commit by standard-version
+yarn release
+```
 
 ## License
 
