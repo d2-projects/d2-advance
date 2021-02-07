@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0-0](https://github.com/d2-projects/d2-advance/compare/v2.0.1-1...v2.1.0-0) (2021-02-07)
+
+
+### Features
+
+* **admin:** logout demo ([9731d66](https://github.com/d2-projects/d2-advance/commit/9731d66cd3c6f4f06349d9360b1f79d053f13871))
+* **admin:** notification detail demo ([208cc33](https://github.com/d2-projects/d2-advance/commit/208cc33c18b4292eeddb8684a11994036d067159))
+* **admin:** profile demo ([90a75f5](https://github.com/d2-projects/d2-advance/commit/90a75f5dc4591ca731c3513dcfd4b34d1bf860e5))
+* notifications demo ([559b7ae](https://github.com/d2-projects/d2-advance/commit/559b7aeac31be23117de81137438d43f93e2ed56))
+
+
+### Bug Fixes
+
+* **admin:** menu link active ([bc094f4](https://github.com/d2-projects/d2-advance/commit/bc094f4ad24a9413a9a927375cb571303539885b))
+* **mock:** rename to `VUE_APP_MOCK` ([18e6765](https://github.com/d2-projects/d2-advance/commit/18e6765061c2616c6fdd95389900ed595ce85972))
+* styles ([a9dff4d](https://github.com/d2-projects/d2-advance/commit/a9dff4d662659155c5ebf8404b75cbbb4f27f436))
+
 ### [2.0.1-1](https://github.com/d2-projects/d2-advance/compare/v2.0.1-0...v2.0.1-1) (2021-02-07)
 
 ### [2.0.1-0](https://github.com/d2-projects/d2-advance/compare/v2.0.0...v2.0.1-0) (2021-02-07)
