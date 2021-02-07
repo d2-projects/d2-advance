@@ -83,7 +83,7 @@
               <icon-remind class="text-2xl" />
               <span
                 v-if="notificationUnread"
-                class="absolute -top-1 -right-1 w-4 h-4 text-xs bg-red-400 text-white rounded-lg"
+                class="absolute -top-1 -right-1 text-center overflow-hidden w-4 h-4 text-xs bg-red-400 text-white rounded-lg"
                 >{{ notificationUnread > 9 ? '+' : notificationUnread }}</span
               >
             </button>
