@@ -9,8 +9,8 @@ export default defineConfig(({ mode }) => {
     plugins: [vue()],
     resolve: {
       alias: {
-        '/@': '/src', // ! hack for vue file template section
         '@': '/src',
+        '/@': '/src', // ! hack for vue file template section
       },
     },
     server: {
