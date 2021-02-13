@@ -14,7 +14,7 @@
     "noEmit": true,
     "baseUrl": ".",
     "types": [
-      "webpack-env",
+      "vite/client",
       "jest"
     ],
     "paths": {
