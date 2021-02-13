@@ -6,9 +6,9 @@ import global from './plugins/global';
 
 import './main.css';
 
-if (process.env.VUE_APP_MOCK === 'on') {
+if (import.meta.env.VITE_APP_MOCK === 'on') {
   import('./mock').then(({ makeServer }) => {
-    makeServer({ environment: process.env.NODE_ENV });
+    makeServer({ environment: import.meta.env.MODE });
   });
 }
 
