@@ -11,8 +11,10 @@ jobs:
     name: Check quality and build
     steps:
     - uses: actions/checkout@v2
+
     - uses: bahmutov/npm-install@v1
-    - run: yarn --frozen-lockfile
+      with:
+        install-command: yarn --frozen-lockfile --silent
 
     - name: Check code
       run: yarn lint
