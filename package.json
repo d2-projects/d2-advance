@@ -67,6 +67,12 @@
       "@vue/cli-plugin-babel/preset"
     ]
   },
+  "postcss": {
+    "plugins": {
+      "tailwindcss": {},
+      "autoprefixer": {}
+    }
+  },
   "jest": {
     "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel",
     "transform": {
