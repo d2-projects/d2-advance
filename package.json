@@ -7,7 +7,7 @@
     "serve": "vite",
     "build": "vite build",
     "type": "vuedx-typecheck .",
-    "test:unit": "vue-cli-service test:unit",
+    "test:unit": "echo TODO",
     "lint": "vue-cli-service lint",
     "commit": "git-cz",
     "release": "standard-version"
