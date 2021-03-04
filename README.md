@@ -49,4 +49,4 @@ yarn test:unit
 
 ## License
 
-D2Advance is licensed under a [MIT License](./LICENSE).
+D2Advance is licensed under a MIT License.
