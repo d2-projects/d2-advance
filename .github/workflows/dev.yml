@@ -1,0 +1,34 @@
+name: Development check
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  check-quality-and-build:
+    runs-on: ${{ matrix.os }}
+    name: Check quality and build
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node: [10, 12, 14]
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node }}
+
+    - uses: bahmutov/npm-install@v1
+      with:
+        install-command: yarn --frozen-lockfile --silent
+
+    - name: Check code
+      run: yarn lint
+
+    - name: Check unit test
+      run: yarn test:unit
+
+    - name: Build
+      run: yarn build
