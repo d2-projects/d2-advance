@@ -7,11 +7,10 @@
     "serve": "vite",
     "build": "vite build",
     "preview": "vite build && vite preview",
-    "type": "vuedx-typecheck .",
-    "test:unit": "echo TODO",
     "lint": "eslint . --ext .js,.ts,.vue",
     "commit": "git-cz",
     "release": "standard-version",
+    "test:unit": "echo TODO",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -24,16 +23,12 @@
   "devDependencies": {
     "@commitlint/cli": "^12.0.1",
     "@commitlint/config-conventional": "^12.0.1",
-    "@types/jest": "^26.0.20",
     "@typescript-eslint/eslint-plugin": "^4.16.1",
     "@typescript-eslint/parser": "^4.16.1",
     "@vitejs/plugin-vue": "^1.1.5",
     "@vue/compiler-sfc": "^3.0.7",
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^7.0.0",
-    "@vue/test-utils": "^2.0.0-0",
-    "@vuedx/typecheck": "^0.6.0",
-    "@vuedx/typescript-plugin-vue": "^0.6.0",
     "autoprefixer": "^10.2.4",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "^7.21.0",
@@ -69,12 +64,6 @@
     "plugins": {
       "tailwindcss": {},
       "autoprefixer": {}
-    }
-  },
-  "jest": {
-    "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel",
-    "transform": {
-      "^.+\\.vue$": "vue-jest"
     }
   },
   "browserslist": [
