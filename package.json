@@ -57,11 +57,14 @@
       "@commitlint/config-conventional"
     ]
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "standard-version": {
+    "infile": "docs/CHANGELOG.md"
+  },
   "postcss": {
     "plugins": {
       "tailwindcss": {},
@@ -74,12 +77,9 @@
       "^.+\\.vue$": "vue-jest"
     }
   },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
-  "standard-version": {
-    "infile": "docs/CHANGELOG.md"
-  }
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }
