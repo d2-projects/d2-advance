@@ -19,23 +19,27 @@ Preview here 👉 [https://d2.pub/d2-advance/preview](https://d2.pub/d2-advance/
 # setup
 yarn install
 
-# development mode (with lint)
+# start dev server
 yarn serve
 
-# check code styles
-yarn lint
-
-# unit test by jest
-yarn test:unit
-
-# build production for deploy (with typescript check)
+# production build
 yarn build
 
-# git commit by commitizen cli
+# locally preview production build
+yarn preview
+
+# check and auto fix code by eslint
+yarn lint
+yarn lint --fix
+
+# git commit by commitizen
 yarn commit
 
 # take a release commit by standard-version
 yarn release
+
+# unit test by jest
+yarn test:unit
 ```
 
 ## License
