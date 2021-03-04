@@ -8,7 +8,7 @@
     "build": "vite build",
     "type": "vuedx-typecheck .",
     "test:unit": "echo TODO",
-    "lint": "vue-cli-service lint",
+    "lint": "eslint . --ext .js,.ts,.vue",
     "commit": "git-cz",
     "release": "standard-version",
     "prepare": "husky install"
@@ -55,7 +55,7 @@
     "vite-tsconfig-paths": "^2.1.0"
   },
   "lint-staged": {
-    "*.{js,jsx,vue,ts,tsx}": "vue-cli-service lint"
+    "*.{js,jsx,vue,ts,tsx}": "eslint --fix "
   },
   "commitlint": {
     "extends": [

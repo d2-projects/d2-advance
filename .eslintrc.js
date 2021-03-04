@@ -20,7 +20,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'vue/component-definition-name-casing': ['warn', 'kebab-case'],
     'vue/component-name-in-template-casing': [
-      'error',
+      'warn',
       'kebab-case',
       {
         registeredComponentsOnly: false,
@@ -34,21 +34,14 @@ module.exports = {
         '**/__tests__/*.{j,t}s?(x)',
         '**/tests/unit/**/*.spec.{j,t}s?(x)',
       ],
-      env: {
-        jest: true,
-      },
+      env: { jest: true },
     },
     {
-      files: ['./*.js'],
-      rules: {
-        '@typescript-eslint/no-var-requires': 'off',
-      },
-    },
-    {
-      files: ['**/mock/*.{j,t}s?(x)'],
+      files: ['**/mock/*.*'],
       rules: {
         '@typescript-eslint/explicit-module-boundary-types': 'off',
       },
     },
   ],
+  ignorePatterns: ['node_modules/', 'dist/'],
 };
