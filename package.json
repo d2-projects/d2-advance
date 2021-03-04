@@ -6,6 +6,7 @@
   "scripts": {
     "serve": "vite",
     "build": "vite build",
+    "preview": "vite build && vite preview",
     "type": "vuedx-typecheck .",
     "test:unit": "echo TODO",
     "lint": "eslint . --ext .js,.ts,.vue",
