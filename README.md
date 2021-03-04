@@ -15,6 +15,11 @@ Preview here 👉 [https://d2.pub/d2-advance/preview](https://d2.pub/d2-advance/
 
 ## Getting Started
 
+**Requirements**
+
+-   Git
+-   NodeJS 12+
+
 ``` bash
 # setup
 yarn install
