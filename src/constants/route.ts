@@ -1,7 +1,10 @@
 /**
+ * @description vue-router v4 match
+ */
+export const MATCH_ALL = ':_(.*)';
+
+/**
  * @example
- * { HOME: '/path/to/home' }
- * ...
  * router.push(RoutePath.HOME)
  */
 export enum RoutePath {
@@ -15,14 +18,7 @@ export enum RoutePath {
 }
 
 /**
- * @description vue 3 router match
- */
-export const MATCH_ALL = ':_(.*)';
-
-/**
  * @example
- * { HOME: 'HOME' }
- * ...
  * router.push({ name: RoutePath.HOME, params: { id: '123' } })
  */
 export const RouteName = Object.fromEntries(
@@ -31,7 +27,8 @@ export const RouteName = Object.fromEntries(
 
 /**
  * @example
- * { HOME: { name: 'HOME', path: '/path/to/home' } }
+ * router.push(RouteMap.HOME.path)
+ * router.push({ name: RouteMap.HOME.name, params: { id: '123' } })
  */
 export const RouteMap = Object.fromEntries(
   Object.entries(RoutePath).map(([name, path]) => [name, { name, path }])
