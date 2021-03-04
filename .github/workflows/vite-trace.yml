@@ -14,9 +14,6 @@ jobs:
     - uses: bahmutov/npm-install@v1
     - run: yarn --frozen-lockfile
 
-    - name: Check type
-      run: yarn type
-
     - name: Check code
       run: yarn lint
 
