@@ -25,7 +25,7 @@ jobs:
         install-command: yarn --frozen-lockfile --silent
 
     - name: Check code
-      run: yarn lint --max-warning=0
+      run: yarn lint --max-warnings=0
 
     - name: Check unit test
       run: yarn test:unit
