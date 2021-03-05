@@ -21,7 +21,7 @@
       <!-- sidebar head -->
       <div class="flex flex-col items-center justify-center mt-8 select-none">
         <div class="flex items-center">
-          <!-- <img class="h-8 w-8" src="@/assets/logo.png" /> -->
+          <!-- <img class="h-8 w-8" src="@/assets/logo.svg" /> -->
           <span class="text-white text-2xl mx-2 font-semibold">Admin</span>
         </div>
         <p class="mt-2 text-sm text-gray-500 font-mono">An elegant dashboard</p>
@@ -112,14 +112,10 @@
 
           <div class="relative">
             <button
-              class="relative block h-8 w-8 rounded-full overflow-hidden ring-gray-200 ring-2 ring-offset-1 focus:outline-none"
+              class="relative block h-8 w-8 rounded-full overflow-hidden ring-gray-300 ring-2 ring-offset-1 focus:outline-none"
               @click="accountDropdownOpen = !accountDropdownOpen"
             >
-              <img
-                class="h-full w-full object-contain"
-                src="@/assets/logo.png"
-                alt="Your avatar"
-              />
+              <icon-user class="text-3xl text-gray-600" />
             </button>
 
             <div
@@ -160,10 +156,11 @@ import { fromAgo } from '@/utils/time';
 import {
   Remind as IconRemind,
   HamburgerButton as IconHamburgerButton,
+  User as IconUser,
 } from '@icon-park/vue-next';
 
 export default defineComponent({
-  components: { IconRemind, IconHamburgerButton },
+  components: { IconRemind, IconHamburgerButton, IconUser },
   setup() {
     const notificationUnread = ref<number>(1);
     const notifications = ref<

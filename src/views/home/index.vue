@@ -1,8 +1,13 @@
 <template>
   <main class="min-h-screen flex flex-col justify-center">
     <h1
-      class="text-center text-5xl space-x-4 mb-5 font-sans select-none font-bold"
+      class="text-center text-4xl space-x-4 mb-5 font-sans select-none font-bold"
     >
+      <img
+        class="h-10 w-10 inline-block align-bottom rounded-full"
+        src="@/assets/logo.svg"
+        alt="logo"
+      />
       <span class="text-gray-700">D2</span>
       <span class="text-blue-500">Advance</span>
     </h1>

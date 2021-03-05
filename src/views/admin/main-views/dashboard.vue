@@ -84,13 +84,9 @@
                   class="px-6 py-4 whitespace-no-wrap border-b border-gray-200"
                 >
                   <div class="flex items-center">
-                    <div class="flex-shrink-0 h-10 w-10">
-                      <img
-                        class="h-10 w-10 rounded-full"
-                        src="@/assets/logo.png"
-                        alt=""
-                      />
-                    </div>
+                    <icon-user
+                      class="flex-shrink-0 text-3xl rounded-full center text-gray-500"
+                    />
 
                     <div class="ml-4">
                       <div class="text-sm leading-5 font-medium text-gray-900">
@@ -145,6 +141,7 @@ import {
   PeoplesTwo as IconPeoplesTwo,
   Shopping as IconShopping,
   AdProduct as IconAdProduct,
+  User as IconUser,
 } from '@icon-park/vue-next';
 
 export default defineComponent({
@@ -152,6 +149,7 @@ export default defineComponent({
     IconPeoplesTwo,
     IconShopping,
     IconAdProduct,
+    IconUser,
   },
 });
 </script>
