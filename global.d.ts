@@ -12,6 +12,8 @@ declare module 'vite' {
     VITE_SOURCE_MAP?: 'on' | 'off';
     VITE_GZIP?: 'on' | 'off';
     VITE_BROTLI?: 'on' | 'off';
-    // ... more custom here, must VITE_* !
+
+    // VITE_XXX?: string;
+    // ... more here and start with 'VITE_'
   }
 }
