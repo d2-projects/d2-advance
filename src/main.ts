@@ -4,7 +4,7 @@ import router from './router';
 import store from './store';
 import global from './plugins/global';
 
-import './main.css';
+import 'windi.css';
 
 if (import.meta.env.VITE_APP_MOCK === 'on') {
   import('./mock').then(({ makeServer }) => {
