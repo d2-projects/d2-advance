@@ -15,5 +15,8 @@ export default defineConfig(({ mode }) => {
     server: {
       open: true,
     },
+    build: {
+      sourcemap: env.VITE_SOURCE_MAP === 'on',
+    },
   };
 });
