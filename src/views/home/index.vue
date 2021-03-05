@@ -20,7 +20,7 @@
             :to="$RoutePath.ADMIN"
             class="text-white p-5 rounded-md bg-blue-500 space-x-4 bg-gradient-to-br from-blue-400 to-blue-600 hover:bg-blue-600 shadow-md hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all w-72 min-h-full flex flex-row items-center"
           >
-            <form-one
+            <icon-form-one
               class="text-blue-500 text-4xl p-2 rounded-xl bg-white shadow-lg"
             />
             <div>
@@ -31,16 +31,30 @@
         </li>
       </ul>
     </nav>
+    <div class="text-center mt-5">
+      <a
+        href="http://github.com/d2-projects/d2-advance"
+        target="_blank"
+        class="text-blue-600 hover:text-blue-900 hover:underline"
+      >
+        <icon-github />
+        Open in Github</a
+      >
+    </div>
   </main>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { FormOne } from '@icon-park/vue-next';
+import {
+  FormOne as IconFormOne,
+  Github as IconGithub,
+} from '@icon-park/vue-next';
 
 export default defineComponent({
   components: {
-    FormOne,
+    IconFormOne,
+    IconGithub,
   },
 });
 </script>
