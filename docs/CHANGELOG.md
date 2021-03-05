@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0-7](https://github.com/d2-projects/d2-advance/compare/v2.1.0-6...v2.1.0-7) (2021-03-05)
+
+
+### Features
+
+* **home:** add github link ([860e995](https://github.com/d2-projects/d2-advance/commit/860e995482faed412e493b9c928096db33121ff1))
+* **space:** add demo pages ([ea9e716](https://github.com/d2-projects/d2-advance/commit/ea9e716cab5a7fe9b9284be5ba8048a5f664ec3e))
+* update favicon ([ee88462](https://github.com/d2-projects/d2-advance/commit/ee884622b3749db655b4942864e781bf08b5c814))
+* update logo ([25cdb46](https://github.com/d2-projects/d2-advance/commit/25cdb4628d6bd0567b95c68f27eb396cfc29853d))
+
+
+### Bug Fixes
+
+* icon-part styles ([3662f1b](https://github.com/d2-projects/d2-advance/commit/3662f1bce2cddac79ad970729806785490f24b82))
+
 ## [2.1.0-6](https://github.com/d2-projects/d2-advance/compare/v2.1.0-5...v2.1.0-6) (2021-03-04)
 
 ## [2.1.0-5](https://github.com/d2-projects/d2-advance/compare/v2.1.0-4...v2.1.0-5) (2021-03-04)
