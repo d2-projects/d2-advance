@@ -474,16 +474,16 @@
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.0.7.tgz#96d52988efc07444c108c7c6803ba7cc93e40045"
   integrity sha512-dn5FyfSc4ky424jH4FntiHno7Ss5yLkqKNmM/NXwANRnlkmqu74pnGetexDFVG5phMk9/FhwovUZCWGxsotVKg==
 
-"@windicss/plugin-utils@0.6.5":
-  version "0.6.5"
-  resolved "https://registry.yarnpkg.com/@windicss/plugin-utils/-/plugin-utils-0.6.5.tgz#c37082ea3e52c605508e7fb9b7331cb80b140441"
-  integrity sha512-8ZZdauxS+d3AE7RQtk7R6cWgiHQ/IUvavv0vsfXHKdvEkwMyI/GUU01VLWTXWRsWyM2+D2F6/HOgUxmxYQx5Sg==
+"@windicss/plugin-utils@0.6.10":
+  version "0.6.10"
+  resolved "https://registry.yarnpkg.com/@windicss/plugin-utils/-/plugin-utils-0.6.10.tgz#39a7f5df9f515eae556ef610a8ae21be9b07ef0c"
+  integrity sha512-dMPHtUHmOktnikLah8tmMQjU2gb5AGxuXO8wen3lMo/G8YZI1H9Ua9qnMUIbaJ11mlGhpv89iYEsyfRHThbi/w==
   dependencies:
-    esbuild "^0.8.54"
-    esbuild-register "^2.0.0"
+    esbuild "^0.8.56"
+    esbuild-register "^2.2.0"
     fast-glob "^3.2.5"
     micromatch "^4.0.2"
-    windicss "^2.2.3"
+    windicss "^2.2.6"
 
 JSONStream@^1.0.4:
   version "1.3.5"
@@ -1333,15 +1333,22 @@ error-ex@^1.2.0, error-ex@^1.3.1:
   dependencies:
     is-arrayish "^0.2.1"
 
-esbuild-register@^2.0.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/esbuild-register/-/esbuild-register-2.1.0.tgz#b1459c1970885e1226f31de1bea595a5c2922b11"
-  integrity sha512-NS/ptwYqFfmRT50SwRuxlwuKDwraijsqhDjngX4QyYj5VxSlbujbglQbXTz1qrRQhZRhx4Ap9369W7t+aJtdmQ==
+esbuild-register@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/esbuild-register/-/esbuild-register-2.2.0.tgz#1c68af6e8e6c4a23af01825224e71bcbd3c85d83"
+  integrity sha512-27039YMtpC3lI8yYGGm78SAQBtBo/4IPMReWVsNh4++VtvozmasBd1a2HiTdk0297iuA2pMzrzvL5cZJqQCKxQ==
+  dependencies:
+    jsonc-parser "^3.0.0"
 
-esbuild@^0.8.52, esbuild@^0.8.54:
+esbuild@^0.8.52:
   version "0.8.55"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.8.55.tgz#4bf949c44db4ffc2a206ac0c002e8e94eecff7d5"
   integrity sha512-mM/s7hjYe5mQR+zAWOM5JVrCtYCke182E9l1Bbs6rG5EDP3b1gZF9sHZka53PD/iNt6OccymVZRWkTtBfcKW4w==
+
+esbuild@^0.8.56:
+  version "0.8.56"
+  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.8.56.tgz#9c7c3d6e614db7367afa348adb0ab287c296735e"
+  integrity sha512-PTMdAWK3JI2MNW811znGssGP5GR44tQPr++VQ1rPP0n8Z1cTKbCPD3S/kXPLr3ZZDIwAaVm08fuFym6Rp8l/0A==
 
 escalade@^3.1.1:
   version "3.1.1"
@@ -2425,6 +2432,11 @@ json5@^1.0.1:
   integrity sha512-aKS4WQjPenRxiQsC93MNfjx+nbF4PAdYzmd/1JIj8HYzqfbu86beTuNgXDzPknWk0n0uARlyewZo4s++ES36Ow==
   dependencies:
     minimist "^1.2.0"
+
+jsonc-parser@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/jsonc-parser/-/jsonc-parser-3.0.0.tgz#abdd785701c7e7eaca8a9ec8cf070ca51a745a22"
+  integrity sha512-fQzRfAbIBnR0IQvftw9FJveWiHp72Fg20giDrHz6TdfB12UH/uue0D3hm57UB5KgAVuniLMCaS8P1IMj9NR7cA==
 
 jsonfile@^4.0.0:
   version "4.0.0"
@@ -4329,13 +4341,13 @@ vite-plugin-compression@^0.2.3:
     debug "^4.3.2"
     fs-extra "^9.1.0"
 
-vite-plugin-windicss@^0.6.5:
-  version "0.6.5"
-  resolved "https://registry.yarnpkg.com/vite-plugin-windicss/-/vite-plugin-windicss-0.6.5.tgz#14b6fc43fcbc2dc143b33c83c58e3f7fe820aa9a"
-  integrity sha512-zEpPlVRaXQbgA0Tsj/N4Kt1jAEZ2aMqVrq4/LaTekS0LCdtD1sQXoadAz2Af/N+qA7ICu8VBpijONH6c8AS4Xg==
+vite-plugin-windicss@^0.6.10:
+  version "0.6.10"
+  resolved "https://registry.yarnpkg.com/vite-plugin-windicss/-/vite-plugin-windicss-0.6.10.tgz#b2719bc9f29220208162e04c342a8983f7536fdb"
+  integrity sha512-ofeJGvHu/Tz+HIP9Ap0uQHBt5YNi2uv/4yoJH30I3zFE5gAdsKN3GgzrcySQEPaQIgWmcDNbpWqAFejLHFLpzw==
   dependencies:
-    "@windicss/plugin-utils" "0.6.5"
-    windicss "^2.2.3"
+    "@windicss/plugin-utils" "0.6.10"
+    windicss "^2.2.6"
 
 vite-tsconfig-paths@^2.1.0:
   version "2.1.0"
@@ -4414,7 +4426,7 @@ which@^2.0.1:
   dependencies:
     isexe "^2.0.0"
 
-windicss@^2.2.3:
+windicss@^2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/windicss/-/windicss-2.2.6.tgz#1e1b40ca329f8dd5ab735734212f9f91c9497004"
   integrity sha512-RK502Xwsw0ptjVueJum0TEr286YJgtqK6kXpa60R6a1z2gGkVpEcaIfr6okQ5EYUk8WMRLrXoK6B2E6dSRg/sw==
