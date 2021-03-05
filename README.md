@@ -47,6 +47,34 @@ yarn release
 yarn test:unit
 ```
 
+### Custom env variables
+
+type in ` global.d.ts`:
+
+``` ts
+// ...
+interface CustomEnvVariables {
+  VITE_BASE_URL: string;
+  VITE_MOCK?: 'on' | 'off'; // is build with mock
+  VITE_SOURCE_MAP?: 'on' | 'off'; // is output .map
+  VITE_GZIP?: 'on' | 'off'; // is output .gz
+  VITE_BROTLI?: 'on' | 'off'; // is output .br
+
+  // VITE_XXX?: string;
+  // ... more here and start with 'VITE_'
+}
+```
+
+default values in `.env`:
+
+```
+VITE_BASE_URL=./
+VITE_MOCK=on
+VITE_SOURCE_MAP=off
+VITE_GZIP=on
+VITE_BROTLI=on
+```
+
 ### Customize configuration
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
