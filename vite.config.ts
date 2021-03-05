@@ -10,7 +10,6 @@ export default defineConfig(({ mode }) => {
     resolve: {
       alias: {
         '@': '/src',
-        '/@': '/src', // ! hack for vue file template section
       },
     },
     server: {
