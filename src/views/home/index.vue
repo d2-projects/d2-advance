@@ -29,6 +29,20 @@
             </div>
           </router-link>
         </li>
+        <li class="m-2">
+          <router-link
+            :to="$RoutePath.SPACE"
+            class="text-white p-5 rounded-md bg-green-500 space-x-4 bg-gradient-to-br from-green-400 to-green-600 hover:bg-green-600 shadow-md hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-green-300 transition-all w-72 min-h-full flex flex-row items-center"
+          >
+            <icon-waterfalls-v
+              class="text-green-500 text-4xl p-2 rounded-xl bg-white shadow-lg"
+            />
+            <div>
+              <p class="font-semibold text-lg">Space</p>
+              <p class="truncate">An personl workspace</p>
+            </div>
+          </router-link>
+        </li>
       </ul>
     </nav>
     <div class="text-center mt-5">
@@ -48,12 +62,14 @@
 import { defineComponent } from 'vue';
 import {
   FormOne as IconFormOne,
+  WaterfallsV as IconWaterfallsV,
   Github as IconGithub,
 } from '@icon-park/vue-next';
 
 export default defineComponent({
   components: {
     IconFormOne,
+    IconWaterfallsV,
     IconGithub,
   },
 });

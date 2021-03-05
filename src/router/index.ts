@@ -4,6 +4,7 @@ import Home from '@/views/home/index.vue';
 import Admin from '@/views/admin/index.vue';
 import AdminSidebarMenuMain from '@/views/admin/common/sidebar-menu-main.vue';
 import AdminSidebarMenuSystem from '@/views/admin/common/sidebar-menu-system.vue';
+import Space from '@/views/space/index.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -60,6 +61,24 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: MATCH_ALL,
         component: () => import('../views/admin/common/not-found.vue'),
+      },
+    ],
+  },
+  {
+    ...RouteMap.SPACE,
+    component: Space,
+    redirect: RoutePath.SPACE_HOME,
+    children: [
+      // # main views
+      {
+        ...RouteMap.SPACE_HOME,
+        component: () => import('../views/space/home.vue'),
+      },
+
+      // # common views
+      {
+        path: MATCH_ALL,
+        component: () => import('../views/space/common/not-found.vue'),
       },
     ],
   },

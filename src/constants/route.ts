@@ -15,6 +15,8 @@ export enum RoutePath {
   ADMIN_PROFILE = '/admin/profile',
   ADMIN_NOTIFICATIONS = '/admin/notifications',
   ADMIN_NOTIFICATION_DETAIL = '/admin/notifications/:id',
+  SPACE = '/space',
+  SPACE_HOME = '/space/',
 }
 
 /**
