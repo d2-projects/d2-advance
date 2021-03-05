@@ -1,14 +1,29 @@
-import { defineConfig, loadEnv } from 'vite';
+import { defineConfig, loadEnv, Plugin } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import legacy from '@vitejs/plugin-legacy';
 import windi from 'vite-plugin-windicss';
+import compression from 'vite-plugin-compression';
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, __dirname);
 
   return {
     base: env.VITE_BASE_URL,
-    plugins: [vue(), legacy(), windi()],
+    plugins: [
+      vue(),
+      legacy(),
+      windi(),
+      env.VITE_GZIP === 'on' &&
+        compression({
+          algorithm: 'gzip',
+          ext: '.gz',
+        }),
+      env.VITE_BROTLI === 'on' &&
+        compression({
+          algorithm: 'brotliCompress',
+          ext: '.br',
+        }),
+    ].filter(Boolean) as Plugin[],
     resolve: {
       alias: {
         '@': '/src',
