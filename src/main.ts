@@ -4,7 +4,9 @@ import router from './router';
 import store from './store';
 import global from './plugins/global';
 
+import '@icon-park/vue-next/styles/index.css';
 import 'windi.css';
+import './main.css';
 
 if (import.meta.env.VITE_APP_MOCK === 'on') {
   import('./mock').then(({ makeServer }) => {
