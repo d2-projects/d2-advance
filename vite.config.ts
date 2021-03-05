@@ -11,8 +11,8 @@ export default defineConfig(({ mode }) => {
     base: env.VITE_BASE_URL,
     plugins: [
       vue(),
-      legacy(),
       windi(),
+      legacy(),
       env.VITE_GZIP === 'on' &&
         compression({
           algorithm: 'gzip',
