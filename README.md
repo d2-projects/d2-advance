@@ -47,6 +47,9 @@ yarn release
 yarn test:unit
 ```
 
+### Customize configuration
+See [Vite Configuration Reference](https://vitejs.dev/config/).
+
 ## License
 
 MIT © [CNine](https://github.com/Aysnine/)
