@@ -39,7 +39,7 @@
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
     "standard-version": "^9.1.1",
-    "typescript": "~4.2.2",
+    "typescript": "~4.2.3",
     "vite": "^2.0.5",
     "vite-plugin-compression": "^0.2.3",
     "vite-plugin-windicss": "^0.6.5",
