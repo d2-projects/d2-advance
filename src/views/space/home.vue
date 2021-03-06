@@ -1,25 +1,22 @@
 <template>
-  <div :class="{ dark: darkMode }" class="font-sans antialiased">
+  <div :class="{ dark: darkMode }">
     <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
       <nav
-        class="bg-white border-b border-gray-100 dark:border-gray-700 dark:bg-gray-800"
+        class="bg-white border-b border-gray-100 text-gray-700 dark:border-gray-700 dark:bg-gray-800"
       >
         <!-- Primary Navigation Menu -->
         <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div class="flex justify-between h-16">
             <div class="flex">
               <!-- Logo -->
-              <router-link
+              <span
                 :to="$RoutePath.SPACE_HOME"
-                class="flex items-center flex-shrink-0 space-x-2"
+                class="flex items-center flex-shrink-0 space-x-2 select-none"
               >
-                <img
-                  class="block w-auto h-9"
-                  src="@/assets/logo.svg"
-                  alt="logo"
-                />
-                <span class="font-bold dark:text-gray-200">Workspace</span>
-              </router-link>
+                <span class="font-bold dark:text-gray-200 text-2xl"
+                  >Workspace</span
+                >
+              </span>
               <!-- Navigation Links -->
               <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                 <router-link
@@ -32,15 +29,8 @@
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
-              <router-link
-                class="p-2 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md dark:text-gray-200 dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-500 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700 active:bg-gray-50"
-                :to="$RoutePath.HOME"
-              >
-                back to home
-              </router-link>
-
               <button
-                class="p-2 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md dark:text-gray-200 dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-700 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700 active:bg-gray-50"
+                class="p-2 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md dark:text-gray-500 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-700 dark:hover:text-gray-200 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-700 active:bg-gray-100"
                 @click="darkMode = !darkMode"
               >
                 <svg
@@ -59,15 +49,8 @@
             </div>
 
             <div class="flex items-center -mr-2 sm:hidden">
-              <router-link
-                class="p-2 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md dark:text-gray-200 dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-700 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700 active:bg-gray-50"
-                :to="$RoutePath.HOME"
-              >
-                back to home
-              </router-link>
-
               <button
-                class="p-2 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md dark:text-gray-200 dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-700 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700 active:bg-gray-50"
+                class="p-2 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md dark:text-gray-500 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-700 dark:hover:text-gray-200 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-700 active:bg-gray-100"
                 @click="darkMode = !darkMode"
               >
                 <svg
@@ -114,7 +97,10 @@
           </div>
         </div>
 
-        <div v-show="mobileMenu" class="sm:hidden border-t border-gray-100">
+        <div
+          v-show="mobileMenu"
+          class="sm:hidden border-t dark:border-gray-700"
+        >
           <div class="pt-2 pb-3 space-y-1">
             <div>
               <a
