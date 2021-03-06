@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0-9](https://github.com/d2-projects/d2-advance/compare/v2.1.0-8...v2.1.0-9) (2021-03-06)
+
+
+### Features
+
+* **admin:** better dark mode ([91fabbb](https://github.com/d2-projects/d2-advance/commit/91fabbb3274bbba7f434c2bcae6dbc12a06171eb))
+
 ## [2.1.0-8](https://github.com/d2-projects/d2-advance/compare/v2.1.0-7...v2.1.0-8) (2021-03-06)
 
 
