@@ -1,23 +1,6 @@
-<!--
-  Thanks https://github.com/tailwindcomponents/dashboard-template
--->
-
 <template>
-  <div class="flex h-screen bg-gray-200">
-    <!-- sidebar mobile mask -->
-    <div
-      :class="sidebarOpen ? 'block' : 'hidden'"
-      class="fixed z-20 inset-0 bg-black opacity-50 transition-opacity lg:hidden"
-      @click="sidebarOpen = false"
-    ></div>
-
-    <!-- sidebar -->
-    <aside
-      :class="
-        sidebarOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'
-      "
-      class="fixed z-30 inset-y-0 left-0 w-64 transition duration-150 transform overflow-y-auto bg-gray-900 lg:translate-x-0 lg:static lg:inset-0"
-    >
+  <admin-layout v-model:sidebarOpen="sidebarOpen">
+    <template #sidebar>
       <!-- sidebar head -->
       <div class="flex flex-col items-center justify-center mt-8 select-none">
         <div class="flex items-center">
@@ -25,142 +8,118 @@
           <span class="text-white text-2xl mx-2 font-semibold">Admin</span>
         </div>
         <p class="mt-2 text-sm text-gray-500 font-mono">An elegant dashboard</p>
-        <router-link
-          :to="$RoutePath.HOME"
-          class="mt-4 text-blue-600 hover:underline"
-        >
-          back to home
-        </router-link>
       </div>
 
       <!-- sidebar menu -->
       <router-view name="SidebarMenu" />
-    </aside>
+    </template>
 
-    <main class="flex-1 flex flex-col overflow-hidden">
-      <header
-        class="flex justify-between items-center py-4 px-6 bg-white shadow z-10"
-      >
-        <div class="flex items-center">
+    <template #header>
+      <div class="flex items-center justify-end space-x-6">
+        <div class="relative">
           <button
-            class="text-gray-500 focus:outline-none lg:hidden"
-            @click="sidebarOpen = true"
+            v-if="notificationUnread"
+            class="flex text-gray-600 focus:outline-none"
+            @click="notificationDropdownOpen = !notificationDropdownOpen"
           >
-            <icon-hamburger-button class="text-2xl" />
-          </button>
-        </div>
-
-        <div class="flex items-center space-x-6">
-          <div class="relative">
-            <button
+            <icon-remind class="text-2xl" />
+            <span
               v-if="notificationUnread"
-              class="flex text-gray-600 focus:outline-none"
+              class="absolute -top-1 -right-1 text-center overflow-hidden w-4 h-4 text-xs bg-red-400 text-white rounded-lg"
+              >{{ notificationUnread > 9 ? '+' : notificationUnread }}</span
+            >
+          </button>
+
+          <router-link
+            v-else
+            :to="$RoutePath.ADMIN_NOTIFICATIONS"
+            class="flex text-gray-600 focus:outline-none"
+          >
+            <icon-remind class="text-2xl" />
+          </router-link>
+
+          <div
+            v-show="notificationDropdownOpen"
+            class="fixed inset-0 h-full w-full z-10"
+            @click="notificationDropdownOpen = false"
+          ></div>
+          <div
+            v-show="notificationDropdownOpen"
+            class="absolute right-0 mt-2 bg-white rounded-lg shadow-xl overflow-hidden z-10 w-80 border-t-2"
+          >
+            <ul
+              v-if="notifications.length > 0"
               @click="notificationDropdownOpen = !notificationDropdownOpen"
             >
-              <icon-remind class="text-2xl" />
-              <span
-                v-if="notificationUnread"
-                class="absolute -top-1 -right-1 text-center overflow-hidden w-4 h-4 text-xs bg-red-400 text-white rounded-lg"
-                >{{ notificationUnread > 9 ? '+' : notificationUnread }}</span
-              >
-            </button>
-
-            <router-link
-              v-else
-              :to="$RoutePath.ADMIN_NOTIFICATIONS"
-              class="flex text-gray-600 focus:outline-none"
-            >
-              <icon-remind class="text-2xl" />
-            </router-link>
-
-            <div
-              v-show="notificationDropdownOpen"
-              class="fixed inset-0 h-full w-full z-10"
-              @click="notificationDropdownOpen = false"
-            ></div>
-            <div
-              v-show="notificationDropdownOpen"
-              class="absolute right-0 mt-2 bg-white rounded-lg shadow-xl overflow-hidden z-10 w-80 border-t-2"
-            >
-              <ul
-                v-if="notifications.length > 0"
-                @click="notificationDropdownOpen = !notificationDropdownOpen"
-              >
-                <li
-                  v-for="{ id, message, timestamp } in notifications"
-                  :key="id"
+              <li v-for="{ id, message, timestamp } in notifications" :key="id">
+                <router-link
+                  :to="{
+                    name: $RouteName.ADMIN_NOTIFICATION_DETAIL,
+                    params: { id },
+                  }"
+                  class="flex items-center px-4 py-3 text-gray-600 hover:text-white hover:bg-blue-600 -mx-2"
                 >
-                  <router-link
-                    :to="{
-                      name: $RouteName.ADMIN_NOTIFICATION_DETAIL,
-                      params: { id },
-                    }"
-                    class="flex items-center px-4 py-3 text-gray-600 hover:text-white hover:bg-blue-600 -mx-2"
-                  >
-                    <p class="text-sm mx-2">
-                      {{ message }} <span class="font-bold">·</span>
-                      {{ fromAgo(timestamp) }}
-                    </p>
-                  </router-link>
-                </li>
-              </ul>
-              <div v-else class="px-4 py-3 text-gray-400 text-center italic">
-                Empty
-              </div>
+                  <p class="text-sm mx-2">
+                    {{ message }} <span class="font-bold">·</span>
+                    {{ fromAgo(timestamp) }}
+                  </p>
+                </router-link>
+              </li>
+            </ul>
+            <div v-else class="px-4 py-3 text-gray-400 text-center italic">
+              Empty
             </div>
           </div>
-
-          <div class="relative">
-            <button
-              class="relative block h-8 w-8 rounded-full overflow-hidden ring-gray-300 ring-2 ring-offset-1 focus:outline-none"
-              @click="accountDropdownOpen = !accountDropdownOpen"
-            >
-              <icon-user class="text-3xl text-gray-600" />
-            </button>
-
-            <div
-              v-show="accountDropdownOpen"
-              class="fixed inset-0 h-full w-full z-10"
-              @click="accountDropdownOpen = false"
-            ></div>
-            <nav
-              v-show="accountDropdownOpen"
-              class="absolute right-0 mt-2 w-48 bg-white rounded-md overflow-hidden shadow-xl z-10 border-t-2"
-              @click="accountDropdownOpen = !accountDropdownOpen"
-            >
-              <router-link
-                :to="$RoutePath.ADMIN_PROFILE"
-                class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-600 hover:text-white"
-                >Profile</router-link
-              >
-              <a
-                class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-600 hover:text-white"
-                @click="handleClickLogout"
-                >Logout</a
-              >
-            </nav>
-          </div>
         </div>
-      </header>
-      <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
-        <router-view />
-      </main>
-    </main>
-  </div>
+
+        <div class="relative">
+          <button
+            class="relative block h-8 w-8 rounded-full overflow-hidden ring-gray-300 ring-2 ring-offset-1 focus:outline-none"
+            @click="accountDropdownOpen = !accountDropdownOpen"
+          >
+            <icon-user class="text-3xl text-gray-600" />
+          </button>
+
+          <div
+            v-show="accountDropdownOpen"
+            class="fixed inset-0 h-full w-full z-10"
+            @click="accountDropdownOpen = false"
+          ></div>
+          <nav
+            v-show="accountDropdownOpen"
+            class="absolute right-0 mt-2 w-48 bg-white rounded-md overflow-hidden shadow-xl z-10 border-t-2"
+            @click="accountDropdownOpen = !accountDropdownOpen"
+          >
+            <router-link
+              :to="$RoutePath.ADMIN_PROFILE"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-600 hover:text-white"
+              >Profile</router-link
+            >
+            <a
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-600 hover:text-white"
+              @click="handleClickLogout"
+              >Logout</a
+            >
+          </nav>
+        </div>
+      </div>
+    </template>
+
+    <template #default>
+      <router-view />
+    </template>
+  </admin-layout>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import { RoutePath } from '@/constants/route';
 import { fromAgo } from '@/utils/time';
-import {
-  Remind as IconRemind,
-  HamburgerButton as IconHamburgerButton,
-  User as IconUser,
-} from '@icon-park/vue-next';
+import AdminLayout from '@/components/layout/admin.vue';
+import { Remind as IconRemind, User as IconUser } from '@icon-park/vue-next';
 
 export default defineComponent({
-  components: { IconRemind, IconHamburgerButton, IconUser },
+  components: { IconRemind, IconUser, AdminLayout },
   setup() {
     const notificationUnread = ref<number>(1);
     const notifications = ref<
