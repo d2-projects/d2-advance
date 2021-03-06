@@ -26,7 +26,7 @@
 
       <main class="flex-1 flex flex-col overflow-hidden">
         <header
-          class="flex justify-between items-center py-4 px-6 bg-white dark:bg-gray-800 border-b dark:border-gray-700 z-10"
+          class="flex justify-between items-center py-4 px-6 bg-white dark:bg-gray-900 border-b dark:border-gray-700 z-10"
         >
           <div class="flex items-center">
             <button
