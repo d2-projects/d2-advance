@@ -6,10 +6,10 @@
           :active="isActive"
           :href="href"
           :class="[
-            'flex items-center py-2 px-6 h-14 transition-all',
+            'flex items-center py-2 px-6 h-12 transition-all rounded m-2',
             isActive || $route.path.startsWith(to + '/')
-              ? 'bg-gray-200 dark:bg-gray-700 bg-opacity-25 dark:text-gray-100'
-              : 'text-gray-500 hover:bg-gray-200 dark:hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-700 dark:hover:text-gray-100',
+              ? 'bg-gray-300 dark:bg-gray-700 bg-opacity-25 dark:text-gray-200'
+              : 'text-gray-500 hover:bg-gray-300 dark:hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-700 dark:hover:text-gray-200',
           ]"
           @click="navigate"
         >

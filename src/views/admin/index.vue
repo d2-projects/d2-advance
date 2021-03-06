@@ -8,13 +8,6 @@
           <span class="dark:text-white text-2xl mx-2 font-semibold">Admin</span>
         </div>
         <p class="mt-2 text-sm text-gray-500 font-mono">An elegant dashboard</p>
-
-        <router-link
-          :to="$RoutePath.HOME"
-          class="mt-4 text-blue-600 hover:underline"
-        >
-          back to home
-        </router-link>
       </div>
 
       <!-- sidebar menu -->
