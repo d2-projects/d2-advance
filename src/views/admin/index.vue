@@ -1,13 +1,20 @@
 <template>
-  <admin-layout v-model:sidebarOpen="sidebarOpen">
+  <admin-layout v-model:sidebarOpen="sidebarOpen" v-model:darkMode="darkMode">
     <template #sidebar>
       <!-- sidebar head -->
       <div class="flex flex-col items-center justify-center mt-8 select-none">
         <div class="flex items-center">
           <!-- <img class="h-8 w-8" src="@/assets/logo.svg" /> -->
-          <span class="text-white text-2xl mx-2 font-semibold">Admin</span>
+          <span class="dark:text-white text-2xl mx-2 font-semibold">Admin</span>
         </div>
         <p class="mt-2 text-sm text-gray-500 font-mono">An elegant dashboard</p>
+
+        <router-link
+          :to="$RoutePath.HOME"
+          class="mt-4 text-blue-600 hover:underline"
+        >
+          back to home
+        </router-link>
       </div>
 
       <!-- sidebar menu -->
@@ -45,7 +52,7 @@
           ></div>
           <div
             v-show="notificationDropdownOpen"
-            class="absolute right-0 mt-2 bg-white rounded-lg shadow-xl overflow-hidden z-10 w-80 border-t-2"
+            class="absolute right-0 mt-2 bg-white dark:bg-gray-800 rounded-lg shadow-xl border dark:border-gray-900 overflow-hidden z-10 w-80"
           >
             <ul
               v-if="notifications.length > 0"
@@ -57,7 +64,7 @@
                     name: $RouteName.ADMIN_NOTIFICATION_DETAIL,
                     params: { id },
                   }"
-                  class="flex items-center px-4 py-3 text-gray-600 hover:text-white hover:bg-blue-600 -mx-2"
+                  class="flex items-center px-4 py-3 hover:text-white hover:bg-blue-600 -mx-2"
                 >
                   <p class="text-sm mx-2">
                     {{ message }} <span class="font-bold">·</span>
@@ -74,7 +81,7 @@
 
         <div class="relative">
           <button
-            class="relative block h-8 w-8 rounded-full overflow-hidden ring-gray-300 ring-2 ring-offset-1 focus:outline-none"
+            class="relative block h-8 w-8 rounded-full overflow-hidden focus:outline-none"
             @click="accountDropdownOpen = !accountDropdownOpen"
           >
             <icon-user class="text-3xl text-gray-600" />
@@ -87,16 +94,16 @@
           ></div>
           <nav
             v-show="accountDropdownOpen"
-            class="absolute right-0 mt-2 w-48 bg-white rounded-md overflow-hidden shadow-xl z-10 border-t-2"
+            class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md overflow-hidden shadow-xl z-10 border dark:border-gray-900"
             @click="accountDropdownOpen = !accountDropdownOpen"
           >
             <router-link
               :to="$RoutePath.ADMIN_PROFILE"
-              class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-600 hover:text-white"
+              class="block px-4 py-2 text-sm hover:bg-blue-600 hover:text-white"
               >Profile</router-link
             >
             <a
-              class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-600 hover:text-white"
+              class="block px-4 py-2 text-sm hover:bg-blue-600 hover:text-white"
               @click="handleClickLogout"
               >Logout</a
             >
@@ -134,6 +141,7 @@ export default defineComponent({
     ]);
 
     const sidebarOpen = ref(false);
+    const darkMode = ref(false);
     const accountDropdownOpen = ref(false);
     const notificationDropdownOpen = ref(false);
 
@@ -142,6 +150,7 @@ export default defineComponent({
       notificationUnread,
 
       sidebarOpen,
+      darkMode,
       accountDropdownOpen,
       notificationDropdownOpen,
     };
