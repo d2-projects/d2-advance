@@ -8,8 +8,8 @@
           :class="[
             'flex items-center py-2 px-6 h-14 transition-all',
             isActive || $route.path.startsWith(to + '/')
-              ? 'bg-gray-700 bg-opacity-25 text-gray-100'
-              : 'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100',
+              ? 'bg-gray-200 dark:bg-gray-700 bg-opacity-25 dark:text-gray-100'
+              : 'text-gray-500 hover:bg-gray-200 dark:hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-700 dark:hover:text-gray-100',
           ]"
           @click="navigate"
         >

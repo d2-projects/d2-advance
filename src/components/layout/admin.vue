@@ -5,7 +5,7 @@
 <template>
   <div :class="{ dark: darkMode }">
     <div
-      class="flex h-screen bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200"
+      class="flex h-screen bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-200"
     >
       <!-- sidebar mobile mask -->
       <div
@@ -19,14 +19,14 @@
         :class="
           sidebarOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'
         "
-        class="fixed z-30 inset-y-0 left-0 w-64 transition duration-150 transform overflow-y-auto bg-white dark:bg-gray-800 border-r dark:border-gray-900 lg:translate-x-0 lg:static lg:inset-0"
+        class="fixed z-30 inset-y-0 left-0 w-64 transition duration-150 transform overflow-y-auto bg-white dark:bg-gray-800 border-r dark:border-gray-700 lg:translate-x-0 lg:static lg:inset-0"
       >
         <slot name="sidebar"></slot>
       </aside>
 
       <main class="flex-1 flex flex-col overflow-hidden">
         <header
-          class="flex justify-between items-center py-4 px-6 bg-white dark:bg-gray-800 border-b dark:border-gray-900 z-10"
+          class="flex justify-between items-center py-4 px-6 bg-white dark:bg-gray-800 border-b dark:border-gray-700 z-10"
         >
           <div class="flex items-center">
             <button

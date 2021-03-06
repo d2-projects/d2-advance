@@ -2,7 +2,7 @@
   <nav class="mt-10 select-none">
     <router-link
       :to="$RoutePath.ADMIN_DASHBOARD"
-      class="flex items-center m-3 px-3 py-2 bg-gray-700 bg-opacity-25 text-gray-500 rounded-md space-x-2 transition-all hover:text-gray-100"
+      class="flex items-center m-3 px-3 py-2 bg-gray-200 dark:bg-gray-700 bg-opacity-25 text-gray-500 rounded-md space-x-2 transition-all hover:text-gray-700 hover:text-gray-200"
     >
       <icon-left class="text-lg" />
       <span class="flex-1">Back to Dashboard</span>
@@ -15,8 +15,8 @@
           :class="[
             'flex items-center py-2 px-6 h-14 transition-all',
             isActive || $route.path.startsWith(to + '/')
-              ? 'bg-gray-700 bg-opacity-25 text-gray-100'
-              : 'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100',
+              ? 'bg-gray-200 dark:bg-gray-700 bg-opacity-25 dark:text-gray-200'
+              : 'text-gray-500 hover:bg-gray-200 dark:hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-700 dark:hover:text-gray-200',
           ]"
           @click="navigate"
         >
