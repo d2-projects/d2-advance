@@ -5,7 +5,7 @@ interface CustomEnvVariables {
   VITE_GZIP?: 'on' | 'off';
   VITE_BROTLI?: 'on' | 'off';
 
-  // VITE_XXX?: string;
+  VITE_API_BASE_URL: string;
   // ... more here and start with 'VITE_'
 }
 

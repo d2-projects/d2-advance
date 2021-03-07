@@ -60,7 +60,7 @@ interface CustomEnvVariables {
   VITE_GZIP?: 'on' | 'off'; // is output .gz
   VITE_BROTLI?: 'on' | 'off'; // is output .br
 
-  // VITE_XXX?: string;
+  VITE_API_BASE_URL: string;
   // ... more here and start with 'VITE_'
 }
 ```
@@ -73,6 +73,8 @@ VITE_MOCK=on
 VITE_SOURCE_MAP=off
 VITE_GZIP=on
 VITE_BROTLI=on
+
+VITE_API_BASE_URL=/api
 ```
 
 ### Customize configuration
