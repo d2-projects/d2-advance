@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0-11](https://github.com/d2-projects/d2-advance/compare/v2.1.0-10...v2.1.0-11) (2021-03-07)
+
+
+### Features
+
+* api demo ([bc3c7f6](https://github.com/d2-projects/d2-advance/commit/bc3c7f61a83ecf32618f77cf0d1bc6054da2cb36))
+* **env:** add VITE_API_BASE_URL ([e2e443f](https://github.com/d2-projects/d2-advance/commit/e2e443f45ee39b8aefe48f9d80f07a2ad84d49d6))
+
+
+### Bug Fixes
+
+* mock strategy ([8232279](https://github.com/d2-projects/d2-advance/commit/8232279dcda30ea606098c47e63e1031c3ae066c))
+* **plugins/global:** inject `$RouteMap` to vue global ([25bcf80](https://github.com/d2-projects/d2-advance/commit/25bcf809e2347331ac928bfda98b55b7b361f450))
+
 ## [2.1.0-10](https://github.com/d2-projects/d2-advance/compare/v2.1.0-9...v2.1.0-10) (2021-03-07)
 
 
