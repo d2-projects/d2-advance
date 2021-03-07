@@ -1,19 +1,18 @@
-import 'vite';
-declare module 'vite' {
-  export function loadEnv(
-    mode: string,
-    root: string,
-    prefix?: string
-  ): CustomEnvVariables;
+interface CustomEnvVariables {
+  VITE_BASE_URL: string;
+  VITE_MOCK?: 'on' | 'off';
+  VITE_SOURCE_MAP?: 'on' | 'off';
+  VITE_GZIP?: 'on' | 'off';
+  VITE_BROTLI?: 'on' | 'off';
 
-  export interface CustomEnvVariables {
-    VITE_BASE_URL: string;
-    VITE_MOCK?: 'on' | 'off';
-    VITE_SOURCE_MAP?: 'on' | 'off';
-    VITE_GZIP?: 'on' | 'off';
-    VITE_BROTLI?: 'on' | 'off';
+  // VITE_XXX?: string;
+  // ... more here and start with 'VITE_'
+}
 
-    // VITE_XXX?: string;
-    // ... more here and start with 'VITE_'
-  }
+// https://stackoverflow.com/questions/66039933/typescript-types-for-import-meta-env
+interface ImportMetaEnv extends CustomEnvVariables {
+  /**
+   * ! DON'T USE ME
+   */
+  __: unknown;
 }

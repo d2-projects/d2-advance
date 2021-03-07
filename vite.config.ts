@@ -5,7 +5,7 @@ import windi from 'vite-plugin-windicss';
 import compression from 'vite-plugin-compression';
 
 export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, __dirname);
+  const env = (loadEnv(mode, __dirname) as unknown) as CustomEnvVariables;
 
   return {
     base: env.VITE_BASE_URL,
