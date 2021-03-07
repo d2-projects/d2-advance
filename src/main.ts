@@ -8,10 +8,13 @@ import '@icon-park/vue-next/styles/index.css';
 import 'windi.css';
 import './main.css';
 
+const app = createApp(App).use(store).use(router).use(global);
+
 if (import.meta.env.VITE_HTTP_MOCK === 'on') {
   import('./mock').then(({ makeServer }) => {
     makeServer({ environment: import.meta.env.MODE });
+    app.mount('#app');
   });
+} else {
+  app.mount('#app');
 }
-
-createApp(App).use(store).use(router).use(global).mount('#app');
