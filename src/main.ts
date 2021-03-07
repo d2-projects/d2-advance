@@ -8,7 +8,7 @@ import '@icon-park/vue-next/styles/index.css';
 import 'windi.css';
 import './main.css';
 
-if (import.meta.env.VITE_APP_MOCK === 'on') {
+if (import.meta.env.VITE_HTTP_MOCK === 'on') {
   import('./mock').then(({ makeServer }) => {
     makeServer({ environment: import.meta.env.MODE });
   });

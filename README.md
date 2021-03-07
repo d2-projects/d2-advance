@@ -55,7 +55,7 @@ type in ` global.d.ts`:
 // ...
 interface CustomEnvVariables {
   VITE_BASE_URL: string;
-  VITE_MOCK?: 'on' | 'off'; // is build with mock
+  VITE_HTTP_MOCK?: 'on' | 'off'; // is build with mock
   VITE_SOURCE_MAP?: 'on' | 'off'; // is output .map
   VITE_GZIP?: 'on' | 'off'; // is output .gz
   VITE_BROTLI?: 'on' | 'off'; // is output .br
@@ -69,7 +69,7 @@ default values in `.env`:
 
 ```
 VITE_BASE_URL=./
-VITE_MOCK=on
+VITE_HTTP_MOCK=on
 VITE_SOURCE_MAP=off
 VITE_GZIP=on
 VITE_BROTLI=on

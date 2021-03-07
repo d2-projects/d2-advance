@@ -1,6 +1,6 @@
 interface CustomEnvVariables {
   VITE_BASE_URL: string;
-  VITE_MOCK?: 'on' | 'off';
+  VITE_HTTP_MOCK?: 'on' | 'off';
   VITE_SOURCE_MAP?: 'on' | 'off';
   VITE_GZIP?: 'on' | 'off';
   VITE_BROTLI?: 'on' | 'off';
