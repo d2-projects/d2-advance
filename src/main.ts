@@ -5,7 +5,7 @@ import store from './store';
 import global from './plugins/global';
 
 import '@icon-park/vue-next/styles/index.css';
-import 'windi.css';
+import '@virtual/windi.css';
 import './main.css';
 
 const app = createApp(App).use(store).use(router).use(global);
