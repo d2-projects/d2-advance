@@ -19,6 +19,7 @@ Preview 👉 [https://d2.pub/d2-advance/preview](https://d2.pub/d2-advance/previ
 
 -   Git
 -   NodeJS 12+
+-   VSCode (optional, recommended)
 
 ``` bash
 # setup
