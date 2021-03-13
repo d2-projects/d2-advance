@@ -1,10 +1,10 @@
 <template>
-  <main class="min-h-screen flex flex-col justify-center">
+  <main class="flex flex-col min-h-screen justify-center">
     <h1
-      class="text-center text-4xl space-x-4 mb-5 font-sans select-none font-bold"
+      class="font-sans font-bold space-x-4 text-center mb-5 text-4xl select-none"
     >
       <img
-        class="h-10 w-10 inline-block align-bottom rounded-full"
+        class="rounded-full h-10 w-10 inline-block align-bottom"
         src="@/assets/logo.svg"
         alt="logo"
       />
@@ -13,15 +13,15 @@
     </h1>
     <nav>
       <ul
-        class="flex flex-row items-stretch justify-center flex-wrap box-border p-2 font-sans select-none"
+        class="flex flex-row flex-wrap font-sans p-2 items-stretch justify-center box-border select-none"
       >
         <li class="m-2">
           <router-link
             :to="$RoutePath.ADMIN"
-            class="text-white p-5 rounded-md bg-blue-500 space-x-4 bg-gradient-to-br from-blue-400 to-blue-600 hover:bg-blue-600 shadow-md hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all w-72 min-h-full flex flex-row items-center"
+            class="bg-gradient-to-br rounded-md flex flex-row min-h-full space-x-4 bg-blue-500 from-blue-400 to-blue-600 shadow-md text-white p-5 transition-all w-72 items-center hover:bg-blue-600 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-300"
           >
             <icon-form-one
-              class="text-blue-500 text-4xl p-2 rounded-xl bg-white shadow-lg"
+              class="bg-white rounded-xl shadow-lg p-2 text-blue-500 text-4xl"
             />
             <div>
               <p class="font-semibold text-lg">Admin</p>
@@ -32,20 +32,20 @@
         <li class="m-2">
           <router-link
             :to="$RoutePath.SPACE"
-            class="text-white p-5 rounded-md bg-green-500 space-x-4 bg-gradient-to-br from-green-400 to-green-600 hover:bg-green-600 shadow-md hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-green-300 transition-all w-72 min-h-full flex flex-row items-center"
+            class="bg-gradient-to-br rounded-md flex flex-row min-h-full space-x-4 bg-green-500 from-green-400 to-green-600 shadow-md text-white p-5 transition-all w-72 items-center hover:bg-green-600 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-green-300"
           >
             <icon-waterfalls-v
-              class="text-green-500 text-4xl p-2 rounded-xl bg-white shadow-lg"
+              class="bg-white rounded-xl shadow-lg p-2 text-green-500 text-4xl"
             />
             <div>
               <p class="font-semibold text-lg">Space</p>
-              <p class="truncate">An personl workspace</p>
+              <p class="truncate">An personal workspace</p>
             </div>
           </router-link>
         </li>
       </ul>
     </nav>
-    <div class="text-center mt-5">
+    <div class="mt-5 text-center">
       <a
         href="http://github.com/d2-projects/d2-advance"
         target="_blank"
