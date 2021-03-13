@@ -7,11 +7,38 @@
 > Advanced, colorful front-end integration practice. be inspired by D2Admin 🧗
 
 Preview 👉 [https://d2.pub/d2-advance/preview](https://d2.pub/d2-advance/preview)
+ 
+Public Repositories: [Github](https://gitee.com/d2-projects/d2-advance) | [码云](https://gitee.com/d2-projects/d2-advance) (mirror)
 
-## Public Repositories
+## Goal
 
-*   [Github](https://gitee.com/d2-projects/d2-advance)
-*   [码云](https://gitee.com/d2-projects/d2-advance) (mirror)
+- Dark mode 🌛
+- Responsive 💻 📱
+- Less UI-Kit dependency
+- Lightweight and faster ⚡️
+
+## Integration
+
+-  ⚡️ [Vite](https://vitejs.dev/guide/), be faster than webpack.
+- 🖖 Vue3 ecosystem: [vue](https://v3.vuejs.org/)、[vue-router](https://next.router.vuejs.org/)、[vuex](https://vuex.vuejs.org/guide/)
+- Tailwind CSS class utils. By [Windi CSS](https://windicss.org/guide/features.html)
+- Typescript support：[volar](https://github.com/johnsoncodehk/volar)、[vue-tsc](https://github.com/johnsoncodehk/vue-tsc)
+- HTTP local mock. By [miragejs](https://miragejs.com/docs/main-concepts/route-handlers/)
+- HTTP request. By [axios](https://github.com/axios/axios)
+- [ESLint](https://eslint.org/) extends prettier and vue config
+- Git commit prompted. By [commitizen/cz-cli](https://github.com/commitizen/cz-cli)
+- Lint git commit message. By [commitlint](https://commitlint.js.org/)
+- Lint git staged files. By [lint-staged](https://github.com/okonet/lint-staged)
+- Git custom hooks. By [husky](https://typicode.github.io/husky/#/)
+- [Jest](https://jestjs.io/) for unit test. With [@testing-library/vue](https://github.com/testing-library/vue-testing-library) (TODO)
+- New version and changelog generation by [standard-version](https://github.com/conventional-changelog/standard-version)
+- Build with gzip and brotli output. by [vite-plugin-compression](https://github.com/anncwb/vite-plugin-compression)
+
+## Demo
+
+- Admin dashboard: `src/views/admin` (IN PROGRESS)
+- Workspace: `src/views/space`  (IN PROGRESS)
+- ...more. welcome to your [issues](https://github.com/d2-projects/d2-advance/issues/new)
 
 ## Getting Started
 
