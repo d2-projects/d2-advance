@@ -2,25 +2,25 @@
   <div :class="{ dark: darkMode }">
     <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
       <nav
-        class="bg-white border-b border-gray-100 text-gray-700 dark:border-gray-700 dark:bg-gray-800"
+        class="bg-white border-b border-gray-100 text-gray-700 dark:bg-gray-800 dark:border-gray-700"
       >
         <!-- Primary Navigation Menu -->
-        <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div class="flex justify-between h-16">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="flex h-16 justify-between">
             <div class="flex">
               <!-- Logo -->
               <span
                 :to="$RoutePath.SPACE_HOME"
-                class="flex items-center flex-shrink-0 space-x-2 select-none"
+                class="flex space-x-2 flex-shrink-0 items-center select-none"
               >
-                <span class="font-bold dark:text-gray-200 text-2xl"
+                <span class="font-bold text-2xl dark:text-gray-200"
                   >Workspace</span
                 >
               </span>
               <!-- Navigation Links -->
-              <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+              <div class="space-x-8 hidden sm:flex sm:-my-px sm:ml-10">
                 <router-link
-                  class="inline-flex items-center px-1 pt-1 text-sm font-medium leading-5 text-gray-900 transition duration-150 ease-in-out border-b-2 border-indigo-400 dark:border-indigo-300 dark:text-gray-200 focus:outline-none focus:border-indigo-700"
+                  class="font-medium border-b-2 border-indigo-400 text-sm px-1 pt-1 transition ease-in-out text-gray-900 leading-5 duration-150 inline-flex items-center dark:border-indigo-300 dark:text-gray-200 focus:outline-none focus:border-indigo-700"
                   :to="$RoutePath.SPACE_HOME"
                 >
                   Home
@@ -28,13 +28,13 @@
               </div>
             </div>
 
-            <div class="hidden sm:flex sm:items-center sm:ml-6">
+            <div class="hidden sm:flex sm:ml-6 sm:items-center">
               <button
-                class="p-2 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md dark:text-gray-500 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-700 dark:hover:text-gray-200 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-700 active:bg-gray-100"
+                class="bg-white border border-transparent rounded-md p-2 transition ease-in-out text-gray-500 duration-150 dark:bg-gray-800 dark:text-gray-500 hover:bg-gray-100 hover:text-gray-700 focus:outline-none focus:bg-gray-100 active:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-200 dark:focus:bg-gray-700"
                 @click="darkMode = !darkMode"
               >
                 <svg
-                  class="w-5 h-5"
+                  class="h-5 w-5"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -48,13 +48,13 @@
               </button>
             </div>
 
-            <div class="flex items-center -mr-2 sm:hidden">
+            <div class="flex -mr-2 items-center sm:hidden">
               <button
-                class="p-2 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md dark:text-gray-500 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-700 dark:hover:text-gray-200 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-700 active:bg-gray-100"
+                class="bg-white border border-transparent rounded-md p-2 transition ease-in-out text-gray-500 duration-150 dark:bg-gray-800 dark:text-gray-500 hover:bg-gray-100 hover:text-gray-700 focus:outline-none focus:bg-gray-100 active:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-200 dark:focus:bg-gray-700"
                 @click="darkMode = !darkMode"
               >
                 <svg
-                  class="w-5 h-5"
+                  class="h-5 w-5"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -68,11 +68,11 @@
               </button>
 
               <button
-                class="inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md dark:text-gray-200 hover:text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-700 focus:text-gray-500"
+                class="rounded-md p-2 transition ease-in-out text-gray-400 duration-150 inline-flex items-center justify-center dark:text-gray-200 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:bg-gray-100 focus:text-gray-500 dark:hover:bg-gray-700 dark:focus:bg-gray-700"
                 @click="mobileMenu = !mobileMenu"
               >
                 <svg
-                  class="w-6 h-6"
+                  class="h-6 w-6"
                   stroke="currentColor"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -99,12 +99,12 @@
 
         <div
           v-show="mobileMenu"
-          class="sm:hidden border-t dark:border-gray-700"
+          class="border-t sm:hidden dark:border-gray-700"
         >
-          <div class="pt-2 pb-3 space-y-1">
+          <div class="space-y-1 pt-2 pb-3">
             <div>
               <a
-                class="block py-2 pl-3 pr-4 text-base font-medium text-indigo-700 transition duration-150 ease-in-out border-l-4 border-indigo-400 dark:border-indigo-300 dark:text-indigo-200 bg-indigo-50 dark:bg-indigo-800 focus:outline-none focus:text-indigo-800 focus:bg-indigo-100 focus:border-indigo-700"
+                class="font-medium bg-indigo-50 border-l-4 border-indigo-400 text-base py-2 pr-4 pl-3 transition ease-in-out text-indigo-700 duration-150 block dark:bg-indigo-800 dark:border-indigo-300 dark:text-indigo-200 focus:outline-none focus:bg-indigo-100 focus:border-indigo-700 focus:text-indigo-800"
                 href="#"
               >
                 Home
@@ -115,9 +115,9 @@
       </nav>
 
       <header class="bg-white shadow dark:bg-gray-800">
-        <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
           <h2
-            class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200"
+            class="font-semibold text-xl leading-tight text-gray-800 dark:text-gray-200"
           >
             Home
           </h2>
@@ -128,11 +128,11 @@
         <div class="py-12">
           <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div
-              class="overflow-hidden bg-white shadow-xl dark:bg-gray-800 sm:rounded-lg"
+              class="bg-white shadow-xl overflow-hidden sm:rounded-lg dark:bg-gray-800"
             >
               <div>
                 <div
-                  class="p-6 bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700 sm:px-20"
+                  class="bg-white border-b border-gray-200 p-6 sm:px-20 dark:bg-gray-800 dark:border-gray-700"
                 >
                   <div class="mt-8 text-2xl dark:text-gray-200">
                     TODO --- Welcome to your workspace!

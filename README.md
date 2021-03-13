@@ -37,6 +37,9 @@ yarn preview
 yarn lint
 yarn lint --fix
 
+# check type
+yarn type
+
 # git commit by commitizen
 yarn commit
 

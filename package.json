@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite build && vite preview",
     "lint": "eslint . --ext .js,.ts,.vue",
+    "type": "vue-tsc",
     "commit": "git-cz",
     "release": "standard-version",
     "test:unit": "echo TODO",
@@ -44,7 +45,8 @@
     "vite": "^2.0.5",
     "vite-plugin-compression": "^0.2.3",
     "vite-plugin-windicss": "^0.8.2",
-    "vite-tsconfig-paths": "^2.3.0"
+    "vite-tsconfig-paths": "^2.3.0",
+    "vue-tsc": "^0.0.8"
   },
   "lint-staged": {
     "*.{js,jsx,vue,ts,tsx}": "eslint --fix "
