@@ -4,6 +4,7 @@
     "dbaeumer.vscode-eslint",
     "voorjaar.windicss-intellisense",
     "csstools.postcss",
-    "aaron-bond.better-comments"
+    "aaron-bond.better-comments",
+    "streetsidesoftware.code-spell-checker"
   ]
 }
