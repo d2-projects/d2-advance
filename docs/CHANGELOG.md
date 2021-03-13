@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0-15](https://github.com/d2-projects/d2-advance/compare/v2.1.0-14...v2.1.0-15) (2021-03-13)
+
 ## [2.1.0-14](https://github.com/d2-projects/d2-advance/compare/v2.1.0-13...v2.1.0-14) (2021-03-13)
 
 ## [2.1.0-13](https://github.com/d2-projects/d2-advance/compare/v2.1.0-12...v2.1.0-13) (2021-03-13)
