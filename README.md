@@ -23,6 +23,7 @@ Public Repositories: [Github](https://gitee.com/d2-projects/d2-advance) | [码�
 - 🖖 Vue3 ecosystem: [vue](https://v3.vuejs.org/)、[vue-router](https://next.router.vuejs.org/)、[vuex](https://vuex.vuejs.org/guide/)
 - Tailwind CSS class utils. By [Windi CSS](https://windicss.org/guide/features.html)
 - Typescript support：[volar](https://github.com/johnsoncodehk/volar)、[vue-tsc](https://github.com/johnsoncodehk/vue-tsc)
+- [IconPark](https://iconpark.bytedance.com/official) resource with [@icon-park/vue-next](https://github.com/bytedance/IconPark/blob/master/packages/vue-next/README.md)
 - HTTP local mock. By [miragejs](https://miragejs.com/docs/main-concepts/route-handlers/)
 - HTTP request. By [axios](https://github.com/axios/axios)
 - [ESLint](https://eslint.org/) extends prettier and vue config
