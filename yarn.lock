@@ -4422,10 +4422,10 @@ vite-plugin-windicss@^0.8.2:
     "@windicss/plugin-utils" "0.8.2"
     windicss "^2.4.0"
 
-vite-tsconfig-paths@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/vite-tsconfig-paths/-/vite-tsconfig-paths-2.1.0.tgz#3d8f80749f9c982a6934b25fd2d1290b48f15e51"
-  integrity sha512-SGCAtgg3PdadLsbCyDEOirlFa0bnw6EdtXbqqSyXb6gX769hA0CzTFpEj472j8LyiHnjXMr6SEwNDMADZdJxcg==
+vite-tsconfig-paths@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/vite-tsconfig-paths/-/vite-tsconfig-paths-2.3.0.tgz#5ecba15108a1f65cd3be86c140073c1c9428a02d"
+  integrity sha512-mAbbzsvMPEuxZtPxxUII8SnVoa4NsevYiCcpgjn5FtjiqYTXT/AsmNK0hXHSf+KQrNns8CoVLYycVg4U5HSo7g==
   dependencies:
     debug "^4.1.1"
     tsconfig-paths "^3.9.0"
