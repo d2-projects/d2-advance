@@ -36,8 +36,8 @@ Public Repositories: [Github](https://gitee.com/d2-projects/d2-advance) | [Á†Å‰∫
 
 ## Demo
 
-- Admin dashboard: `src/views/admin` (IN PROGRESS)
-- Workspace: `src/views/space`  (IN PROGRESS)
+- Admin `src/views/admin`: An elegant dashboard (IN PROGRESS)
+- Space `src/views/space`: An personal workspace (IN PROGRESS)
 - ...more. welcome to your [issues](https://github.com/d2-projects/d2-advance/issues/new)
 
 ## Getting Started
