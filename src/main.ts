@@ -4,7 +4,6 @@ import router from './router';
 import store from './store';
 import global from './plugins/global';
 
-import '@icon-park/vue-next/styles/index.css';
 import '@virtual/windi.css';
 import './main.css';
 
