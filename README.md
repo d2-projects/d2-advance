@@ -12,9 +12,9 @@ Public Repositories: [Github](https://gitee.com/d2-projects/d2-advance) | [码�
 
 ## Goal
 
+- Less is more
 - Dark mode 🌛
 - Responsive 💻 📱
-- Less UI-Kit dependency
 - Lightweight and faster ⚡️
 
 ## Integration
