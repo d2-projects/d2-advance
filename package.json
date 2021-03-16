@@ -46,7 +46,7 @@
     "vite-plugin-compression": "^0.2.3",
     "vite-plugin-windicss": "^0.8.2",
     "vite-tsconfig-paths": "^2.3.0",
-    "vue-tsc": "^0.0.11"
+    "vue-tsc": "^0.0.12"
   },
   "lint-staged": {
     "*.{js,jsx,vue,ts,tsx}": "eslint --fix "
