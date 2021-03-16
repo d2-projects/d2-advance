@@ -19,6 +19,8 @@ export const makeServer = ({ environment = 'development' } = {}) => {
       this.get('/users', (schema) => {
         return schema.users.all();
       });
+
+      this.passthrough();
     },
   });
 
