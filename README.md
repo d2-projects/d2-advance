@@ -21,20 +21,20 @@ Public Repositories: [Github](https://gitee.com/d2-projects/d2-advance) | [码�
 
 -  ⚡️ [Vite](https://vitejs.dev/guide/), be faster than webpack.
 - 🖖 Vue3 ecosystem: [vue](https://v3.vuejs.org/)、[vue-router](https://next.router.vuejs.org/)、[vuex](https://vuex.vuejs.org/guide/)
-- Tailwind CSS class utils. By [Windi CSS](https://windicss.org/guide/features.html)
-- Typescript support：[volar](https://github.com/johnsoncodehk/volar)、[vue-tsc](https://github.com/johnsoncodehk/vue-tsc)
+- Tailwind CSS class utils: [Windi CSS](https://windicss.org/guide/features.html)
+- Typescript support: [volar](https://github.com/johnsoncodehk/volar)、[vue-tsc](https://github.com/johnsoncodehk/vue-tsc)
 - [IconPark](https://iconpark.bytedance.com/official) resource with [@icon-park/vue-next](https://github.com/bytedance/IconPark/blob/master/packages/vue-next/README.md)
-- HTTP local mock. By [miragejs](https://miragejs.com/docs/main-concepts/route-handlers/)
-- HTTP request. By [axios](https://github.com/axios/axios)
+- HTTP local mock: [miragejs](https://miragejs.com/docs/main-concepts/route-handlers/)
+- HTTP request: [axios](https://github.com/axios/axios)
 - [ESLint](https://eslint.org/) extends prettier and vue config
-- Git commit prompted. By [commitizen/cz-cli](https://github.com/commitizen/cz-cli)
-- Lint git commit message. By [commitlint](https://commitlint.js.org/)
-- Lint git staged files. By [lint-staged](https://github.com/okonet/lint-staged)
-- Git custom hooks. By [husky](https://typicode.github.io/husky/#/)
-- [Jest](https://jestjs.io/) for unit test. With [@testing-library/vue](https://github.com/testing-library/vue-testing-library) (TODO)
-- New version and changelog generation by [standard-version](https://github.com/conventional-changelog/standard-version)
-- Build with gzip and brotli output. by [vite-plugin-compression](https://github.com/anncwb/vite-plugin-compression)
-- Visualize bundle. by [rollup-plugin-visualizer](https://github.com/btd/rollup-plugin-visualizer)
+- Git commit prompted: [commitizen/cz-cli](https://github.com/commitizen/cz-cli)
+- Lint git commit message: [commitlint](https://commitlint.js.org/)
+- Lint git staged files: [lint-staged](https://github.com/okonet/lint-staged)
+- Git custom hooks: [husky](https://typicode.github.io/husky/#/)
+- [Jest](https://jestjs.io/) for unit test with [@testing-library/vue](https://github.com/testing-library/vue-testing-library) (TODO)
+- New version and changelog generation: [standard-version](https://github.com/conventional-changelog/standard-version)
+- Build with gzip and brotli output: [vite-plugin-compression](https://github.com/anncwb/vite-plugin-compression)
+- Visualize bundle: [rollup-plugin-visualizer](https://github.com/btd/rollup-plugin-visualizer)
 
 ## Demo
 
