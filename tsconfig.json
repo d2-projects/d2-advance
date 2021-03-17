@@ -27,7 +27,6 @@
     ]
   },
   "include": [
-    "vite.config.ts",
     "global.d.ts",
     "src/**/*.ts",
     "src/**/*.tsx",
