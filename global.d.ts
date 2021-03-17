@@ -16,3 +16,8 @@ interface ImportMetaEnv extends CustomEnvVariables {
    */
   __: unknown;
 }
+
+interface Window {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  __VUE_DEVTOOLS_GLOBAL_HOOK__: any;
+}
