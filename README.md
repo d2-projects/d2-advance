@@ -34,6 +34,7 @@ Public Repositories: [Github](https://gitee.com/d2-projects/d2-advance) | [Á†Å‰∫
 - [Jest](https://jestjs.io/) for unit test. With [@testing-library/vue](https://github.com/testing-library/vue-testing-library) (TODO)
 - New version and changelog generation by [standard-version](https://github.com/conventional-changelog/standard-version)
 - Build with gzip and brotli output. by [vite-plugin-compression](https://github.com/anncwb/vite-plugin-compression)
+- Visualize bundle. by [rollup-plugin-visualizer](https://github.com/btd/rollup-plugin-visualizer)
 
 ## Demo
 
@@ -58,6 +59,9 @@ yarn serve
 
 # production build
 yarn build
+
+# build with `report.html`
+yarn build:report
 
 # locally preview production build
 yarn preview

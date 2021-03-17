@@ -26,7 +26,7 @@ jobs:
       run: yarn test:unit
 
     - name: Build
-      run: yarn build
+      run: yarn build:report
 
     - uses: actions/upload-artifact@v2
       with:
