@@ -70,6 +70,7 @@
     "infile": "docs/CHANGELOG.md"
   },
   "browserslist": [
-    "defaults"
+    "defaults",
+    "android >= 4"
   ]
 }
