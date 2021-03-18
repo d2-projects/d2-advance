@@ -10,6 +10,10 @@ Preview 👉 [https://d2.pub/d2-advance/preview](https://d2.pub/d2-advance/previ
  
 Public Repositories: [Github](https://gitee.com/d2-projects/d2-advance) | [码云](https://gitee.com/d2-projects/d2-advance) (mirror)
 
+<!-- Online Documents: [English](https://d2.pub/doc/d2-advance/) | [中文](https://d2.pub/zh/doc/d2-advance/) -->
+
+Documents: [English](docs/README.md) | [中文](docs/README_zh.md)
+
 ## Goal
 
 - Less is more
@@ -48,6 +52,7 @@ Public Repositories: [Github](https://gitee.com/d2-projects/d2-advance) | [码�
 
 -   Git
 -   NodeJS 12+
+-   Yarn
 -   VSCode (optional, recommended)
 
 ``` bash
@@ -56,64 +61,6 @@ yarn install
 
 # start dev server
 yarn serve
-
-# production build
-yarn build
-
-# build with `report.html`
-yarn build:report
-
-# locally preview production build
-yarn preview
-
-# check and auto fix code by eslint
-yarn lint
-yarn lint --fix
-
-# check type
-yarn type
-
-# git commit by commitizen
-yarn commit
-
-# take a release commit by standard-version
-yarn release
-
-# unit test by jest
-yarn test:unit
-
-# show support browsers
-yarn browsers
-```
-
-### Custom env variables
-
-type in ` global.d.ts`:
-
-``` ts
-// ...
-interface CustomEnvVariables {
-  VITE_BASE_URL: string;
-  VITE_HTTP_MOCK?: 'on' | 'off'; // is build with mock
-  VITE_SOURCE_MAP?: 'on' | 'off'; // is output .map
-  VITE_GZIP?: 'on' | 'off'; // is output .gz
-  VITE_BROTLI?: 'on' | 'off'; // is output .br
-
-  VITE_API_BASE_URL: string;
-  // ... more here and start with 'VITE_'
-}
-```
-
-default values in `.env`:
-
-```
-VITE_BASE_URL=./
-VITE_HTTP_MOCK=on
-VITE_SOURCE_MAP=off
-VITE_GZIP=on
-VITE_BROTLI=on
-
-VITE_API_BASE_URL=/api
 ```
 
 ### Customize configuration
