@@ -13,6 +13,7 @@
     "commit": "git-cz",
     "release": "standard-version",
     "test:unit": "echo TODO",
+    "browsers": "browserslist",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -35,6 +36,7 @@
     "@vue/compiler-sfc": "^3.0.7",
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^7.0.0",
+    "browserslist": "^4.16.3",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "^7.22.0",
     "eslint-plugin-prettier": "^3.3.1",

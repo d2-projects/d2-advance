@@ -81,6 +81,9 @@ yarn release
 
 # unit test by jest
 yarn test:unit
+
+# show support browsers
+yarn browsers
 ```
 
 ### Custom env variables
