@@ -38,24 +38,6 @@ jobs:
     name: Deploy development
     steps:
     - uses: actions/checkout@v2
-    - uses: bahmutov/npm-install@v1
-      with:
-        install-command: yarn --frozen-lockfile --silent
-
-    - name: Check code
-      run: yarn lint --max-warnings=0
-
-    - name: Check unit test
-      run: yarn test:unit
-
-    - name: Build
-      run: yarn build
-jobs:
-  check-quality-and-build-preview:
-    runs-on: ubuntu-latest
-    name: Check quality and build
-    steps:
-    - uses: actions/checkout@v2
 
     - uses: bahmutov/npm-install@v1
       with:
